@@ -1,0 +1,12 @@
+uuid: 7a0ef869-55f9-42b3-882e-774608c94c48
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - farm_id_tag
+_core:
+  default_config_hash: QCPaKU7sJFLWiVi81bSJrYCKmS_MtEIc56wPBCz8BNc
+id: other
+label: Other
+bundles: null

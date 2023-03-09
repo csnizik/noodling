@@ -1,0 +1,68 @@
+diff --git a/src/Controller/OpenIDConnectRedirectController.php b/src/Controller/OpenIDConnectRedirectController.php
+index 74d389d..e35111c 100644
+--- a/src/Controller/OpenIDConnectRedirectController.php
++++ b/src/Controller/OpenIDConnectRedirectController.php
+@@ -22,6 +22,8 @@ use Drupal\openid_connect\OpenIDConnectClientEntityInterface;
+ use Drupal\openid_connect\OpenIDConnectSessionInterface;
+ use Drupal\openid_connect\OpenIDConnectStateTokenInterface;
+ use Drupal\openid_connect\Plugin\OpenIDConnectClientInterface;
++use GuzzleHttp\Client;
++use GuzzleHttp\Exception\RequestException;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ use Symfony\Component\HttpFoundation\RedirectResponse;
+ use Symfony\Component\HttpFoundation\RequestStack;
+@@ -307,26 +309,37 @@ class OpenIDConnectRedirectController implements ContainerInjectionInterface, Ac
+ 
+             // Destroy session if provider supports it.
+             $end_session_enabled = $config->get('end_session_enabled') ?? FALSE;
+-            if ($end_session_enabled && !empty($endpoints['end_session'])) {
+-              $url_options = [
+-                'query' => ['id_token_hint' => $this->session->retrieveIdToken()],
+-              ];
+-              if ($redirect_logout_url) {
+-                $url_options['query']['post_logout_redirect_uri'] = $redirect_logout_url->setAbsolute()->toString(TRUE)->getGeneratedUrl();
++            if ($end_session_enabled) {
++              try {
++                $client = new Client();
++                $request_options = [
++		    'form_params' => [
++		        'token' => $this->session->retrieveAccessToken(),
++                        'client_id' => $entity->getPlugin()->getConfiguration()['client_id'],
++                        'client_secret' => $entity->getPlugin()->getConfiguration()['client_secret'],
++                    ],
++                    'headers' => [
++                        'Content-Type' => 'application/x-www-form-urlencoded',
++                    ],
++	        ];
++                $response = $client->post($endpoints['end_session'], $request_options);
++              } catch (\Exception $e) {
++                $error_message = $e->getMessage();
++                if ($e instanceof RequestException && $e->hasResponse()) {
++                  $error_message .= ' Response: ' . $e->getResponse()->getBody()->getContents();
++                }
++
++                $this->getLogger('openid_connect_' . $entity->getPlugin()->getPluginId())
++                  ->error('Could not revoke token. Details: @error_message', ['@error_message' => $error_message]);
+               }
+-              $redirect = Url::fromUri($endpoints['end_session'], $url_options)->toString(TRUE);
+-              $response = new TrustedRedirectResponse($redirect->getGeneratedUrl());
+-              $response->addCacheableDependency($redirect);
+             }
+             else {
+-              if (!$end_session_enabled) {
+-                $this->messenger()->addWarning($this->t('@provider does not support log out. You are logged out of this site but not out of the OpenID Connect provider.', ['@provider' => $entity->label()]));
+-              }
+-              if ($redirect_logout_url) {
+-                $url = $redirect_logout_url->toString(TRUE)->getGeneratedUrl();
+-                $response = new TrustedRedirectResponse($url);
+-                $response->addCacheableDependency($url);
+-              }
++              $this->messenger()->addWarning($this->t('@provider does not support log out. You are logged out of this site but not out of the OpenID Connect provider.', ['@provider' => $entity->label()]));
++            }
++            if ($redirect_logout_url) {
++              $url = $redirect_logout_url->toString(TRUE)->getGeneratedUrl();
++              $response = new TrustedRedirectResponse($url);
++              $response->addCacheableDependency($url);
+             }
+             $rsp = ['response' => &$response];
+             $context = ['client' => $client_name];

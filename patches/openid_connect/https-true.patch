@@ -1,0 +1,12 @@
+diff --git a/src/Plugin/OpenIDConnectClientBase.php b/src/Plugin/OpenIDConnectClientBase.php
+index d5e59ff..1af36a6 100644
+--- a/src/Plugin/OpenIDConnectClientBase.php
++++ b/src/Plugin/OpenIDConnectClientBase.php
+@@ -437,6 +437,7 @@ abstract class OpenIDConnectClientBase extends PluginBase implements OpenIDConne
+     $route_parameters += ['openid_connect_client' => $this->parentEntityId];
+     $options += [
+       'absolute' => TRUE,
++      'https' => TRUE,
+       'language' => $this->languageManager->getLanguage(LanguageInterface::LANGCODE_NOT_APPLICABLE),
+     ];
+     return Url::fromRoute('openid_connect.redirect_controller_redirect', $route_parameters, $options);

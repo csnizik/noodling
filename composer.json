@@ -1,0 +1,79 @@
+{
+  "name": "pods/pods_csc",
+  "description": "Producer Operations Data Service - CSC",
+  "type": "project",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "oomphinc/composer-installers-extender": "^2.0",
+    "farmos/farmos": "2.0.1",
+    "wikimedia/composer-merge-plugin": "^2.0",
+    "drupal/structure_sync": "^2.0",
+    "drupal/openid_connect": "2.0.0-alpha12",
+    "drupal/scss_compiler": "^1.1"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "cweagans/composer-patches": true,
+      "drupal/core-composer-scaffold": true,
+      "oomphinc/composer-installers-extender": true,
+      "phpstan/extension-installer": true,
+      "wikimedia/composer-merge-plugin": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "extra": {
+    "composer-exit-on-patch-failure": true,
+    "enable-patching": true,
+    "installer-paths": {
+      "web/libraries/scssphp": [
+        "scssphp/scssphp"
+      ],
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "web/modules/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/farm": [
+        "farmos/farmos"
+      ],
+      "web/themes/{$name}": [
+        "type:drupal-theme"
+      ],
+      "drush/Commands/contrib/{$name}": [
+        "type:drupal-drush"
+      ]
+    },
+    "merge-plugin": {
+      "include": [
+        "web/profiles/farm/composer.libraries.json",
+        "web/profiles/farm/composer.project.json"
+      ],
+      "merge-extra": true,
+      "merge-extra-deep": true
+    },
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
+    "patches": {
+      "drupal/core": {
+        "Issue #3051453: Call to a member function setSyncing() on null when installing a module": "https://www.drupal.org/files/issues/2020-08-18/protect_against_invalid_ids_in_import_delete-3051453-10.patch"
+      },
+      "drupal/openid_connect": {
+        "Force HTTPS in redirect URIs": "patches/openid_connect/https-true.patch",
+        "Send Post Request to revoke endpoint for smooth logout": "patches/openid_connect/smooth-logout.patch"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+uuid: e0df2b2f-abbf-404e-a9f1-196844dc60c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - asset
+    - farm_parent
+  enforced:
+    module:
+      - farm_parent
+_core:
+  default_config_hash: IFuHKA8pKzOVBTXPDlCAOj0obZdGuzvOvR3JSOYx_3o
+id: asset_parent_action
+label: 'Assign asset parent'
+type: asset
+plugin: asset_parent_action
+configuration: {  }

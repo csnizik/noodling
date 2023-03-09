@@ -1,0 +1,7 @@
+FROM docker-rhel-php:7.3
+
+USER root
+
+RUN dnf install -y php-gd php-pdo patch
+
+USER bob

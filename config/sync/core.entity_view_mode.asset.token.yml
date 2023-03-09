@@ -1,0 +1,10 @@
+uuid: cc972b8c-7095-4a3c-a781-e26cf3663cca
+langcode: en
+status: true
+dependencies:
+  module:
+    - asset
+id: asset.token
+label: Token
+targetEntityType: asset
+cache: true

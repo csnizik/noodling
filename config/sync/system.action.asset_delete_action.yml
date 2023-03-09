@@ -1,0 +1,13 @@
+uuid: ffa5ceab-10fe-4845-bebb-bc8b24b38f23
+langcode: en
+status: true
+dependencies:
+  module:
+    - asset
+_core:
+  default_config_hash: YpPDrF_Vz2pEZE5_YyEBpt4H6JLRPGTo63i2YavCZeI
+id: asset_delete_action
+label: 'Delete asset'
+type: asset
+plugin: 'entity:delete_action:asset'
+configuration: {  }

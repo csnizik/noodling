@@ -1,0 +1,12 @@
+uuid: fc1f6a6f-4ae0-4c35-960c-6b8c7e0668fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - asset
+_core:
+  default_config_hash: Y89ri4XsuHy2Z4AmdB3Ja1xu6sw8P2ZbCPWUvu5lP9c
+id: asset.map_popup
+label: 'Map popup'
+targetEntityType: asset
+cache: true

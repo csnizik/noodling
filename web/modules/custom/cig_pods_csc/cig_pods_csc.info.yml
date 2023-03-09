@@ -1,0 +1,6 @@
+name: Producer Operations Data Service - CSC
+description: Producer Operations Data Service - CSC
+type: module
+core_version_requirement: ^9
+dependencies:
+  - structure_sync:structure_sync

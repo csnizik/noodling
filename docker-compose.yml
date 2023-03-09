@@ -1,0 +1,73 @@
+version: '3'
+services:
+  db:
+    image: mariadb:latest
+    volumes:
+      - './db:/var/lib/mysql'
+    ports:
+      - '3306:3306'
+    environment:
+        MYSQL_ROOT_PASSWORD: pods_csc
+        MYSQL_DATABASE: pods_csc
+        MYSQL_USER: pods_csc
+        MYSQL_PASSWORD: pods_csc
+        MYSQL_INITDB_SKIP_TZINFO: 1
+  www:
+    build: .
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        set -ex
+
+        # If a INSTALLED file does not exist, perform a fresh install
+        if [ ! -f /opt/drupal/INSTALLED ]; then
+
+          # Wait for MySQL
+          while ! mysqladmin ping -h db --silent; do
+            sleep 1
+          done
+
+          # Delete the database volume.
+          mysql -u pods_csc -h db -ppods_csc -e "DROP DATABASE pods_csc; CREATE DATABASE pods_csc"
+
+          # Delete all files created by Composer.
+          # This also deletes our custom modules and then restores them via Git.
+          rm -rf /opt/drupal/.editorconfig /opt/drupal/.gitattributes /opt/drupal/keys /opt/drupal/vendor /opt/drupal/web
+          (cd /opt/drupal/ && git checkout -- web)
+
+          # Build the PODS CSC codebase via Composer.
+          composer install
+
+          # Install Drupal via Drush.
+          drush site-install -y --existing-config --db-url=mysql://pods_csc:pods_csc@db/pods_csc --account-pass=admin farm farm.modules="base"
+
+          # Make sites/default/files writable by Apache.
+          chown -R root:www-data /opt/drupal/web/sites/default/files
+
+          # # Import taxonomy terms via Drush.
+          # drush -y import:taxonomies --choice=full
+          
+          # Add a test user.
+          drush user:create test --mail="test@example.com" --password="test"
+
+          # Create INSTALLED file
+          touch /opt/drupal/INSTALLED
+        fi
+
+        # Notify that PODS CSC is ready.
+        echo "##### PODS CSC IS READY #####"
+
+        # Run Apache.
+        apache2-foreground
+
+    depends_on:
+      - db
+    volumes:
+      - './:/opt/drupal'
+    ports:
+      - '85:80'
+    environment:
+      XDEBUG_MODE: debug
+      XDEBUG_CONFIG: discover_client_host=yes
+      XDEBUG_SESSION: PHPSTORM

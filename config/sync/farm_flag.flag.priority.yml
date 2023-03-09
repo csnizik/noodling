@@ -1,0 +1,12 @@
+uuid: ac3bb738-1726-49ad-848e-b0be47828374
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - farm_flag
+_core:
+  default_config_hash: vC4drh9sAkYt2w94w39lgFgT9Wc3AM4lnDqA7Yqj-0k
+id: priority
+label: Priority
+entity_types: null

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# This script will COMPLETELY refresh the PODS codebase and container.
+# THIS WILL UNDO ALL UNCOMMITTED CHANGES!
+
+# Confirm that the user wants to do this...
+read -r -p "PODS CSC will be rebuilt. You will lose all data and uncommitted changes. Are you sure? [Y/n] " input
+case $input in
+      [yY][eE][sS]|[yY])
+            echo "Rebuilding PODS CSC..."
+            ;;
+      [nN][oO]|[nN])
+            exit 0
+            ;;
+      *)
+            echo "Invalid input..."
+            exit 1
+            ;;
+esac
+
+# Get this script's path and parent directory.
+SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+PARENTPATH="$(dirname $SCRIPTPATH)"
+
+# Shut down the Docker containers.
+docker-compose -f $PARENTPATH/docker-compose.yml down
+
+#Delete INSTALLED
+rm $PARENTPATH/INSTALLED
+
+#The following rm should be removed if we transfer over to a WSL2 enviornment
+yes| rm -r $PARENTPATH/web
+
+# Build the Docker image.
+docker-compose -f $PARENTPATH/docker-compose.yml build --no-cache
+
+# Start up the Docker containers.
+docker-compose -f $PARENTPATH/docker-compose.yml up

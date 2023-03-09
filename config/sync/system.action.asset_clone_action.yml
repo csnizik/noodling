@@ -1,0 +1,13 @@
+uuid: a38d17d4-fc11-4a8e-af0c-efa33c4575a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - asset
+_core:
+  default_config_hash: 3PWxedGHIVDHBsmQ3X9SzoiCkfN8B9ufml3gJxEStuk
+id: asset_clone_action
+label: 'Clone asset'
+type: asset
+plugin: asset_clone_action
+configuration: {  }

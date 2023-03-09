@@ -1,0 +1,223 @@
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+
+  "PODS CSC Textfield": {
+    "scope": "php",
+    "prefix": "pdtf",
+    "body": [
+      "\\$form['$1'] = [",
+      "\t'#type' => 'textfield',",
+      "\t'#title' => \\$this->t('$2'),",
+      "\t'#description' => '',",
+      "\t'#required' => TRUE",
+      "]; $0"
+    ],
+    "description": "PODS textfield"
+  },
+  "PODS CSC Form Element Number": {
+    "scope": "php",
+    "prefix": "pdfen",
+    "body": [
+      "\\$form['$1'] = [",
+      "\t'#type' => 'number',",
+      "\t'#title' => \\$this->t('$2'),",
+      "\t'#description' => '',",
+      "\t'#required' => TRUE",
+      "]; $0"
+    ]
+  },
+
+  "PODS CSC Default Value": {
+    "scope": "php",
+    "prefix": "pddv",
+    "body": ["'#default_value' => $0,"],
+    "description": "PODS default value"
+  },
+
+  "PODS CSC Comment": {
+    "scope": "php",
+    "prefix": "pdcm",
+    "body": [
+      "echo(\"<script>console.log('$1: \" . json_encode($2) . \"');</script>\"); $0"
+    ],
+    "description": "PODS comment"
+  },
+
+  "PODS CSC Select": {
+    "scope": "php",
+    "prefix": "pdsl",
+    "body": [
+      "\\$form['$1'] = [",
+      "\t'#type' => 'select',",
+      "\t'#title' => \\$this->t('$2'),",
+      "\t'#options' => '$3',",
+      "\t'#required' => TRUE",
+      "]; $0"
+    ],
+    "description": "PODS select"
+  },
+
+  "PODS CSC Submit": {
+    "scope": "php",
+    "prefix": "pdsub",
+    "body": [
+      "\\$form['actions']['$1'] = [",
+      "\t'#type' => 'submit',",
+      "\t'#value' => \\$this->t('$2'),",
+      "]; $0"
+    ],
+    "description": "PODS submit"
+  },
+
+  "PODS CSC Button": {
+    "scope": "php",
+    "prefix": "pdbtn",
+    "body": [
+      "\\$form['$1'] = [",
+      "\t'#type' => 'button',",
+      "\t'#value' => \\$this->t('$2'),",
+      "\t'#attributes' => array('onClick' => '$3'),",
+      "]; $0"
+    ],
+    "description": "PODS button"
+  },
+
+  "PODS CSC Markup": {
+    "scope": "php",
+    "prefix": "pdmu",
+    "body": ["\\$form['$1'] = [", "\t'#markup' => '$2',", "]; $0"],
+    "description": "PODS markup"
+  },
+
+  "PODS CSC Routing yml": {
+    "prefix": "pdrt",
+    // "scope": "yml",
+    "body": [
+      "cig_pods.$1:",
+      "\tpath: \"$2\"",
+      "\tdefaults:",
+      "\t\t_form: \"$3\"",
+      "\t\t_title: \"$4\"",
+      "\trequirements:",
+      "\t\t_permission: \"access content\"$0"
+    ],
+    "description": "PODS routing yml entry"
+  },
+
+  "PODS CSC Create Select Taxonomy": {
+    "scope": "php",
+    "prefix": "pdcst",
+    "body": [
+      "\tpublic function get$1Options(){",
+      "\t\t\\$options = [];",
+      "\t\t\\$taxonomy_terms = \\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(",
+      "\t\t\t['vid' => '$3']);",
+      "\t\t\\$keys = array_keys(\\$taxonomy_terms);",
+      "\t\tforeach(\\$keys as \\$key){",
+      "\t\t\t\\$term = \\$taxonomy_terms[\\$key];",
+      "\t\t\t\\$options[\\$key] = \\$term -> getName();",
+      "\t\t}",
+      "\t\treturn \\$options;",
+      "\t}$0"
+    ],
+    "description": "Create Select element data from taxonomy"
+  },
+
+  "PODS CSC DDL primative field": {
+    "scope": "php",
+    "prefix": "pddlpf",
+    "body": [
+      "'field_$1' => [",
+      "\t 'label'=> '$2',",
+      "\t 'type'=> '$3',",
+      "\t 'required' => $4,",
+      "\t 'description' => '$5',",
+      "\n],"
+    ]
+  },
+  "PODS DDL Entity reference field": {
+    "scope": "php",
+    "prefix": "pdddlerf",
+    "body": [
+      "'field_$1' => [",
+      "\t 'label'=> '$2',",
+      "\t 'type'=> 'entity_reference',",
+      "\t 'target_type'=> '$3',",
+      "\t 'target_bundle'=> '$4',",
+      "\t 'required' => $5,",
+      "\t 'description' => '$6',",
+      "\n],"
+    ]
+  },
+
+  "PODS CSC Form": {
+    "prefix": "pdfm",
+    "body": [
+      "<?php",
+
+      "\nnamespace Drupal\\cig_pods\\Form;",
+
+      "\nUse Drupal\\Core\\Form\\FormBase;",
+      "Use Drupal\\Core\\Form\\FormStateInterface;",
+
+      "\nclass $TM_FILENAME_BASE extends FormBase {",
+
+      "\n\t/**",
+      "\t* {@inheritdoc}",
+      "\t*/",
+
+      "\tpublic function buildForm(array \\$form, FormStateInterface \\$form_state, \\$options = NULL){",
+      "\n\t$0",
+
+      "\n\n\n\n\t\treturn \\$form;",
+
+      "\n\t}",
+
+      "\n\t/**",
+      "\t* {@inheritdoc}",
+      "\t*/",
+
+      "\tpublic function validateForm(array &\\$form, FormStateInterface \\$form_state){",
+      "\t\treturn;",
+      "\t}",
+
+      "\n\t/**",
+      "\t* {@inheritdoc}",
+      "\t*/",
+
+      "\tpublic function getFormId() {",
+      "\t\treturn '$1';",
+      "\t}",
+
+      "\n\t/**",
+      "\t* {@inheritdoc}",
+      "\t*/",
+
+      "\tpublic function submitForm(array &\\$form, FormStateInterface \\$form_state) {",
+      "\t\t\\$this",
+      "\t\t\t->messenger()",
+      "\t\t\t->addStatus(\\$this",
+      "\t\t\t->t('Form submitted for $2 @$2_name', [",
+      "\t\t\t'@$2_name' => \\$form['$2_name']['#value'],",
+      "\t\t]));",
+      "\t}",
+      "}"
+    ],
+    "description": "PODS CSC form"
+  }
+}
