@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Partner type'
+vid: partner_type
+description: 'Legal/financial structure of lead grantee or partner organization'
+weight: 0

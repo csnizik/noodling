@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduced energy use purpose'
+vid: reduced_energy_use_purpose
+description: 'Purpose of tracking reduced energy use in the enrolled field.'
+weight: 0

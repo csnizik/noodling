@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Other water quality purpose'
+vid: other_water_quality_purpose
+description: 'Purpose of tracking other water quality benefits in the enrolled field.'
+weight: 0

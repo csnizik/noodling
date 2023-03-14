@@ -1,0 +1,5674 @@
+taxonomies:
+  activity_by_partner:
+    -
+      vid: activity_by_partner
+      tid: '60'
+      langcode: en
+      name: 'Marketing support'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e2335af7-288a-4dc7-9524-3837bc373ffb
+    -
+      vid: activity_by_partner
+      tid: '59'
+      langcode: en
+      name: 'MMRV support'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b49f3ae4-c3df-4644-a84c-15b50ac8ce37
+    -
+      vid: activity_by_partner
+      tid: '61'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9f17c3e8-6efe-448c-ae3d-670b288c4223
+    -
+      vid: activity_by_partner
+      tid: '56'
+      langcode: en
+      name: 'Producer outreach for enrollment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 51f773cd-e694-4941-a424-63f08d48a29d
+    -
+      vid: activity_by_partner
+      tid: '57'
+      langcode: en
+      name: 'Technical assistance to producers'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f53e4bb9-5651-40d9-998a-30db318efb2e
+    -
+      vid: activity_by_partner
+      tid: '58'
+      langcode: en
+      name: 'Training to other partner organizations'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ee7f94f9-e92e-4a36-9e0e-92dfd8d02a15
+  avoided_land_conversion:
+    -
+      vid: avoided_land_conversion
+      tid: '540'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8af5181b-f71c-423e-ac15-03ebf6966559
+    -
+      vid: avoided_land_conversion
+      tid: '539'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 41dafd29-85bd-4fc5-93ce-c67e50326e81
+    -
+      vid: avoided_land_conversion
+      tid: '538'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3e2269f7-1ac2-43c5-a859-b0876e8f64d3
+  avoided_land_conversion_amount_u:
+    -
+      vid: avoided_land_conversion_amount_u
+      tid: '541'
+      langcode: en
+      name: Acres
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4b45ae50-a996-4ae4-af1d-be474a9504de
+    -
+      vid: avoided_land_conversion_amount_u
+      tid: '542'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2fb4aba0-175e-404c-a421-2f4af47d827a
+  avoided_land_conversion_purpose:
+    -
+      vid: avoided_land_conversion_purpose
+      tid: '545'
+      langcode: en
+      name: 'Commodity marketing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ed693406-e618-44b4-8c6b-49ad20f21a77
+    -
+      vid: avoided_land_conversion_purpose
+      tid: '546'
+      langcode: en
+      name: 'I don’t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f75b904a-81c6-4285-accb-5fd19b34d9e7
+    -
+      vid: avoided_land_conversion_purpose
+      tid: '547'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 848256bc-88f2-4eef-82be-a0debf50c0fe
+    -
+      vid: avoided_land_conversion_purpose
+      tid: '544'
+      langcode: en
+      name: 'Producing insets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8a40f0c6-8643-4312-9015-381103f9ed93
+    -
+      vid: avoided_land_conversion_purpose
+      tid: '543'
+      langcode: en
+      name: 'Producing offsets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6afadec9-79d9-47d7-83b8-a1d5e5baf41a
+  baseline_yield_location:
+    -
+      vid: baseline_yield_location
+      tid: '228'
+      langcode: en
+      name: 'Enrolled field'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 67073b27-5064-45d6-809c-9b3f53889f75
+    -
+      vid: baseline_yield_location
+      tid: '230'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c27fd58e-637d-4fbd-97de-7db8ce49d988
+    -
+      vid: baseline_yield_location
+      tid: '229'
+      langcode: en
+      name: 'Whole operation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fbbb2898-66ef-4678-8407-daf7f3e43fa8
+  baseline_yield_unit:
+    -
+      vid: baseline_yield_unit
+      tid: '220'
+      langcode: en
+      name: 'Animal units per acre'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0044283a-a19a-4e2e-b827-ee111381ffa5
+    -
+      vid: baseline_yield_unit
+      tid: '218'
+      langcode: en
+      name: 'Bushels per acre'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7d55755b-3fa1-47d3-a034-12e8d18fdf96
+    -
+      vid: baseline_yield_unit
+      tid: '223'
+      langcode: en
+      name: 'Carcass pounds per animal'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 33ccf0c7-a117-4abd-aaeb-ff9098a5bf96
+    -
+      vid: baseline_yield_unit
+      tid: '221'
+      langcode: en
+      name: 'Head per acre'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 43a75bde-e3c4-4f20-9605-a0baceeceb62
+    -
+      vid: baseline_yield_unit
+      tid: '219'
+      langcode: en
+      name: 'Hundred-weights (or pounds) per head'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 12ba8a59-252a-430a-becc-5427302135cd
+    -
+      vid: baseline_yield_unit
+      tid: '226'
+      langcode: en
+      name: 'Linear feet per acre'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d1a35df9-af94-4414-906d-40db7f4f24be
+    -
+      vid: baseline_yield_unit
+      tid: '222'
+      langcode: en
+      name: 'Liveweight pounds per animal'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 50923354-2bb8-4fa2-ba4b-ec6e60e259ce
+    -
+      vid: baseline_yield_unit
+      tid: '227'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c58685a9-7abf-4697-ae16-cd9188d75b34
+    -
+      vid: baseline_yield_unit
+      tid: '225'
+      langcode: en
+      name: 'Pounds per acre'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0cde8eed-adf7-4c72-a6f3-75bd2230996a
+    -
+      vid: baseline_yield_unit
+      tid: '224'
+      langcode: en
+      name: 'Tons per acre'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5163134d-4f02-43d0-b3b8-84568d366ffb
+  commodity_category:
+    -
+      vid: commodity_category
+      tid: '211'
+      langcode: en
+      name: Crops
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 90c87ba8-7d5a-447f-8655-27cfe5fddac2
+    -
+      vid: commodity_category
+      tid: '214'
+      langcode: en
+      name: 'Crops and livestock'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 840b80fe-a8c1-4734-b839-fea461f46e20
+    -
+      vid: commodity_category
+      tid: '215'
+      langcode: en
+      name: 'Crops and trees'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b1ae53d8-da30-4f63-9da9-cb9763a12068
+    -
+      vid: commodity_category
+      tid: '217'
+      langcode: en
+      name: 'Crops, livestock and trees'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 920c6d08-b216-424b-827a-19b962dd2684
+    -
+      vid: commodity_category
+      tid: '212'
+      langcode: en
+      name: Livestock
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1de5d3a1-f53a-4ef8-9fbf-c42422ab1754
+    -
+      vid: commodity_category
+      tid: '216'
+      langcode: en
+      name: 'Livestock and trees'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 97d51a6f-e77b-4077-aa82-86a735e551a1
+    -
+      vid: commodity_category
+      tid: '213'
+      langcode: en
+      name: Trees
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d8f9ffe9-c24c-44d2-9807-91a343f87784
+  cost_unit:
+    -
+      vid: cost_unit
+      tid: '364'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2285ee4b-dc4f-43e0-9f91-4f40d09573a1
+    -
+      vid: cost_unit
+      tid: '358'
+      langcode: en
+      name: 'Per acre'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 12bf4371-f6d5-4a33-b748-1d8b8812920e
+    -
+      vid: cost_unit
+      tid: '361'
+      langcode: en
+      name: 'Per bushel'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 828ec6da-5b0e-46ee-9905-9ef08a22b576
+    -
+      vid: cost_unit
+      tid: '359'
+      langcode: en
+      name: 'Per head'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 42011929-2f9d-4421-97be-46496758e589
+    -
+      vid: cost_unit
+      tid: '360'
+      langcode: en
+      name: 'Per linear foot'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 852aa079-0b04-414a-a64b-cad55f489076
+    -
+      vid: cost_unit
+      tid: '362'
+      langcode: en
+      name: 'Per pound'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b174cdf9-805d-43f1-bcb7-3c9517c31d0d
+    -
+      vid: cost_unit
+      tid: '363'
+      langcode: en
+      name: 'Per ton'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 33c71e98-ab1a-45ae-b64a-ffb317ec8f62
+  csaf_experience:
+    -
+      vid: csaf_experience
+      tid: '198'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fd31e0e4-efad-4fa1-b0d5-e705f537f792
+    -
+      vid: csaf_experience
+      tid: '197'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 42110fa5-efa2-4756-99af-615a2c1f8ece
+    -
+      vid: csaf_experience
+      tid: '196'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 01b0f42a-aa06-458f-9889-262485b6f57a
+  csaf_federal_funds:
+    -
+      vid: csaf_federal_funds
+      tid: '201'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 311c40df-ff3b-46dc-85c8-37c18fe04ac9
+    -
+      vid: csaf_federal_funds
+      tid: '200'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 17cd07f6-56f8-4222-ae64-c0b58edb54a5
+    -
+      vid: csaf_federal_funds
+      tid: '199'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2a89f852-a9c2-4fb1-820d-1956c44cec74
+  csaf_market_incentives:
+    -
+      vid: csaf_market_incentives
+      tid: '210'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 845fc16e-3d6c-4f17-864a-27193ebcda28
+    -
+      vid: csaf_market_incentives
+      tid: '209'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8a47fc03-5a55-4112-97dc-21d18d660da4
+    -
+      vid: csaf_market_incentives
+      tid: '208'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6af446f5-03c3-4d7e-944f-a7d43dc8ebf1
+  csaf_nonprofit_funds:
+    -
+      vid: csaf_nonprofit_funds
+      tid: '207'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 90e82b07-6b52-4c9e-9e6a-d868fdaf7fc3
+    -
+      vid: csaf_nonprofit_funds
+      tid: '206'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f09c6f82-c346-48ad-a6a9-d05c8cb02b0d
+    -
+      vid: csaf_nonprofit_funds
+      tid: '205'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8f032885-2295-4fba-9412-cc7921215d35
+  csaf_state_or_local_funds:
+    -
+      vid: csaf_state_or_local_funds
+      tid: '204'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7c29970e-38e5-4e57-a1e6-520e8a31bd78
+    -
+      vid: csaf_state_or_local_funds
+      tid: '203'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b03b45df-345c-44f7-b8e9-6320b15985db
+    -
+      vid: csaf_state_or_local_funds
+      tid: '202'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 59a18bc9-a663-4d7f-981e-98dea0e5e362
+  environmental_benefits:
+    -
+      vid: environmental_benefits
+      tid: '465'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 39be0014-9432-4105-9f1b-6d20528d88fd
+    -
+      vid: environmental_benefits
+      tid: '464'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fbc99338-f0e1-49e8-87ad-0cced0d8d638
+    -
+      vid: environmental_benefits
+      tid: '463'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6261b009-b297-4a16-9c01-137e08dd1f9c
+  field_any_csaf_practice:
+    -
+      vid: field_any_csaf_practice
+      tid: '266'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bed8d174-8b9e-4029-9852-0b6591e0a72e
+    -
+      vid: field_any_csaf_practice
+      tid: '265'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e19326ce-ff67-4860-9644-f2916cae4834
+    -
+      vid: field_any_csaf_practice
+      tid: '264'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2e16d437-42f5-4818-b803-5305c9a4298d
+  field_commodity_volume_unit:
+    -
+      vid: field_commodity_volume_unit
+      tid: '349'
+      langcode: en
+      name: Bushels
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f6d6f2ab-f0c4-4f12-8672-779ee623e00a
+    -
+      vid: field_commodity_volume_unit
+      tid: '354'
+      langcode: en
+      name: 'Carcass weight pounds'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5670e718-1fab-460f-b642-e2f993c581a8
+    -
+      vid: field_commodity_volume_unit
+      tid: '350'
+      langcode: en
+      name: Gallons
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d74d1e47-dc47-4ca8-b155-4d10e1b49297
+    -
+      vid: field_commodity_volume_unit
+      tid: '356'
+      langcode: en
+      name: Head
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2f98d843-ae6d-4ad1-898c-eb6457dccfce
+    -
+      vid: field_commodity_volume_unit
+      tid: '355'
+      langcode: en
+      name: 'Linear feet'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4c0b0a9c-d4b7-4e3b-ad93-fbb0ae666da2
+    -
+      vid: field_commodity_volume_unit
+      tid: '353'
+      langcode: en
+      name: 'Liveweight pounds'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 95f0ca55-80be-45ec-82b6-c7051422b70b
+    -
+      vid: field_commodity_volume_unit
+      tid: '357'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f18b60c0-8712-49ca-921f-41e4bc4ed7aa
+    -
+      vid: field_commodity_volume_unit
+      tid: '352'
+      langcode: en
+      name: Pounds
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 439c35cb-40c9-42c2-a5e2-6ce4ad2c5357
+    -
+      vid: field_commodity_volume_unit
+      tid: '351'
+      langcode: en
+      name: Tons
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b64e3649-a835-4882-81d8-521d8580741f
+  field_ghg_calculations:
+    -
+      vid: field_ghg_calculations
+      tid: '393'
+      langcode: en
+      name: Both
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 20229c2b-90a8-4d23-ae1e-b2b5e703dec6
+    -
+      vid: field_ghg_calculations
+      tid: '392'
+      langcode: en
+      name: 'Direct physical measurements'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 69eaa3de-4fcd-4877-bad9-a7d9e5889edf
+    -
+      vid: field_ghg_calculations
+      tid: '391'
+      langcode: en
+      name: Models
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5b8dabb4-2a55-435c-be42-cd5245c5dcc2
+  field_ghg_monitoring:
+    -
+      vid: field_ghg_monitoring
+      tid: '372'
+      langcode: en
+      name: Drones
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 294a5c0a-a498-4fda-b743-894a586f3136
+    -
+      vid: field_ghg_monitoring
+      tid: '373'
+      langcode: en
+      name: 'Ground-level photos and videos'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e99d7fdc-7420-4f60-bb48-49fda90fc564
+    -
+      vid: field_ghg_monitoring
+      tid: '365'
+      langcode: en
+      name: 'On-farm inspection'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 148b230c-1576-4ac4-9b04-1131e3fdd8d5
+    -
+      vid: field_ghg_monitoring
+      tid: '374'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b3e35c7a-a66b-435f-808c-d8e57594c4b2
+    -
+      vid: field_ghg_monitoring
+      tid: '368'
+      langcode: en
+      name: 'Plot-based sampling (soil, water, etc.)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 40e41670-f40b-4e64-bf0c-ce98adbdb355
+    -
+      vid: field_ghg_monitoring
+      tid: '367'
+      langcode: en
+      name: 'Producer records or attestation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0337df80-b7a4-494d-b908-244e0daf81dd
+    -
+      vid: field_ghg_monitoring
+      tid: '366'
+      langcode: en
+      name: 'Satellite monitoring or remote sensing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3445e305-77c9-467a-b6b4-e0c6827daab2
+    -
+      vid: field_ghg_monitoring
+      tid: '370'
+      langcode: en
+      name: 'Soil metagenomics'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3000b68f-3cfb-4549-8825-575081834159
+    -
+      vid: field_ghg_monitoring
+      tid: '369'
+      langcode: en
+      name: 'Soil sensors'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 79922f65-d832-4f33-b3f3-090d21e46e51
+    -
+      vid: field_ghg_monitoring
+      tid: '371'
+      langcode: en
+      name: 'Water sensors'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3f0c8371-edf4-42cd-b10a-aca60f90e55a
+  field_ghg_reporting:
+    -
+      vid: field_ghg_reporting
+      tid: '379'
+      langcode: en
+      name: 'Automated devices'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 96992b50-4aec-4fd3-9dee-d5b74d23c03d
+    -
+      vid: field_ghg_reporting
+      tid: '377'
+      langcode: en
+      name: Email
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ee61dc6c-17fe-427e-83b5-2962ddc551ef
+    -
+      vid: field_ghg_reporting
+      tid: '375'
+      langcode: en
+      name: 'Mobile app'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cb01360f-64db-4fad-b0f4-a589fe555263
+    -
+      vid: field_ghg_reporting
+      tid: '381'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ed652af0-b031-4ac9-b216-e7aaf02b6afb
+    -
+      vid: field_ghg_reporting
+      tid: '378'
+      langcode: en
+      name: Paper
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d0b003fc-a151-49b6-b451-4bc643965e75
+    -
+      vid: field_ghg_reporting
+      tid: '380'
+      langcode: en
+      name: 'Third-party actors'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0048de9e-eb25-44f2-a4c2-64895a05dde7
+    -
+      vid: field_ghg_reporting
+      tid: '376'
+      langcode: en
+      name: Website
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e384f5e5-e710-42c7-ae45-04658d062443
+  field_ghg_verification:
+    -
+      vid: field_ghg_verification
+      tid: '387'
+      langcode: en
+      name: 'Artificial intelligence'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 023480cf-8d82-4071-b56f-54fa8b515965
+    -
+      vid: field_ghg_verification
+      tid: '384'
+      langcode: en
+      name: 'Computer modeling'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6307e2b4-6719-4b1f-993f-5c2240e89809
+    -
+      vid: field_ghg_verification
+      tid: '383'
+      langcode: en
+      name: 'Grantee audit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 86716aff-d42c-4b30-b3c8-0aee0793619c
+    -
+      vid: field_ghg_verification
+      tid: '390'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f342f753-0d89-403c-8431-80d2ed3cd1f1
+    -
+      vid: field_ghg_verification
+      tid: '386'
+      langcode: en
+      name: Photos
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f5c9616c-f033-4383-919e-69e62a677ea3
+    -
+      vid: field_ghg_verification
+      tid: '389'
+      langcode: en
+      name: 'Record audit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f429f5f5-1151-447a-b6ef-61704936ca8b
+    -
+      vid: field_ghg_verification
+      tid: '388'
+      langcode: en
+      name: 'Satellite imagery'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2c3d37a1-ae8a-4a10-96c2-4d7ca1d625ae
+    -
+      vid: field_ghg_verification
+      tid: '385'
+      langcode: en
+      name: 'Site or field visit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f0528293-86d9-492f-a441-95e38008b219
+    -
+      vid: field_ghg_verification
+      tid: '382'
+      langcode: en
+      name: 'Third-party audit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a8fd3d0a-ad0f-4662-b4e0-874b4ab493fb
+  field_irrigated:
+    -
+      vid: field_irrigated
+      tid: '241'
+      langcode: en
+      name: 'Center Pivot'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4086a16b-9a99-4991-aeab-a21aadfd10cf
+    -
+      vid: field_irrigated
+      tid: '242'
+      langcode: en
+      name: Drip-Subsurface
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a0860ec0-5f53-4eb2-b116-e580baae8668
+    -
+      vid: field_irrigated
+      tid: '243'
+      langcode: en
+      name: Drip-Surface
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 53cbb0b4-5d34-4fbb-bb2c-c22ac1d82023
+    -
+      vid: field_irrigated
+      tid: '244'
+      langcode: en
+      name: Flood/Border
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 022975a2-43c5-4caf-8658-c08db18038a4
+    -
+      vid: field_irrigated
+      tid: '245'
+      langcode: en
+      name: Furrow/Ditch
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d0b34122-bf33-4d1c-b8ad-7eca3397421b
+    -
+      vid: field_irrigated
+      tid: '246'
+      langcode: en
+      name: 'Lateral/Linear Sprinkler'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: de8b8a0d-10ce-41e9-a6af-770d194e4ef6
+    -
+      vid: field_irrigated
+      tid: '247'
+      langcode: en
+      name: Micro-sprinklers
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cb9d6bf7-78bb-42b1-a785-62077f78a047
+    -
+      vid: field_irrigated
+      tid: '240'
+      langcode: en
+      name: 'No irrigation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2333d64f-30cd-4a8c-8717-d91d4516f31b
+    -
+      vid: field_irrigated
+      tid: '255'
+      langcode: en
+      name: Other
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ff3ced27-02cc-428a-9dfd-6c3b24691c83
+    -
+      vid: field_irrigated
+      tid: '248'
+      langcode: en
+      name: Seepage
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1bc4fc82-4752-48d1-99db-4b26271defcb
+    -
+      vid: field_irrigated
+      tid: '249'
+      langcode: en
+      name: 'Side Roll'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7de1bf78-4986-4858-b1d5-6fc81ae311a3
+    -
+      vid: field_irrigated
+      tid: '250'
+      langcode: en
+      name: 'Solid Set Sprinklers'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 32394f5b-3090-4422-ac7a-30a196638a63
+    -
+      vid: field_irrigated
+      tid: '251'
+      langcode: en
+      name: Supplemental
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2fbbc531-3a15-4ffd-a714-0e26fc2f53b0
+    -
+      vid: field_irrigated
+      tid: '252'
+      langcode: en
+      name: Surface
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 32feab37-709a-48f8-92d3-8a0c51f78107
+    -
+      vid: field_irrigated
+      tid: '253'
+      langcode: en
+      name: 'Traveling Gun/Towline'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3506ecfb-0f96-4fa6-9718-357580f3660e
+    -
+      vid: field_irrigated
+      tid: '254'
+      langcode: en
+      name: 'Wheel Line'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 802760be-bcb1-4190-9280-87b973c1f884
+  field_land_use:
+    -
+      vid: field_land_use
+      tid: '236'
+      langcode: en
+      name: 'Crop land'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8ce58ced-c586-4ab0-a957-0859216095ea
+    -
+      vid: field_land_use
+      tid: '237'
+      langcode: en
+      name: 'Forest land'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f578234e-d753-4da5-929f-e3a4c263a20c
+    -
+      vid: field_land_use
+      tid: '238'
+      langcode: en
+      name: Pasture
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8f356f74-d2fe-48f0-963f-10169bc27274
+    -
+      vid: field_land_use
+      tid: '239'
+      langcode: en
+      name: Range
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5637a6ae-ec17-4fa8-855e-ca50c9ab1c4c
+  field_official_ghg_calculation:
+    -
+      vid: field_official_ghg_calculation
+      tid: '395'
+      langcode: en
+      name: 'Direct measurement'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bece58ef-c7c5-4a58-b742-d90443d55a9d
+    -
+      vid: field_official_ghg_calculation
+      tid: '394'
+      langcode: en
+      name: Models
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 67dfa89c-6b68-4916-9ecc-0ce46d68a5a4
+  field_tillage:
+    -
+      vid: field_tillage
+      tid: '261'
+      langcode: en
+      name: 'Conventional, Inversion'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dd00a259-18ca-445f-89b7-b3a101a5ac14
+    -
+      vid: field_tillage
+      tid: '262'
+      langcode: en
+      name: 'Conventional, Vertical'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ef46fbc8-4f51-455d-975a-3be951c86727
+    -
+      vid: field_tillage
+      tid: '257'
+      langcode: en
+      name: 'No-Till, Direct Seed'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1047d67e-8331-44cf-baad-0aeca7dffda2
+    -
+      vid: field_tillage
+      tid: '256'
+      langcode: en
+      name: None
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2dea1ee4-50fd-4cef-9463-4ba49a9c6f9f
+    -
+      vid: field_tillage
+      tid: '263'
+      langcode: en
+      name: Other
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8c20c58a-43c3-4f43-b2b8-2360b339e91f
+    -
+      vid: field_tillage
+      tid: '259'
+      langcode: en
+      name: 'Reduced Till, Inversion'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 095aca1e-f40b-4702-90a9-909d0d0b4703
+    -
+      vid: field_tillage
+      tid: '260'
+      langcode: en
+      name: 'Reduced Till, Vertical'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 418083e7-f952-472f-ab1a-e54dd184833f
+    -
+      vid: field_tillage
+      tid: '258'
+      langcode: en
+      name: 'Strip Till'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3bf490cd-d547-43ad-9792-26ac1fc3af66
+  ghg_calculation_methods:
+    -
+      vid: ghg_calculation_methods
+      tid: '3'
+      langcode: en
+      name: Both
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 58f9c7e9-5a27-4071-bfc3-ca45084abfdb
+    -
+      vid: ghg_calculation_methods
+      tid: '2'
+      langcode: en
+      name: 'Direct field measurements'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 390ffa4a-4e9e-48f1-a38c-cf6e7ef96c6e
+    -
+      vid: ghg_calculation_methods
+      tid: '1'
+      langcode: en
+      name: Models
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2f2dd0d2-0dd6-4912-b4e5-97e173908a1a
+  ghg_cumulative_calculation:
+    -
+      vid: ghg_cumulative_calculation
+      tid: '6'
+      langcode: en
+      name: Both
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8affe2f6-b38e-4fe7-8b9d-da4e067931de
+    -
+      vid: ghg_cumulative_calculation
+      tid: '5'
+      langcode: en
+      name: 'Direct field measurements'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: eb228a44-d2da-4be5-b6c1-93ed841e73f7
+    -
+      vid: ghg_cumulative_calculation
+      tid: '4'
+      langcode: en
+      name: Models
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 915e95c9-9eff-4ddd-a702-7b3df62bddbb
+  ghg_measurement_method:
+    -
+      vid: ghg_measurement_method
+      tid: '452'
+      langcode: en
+      name: 'Emissions measurement unit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5bdbcb8c-4949-4475-b57d-114edf5901d4
+    -
+      vid: ghg_measurement_method
+      tid: '445'
+      langcode: en
+      name: 'Flux towers'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c0e2727e-be30-41de-822f-f48b2bfe21e0
+    -
+      vid: ghg_measurement_method
+      tid: '450'
+      langcode: en
+      name: Litterbag
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fcb3d1ff-fda2-435f-a59d-346fcecad63c
+    -
+      vid: ghg_measurement_method
+      tid: '453'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bdd4f673-9536-4a63-8066-56f09db73082
+    -
+      vid: ghg_measurement_method
+      tid: '448'
+      langcode: en
+      name: 'Plant measurements'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 612b27e4-3755-48b6-91f9-13441dce2297
+    -
+      vid: ghg_measurement_method
+      tid: '451'
+      langcode: en
+      name: 'Portable emissions analyzer'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9e74d699-284d-40a7-bc23-08d554ab0d84
+    -
+      vid: ghg_measurement_method
+      tid: '449'
+      langcode: en
+      name: 'Soil flux chambers'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9ad4b88b-a20b-44e6-beb1-a6ae48a41efe
+    -
+      vid: ghg_measurement_method
+      tid: '444'
+      langcode: en
+      name: 'Soil samples'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1c55a93e-935e-41d8-9947-9db9b5380844
+    -
+      vid: ghg_measurement_method
+      tid: '446'
+      langcode: en
+      name: 'Soil sensors'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 28e318c6-89a3-4478-89ed-74d1b4d807dc
+    -
+      vid: ghg_measurement_method
+      tid: '447'
+      langcode: en
+      name: 'Vehicle-mounted sensors'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cb7c62af-b452-45ac-8151-d8bf7d95c9a4
+  ghg_model:
+    -
+      vid: ghg_model
+      tid: '442'
+      langcode: en
+      name: '(California) CDFA web-based calculator for on-farm methane emission reductions by CA dairy producers'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c5242e78-f1e4-4bff-8d49-a220bfa42e56
+    -
+      vid: ghg_model
+      tid: '413'
+      langcode: en
+      name: 'ACC Calculator'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 43c7e93f-d189-435b-98df-0f1754135e19
+    -
+      vid: ghg_model
+      tid: '425'
+      langcode: en
+      name: 'Agriculture, Forestry and Other Land Use (AFOLU) Carbon Calculator'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e74e14de-7e0d-40f9-9b16-3aea5237505c
+    -
+      vid: ghg_model
+      tid: '427'
+      langcode: en
+      name: AIRES
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 53a3dddb-c816-4603-99d8-ca27e52cf3f3
+    -
+      vid: ghg_model
+      tid: '407'
+      langcode: en
+      name: APEX
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f9c99fd2-8cdb-4d46-8cee-432d84597244
+    -
+      vid: ghg_model
+      tid: '415'
+      langcode: en
+      name: 'Bowen Ratio Energy Balance'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4b3ad637-b548-458d-9dff-3bd65616cdf8
+    -
+      vid: ghg_model
+      tid: '422'
+      langcode: en
+      name: Carat-Calculator
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f3339887-e8ba-403d-a864-5cdb9f9401c1
+    -
+      vid: ghg_model
+      tid: '412'
+      langcode: en
+      name: CArPE
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 71bcb9e2-bc1c-4f2f-8c8f-10c895f7698c
+    -
+      vid: ghg_model
+      tid: '426'
+      langcode: en
+      name: COMET-Energy
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e3c4b885-8100-496b-b83c-c33e411fb26e
+    -
+      vid: ghg_model
+      tid: '399'
+      langcode: en
+      name: COMET-Farm
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2b18299f-2d00-4110-8c9b-c6ecd1ea8124
+    -
+      vid: ghg_model
+      tid: '400'
+      langcode: en
+      name: COMET-Planner
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1aba152e-7a18-4ade-b273-1801035e70af
+    -
+      vid: ghg_model
+      tid: '402'
+      langcode: en
+      name: CoolFarm
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d5effa07-4328-431b-8de3-936d8502459d
+    -
+      vid: ghg_model
+      tid: '430'
+      langcode: en
+      name: 'Cover Crop Explore'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 09b28f8d-4d4c-42c6-99bc-deb4d3f6ea43
+    -
+      vid: ghg_model
+      tid: '423'
+      langcode: en
+      name: CropTrak
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5a8daa97-c4fd-41fb-bbff-0e8a43f1d9c0
+    -
+      vid: ghg_model
+      tid: '432'
+      langcode: en
+      name: 'CultivateAI''s FMIS'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6860dc3e-a8f2-4543-b17b-eb509fad0ff2
+    -
+      vid: ghg_model
+      tid: '420'
+      langcode: en
+      name: DayCent-CR
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ab394d28-9659-455c-9504-307fd1d626a1
+    -
+      vid: ghg_model
+      tid: '404'
+      langcode: en
+      name: DNDC
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0b7b2bd2-bff5-4661-b352-978a7cae7d27
+    -
+      vid: ghg_model
+      tid: '405'
+      langcode: en
+      name: DSSAT
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c25b0bb3-141e-460a-8549-8e5718b1c6e4
+    -
+      vid: ghg_model
+      tid: '411'
+      langcode: en
+      name: 'Earth Optics'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3c61fd5b-8827-41a5-99bd-293599bb0fa8
+    -
+      vid: ghg_model
+      tid: '435'
+      langcode: en
+      name: EcoPractices
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 45c26585-4cf8-4f05-b026-51d082370e2f
+    -
+      vid: ghg_model
+      tid: '406'
+      langcode: en
+      name: EPIC
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b15ef9f6-56aa-496e-a618-47ac6d91d137
+    -
+      vid: ghg_model
+      tid: '436'
+      langcode: en
+      name: 'Extrapolation based on literature'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4d3e3348-7389-44ce-ade1-ea13546ed02a
+    -
+      vid: ghg_model
+      tid: '401'
+      langcode: en
+      name: FieldPrint
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ef59c0d4-da0b-4fa0-a873-817f0c0660ba
+    -
+      vid: ghg_model
+      tid: '409'
+      langcode: en
+      name: Granular
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 40f19521-401e-4c1e-b1ed-88f911e41c6f
+    -
+      vid: ghg_model
+      tid: '403'
+      langcode: en
+      name: GREET
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9ce1a890-c852-4156-8a5c-34cbc79fb8a4
+    -
+      vid: ghg_model
+      tid: '439'
+      langcode: en
+      name: gTIR
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0df5efef-1d93-48ba-af2c-2fd134501398
+    -
+      vid: ghg_model
+      tid: '419'
+      langcode: en
+      name: 'IFSM modeling tool'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 44cdc249-3cc5-4c73-9c9a-e8c934d8d7f5
+    -
+      vid: ghg_model
+      tid: '440'
+      langcode: en
+      name: 'IPCC default emissions factors & models'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 19552570-1e6f-48ca-b8c4-6e429ac41667
+    -
+      vid: ghg_model
+      tid: '424'
+      langcode: en
+      name: itree
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d21d784d-8196-48c8-a1c9-51d18561ba5f
+    -
+      vid: ghg_model
+      tid: '431'
+      langcode: en
+      name: 'Nitrogen Balance'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9903dd72-087c-4050-8347-7fd49acde36f
+    -
+      vid: ghg_model
+      tid: '433'
+      langcode: en
+      name: 'Nutrient Tracking Tool (NTT)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9c0e2a26-3a6b-4dd4-96a6-3139a4229b75
+    -
+      vid: ghg_model
+      tid: '443'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9e849864-6806-428f-834e-778f38548091
+    -
+      vid: ghg_model
+      tid: '421'
+      langcode: en
+      name: 'RCD Project Tracker'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f346b502-da27-4a3d-9f23-4d5e8ebe4f33
+    -
+      vid: ghg_model
+      tid: '441'
+      langcode: en
+      name: 'Revised Universal Soil Loss equation 2 (RUSLE2)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a6abb885-746d-4d7d-a3d6-cd396dd1879b
+    -
+      vid: ghg_model
+      tid: '437'
+      langcode: en
+      name: RuFaS
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3d9c9f07-bd12-4bee-bc5c-0dd3ece06d77
+    -
+      vid: ghg_model
+      tid: '416'
+      langcode: en
+      name: SAFE-Link
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 33399ba4-c564-4a23-8dfb-ce2f2f94efa1
+    -
+      vid: ghg_model
+      tid: '410'
+      langcode: en
+      name: 'SALUS (CIBO)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0b317054-0536-4094-aa22-4ec57e41c8ee
+    -
+      vid: ghg_model
+      tid: '418'
+      langcode: en
+      name: SNAPGRAZE
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 45d795b2-9dd8-42d9-8ec4-c3c37036c0c9
+    -
+      vid: ghg_model
+      tid: '414'
+      langcode: en
+      name: SquareRoots
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ab3f5f03-9e02-450f-893c-ff9945f0ce2f
+    -
+      vid: ghg_model
+      tid: '408'
+      langcode: en
+      name: SWAT-C
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b542a166-cc7f-4304-8b87-07faf35b7275
+    -
+      vid: ghg_model
+      tid: '428'
+      langcode: en
+      name: SYMFONI
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5d3e4b2d-b744-4b37-be9a-a7f3d8b3e6a3
+    -
+      vid: ghg_model
+      tid: '429'
+      langcode: en
+      name: 'Truterra Sustainability Tool'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 88aebac8-1805-4bed-8e15-847cbcead0b2
+    -
+      vid: ghg_model
+      tid: '434'
+      langcode: en
+      name: Verra
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: db06be38-56c5-49dd-a697-2bbf0b51ee20
+    -
+      vid: ghg_model
+      tid: '438'
+      langcode: en
+      name: WEPP
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9ce485af-37d0-4de5-9ef3-70bc94b2688d
+    -
+      vid: ghg_model
+      tid: '417'
+      langcode: en
+      name: YardStick
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6139e015-c5c2-49a1-9393-fe8087c2797d
+  ghg_monitoring_method:
+    -
+      vid: ghg_monitoring_method
+      tid: '14'
+      langcode: en
+      name: Drones
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b8a85ed5-2649-40b1-a51a-7ededfbb422a
+    -
+      vid: ghg_monitoring_method
+      tid: '15'
+      langcode: en
+      name: 'Ground-level photos and videos'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 82090e4e-f788-4e58-8e04-f13ff239c8aa
+    -
+      vid: ghg_monitoring_method
+      tid: '7'
+      langcode: en
+      name: 'On-farm visit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6f0f6081-0ecb-4587-bff1-c39de5a69deb
+    -
+      vid: ghg_monitoring_method
+      tid: '16'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 656b2d57-2835-4431-988a-a58ae2aacf69
+    -
+      vid: ghg_monitoring_method
+      tid: '10'
+      langcode: en
+      name: 'Plot-based sampling'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5c2f0ff0-56bc-4450-a76a-de50b75c1663
+    -
+      vid: ghg_monitoring_method
+      tid: '9'
+      langcode: en
+      name: 'Producer records or attestation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8da39012-4c00-470a-ade9-194c139b8bec
+    -
+      vid: ghg_monitoring_method
+      tid: '8'
+      langcode: en
+      name: 'Satellite monitoring or remote sensing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e15abbba-489a-456f-991f-8f26ef85f84b
+    -
+      vid: ghg_monitoring_method
+      tid: '13'
+      langcode: en
+      name: 'Soil metagenomics'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e2d7d141-bfc8-43d3-a25b-31104e46eb07
+    -
+      vid: ghg_monitoring_method
+      tid: '11'
+      langcode: en
+      name: 'Soil sensors'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 56032784-85ac-4aae-a758-e3c3506d0415
+    -
+      vid: ghg_monitoring_method
+      tid: '12'
+      langcode: en
+      name: 'Water sensors'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 61201fb3-c78f-404c-a951-ef3a0c96b01d
+  ghg_reporting_method:
+    -
+      vid: ghg_reporting_method
+      tid: '21'
+      langcode: en
+      name: 'Automated devices'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a7641684-b14a-4658-9805-0a28a9b379b5
+    -
+      vid: ghg_reporting_method
+      tid: '19'
+      langcode: en
+      name: Email
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cb4eec83-de49-45de-adbb-50f1ccd2b4fa
+    -
+      vid: ghg_reporting_method
+      tid: '17'
+      langcode: en
+      name: 'Mobile app'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 75d9a536-4594-473d-9d6a-b64aef41224f
+    -
+      vid: ghg_reporting_method
+      tid: '23'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8b7fa7f9-8032-4e29-b2d6-6d4c419e6f1c
+    -
+      vid: ghg_reporting_method
+      tid: '20'
+      langcode: en
+      name: Paper
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b40253e9-dc7a-4ea7-9531-fc1a3921f5d0
+    -
+      vid: ghg_reporting_method
+      tid: '22'
+      langcode: en
+      name: 'Third-party actors'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f0aca173-11fa-45e7-ac4f-2c9523b68a18
+    -
+      vid: ghg_reporting_method
+      tid: '18'
+      langcode: en
+      name: Website
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1daa76e4-37da-4b56-89ce-7542c85c2a91
+  ghg_verification_method:
+    -
+      vid: ghg_verification_method
+      tid: '29'
+      langcode: en
+      name: 'Artificial intelligence'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4e3faf7f-dc40-4699-b7fa-4b8d351c09b4
+    -
+      vid: ghg_verification_method
+      tid: '25'
+      langcode: en
+      name: 'Audit by grantee'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a473c0eb-5555-43b6-9a9e-6d2db803fc2c
+    -
+      vid: ghg_verification_method
+      tid: '26'
+      langcode: en
+      name: 'Computer modeling'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3f0119c8-98eb-4cb4-9679-98d6e68cdfc2
+    -
+      vid: ghg_verification_method
+      tid: '32'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7e8adbea-90ac-4216-b5f8-86abd761d2f6
+    -
+      vid: ghg_verification_method
+      tid: '28'
+      langcode: en
+      name: Photos
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bab2f164-9361-483f-9f43-50b07537771e
+    -
+      vid: ghg_verification_method
+      tid: '31'
+      langcode: en
+      name: 'Record audit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4c13d1f3-a026-498a-a904-018827923dd0
+    -
+      vid: ghg_verification_method
+      tid: '30'
+      langcode: en
+      name: 'Satellite imagery'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9add9881-88e7-4603-b5fd-79552a2debc7
+    -
+      vid: ghg_verification_method
+      tid: '27'
+      langcode: en
+      name: 'Site or field visit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 52598061-63d7-4932-8490-36453012b108
+    -
+      vid: ghg_verification_method
+      tid: '24'
+      langcode: en
+      name: 'Third-party audit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a9bb160e-42e6-48ae-9df8-db1e3436aa89
+  improved_wildlife_habitat:
+    -
+      vid: improved_wildlife_habitat
+      tid: '550'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d802ac35-6f7c-4f1f-b58c-f5331b43369a
+    -
+      vid: improved_wildlife_habitat
+      tid: '549'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3a050190-c3e1-4281-98c8-56f1a3e986c9
+    -
+      vid: improved_wildlife_habitat
+      tid: '548'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 90b3cfbf-1c61-48b7-8bee-f9cd178b15c2
+  improved_wildlife_habitat_amount:
+    -
+      vid: improved_wildlife_habitat_amount
+      tid: '551'
+      langcode: en
+      name: Acres
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c287036e-41d2-4078-8827-0ce31a36efa5
+    -
+      vid: improved_wildlife_habitat_amount
+      tid: '552'
+      langcode: en
+      name: 'Linear feet'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2575a832-326f-4f62-a3c1-629066f7ed74
+    -
+      vid: improved_wildlife_habitat_amount
+      tid: '553'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0d4172ce-f447-4a22-ad29-c3c522068cf1
+  improved_wildlife_habitat_purpos:
+    -
+      vid: improved_wildlife_habitat_purpos
+      tid: '556'
+      langcode: en
+      name: 'Commodity marketing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 043aa4de-da85-4b6d-ae8c-433d2925f297
+    -
+      vid: improved_wildlife_habitat_purpos
+      tid: '557'
+      langcode: en
+      name: 'I don’t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3b7825f8-6a56-4f57-a917-d02be7383674
+    -
+      vid: improved_wildlife_habitat_purpos
+      tid: '558'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d877eb49-0bec-44bc-b16a-f38237b15a5f
+    -
+      vid: improved_wildlife_habitat_purpos
+      tid: '555'
+      langcode: en
+      name: 'Producing insets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 543c4de9-fa9a-499f-a08b-cc47440d3465
+    -
+      vid: improved_wildlife_habitat_purpos
+      tid: '554'
+      langcode: en
+      name: 'Producing offsets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2184571b-a15c-4659-ac6e-bc799319049a
+  incentive_per_acre_or_head:
+    -
+      vid: incentive_per_acre_or_head
+      tid: '348'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b1a7a6a1-8a13-4ed0-b74d-d491d670baab
+    -
+      vid: incentive_per_acre_or_head
+      tid: '347'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5c29461d-0cd8-477f-94b0-6a93ac753533
+    -
+      vid: incentive_per_acre_or_head
+      tid: '346'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d62fbdf0-fde1-4c5e-9db6-a5409564000e
+  incentive_reason:
+    -
+      vid: incentive_reason
+      tid: '301'
+      langcode: en
+      name: 'Avoided conversion'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4190245f-0d20-45ac-8bb6-60e2c8de9ba2
+    -
+      vid: incentive_reason
+      tid: '302'
+      langcode: en
+      name: 'Conference or training attendance'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9659426a-d9fa-4932-8ba9-0f5e92bf8403
+    -
+      vid: incentive_reason
+      tid: '297'
+      langcode: en
+      name: 'Demographics/equity payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9840597f-9613-400c-9972-3a0d658760d0
+    -
+      vid: incentive_reason
+      tid: '294'
+      langcode: en
+      name: Enrollment
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9ed77470-d4ff-48f4-a481-7cee2b174d90
+    -
+      vid: incentive_reason
+      tid: '299'
+      langcode: en
+      name: 'Foregone revenue'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6f3ccd15-250e-4423-b81a-53e1a96e3e67
+    -
+      vid: incentive_reason
+      tid: '305'
+      langcode: en
+      name: 'Historic data collection'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9708c9cc-51e6-4a97-a581-a1007a0129b7
+    -
+      vid: incentive_reason
+      tid: '304'
+      langcode: en
+      name: 'Identity preservation (supply chain tracing)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7bad3421-a68c-4a1b-9c64-6307f0f76917
+    -
+      vid: incentive_reason
+      tid: '295'
+      langcode: en
+      name: 'Implementation of practices'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 54ea0442-8015-4749-980c-7ab03f3ae19a
+    -
+      vid: incentive_reason
+      tid: '303'
+      langcode: en
+      name: 'MMRV (data collection, reporting, etc.)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 43e02550-afd4-4265-920b-878635075030
+    -
+      vid: incentive_reason
+      tid: '306'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e7fff59d-dbd2-41eb-b85b-63bcf3c00b8d
+    -
+      vid: incentive_reason
+      tid: '300'
+      langcode: en
+      name: 'Passing audit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 80159a50-0b2e-4bd8-90e5-826d07cff045
+    -
+      vid: incentive_reason
+      tid: '296'
+      langcode: en
+      name: 'Price premium on output'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8b19a0c4-7bb7-4ae0-9877-1a01469ab0ec
+    -
+      vid: incentive_reason
+      tid: '298'
+      langcode: en
+      name: 'Yield change'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7dc30d01-d63c-48c2-ade3-ff1c1ca532ef
+  incentive_structure:
+    -
+      vid: incentive_structure
+      tid: '313'
+      langcode: en
+      name: 'Flat rate'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 09291520-26f6-405b-ac0a-114be6200fb9
+    -
+      vid: incentive_structure
+      tid: '314'
+      langcode: en
+      name: Other
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fa396600-559e-484b-aa8a-628fcdb30b96
+    -
+      vid: incentive_structure
+      tid: '309'
+      langcode: en
+      name: 'Per animal head'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6091c6e1-ad65-4e67-96f8-7757681541d3
+    -
+      vid: incentive_structure
+      tid: '307'
+      langcode: en
+      name: 'Per area'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dfb895c7-da4a-43e9-9945-dbf6cbd2debf
+    -
+      vid: incentive_structure
+      tid: '308'
+      langcode: en
+      name: 'Per length'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cc02e5de-b0cb-4f10-80ec-366371313f84
+    -
+      vid: incentive_structure
+      tid: '311'
+      langcode: en
+      name: 'Per production unit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 267c0d96-6d38-40dc-be08-79482b7e916d
+    -
+      vid: incentive_structure
+      tid: '312'
+      langcode: en
+      name: 'Per ton GHG'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e15b4015-03d7-46ca-b941-36d5b62bf3da
+    -
+      vid: incentive_structure
+      tid: '310'
+      langcode: en
+      name: 'Per tree'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3fee73b4-46d7-4c78-8e3b-ba0dd91f856d
+  incentive_type:
+    -
+      vid: incentive_type
+      tid: '315'
+      langcode: en
+      name: 'Cash payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f66880f3-68ed-418f-ac1c-2352b5129ce1
+    -
+      vid: incentive_type
+      tid: '316'
+      langcode: en
+      name: 'Equipment loan'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 166c26c3-4605-4ff3-b44f-cbc86c7e9ba6
+    -
+      vid: incentive_type
+      tid: '323'
+      langcode: en
+      name: 'Guaranteed commodity premium payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e7a85c9c-4681-4f1b-93b6-7296cdccc483
+    -
+      vid: incentive_type
+      tid: '319'
+      langcode: en
+      name: 'Inputs and supplies'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 64dab6d5-ea88-4eed-b716-8ec0cfb7658a
+    -
+      vid: incentive_type
+      tid: '318'
+      langcode: en
+      name: 'Land rental'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5cceead2-32d0-4fc8-886f-ba624b2a8549
+    -
+      vid: incentive_type
+      tid: '320'
+      langcode: en
+      name: Loan
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ee1ab468-a342-476a-b22f-86309de71284
+    -
+      vid: incentive_type
+      tid: '324'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8de39aed-9635-4af2-a15d-b377fc1d30be
+    -
+      vid: incentive_type
+      tid: '317'
+      langcode: en
+      name: 'Paid labor'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b9ea463a-330e-4347-9bce-8d9632a13fce
+    -
+      vid: incentive_type
+      tid: '321'
+      langcode: en
+      name: 'Post-harvest transportation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 55d4e39f-e4a7-46d1-884b-5c6311bb8639
+    -
+      vid: incentive_type
+      tid: '322'
+      langcode: en
+      name: 'Tuition or fees for training'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b67e2452-aa08-4557-9783-282181de0ee6
+  livestock_type:
+    -
+      vid: livestock_type
+      tid: '158'
+      langcode: en
+      name: Alpacas
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dbf5647e-7c0b-4208-8dc7-404621c56f64
+    -
+      vid: livestock_type
+      tid: '148'
+      langcode: en
+      name: 'Beef cows'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a6533f3d-9c98-4751-8639-38cef330bed7
+    -
+      vid: livestock_type
+      tid: '150'
+      langcode: en
+      name: Beefalo
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5a5634d2-1117-4ae4-bb4e-cef8c8904bd0
+    -
+      vid: livestock_type
+      tid: '151'
+      langcode: en
+      name: 'Buffalo or bison'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 43019087-b9fd-4730-8d88-9e2930e00217
+    -
+      vid: livestock_type
+      tid: '161'
+      langcode: en
+      name: 'Chickens (broilers)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b114e15e-8139-4c9a-a4fe-10f4687b310a
+    -
+      vid: livestock_type
+      tid: '162'
+      langcode: en
+      name: 'Chickens (layers)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d22bdecf-1c64-4d55-a340-4995e0926f8b
+    -
+      vid: livestock_type
+      tid: '149'
+      langcode: en
+      name: 'Dairy cows'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dbb40c65-fd0e-4204-a2fe-95c7f8cfb6e6
+    -
+      vid: livestock_type
+      tid: '154'
+      langcode: en
+      name: Deer4
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: aac00479-b0bb-4ecf-872d-728b1a2f8634
+    -
+      vid: livestock_type
+      tid: '163'
+      langcode: en
+      name: Ducks
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 68b068af-fda9-440d-b960-30360fc7df2a
+    -
+      vid: livestock_type
+      tid: '156'
+      langcode: en
+      name: Elk
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ba50f553-2327-4b4c-911b-ed277b093ca4
+    -
+      vid: livestock_type
+      tid: '159'
+      langcode: en
+      name: Emus
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7a39b1cb-1de6-4205-8604-0c6ff4569e27
+    -
+      vid: livestock_type
+      tid: '155'
+      langcode: en
+      name: Equine
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7b412ae5-a952-4f3f-a18a-b60ca0a7f1fc
+    -
+      vid: livestock_type
+      tid: '164'
+      langcode: en
+      name: Geese
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a3c79dc0-7041-41a6-be4d-2976b13f3aa3
+    -
+      vid: livestock_type
+      tid: '153'
+      langcode: en
+      name: Goats
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 154a7f08-170a-4d67-9200-d553ee8cf9da
+    -
+      vid: livestock_type
+      tid: '167'
+      langcode: en
+      name: Honeybees
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 212ebabe-e659-4078-9323-38c210766599
+    -
+      vid: livestock_type
+      tid: '160'
+      langcode: en
+      name: Llamas
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5b9555ae-ef52-4b00-8931-110e44e67e34
+    -
+      vid: livestock_type
+      tid: '168'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ff81eda2-0374-48af-a1db-510c3c2255fd
+    -
+      vid: livestock_type
+      tid: '157'
+      langcode: en
+      name: Reindeer
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 994c0854-0a0b-44f9-9c43-d37fb73a8e46
+    -
+      vid: livestock_type
+      tid: '152'
+      langcode: en
+      name: Sheep
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 64b1ffcf-ee5a-4234-91d9-2a4af9419bf5
+    -
+      vid: livestock_type
+      tid: '165'
+      langcode: en
+      name: Swine
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c931e0c7-8af4-410e-ad69-e676f5e9dcda
+    -
+      vid: livestock_type
+      tid: '166'
+      langcode: en
+      name: Turkeys
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f220e7bb-493d-48f3-bd53-1b53b355a7d6
+  log_category: {  }
+  marketing_assistance_provided:
+    -
+      vid: marketing_assistance_provided
+      tid: '345'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bdfb1baa-b90b-4a6a-b204-e03bd942aa91
+    -
+      vid: marketing_assistance_provided
+      tid: '344'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1b09e7da-96dc-4d9e-a8cb-c78c82c6f2f9
+    -
+      vid: marketing_assistance_provided
+      tid: '343'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6e994820-cf35-4371-8722-97eaf3153d80
+  marketing_channel_geography:
+    -
+      vid: marketing_channel_geography
+      tid: '78'
+      langcode: en
+      name: Global
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 17af9142-aff9-4931-8791-ed4017be3ca2
+    -
+      vid: marketing_channel_geography
+      tid: '75'
+      langcode: en
+      name: Local
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5ba23e51-78bd-4493-931a-72049541d753
+    -
+      vid: marketing_channel_geography
+      tid: '77'
+      langcode: en
+      name: National
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 467029e0-e572-4b4e-b581-e949eee89526
+    -
+      vid: marketing_channel_geography
+      tid: '76'
+      langcode: en
+      name: Regional
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0568e54b-ffd9-4459-b560-a5d3fd3827ef
+  marketing_channel_identification:
+    -
+      vid: marketing_channel_identification
+      tid: '114'
+      langcode: en
+      name: 'Educational tours for buyers'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6e48e1f6-8f75-459e-8e8a-73c2bed5aa48
+    -
+      vid: marketing_channel_identification
+      tid: '113'
+      langcode: en
+      name: 'In-person lead generation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d9900b2a-dd3e-45f7-b207-b21ff627ff77
+    -
+      vid: marketing_channel_identification
+      tid: '115'
+      langcode: en
+      name: 'Negotiated contracts with buyers'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 47cf8e37-ff96-44ff-b717-356c0a69f80e
+    -
+      vid: marketing_channel_identification
+      tid: '117'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 589fe219-29ac-4fc4-9360-4e84d790ce42
+    -
+      vid: marketing_channel_identification
+      tid: '116'
+      langcode: en
+      name: 'Partnership network or project partner'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8548415e-18e5-4f8e-b73c-69e924d4ebfd
+  marketing_channel_type:
+    -
+      vid: marketing_channel_type
+      tid: '73'
+      langcode: en
+      name: 'Agricultural marketing board'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b3e17993-4474-40f0-abce-e9d3860cf86c
+    -
+      vid: marketing_channel_type
+      tid: '64'
+      langcode: en
+      name: Biorefinery
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b827f7be-306d-4729-a39d-d53749de2f77
+    -
+      vid: marketing_channel_type
+      tid: '71'
+      langcode: en
+      name: 'Commodity broker'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dad27762-88d6-474f-b341-383ca0fe892c
+    -
+      vid: marketing_channel_type
+      tid: '68'
+      langcode: en
+      name: 'Direct to consumer'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 67502da6-4c05-45f5-8390-e2beaf94935d
+    -
+      vid: marketing_channel_type
+      tid: '69'
+      langcode: en
+      name: 'Direct to institution'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dbee8901-1e28-41cd-af89-328bb4280071
+    -
+      vid: marketing_channel_type
+      tid: '70'
+      langcode: en
+      name: 'Direct to restaurant'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 31f6c95d-87e8-4d5d-b68f-713e8d3a1fdb
+    -
+      vid: marketing_channel_type
+      tid: '65'
+      langcode: en
+      name: 'Distributor (including grain elevators)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c9f33ace-b7ce-4adf-a74a-0ed742787a4f
+    -
+      vid: marketing_channel_type
+      tid: '67'
+      langcode: en
+      name: 'Food hub or cooperative'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 017dfbe0-83ff-46f9-93a0-4e0cbcd941ec
+    -
+      vid: marketing_channel_type
+      tid: '62'
+      langcode: en
+      name: 'Food processor'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 37cd84a4-9394-4465-88e0-fd6a643a0fce
+    -
+      vid: marketing_channel_type
+      tid: '63'
+      langcode: en
+      name: 'Non-food byproducts processor'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a0ffb5db-cfa1-4d29-9fbd-3c8772b5379b
+    -
+      vid: marketing_channel_type
+      tid: '74'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5b66563d-bf55-40f1-8187-345a4e7ede69
+    -
+      vid: marketing_channel_type
+      tid: '66'
+      langcode: en
+      name: Retailer
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6a474736-7de6-45f9-ba1d-49afb204d956
+    -
+      vid: marketing_channel_type
+      tid: '72'
+      langcode: en
+      name: USDA
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4022803f-73ee-40cf-acfd-909ee0025687
+  marketing_method:
+    -
+      vid: marketing_method
+      tid: '107'
+      langcode: en
+      name: 'Label or badge used on packaging or marketing materials'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 426767e7-f626-430c-8798-56813ceac232
+    -
+      vid: marketing_method
+      tid: '108'
+      langcode: en
+      name: 'Marketing partnership (e.g., promotion by buyer)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 01078f91-c77b-4ccc-97b7-4b61c3648f15
+    -
+      vid: marketing_method
+      tid: '112'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dcf20963-58a2-4021-b9f9-cf6586024706
+    -
+      vid: marketing_method
+      tid: '109'
+      langcode: en
+      name: 'Print marketing campaign'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6a5a8a6a-7fb7-4998-bb49-7d3412020bae
+    -
+      vid: marketing_method
+      tid: '110'
+      langcode: en
+      name: 'Social media and digital marketing campaign'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a13fae66-c7c4-48bf-b30c-09bbce9bf7c0
+    -
+      vid: marketing_method
+      tid: '111'
+      langcode: en
+      name: 'Verbal marketing campaign (e.g., radio, word of mouth)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cf045183-20a4-471e-ab65-6a75b9526a91
+  match_type:
+    -
+      vid: match_type
+      tid: '45'
+      langcode: en
+      name: 'Equipment rental or use'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 06dd847c-bdf3-4df7-8961-c9b79db98355
+    -
+      vid: match_type
+      tid: '43'
+      langcode: en
+      name: 'In-kind staff time'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b61ad6ca-af43-437c-a59f-28613212a675
+    -
+      vid: match_type
+      tid: '48'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dd6114c8-21bf-4964-a0bc-5084379debf4
+    -
+      vid: match_type
+      tid: '44'
+      langcode: en
+      name: 'Production inputs (reduced cost or free)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3c08ea67-43a2-4e61-8371-9297677d1d20
+    -
+      vid: match_type
+      tid: '47'
+      langcode: en
+      name: 'Program income'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6cb25e89-c2f2-45a5-9159-626d5b68f55c
+    -
+      vid: match_type
+      tid: '46'
+      langcode: en
+      name: Software
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0f6495b8-d74a-400d-adca-d02d54d87649
+  measurement_type:
+    -
+      vid: measurement_type
+      tid: '461'
+      langcode: en
+      name: 'Bulk density'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 85a0fb45-3431-4d41-92af-eb4ae6e7ba47
+    -
+      vid: measurement_type
+      tid: '459'
+      langcode: en
+      name: 'Organic matter'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 97f88216-b904-4ea2-8e8f-e3d0be7af913
+    -
+      vid: measurement_type
+      tid: '462'
+      langcode: en
+      name: Other
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2217e0d0-71dd-411e-a639-c1413dbf1500
+    -
+      vid: measurement_type
+      tid: '460'
+      langcode: en
+      name: 'Total organic carbon'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 33de77c4-3f7f-4ff6-a285-691eef3f3b98
+  mmrv_assistance_provided:
+    -
+      vid: mmrv_assistance_provided
+      tid: '342'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f67570a0-8929-4c5b-9f3d-f46d5de8b7c6
+    -
+      vid: mmrv_assistance_provided
+      tid: '341'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d439533c-c94c-4196-8b86-72925f8e7fe8
+    -
+      vid: mmrv_assistance_provided
+      tid: '340'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b08ac051-6cf4-429d-b5ba-ffcff713bb39
+  new_partnership:
+    -
+      vid: new_partnership
+      tid: '42'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8a87a434-0996-48b1-86f4-eb393ac33b36
+    -
+      vid: new_partnership
+      tid: '41'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6c7a97df-f4e0-4721-afa1-3cbb29d3af9f
+    -
+      vid: new_partnership
+      tid: '40'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3915d5c1-447d-47d3-9f31-d065b6bc37a7
+  organic_farm:
+    -
+      vid: organic_farm
+      tid: '171'
+      langcode: en
+      name: 'I don’t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 902f225b-7d47-4d29-8a88-f11811c76389
+    -
+      vid: organic_farm
+      tid: '170'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e3026d3b-9cca-443d-bdbd-3d6d2c910aaf
+    -
+      vid: organic_farm
+      tid: '169'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e5cff40e-4a32-453e-8b54-b2b7d4cc6d63
+  organic_fields:
+    -
+      vid: organic_fields
+      tid: '174'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9db9d8cc-0b18-475a-a315-6e5df9ca4a77
+    -
+      vid: organic_fields
+      tid: '173'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8a4bbe04-c32c-4bae-b56e-64af7eb09a24
+    -
+      vid: organic_fields
+      tid: '172'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: efa8b6d7-51c2-4f1f-acd6-b17f299629ad
+  other_field_measurement:
+    -
+      vid: other_field_measurement
+      tid: '398'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 988ca12c-d324-4b09-9dc2-1cad9b029df5
+    -
+      vid: other_field_measurement
+      tid: '397'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4b1bce14-3179-476f-a253-b2b31553c084
+    -
+      vid: other_field_measurement
+      tid: '396'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 462b4b8a-9d87-4a97-a973-07757fc2a195
+  other_water_quality:
+    -
+      vid: other_water_quality
+      tid: '492'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9c359b16-3e5c-4de5-aeaa-cc244dc19ca0
+    -
+      vid: other_water_quality
+      tid: '491'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 07afdf1d-758b-4222-97ea-e5c32a4f2060
+    -
+      vid: other_water_quality
+      tid: '490'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a2d9e1e7-c031-44cf-bcc0-20364e7c94b3
+  other_water_quality_amount_unit:
+    -
+      vid: other_water_quality_amount_unit
+      tid: '499'
+      langcode: en
+      name: 'Degrees F'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 12c3d87d-727a-49c1-bc6d-98ffc8dc7723
+    -
+      vid: other_water_quality_amount_unit
+      tid: '496'
+      langcode: en
+      name: Kilograms
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2054e161-4d2b-46b6-b6e5-2e428d8fcf68
+    -
+      vid: other_water_quality_amount_unit
+      tid: '500'
+      langcode: en
+      name: 'Kilograms per liter'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a3c741dc-562e-489d-aebf-ecc77bf0eff6
+    -
+      vid: other_water_quality_amount_unit
+      tid: '497'
+      langcode: en
+      name: 'Metric tons'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 90654c42-c6a2-4a0a-9416-2ba0ebcf0f24
+    -
+      vid: other_water_quality_amount_unit
+      tid: '501'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 080ab8d6-c40b-4f6a-82d4-cd2eed7f1174
+    -
+      vid: other_water_quality_amount_unit
+      tid: '498'
+      langcode: en
+      name: Pounds
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0645a000-6177-4733-b491-542b47c9fbcf
+  other_water_quality_purpose:
+    -
+      vid: other_water_quality_purpose
+      tid: '504'
+      langcode: en
+      name: 'Commodity marketing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d1286222-64e6-45a4-9de4-6f2644521438
+    -
+      vid: other_water_quality_purpose
+      tid: '505'
+      langcode: en
+      name: 'I don’t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5f412218-bd14-4fa2-a4ac-9778d3488967
+    -
+      vid: other_water_quality_purpose
+      tid: '506'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e47b6a22-18f5-4e0a-9eb3-59217fb471ff
+    -
+      vid: other_water_quality_purpose
+      tid: '503'
+      langcode: en
+      name: 'Producing insets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 275d4634-7801-4bd2-9674-6dd28092b33c
+    -
+      vid: other_water_quality_purpose
+      tid: '502'
+      langcode: en
+      name: 'Producing offsets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 57efa040-93b6-4dbd-997f-3593ddaa5c3a
+  other_water_quality_type:
+    -
+      vid: other_water_quality_type
+      tid: '495'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fff5cac5-7653-4821-90ab-ab4b5d95cc9b
+    -
+      vid: other_water_quality_type
+      tid: '493'
+      langcode: en
+      name: 'Sediment load reduction'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 734080cb-fd90-4c60-ab3b-8f7fb8d7fa44
+    -
+      vid: other_water_quality_type
+      tid: '494'
+      langcode: en
+      name: Temperature
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0d4e17de-877b-4a21-af3e-4683f3c93f79
+  partner_type:
+    -
+      vid: partner_type
+      tid: '34'
+      langcode: en
+      name: 'Commodity groups (501c5)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 849daeb8-5ca4-4219-a85f-23d68a46173f
+    -
+      vid: partner_type
+      tid: '33'
+      langcode: en
+      name: For-profit
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 80185f1e-4766-46d1-b84b-f13c78c0a84b
+    -
+      vid: partner_type
+      tid: '39'
+      langcode: en
+      name: Individual
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c729d31f-048c-4d71-8d8d-b8a5267221e9
+    -
+      vid: partner_type
+      tid: '35'
+      langcode: en
+      name: Non-profit
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c4fbc4f9-9e43-4701-af86-6c3202367a55
+    -
+      vid: partner_type
+      tid: '36'
+      langcode: en
+      name: 'State or local agency'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dc1e5aa8-33b2-4883-ac36-bba769ef336d
+    -
+      vid: partner_type
+      tid: '37'
+      langcode: en
+      name: 'Tribal agency'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9f1b16dc-8e79-43cb-8660-c1492f8a4bd9
+    -
+      vid: partner_type
+      tid: '38'
+      langcode: en
+      name: University
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f96d5e28-929c-4ad5-baff-20a24a56a359
+  payment_on_enrollment:
+    -
+      vid: payment_on_enrollment
+      tid: '325'
+      langcode: en
+      name: 'Full payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0a9b6a76-ad36-4ce9-ac62-d057323417cd
+    -
+      vid: payment_on_enrollment
+      tid: '327'
+      langcode: en
+      name: 'No payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 862385c0-46ef-4279-a77b-ac169d793e5f
+    -
+      vid: payment_on_enrollment
+      tid: '326'
+      langcode: en
+      name: 'Partial payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b0fb6ba8-69a8-4b7d-a02a-33fc11d6e02a
+  payment_on_harvest:
+    -
+      vid: payment_on_harvest
+      tid: '331'
+      langcode: en
+      name: 'Full payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2504fa4d-e5bc-41aa-8a45-bef3d6508c13
+    -
+      vid: payment_on_harvest
+      tid: '333'
+      langcode: en
+      name: 'No payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9a025edb-164f-4e8c-b1cb-6f2553d6e5a4
+    -
+      vid: payment_on_harvest
+      tid: '332'
+      langcode: en
+      name: 'Partial payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ba3c8f66-cec8-4587-b58d-9a03e3a4a80a
+  payment_on_implementation:
+    -
+      vid: payment_on_implementation
+      tid: '328'
+      langcode: en
+      name: 'Full payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 173491f8-109e-4672-840f-34af8d0eda59
+    -
+      vid: payment_on_implementation
+      tid: '330'
+      langcode: en
+      name: 'No payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: de447da8-ba18-4d8b-a19f-80dbd64168f8
+    -
+      vid: payment_on_implementation
+      tid: '329'
+      langcode: en
+      name: 'Partial payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e7772ae6-0a58-4109-bfff-bde8bf6d07b5
+  payment_on_mmrv:
+    -
+      vid: payment_on_mmrv
+      tid: '334'
+      langcode: en
+      name: 'Full payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 844a5272-778c-4d82-800b-a1f7d92644ee
+    -
+      vid: payment_on_mmrv
+      tid: '336'
+      langcode: en
+      name: 'No payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 58700552-2788-4152-8d4c-8c81e59ebd1e
+    -
+      vid: payment_on_mmrv
+      tid: '335'
+      langcode: en
+      name: 'Partial payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: afc52048-f038-4f57-990f-43e6307d060f
+  payment_on_sale:
+    -
+      vid: payment_on_sale
+      tid: '337'
+      langcode: en
+      name: 'Full payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: aca040f8-9299-437c-8fae-64c3f383b77f
+    -
+      vid: payment_on_sale
+      tid: '339'
+      langcode: en
+      name: 'No payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8d765968-4844-4d3d-bc6f-09f3b4ca4e48
+    -
+      vid: payment_on_sale
+      tid: '338'
+      langcode: en
+      name: 'Partial payment'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b4a1c10b-d04f-4e08-9fc7-d84daa82dc53
+  practice_extent_unit:
+    -
+      vid: practice_extent_unit
+      tid: '231'
+      langcode: en
+      name: Acres
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5d385824-ea37-41f5-946b-f38d66c13fa0
+    -
+      vid: practice_extent_unit
+      tid: '232'
+      langcode: en
+      name: 'Head of livestock'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9b5b48f1-c68a-4b5f-9269-5c0d495b3ebd
+    -
+      vid: practice_extent_unit
+      tid: '233'
+      langcode: en
+      name: 'Linear feet'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2c434f9a-0085-4816-87a4-caab75ef1705
+    -
+      vid: practice_extent_unit
+      tid: '235'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8636d2bc-9363-41d1-8df3-baf451aa40c4
+    -
+      vid: practice_extent_unit
+      tid: '234'
+      langcode: en
+      name: 'Square feet'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d838e0bb-eca8-4b00-b340-b79aadad70e1
+  practice_past_extent:
+    -
+      vid: practice_past_extent
+      tid: '269'
+      langcode: en
+      name: 'Never used'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 50aecc4e-da5b-4af7-9d01-9f0ace0682ed
+    -
+      vid: practice_past_extent
+      tid: '271'
+      langcode: en
+      name: 'Used on 25-50% of operation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7146049b-e6a0-4b7f-a5ad-1fd68470c94f
+    -
+      vid: practice_past_extent
+      tid: '272'
+      langcode: en
+      name: 'Used on 51-75% of operation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8f6e7e76-46cf-418b-aff6-151b4df8e85d
+    -
+      vid: practice_past_extent
+      tid: '270'
+      langcode: en
+      name: 'Used on less than 25% of operation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 50b85e6f-49e0-469b-b789-1d0b145fbd25
+    -
+      vid: practice_past_extent
+      tid: '273'
+      langcode: en
+      name: 'Used on more than 75% of operation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 851f9ed9-eecd-4401-87fc-217b97951c33
+  practice_standard:
+    -
+      vid: practice_standard
+      tid: '267'
+      langcode: en
+      name: NRCS
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c1a66103-680b-4828-b14c-03b9dedababe
+    -
+      vid: practice_standard
+      tid: '268'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2e5e6d2b-dd8e-45e8-b68f-c6213c028697
+  practice_this_field:
+    -
+      vid: practice_this_field
+      tid: '277'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5b5aad00-0201-4ad1-8015-dc8724231ce3
+    -
+      vid: practice_this_field
+      tid: '276'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c06709f2-e659-4946-9efb-cfdbb1249ec8
+    -
+      vid: practice_this_field
+      tid: '275'
+      langcode: en
+      name: Some
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6eeaa461-e7ca-443b-af4b-b62d8b38c87e
+    -
+      vid: practice_this_field
+      tid: '274'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bcbb2eb3-e201-468c-9f5e-3850394c7e59
+  price_premium_unit:
+    -
+      vid: price_premium_unit
+      tid: '100'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: de3aea34-3b2a-48d3-8c54-cf2bd48935cd
+    -
+      vid: price_premium_unit
+      tid: '99'
+      langcode: en
+      name: 'Per bale (500 pounds)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5dbbf9e4-299f-465f-9265-a359400a6950
+    -
+      vid: price_premium_unit
+      tid: '90'
+      langcode: en
+      name: 'Per bushel'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bd01f209-0de1-4827-aed9-e26c6b46709f
+    -
+      vid: price_premium_unit
+      tid: '96'
+      langcode: en
+      name: 'Per carcass pound'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6b2ec662-5d98-40a4-a919-f784cdc4a0d4
+    -
+      vid: price_premium_unit
+      tid: '91'
+      langcode: en
+      name: 'Per gallon'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1d7e9859-fd2e-400a-8101-c1cd13ffdf4a
+    -
+      vid: price_premium_unit
+      tid: '95'
+      langcode: en
+      name: 'Per kilogram'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 20a05d8b-7337-4c31-b396-778f97198a3e
+    -
+      vid: price_premium_unit
+      tid: '98'
+      langcode: en
+      name: 'Per linear board foot'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c47b2458-0677-41cf-812d-5b06062a435d
+    -
+      vid: price_premium_unit
+      tid: '97'
+      langcode: en
+      name: 'Per live pound'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6dc736b9-23f2-4d43-97cf-ae753cfd50d6
+    -
+      vid: price_premium_unit
+      tid: '93'
+      langcode: en
+      name: 'Per metric ton'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7dfd10ea-60d9-4c8c-9b3c-d294faa9bf6f
+    -
+      vid: price_premium_unit
+      tid: '92'
+      langcode: en
+      name: 'Per ounce'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 83c67133-418a-407b-b696-0d6efee8c645
+    -
+      vid: price_premium_unit
+      tid: '94'
+      langcode: en
+      name: 'Per short ton'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e5f57926-993c-4ff7-ae23-822b3ec37db0
+  producer_motivation:
+    -
+      vid: producer_motivation
+      tid: '176'
+      langcode: en
+      name: 'Environmental benefit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8e3eed08-9b5f-4bca-b3d9-e7cc28eea0ca
+    -
+      vid: producer_motivation
+      tid: '175'
+      langcode: en
+      name: 'Financial benefit'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fee3d184-a297-44d1-9e9d-362b27af7605
+    -
+      vid: producer_motivation
+      tid: '177'
+      langcode: en
+      name: 'New market opportunity'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d25e59db-9194-49fd-b8a7-4167761491f6
+    -
+      vid: producer_motivation
+      tid: '179'
+      langcode: en
+      name: Other
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 697b191f-c6b4-4baf-af0e-560561c417f5
+    -
+      vid: producer_motivation
+      tid: '178'
+      langcode: en
+      name: 'Partnerships or networks'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a5710a0f-9628-41ef-9c1c-e46929524dde
+  producer_outreach:
+    -
+      vid: producer_outreach
+      tid: '188'
+      langcode: en
+      name: 'Commodity organizations'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: de687bb6-dbd4-4a78-85ef-c8e6ab308c8c
+    -
+      vid: producer_outreach
+      tid: '180'
+      langcode: en
+      name: Conferences
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f7076987-bc62-4ea6-8b7c-28d7f840a638
+    -
+      vid: producer_outreach
+      tid: '186'
+      langcode: en
+      name: 'Cooperative extension'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bac6a168-383e-4ca2-b59b-fe7a02e0bb5b
+    -
+      vid: producer_outreach
+      tid: '182'
+      langcode: en
+      name: 'Digital communications and resources'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4031d00f-9382-4700-be86-6104c3259781
+    -
+      vid: producer_outreach
+      tid: '192'
+      langcode: en
+      name: 'Education workshops, field days, and town halls'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ab3c6f0e-e364-4813-bb53-daf9068d3d9b
+    -
+      vid: producer_outreach
+      tid: '183'
+      langcode: en
+      name: 'Existing partner networks'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 23236313-fadf-4bd8-8be9-1c10fdd14ce8
+    -
+      vid: producer_outreach
+      tid: '194'
+      langcode: en
+      name: 'Farm visits and one-on-one meetings'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 35dc3927-03e2-4568-bab3-6e28f982350c
+    -
+      vid: producer_outreach
+      tid: '190'
+      langcode: en
+      name: 'General advertising'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 415f4cb0-a5fd-4787-89c4-2ebccdc5ce9e
+    -
+      vid: producer_outreach
+      tid: '195'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a18e3db3-a12e-4f64-b05d-aef088aaf32a
+    -
+      vid: producer_outreach
+      tid: '193'
+      langcode: en
+      name: 'Peer referrals and producer groups'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3479316d-4df7-403a-acc6-10dcf9d87f0a
+    -
+      vid: producer_outreach
+      tid: '191'
+      langcode: en
+      name: 'Phone calls'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 31ed5362-a190-4d9f-8384-53dcaf497018
+    -
+      vid: producer_outreach
+      tid: '181'
+      langcode: en
+      name: 'Print communications and resources'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d7bc0766-8e60-49f6-abf7-1a948f037a00
+    -
+      vid: producer_outreach
+      tid: '185'
+      langcode: en
+      name: Retailers
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2d141a63-3267-4384-aafe-2003471daa74
+    -
+      vid: producer_outreach
+      tid: '187'
+      langcode: en
+      name: 'State agencies'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 764f4b30-8853-45d3-97a7-525a8f6358ec
+    -
+      vid: producer_outreach
+      tid: '189'
+      langcode: en
+      name: 'Targeted messaging using proprietary data'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3e1d2418-8e4e-4637-bb8d-b57223815929
+    -
+      vid: producer_outreach
+      tid: '184'
+      langcode: en
+      name: 'Technical service providers'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c1cee70b-67d7-4822-b537-1ba90c4ad731
+  producer_ta_received:
+    -
+      vid: producer_ta_received
+      tid: '285'
+      langcode: en
+      name: 'Demonstration plots'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 758ac731-1815-4d67-bf28-77d47df11cd3
+    -
+      vid: producer_ta_received
+      tid: '286'
+      langcode: en
+      name: 'Equipment demonstrations'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8c713334-9423-4f70-acb1-24efb37d00b6
+    -
+      vid: producer_ta_received
+      tid: '279'
+      langcode: en
+      name: 'Group field days or in-person field workshops'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 718d9cf7-c2b9-4f60-a803-b4db3dc739c5
+    -
+      vid: producer_ta_received
+      tid: '289'
+      langcode: en
+      name: Hotline
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 839de22f-9b30-4e4e-b7e6-21c4ce044035
+    -
+      vid: producer_ta_received
+      tid: '292'
+      langcode: en
+      name: None
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: df5ebff4-e191-447a-8f83-4a7204141ebb
+    -
+      vid: producer_ta_received
+      tid: '291'
+      langcode: en
+      name: 'One-on-one enrollment assistance'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 602b1ef3-6bac-40b9-a304-5241e210b408
+    -
+      vid: producer_ta_received
+      tid: '278'
+      langcode: en
+      name: 'One-on-one field visits'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 63f629b7-54dc-4727-884d-554213a1d163
+    -
+      vid: producer_ta_received
+      tid: '282'
+      langcode: en
+      name: 'One-on-one producer mentorship'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 37c59e7f-e4a5-4335-bbc8-e7ad5d1542f5
+    -
+      vid: producer_ta_received
+      tid: '293'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5fb16e6e-41a5-49fc-b6c3-1d8b175c391e
+    -
+      vid: producer_ta_received
+      tid: '283'
+      langcode: en
+      name: 'Producer networks and peer-to-peer groups'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5719ec09-cdfb-4e1e-96a8-b31e0e8a5fe4
+    -
+      vid: producer_ta_received
+      tid: '287'
+      langcode: en
+      name: 'Retailer consultation'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f5effb2b-bfb4-4a22-8e01-36d57a3a4edd
+    -
+      vid: producer_ta_received
+      tid: '290'
+      langcode: en
+      name: 'Social media/digital tools'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 68c10dfc-6a9b-4e31-b2cb-0fe419327361
+    -
+      vid: producer_ta_received
+      tid: '284'
+      langcode: en
+      name: 'Train-the-trainer opportunities'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5384a289-9a1f-4c39-9613-2a6a4cadef73
+    -
+      vid: producer_ta_received
+      tid: '280'
+      langcode: en
+      name: 'Virtual meetings or field days'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2d3a03a9-b145-410c-a8c9-556a2c260910
+    -
+      vid: producer_ta_received
+      tid: '281'
+      langcode: en
+      name: 'Webinars and videos'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 25e19fc3-28ac-43ce-abd7-3587b0c8ec6e
+    -
+      vid: producer_ta_received
+      tid: '288'
+      langcode: en
+      name: 'Written materials'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 101c8c16-2abb-4b75-bf52-bb7560026ed4
+  product_differentiation_method:
+    -
+      vid: product_differentiation_method
+      tid: '103'
+      langcode: en
+      name: 'Certification/verification for internal insetting'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6de3cec7-d244-41a3-aa62-c9d274050cb8
+    -
+      vid: product_differentiation_method
+      tid: '104'
+      langcode: en
+      name: 'Farm certification'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5f9ab862-de5f-4be1-8222-88f4e24cc7bd
+    -
+      vid: product_differentiation_method
+      tid: '101'
+      langcode: en
+      name: 'Label or badge used on packaging or marketing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7653dfae-0e32-4ffc-87da-9e68f0870a0c
+    -
+      vid: product_differentiation_method
+      tid: '106'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 342c8e1d-8424-4ab8-8791-b492118a304e
+    -
+      vid: product_differentiation_method
+      tid: '102'
+      langcode: en
+      name: 'Third party certification/verification'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cedc9aa5-ec3a-4ad3-8e12-eb08729b6319
+    -
+      vid: product_differentiation_method
+      tid: '105'
+      langcode: en
+      name: Trademark
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3eaa20aa-dce1-4e95-abab-b7a06731600c
+  reduced_energy_use:
+    -
+      vid: reduced_energy_use
+      tid: '530'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0a008f50-f272-4f32-9d6d-c25e1052b874
+    -
+      vid: reduced_energy_use
+      tid: '529'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2e7bbaa4-ba7b-46b3-9743-93214b01d414
+    -
+      vid: reduced_energy_use
+      tid: '528'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9468898d-1816-4cad-b27c-8afc8feb3e19
+  reduced_energy_use_amount_unit:
+    -
+      vid: reduced_energy_use_amount_unit
+      tid: '531'
+      langcode: en
+      name: 'Kilowatt hours'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b385f982-decf-455f-81e6-16930eb542c3
+    -
+      vid: reduced_energy_use_amount_unit
+      tid: '532'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b77f2628-c4e0-4aae-a70c-cadf4308beb5
+  reduced_energy_use_purpose:
+    -
+      vid: reduced_energy_use_purpose
+      tid: '535'
+      langcode: en
+      name: 'Commodity marketing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: dd7c201d-9e9f-4e9c-a349-c73acf93f53c
+    -
+      vid: reduced_energy_use_purpose
+      tid: '536'
+      langcode: en
+      name: 'I don’t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 434ae904-11e4-4b6d-811c-63d6c075106b
+    -
+      vid: reduced_energy_use_purpose
+      tid: '537'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 79477a1e-3f3d-45d7-8eb8-6045f0276bba
+    -
+      vid: reduced_energy_use_purpose
+      tid: '534'
+      langcode: en
+      name: 'Producing insets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f401c585-1fcd-44d4-b021-2db522d55001
+    -
+      vid: reduced_energy_use_purpose
+      tid: '533'
+      langcode: en
+      name: 'Producing offsets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3c105d6a-9796-451e-acd9-aba82e8bc7ba
+  reduced_erosion:
+    -
+      vid: reduced_erosion
+      tid: '520'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 620668f9-0776-4b93-934e-db0e0fd6733f
+    -
+      vid: reduced_erosion
+      tid: '519'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: be1e2f3b-3624-47bd-a2ca-c5d7eab9a2c7
+    -
+      vid: reduced_erosion
+      tid: '518'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7856e286-3183-48f3-8e77-84a227800b07
+  reduced_erosion_amount_unit:
+    -
+      vid: reduced_erosion_amount_unit
+      tid: '522'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 23d085f8-5761-4ca5-a407-861f587907d2
+    -
+      vid: reduced_erosion_amount_unit
+      tid: '521'
+      langcode: en
+      name: Tons
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 711a1aa1-cd4a-4437-973b-eb5fab46c23d
+  reduced_erosion_purpose:
+    -
+      vid: reduced_erosion_purpose
+      tid: '525'
+      langcode: en
+      name: 'Commodity marketing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9a3a6158-4143-40ce-a5ea-44643d6a47a4
+    -
+      vid: reduced_erosion_purpose
+      tid: '526'
+      langcode: en
+      name: 'I don’t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: aa69e045-52f0-425d-86c1-4729d46f29da
+    -
+      vid: reduced_erosion_purpose
+      tid: '527'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f700e376-8dcd-47d6-a27f-ec5b5b251c6d
+    -
+      vid: reduced_erosion_purpose
+      tid: '524'
+      langcode: en
+      name: 'Producing insets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8fee540e-db51-489f-8c2a-f9948a19cc67
+    -
+      vid: reduced_erosion_purpose
+      tid: '523'
+      langcode: en
+      name: 'Producing offsets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2c582ed3-97c2-480a-aec8-bb71e8af7137
+  reduced_phosphorus_loss_amount_u:
+    -
+      vid: reduced_phosphorus_loss_amount_u
+      tid: '481'
+      langcode: en
+      name: Kilograms
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 25102127-ea53-40ce-863b-977bd6e6e092
+    -
+      vid: reduced_phosphorus_loss_amount_u
+      tid: '483'
+      langcode: en
+      name: 'Metric tons'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b9ed7b1a-3908-4232-892b-9ae275a8d267
+    -
+      vid: reduced_phosphorus_loss_amount_u
+      tid: '484'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 8b12f50f-a4fa-4b69-b8d4-25e61232899f
+    -
+      vid: reduced_phosphorus_loss_amount_u
+      tid: '482'
+      langcode: en
+      name: Pounds
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 077e6564-4bd7-4ade-81d4-9c7fb1e0b0a8
+  reduction_in_nitrogen_loss:
+    -
+      vid: reduction_in_nitrogen_loss
+      tid: '468'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 52345a43-cb9f-4133-a449-6e70e30f07a6
+    -
+      vid: reduction_in_nitrogen_loss
+      tid: '467'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d694f7b5-942d-452b-8e06-9c5ba9014f17
+    -
+      vid: reduction_in_nitrogen_loss
+      tid: '466'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: db37ff0c-94f3-49c8-9e68-3181c38a5fd9
+  reduction_in_nitrogen_loss_amoun:
+    -
+      vid: reduction_in_nitrogen_loss_amoun
+      tid: '469'
+      langcode: en
+      name: Kilograms
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4f1f16ea-44c9-4a81-8782-4ff100ad4130
+    -
+      vid: reduction_in_nitrogen_loss_amoun
+      tid: '471'
+      langcode: en
+      name: 'Metric tons'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 509bd599-ff57-4735-983d-4f2a656771df
+    -
+      vid: reduction_in_nitrogen_loss_amoun
+      tid: '472'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 18add7f2-a5d5-453a-b5e5-f37670cede0f
+    -
+      vid: reduction_in_nitrogen_loss_amoun
+      tid: '470'
+      langcode: en
+      name: Pounds
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0e8ac319-0f43-463a-a4d6-5982b8df1ef3
+  reduction_in_nitrogen_loss_purpo:
+    -
+      vid: reduction_in_nitrogen_loss_purpo
+      tid: '475'
+      langcode: en
+      name: 'Commodity marketing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 742ce171-4bf6-42b1-be0a-d26ab9e7b65e
+    -
+      vid: reduction_in_nitrogen_loss_purpo
+      tid: '476'
+      langcode: en
+      name: 'I don’t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 326eac16-2967-4551-b60a-fa338158c87c
+    -
+      vid: reduction_in_nitrogen_loss_purpo
+      tid: '477'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 263ec368-901b-426d-b0c4-f80ceaa42970
+    -
+      vid: reduction_in_nitrogen_loss_purpo
+      tid: '474'
+      langcode: en
+      name: 'Producing insets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ad16dc67-3602-498b-9b98-d349fcb082eb
+    -
+      vid: reduction_in_nitrogen_loss_purpo
+      tid: '473'
+      langcode: en
+      name: 'Producing offsets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 02f6e135-cd60-4db2-b5a6-341125669c98
+  reduction_in_phosphorus_loss:
+    -
+      vid: reduction_in_phosphorus_loss
+      tid: '480'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 99304e79-545e-490a-a051-8b999cbd0f55
+    -
+      vid: reduction_in_phosphorus_loss
+      tid: '479'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b52e5881-33cd-4705-8422-c67efc444892
+    -
+      vid: reduction_in_phosphorus_loss
+      tid: '478'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1ca8165c-4cd1-436f-8e37-643b6f62ef46
+  reduction_in_phosphorus_loss_pur:
+    -
+      vid: reduction_in_phosphorus_loss_pur
+      tid: '487'
+      langcode: en
+      name: 'Commodity marketing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7ab34650-bd46-45f1-817b-33653de15cb6
+    -
+      vid: reduction_in_phosphorus_loss_pur
+      tid: '488'
+      langcode: en
+      name: 'I don’t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b6b7247e-9d30-48b7-876c-f31e7e5bafe0
+    -
+      vid: reduction_in_phosphorus_loss_pur
+      tid: '489'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: da313932-8e4f-41d2-8e68-c8773119fab6
+    -
+      vid: reduction_in_phosphorus_loss_pur
+      tid: '486'
+      langcode: en
+      name: 'Producing insets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7fa57b7e-2e22-4137-bbc2-5f14e61fd4f4
+    -
+      vid: reduction_in_phosphorus_loss_pur
+      tid: '485'
+      langcode: en
+      name: 'Producing offsets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2110adfd-b814-4b60-ae16-5d64d509f53d
+  soil_sample_result_unit:
+    -
+      vid: soil_sample_result_unit
+      tid: '456'
+      langcode: en
+      name: Grams
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 52d82c57-5e26-4f77-89db-fd653b92eb69
+    -
+      vid: soil_sample_result_unit
+      tid: '457'
+      langcode: en
+      name: 'Grams per cubic centimeter'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 30ccb9a1-bcc3-4443-92e7-07252462beb8
+    -
+      vid: soil_sample_result_unit
+      tid: '458'
+      langcode: en
+      name: Other
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 10fa9e0c-64cc-43df-9bec-8ed6446cc17e
+    -
+      vid: soil_sample_result_unit
+      tid: '454'
+      langcode: en
+      name: Percent
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a7c96aa3-7340-433f-b475-d12d96676016
+    -
+      vid: soil_sample_result_unit
+      tid: '455'
+      langcode: en
+      name: Ppm
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6f233e82-1144-4fc4-82fd-b5d95ad14088
+  total_area:
+    -
+      vid: total_area
+      tid: '135'
+      langcode: en
+      name: '1 to 9 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a300c9bc-3448-4f1e-ab16-9fce5d146fcd
+    -
+      vid: total_area
+      tid: '145'
+      langcode: en
+      name: '1,000 to 1,999 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: bfdbf04f-1d0b-4a8d-ba5b-2b0c1ee49c8c
+    -
+      vid: total_area
+      tid: '136'
+      langcode: en
+      name: '10 to 49 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 99070d2b-c36d-414e-84f4-4095dc93998a
+    -
+      vid: total_area
+      tid: '139'
+      langcode: en
+      name: '100 to 139 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0beaed27-3e66-4b34-9e89-b7a67d9dc4f5
+    -
+      vid: total_area
+      tid: '140'
+      langcode: en
+      name: '140 to 179 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7118b687-5565-4e87-8a14-1a1e1cdcb907
+    -
+      vid: total_area
+      tid: '141'
+      langcode: en
+      name: '180 to 219 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3015a2ae-65d8-4a5d-a268-a4f9d783d60e
+    -
+      vid: total_area
+      tid: '146'
+      langcode: en
+      name: '2,000 to 4,999 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ec1085f7-69f8-46da-be08-0c5622999ac3
+    -
+      vid: total_area
+      tid: '142'
+      langcode: en
+      name: '220 to 259 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6071936c-6ebc-4bf2-b099-a915bfbc06fe
+    -
+      vid: total_area
+      tid: '143'
+      langcode: en
+      name: '260 to 499 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1711f6de-91f7-48b6-b680-49775dd4d8d8
+    -
+      vid: total_area
+      tid: '147'
+      langcode: en
+      name: '5,000 or more acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c3814a84-af52-49cd-9fe5-df0e136f5cb5
+    -
+      vid: total_area
+      tid: '137'
+      langcode: en
+      name: '50 to 69 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: faf28cef-44a9-406d-b3ce-6e32d2366533
+    -
+      vid: total_area
+      tid: '144'
+      langcode: en
+      name: '500 to 999 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a78bb0d9-94eb-4083-8ad4-78243c50b77f
+    -
+      vid: total_area
+      tid: '138'
+      langcode: en
+      name: '70 to 99 acres'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ad925bf4-c261-43c9-a7db-4fc3c51f7b4a
+    -
+      vid: total_area
+      tid: '134'
+      langcode: en
+      name: 'Less than 1 acre'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 588683ec-5460-41d4-8c54-623a71741cfe
+  traceability_method:
+    -
+      vid: traceability_method
+      tid: '118'
+      langcode: en
+      name: 'Barcode or unique ID'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b528bd61-9da5-42d1-87d1-839e704312b5
+    -
+      vid: traceability_method
+      tid: '123'
+      langcode: en
+      name: 'Block chain'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e36cfcd3-98e8-4eb9-a41d-e37430ca4b4e
+    -
+      vid: traceability_method
+      tid: '121'
+      langcode: en
+      name: 'Book and claim'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e9fcb3f0-f41e-4be7-959f-71bc82ef4993
+    -
+      vid: traceability_method
+      tid: '124'
+      langcode: en
+      name: 'Chain of custody'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 10e8ccb0-e018-4fde-9a36-31ed4cd75247
+    -
+      vid: traceability_method
+      tid: '119'
+      langcode: en
+      name: 'Mass balance'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d310f18f-25d8-42c2-a4a6-740fcb07e5fd
+    -
+      vid: traceability_method
+      tid: '128'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d29e5e8e-9285-4617-8364-c805f62a5daa
+    -
+      vid: traceability_method
+      tid: '127'
+      langcode: en
+      name: Recordkeeping
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: da99443e-b5fd-4fe6-a45f-608b77e4c77c
+    -
+      vid: traceability_method
+      tid: '126'
+      langcode: en
+      name: 'Registry with certification'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a91d5c14-bd2c-4e24-ad55-e82956f7e09c
+    -
+      vid: traceability_method
+      tid: '125'
+      langcode: en
+      name: Segregation
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5f19661f-85ca-4fe8-90ff-7e3c618378cf
+    -
+      vid: traceability_method
+      tid: '122'
+      langcode: en
+      name: 'Supply shed'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c7f1ff20-fe34-4873-8bef-ae7e8fbfbbee
+    -
+      vid: traceability_method
+      tid: '120'
+      langcode: en
+      name: 'Volume proxy'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 724b83f6-ba6e-4d0b-8cbd-16642de0fa91
+  training_provided:
+    -
+      vid: training_provided
+      tid: '50'
+      langcode: en
+      name: 'Data collection'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: c946892a-03f3-4932-81e5-db8f5df98651
+    -
+      vid: training_provided
+      tid: '51'
+      langcode: en
+      name: 'Grant reporting'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: eb177751-6766-441c-b565-0c77f2a52bcb
+    -
+      vid: training_provided
+      tid: '54'
+      langcode: en
+      name: 'Marketing opportunities'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 5e26479b-31cb-42e2-bed4-7a2178efdf72
+    -
+      vid: training_provided
+      tid: '55'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a5f2260f-a78f-434c-9a00-79121acb736e
+    -
+      vid: training_provided
+      tid: '53'
+      langcode: en
+      name: 'Providing financial assistance'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 676a9a10-269a-43c7-a29d-667a9924d79f
+    -
+      vid: training_provided
+      tid: '52'
+      langcode: en
+      name: 'Providing technical assistance'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 7bcff3e7-156f-4747-b36f-90dc7d4f3bab
+    -
+      vid: training_provided
+      tid: '49'
+      langcode: en
+      name: 'Writing producer contracts'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4ae49baf-d906-48a9-9afd-2a78738812bf
+  underserved_status:
+    -
+      vid: underserved_status
+      tid: '133'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: e3bcf656-1627-477e-bb8b-8420ddda57e5
+    -
+      vid: underserved_status
+      tid: '132'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3a286025-1b77-4727-ac53-8fe3e7beeba8
+    -
+      vid: underserved_status
+      tid: '130'
+      langcode: en
+      name: 'Yes, small producer'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d63c4528-2c9f-458c-8cad-2a84eafb4252
+    -
+      vid: underserved_status
+      tid: '129'
+      langcode: en
+      name: 'Yes, underserved'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: f137df42-5601-40d7-b045-a9cc48dae8dc
+    -
+      vid: underserved_status
+      tid: '131'
+      langcode: en
+      name: 'Yes, underserved and small producer'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2e61d256-e7af-4e58-9682-e548592645b0
+  unit: {  }
+  volume_sold_unit:
+    -
+      vid: volume_sold_unit
+      tid: '88'
+      langcode: en
+      name: 'Bales (500 lbs)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6f26ac22-3026-4591-9a92-464d5f6d7c30
+    -
+      vid: volume_sold_unit
+      tid: '79'
+      langcode: en
+      name: Bushels
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 75bdcdd2-b58b-4ba3-97c1-a1baf972c6f8
+    -
+      vid: volume_sold_unit
+      tid: '85'
+      langcode: en
+      name: 'Carcass pounds'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: fcf878e3-aa89-4745-98f6-9b67816b60ca
+    -
+      vid: volume_sold_unit
+      tid: '80'
+      langcode: en
+      name: Gallons
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 91fc216c-a0a8-4856-a0d8-980101524f55
+    -
+      vid: volume_sold_unit
+      tid: '84'
+      langcode: en
+      name: Kilograms
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6b2116d1-a00e-4c52-b80e-3ebe8e043080
+    -
+      vid: volume_sold_unit
+      tid: '87'
+      langcode: en
+      name: 'Linear board feet'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cb489179-7509-4b98-80b9-c77a238adba5
+    -
+      vid: volume_sold_unit
+      tid: '86'
+      langcode: en
+      name: 'Liveweight pounds'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 6287dc38-08cc-415e-b602-b010c4c918e2
+    -
+      vid: volume_sold_unit
+      tid: '81'
+      langcode: en
+      name: 'Metric tons'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 01d52208-48df-4644-b685-76bdfdd2520f
+    -
+      vid: volume_sold_unit
+      tid: '89'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 66cbcfcd-7b7a-4fcd-ac98-6e39b78baf81
+    -
+      vid: volume_sold_unit
+      tid: '83'
+      langcode: en
+      name: Pounds
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1aec1955-8a46-4309-9adb-087956b0509b
+    -
+      vid: volume_sold_unit
+      tid: '82'
+      langcode: en
+      name: 'Short tons'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 9a5d5b98-4104-4612-9df5-055b9b5f0b7f
+  water_quantity:
+    -
+      vid: water_quantity
+      tid: '509'
+      langcode: en
+      name: 'I don''t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0fbc83e2-9d54-46e9-8545-1ee23f141a23
+    -
+      vid: water_quantity
+      tid: '508'
+      langcode: en
+      name: 'No'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2be42b75-3f4d-4ec2-be28-ccd58a567233
+    -
+      vid: water_quantity
+      tid: '507'
+      langcode: en
+      name: 'Yes'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1fab1334-1f9c-4bb2-a957-faacef2582a1
+  water_quantity_amount_unit:
+    -
+      vid: water_quantity_amount_unit
+      tid: '510'
+      langcode: en
+      name: Acre-feet
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 0599540f-968d-42dd-bb21-2b8174cc8f6b
+    -
+      vid: water_quantity_amount_unit
+      tid: '511'
+      langcode: en
+      name: 'Cubic feet'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 492994dd-98de-488d-8f4b-84d6ad32a207
+    -
+      vid: water_quantity_amount_unit
+      tid: '512'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 77136799-b5ca-4bcd-ba0f-b8b4b91fee89
+  water_quantity_purpose:
+    -
+      vid: water_quantity_purpose
+      tid: '515'
+      langcode: en
+      name: 'Commodity marketing'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: a3b9562a-047d-4918-a44a-aa74ae727a1b
+    -
+      vid: water_quantity_purpose
+      tid: '516'
+      langcode: en
+      name: 'I don’t know'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: abdb3870-93f4-4ae1-a54c-8e977a0f019f
+    -
+      vid: water_quantity_purpose
+      tid: '517'
+      langcode: en
+      name: 'Other (specify)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 736fe553-0d9d-4dbe-b428-6efc0f75bd15
+    -
+      vid: water_quantity_purpose
+      tid: '514'
+      langcode: en
+      name: 'Producing insets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 781c0ec6-ac42-4a77-a208-f99af9f0e84b
+    -
+      vid: water_quantity_purpose
+      tid: '513'
+      langcode: en
+      name: 'Producing offsets'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 2d407f60-1401-4e4f-b56f-6a8b06fbc02e

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Environmental benefits'
+vid: environmental_benefits
+description: 'Tracking of environmental benefits other than greenhouse gas emission reductions and carbon sequestration in the enrolled field.'
+weight: 0

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Volume sold unit'
+vid: volume_sold_unit
+description: 'The unit associated with the volume of the commodity sold in the marketing channel.'
+weight: 0

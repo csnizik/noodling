@@ -1,0 +1,8 @@
+uuid: a8987ef9-fe33-40f5-85d8-74c7c37d7d07
+langcode: en
+status: true
+dependencies: {  }
+name: 'Traceability method'
+vid: traceability_method
+description: 'Provide the traceability method(s) used for the climate-smart commodity in this market channel.'
+weight: 0

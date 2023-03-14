@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduced erosion purpose'
+vid: reduced_erosion_purpose
+description: 'Purpose of tracking reduced erosion the enrolled field.'
+weight: 0

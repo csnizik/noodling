@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduction in nitrogen loss amount unit'
+vid: reduction_in_nitrogen_loss_amoun
+description: 'Unit for the total amount of reduction in nitrogen losses that is measured and reported in the enrolled field. If “other” is cho'
+weight: 0

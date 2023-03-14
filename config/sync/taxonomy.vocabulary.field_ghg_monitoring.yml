@@ -1,0 +1,8 @@
+uuid: f5984996-dc7f-4763-af7d-9de9b6f35871
+langcode: en
+status: true
+dependencies: {  }
+name: 'Field GHG monitoring'
+vid: field_ghg_monitoring
+description: 'Up to the top three forms of monitoring GHG benefits as part of MMRV requirements.'
+weight: 0

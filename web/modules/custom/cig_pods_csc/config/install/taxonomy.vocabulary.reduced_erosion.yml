@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduced erosion'
+vid: reduced_erosion
+description: 'Tracking of reduced soil erosion in the enrolled field.'
+weight: 0

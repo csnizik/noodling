@@ -1,0 +1,8 @@
+uuid: 6f08401d-c810-479c-9163-1fd05d55458c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Avoided land conversion'
+vid: avoided_land_conversion
+description: 'Tracking of avoided land conversion in the enrolled field.'
+weight: 0

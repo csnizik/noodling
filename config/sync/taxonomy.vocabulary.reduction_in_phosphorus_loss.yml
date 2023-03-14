@@ -1,0 +1,8 @@
+uuid: 59160f6a-f97e-4371-97aa-9ab22f04f77d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduction in phosphorus loss'
+vid: reduction_in_phosphorus_loss
+description: 'Tracking of reductions in phosphorus losses in the enrolled field.'
+weight: 0

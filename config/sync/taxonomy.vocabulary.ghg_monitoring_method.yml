@@ -1,0 +1,8 @@
+uuid: 7c2337a9-12b2-4a73-9073-a62081873d02
+langcode: en
+status: true
+dependencies: {  }
+name: 'GHG monitoring method'
+vid: ghg_monitoring_method
+description: 'Up to the five most common forms of monitoring GHG benefits used this quarter as part of MMRV requirements.'
+weight: 0

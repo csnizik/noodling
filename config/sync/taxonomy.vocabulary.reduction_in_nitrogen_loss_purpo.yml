@@ -1,0 +1,8 @@
+uuid: 19c2bc00-9e5e-46e6-9410-1f3e09f9e8fb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduction in nitrogen loss purpose'
+vid: reduction_in_nitrogen_loss_purpo
+description: 'Purpose of tracking reduction in nitrogen losses in the enrolled field.'
+weight: 0

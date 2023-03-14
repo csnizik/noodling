@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'GHG calculation methods'
+vid: ghg_calculation_methods
+description: 'List the way(s) that GHG benefits are being measured and calculated by the project this quarter.'
+weight: 0

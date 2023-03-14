@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Total area'
+vid: total_area
+description: 'Total area of the farm associated with the Farm ID.'
+weight: 0

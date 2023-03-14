@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Producer motivation'
+vid: producer_motivation
+description: 'Primary operator’s motivation for enrolling in the project'
+weight: 0

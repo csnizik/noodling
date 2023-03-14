@@ -1,0 +1,8 @@
+uuid: 322c4f5b-6aaf-4fe6-b4bc-c5c15ebf42cc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduction in nitrogen loss'
+vid: reduction_in_nitrogen_loss
+description: 'Tracking reductions in nitrogen losses in the enrolled field.'
+weight: 0

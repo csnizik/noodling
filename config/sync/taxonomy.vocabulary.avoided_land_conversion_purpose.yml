@@ -1,0 +1,8 @@
+uuid: c1a89821-ca06-4c11-a410-2ba003b105bc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Avoided land conversion purpose'
+vid: avoided_land_conversion_purpose
+description: 'Purpose of tracking avoided land conversion in the enrolled field.'
+weight: 0

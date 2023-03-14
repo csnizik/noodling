@@ -1,0 +1,8 @@
+uuid: d319eae2-0c4c-40ba-b140-fffba9b1ad9a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Improved wildlife habitat amount unit'
+vid: improved_wildlife_habitat_amount
+description: 'Unit for the total amount of improved wildlife habitat that is measured in and around enrolled fields.'
+weight: 0

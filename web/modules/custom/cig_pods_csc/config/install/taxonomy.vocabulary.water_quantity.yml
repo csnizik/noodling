@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Water quantity'
+vid: water_quantity
+description: 'Tracking of water conservation or reduction in use in the enrolled field.'
+weight: 0

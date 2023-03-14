@@ -1,0 +1,8 @@
+uuid: ece105a0-9c89-4931-a2a1-080c4f128642
+langcode: en
+status: true
+dependencies: {  }
+name: 'Payment on enrollment'
+vid: payment_on_enrollment
+description: 'Any incentive payment provided to the producer upon enrollment/signing a contract, and not related to any implementation, MMRV o'
+weight: 0

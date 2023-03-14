@@ -1,0 +1,8 @@
+uuid: 5cad3ac8-42f0-4b22-9489-ab1fd468ab18
+langcode: en
+status: true
+dependencies: {  }
+name: 'Avoided land conversion amount unit'
+vid: avoided_land_conversion_amount_u
+description: 'Unit for the total amount of avoided land conversion that is measured in the enrolled field.'
+weight: 0

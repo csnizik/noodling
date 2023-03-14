@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Underserved status'
+vid: underserved_status
+description: 'Underserved status of the primary operator of the enrolled operation.'
+weight: 0

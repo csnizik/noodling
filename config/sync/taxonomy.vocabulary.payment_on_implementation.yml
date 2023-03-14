@@ -1,0 +1,8 @@
+uuid: 771b7675-a5b1-4f9b-9736-2006c6fcf49d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Payment on implementation'
+vid: payment_on_implementation
+description: 'Any incentive payment provided to the producer upon implementing the practices included in the contract.'
+weight: 0

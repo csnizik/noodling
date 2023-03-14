@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Measurement type'
+vid: measurement_type
+description: 'Type of soil analysis conducted. The worksheet provides a drop-down list of choices for this data element.'
+weight: 0

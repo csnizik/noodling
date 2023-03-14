@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'GHG reporting method'
+vid: ghg_reporting_method
+description: 'Up to the five most common forms of tracking and reporting on practice implementation used this year as part of MMRV requirement'
+weight: 0

@@ -1,0 +1,8 @@
+uuid: bfa4abc6-4867-497d-86fd-e530e5b90381
+langcode: en
+status: true
+dependencies: {  }
+name: 'Field land use'
+vid: field_land_use
+description: 'Prior to enrollment, what was the most common land use for this field in the past 3 years?'
+weight: 0

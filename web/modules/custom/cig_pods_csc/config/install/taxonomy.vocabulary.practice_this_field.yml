@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Practice this field'
+vid: practice_this_field
+description: 'Prior to enrollment, had this (these) CSAF practice(s) been used in this field in the in the past 3 years?'
+weight: 0

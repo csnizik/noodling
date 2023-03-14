@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduced energy use amount unit'
+vid: reduced_energy_use_amount_unit
+description: 'Unit for the total amount of energy use reduction that is measured in the enrolled field.'
+weight: 0

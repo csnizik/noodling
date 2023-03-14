@@ -1,0 +1,8 @@
+uuid: 45881e46-73b7-4386-b68e-6e496440129f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Producer TA received'
+vid: producer_ta_received
+description: 'Did the lead grantee or any partner provide technical assistance (TA) to the producer this year?'
+weight: 0

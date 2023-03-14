@@ -1,0 +1,8 @@
+uuid: 29341f05-266d-441c-b10f-5e1c3e618017
+langcode: en
+status: true
+dependencies: {  }
+name: 'Payment on sale'
+vid: payment_on_sale
+description: 'Any incentive payment provided to the producer upon sale of the commodity included in the contract.'
+weight: 0

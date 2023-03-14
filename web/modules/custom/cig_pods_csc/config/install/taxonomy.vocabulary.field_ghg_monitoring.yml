@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Field GHG monitoring'
+vid: field_ghg_monitoring
+description: 'Up to the top three forms of monitoring GHG benefits as part of MMRV requirements.'
+weight: 0

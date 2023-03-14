@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduced phosphorus loss amount unit'
+vid: reduced_phosphorus_loss_amount_u
+description: 'Unit for the total amount of reduction in phosphorus losses that is measured in the enrolled field.'
+weight: 0

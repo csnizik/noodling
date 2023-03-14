@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'CSAF experience'
+vid: csaf_experience
+description: 'Has this farm implemented climate-smart agriculture or forestry (CSAF) practices anywhere on the farm in the past 10 years or si'
+weight: 0

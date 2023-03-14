@@ -1,0 +1,8 @@
+uuid: 36b51203-ccf3-43d4-85be-9b42ca762c0f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Baseline yield location'
+vid: baseline_yield_location
+description: 'Location of the reported average annual yield of commodity in 3 years prior to enrollment'
+weight: 0

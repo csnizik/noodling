@@ -1,0 +1,8 @@
+uuid: a8752fb3-bd39-432c-9851-b2e81595843c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Field any CSAF practice'
+vid: field_any_csaf_practice
+description: 'Prior to enrollment, have any CSAF practice or practices been used in this field in the past 3 years?'
+weight: 0

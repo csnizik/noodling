@@ -1,0 +1,8 @@
+uuid: 13ad5307-f019-4dfa-86a6-22ad03895bed
+langcode: en
+status: true
+dependencies: {  }
+name: 'Livestock type'
+vid: livestock_type
+description: 'Up to top three types of livestock (by head count) on the farm.'
+weight: 0

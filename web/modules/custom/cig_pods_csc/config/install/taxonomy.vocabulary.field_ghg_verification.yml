@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Field GHG verification'
+vid: field_ghg_verification
+description: 'Up to the top three of verification of GHG benefits as part of MMRV requirements.'
+weight: 0

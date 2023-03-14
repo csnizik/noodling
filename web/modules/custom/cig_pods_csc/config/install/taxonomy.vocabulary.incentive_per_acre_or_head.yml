@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Incentive per acre or head'
+vid: incentive_per_acre_or_head
+description: 'Is this field receiving an incentive payment to implement a specific CSAF practice or set of practices on a per-acre or per-head'
+weight: 0

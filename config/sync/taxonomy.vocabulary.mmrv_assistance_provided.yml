@@ -1,0 +1,8 @@
+uuid: e7d1d5fc-0056-4bcf-ab5e-be32a7510d32
+langcode: en
+status: true
+dependencies: {  }
+name: 'MMRV assistance provided'
+vid: mmrv_assistance_provided
+description: 'Was any MMRV assistance provided to the primary operator for this field?'
+weight: 0

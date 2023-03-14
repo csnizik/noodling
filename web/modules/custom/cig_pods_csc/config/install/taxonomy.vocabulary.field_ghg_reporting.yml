@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Field GHG reporting'
+vid: field_ghg_reporting
+description: 'Up to the top three forms of reporting on GHG benefits as part of MMRV requirements.'
+weight: 0

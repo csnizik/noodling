@@ -1,0 +1,8 @@
+uuid: 12737ade-4c14-49a3-b69c-41d3bb3960cb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Incentive type'
+vid: incentive_type
+description: 'List the top 4 types of incentive payments to producers (based on dollar value).'
+weight: 0

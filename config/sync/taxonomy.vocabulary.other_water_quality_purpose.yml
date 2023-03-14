@@ -1,0 +1,8 @@
+uuid: f1211b2e-e5ed-431d-9fed-8600cedc0306
+langcode: en
+status: true
+dependencies: {  }
+name: 'Other water quality purpose'
+vid: other_water_quality_purpose
+description: 'Purpose of tracking other water quality benefits in the enrolled field.'
+weight: 0

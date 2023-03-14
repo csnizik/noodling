@@ -1,0 +1,8 @@
+uuid: b71b8b6b-4a56-4d8b-9504-a5d84ef1554e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Producer outreach'
+vid: producer_outreach
+description: 'Up to three most common types of outreach provided to producer prior to enrollment.'
+weight: 0

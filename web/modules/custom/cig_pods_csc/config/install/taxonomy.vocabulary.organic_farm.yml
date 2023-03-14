@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Organic farm'
+vid: organic_farm
+description: 'USDA-certified organic means that the farm has been certified by an accredited organic certifying agent or is transitioning to U'
+weight: 0

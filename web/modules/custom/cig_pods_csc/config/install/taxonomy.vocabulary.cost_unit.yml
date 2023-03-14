@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Cost unit'
+vid: cost_unit
+description: 'The unit associated with the cost of implementing CSAF practices in the field.'
+weight: 0

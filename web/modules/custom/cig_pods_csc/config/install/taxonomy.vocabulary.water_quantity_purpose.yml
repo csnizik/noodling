@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Water quantity purpose'
+vid: water_quantity_purpose
+description: 'Purpose of tracking water conservation or reductions in water use in the enrolled field.'
+weight: 0

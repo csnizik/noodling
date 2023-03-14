@@ -1,0 +1,8 @@
+uuid: 53b4849a-d39c-4a40-a2b5-6799f16fa063
+langcode: en
+status: true
+dependencies: {  }
+name: 'Marketing channel geography'
+vid: marketing_channel_geography
+description: 'The primary geography of the type of marketing channel.'
+weight: 0

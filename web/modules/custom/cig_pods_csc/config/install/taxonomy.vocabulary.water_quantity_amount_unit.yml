@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Water quantity amount unit'
+vid: water_quantity_amount_unit
+description: 'Unit for the total amount of water conservation or reduced use that is measured and reported in the enrolled field.'
+weight: 0

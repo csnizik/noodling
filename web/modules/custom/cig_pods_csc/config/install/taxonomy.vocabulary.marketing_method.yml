@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Marketing method'
+vid: marketing_method
+description: 'Provide the method(s) used to market this commodity in this market channel.'
+weight: 0

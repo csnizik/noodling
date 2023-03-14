@@ -1,0 +1,8 @@
+uuid: e4b78017-7127-4695-8cec-bf7561095a9b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Match type'
+vid: match_type
+description: 'Types of match contributions other than incentives provided directly to producers by the organization from the start of the part'
+weight: 0

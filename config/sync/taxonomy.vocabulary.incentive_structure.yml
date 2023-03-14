@@ -1,0 +1,8 @@
+uuid: 2fd50801-7a51-4cb8-b7eb-f43b9f5d8e7b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Incentive structure'
+vid: incentive_structure
+description: 'List the structures (units) corresponding to the top 4 (by dollar value) incentive payments to producers.'
+weight: 0

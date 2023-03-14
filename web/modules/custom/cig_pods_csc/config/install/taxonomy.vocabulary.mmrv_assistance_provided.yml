@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'MMRV assistance provided'
+vid: mmrv_assistance_provided
+description: 'Was any MMRV assistance provided to the primary operator for this field?'
+weight: 0

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Baseline yield unit'
+vid: baseline_yield_unit
+description: 'Unit of average annual yield of commodity in enrolled field in 3 years prior to enrollment.'
+weight: 0

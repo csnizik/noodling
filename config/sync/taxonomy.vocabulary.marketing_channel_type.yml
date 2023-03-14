@@ -1,0 +1,8 @@
+uuid: 9d776ef1-53b8-4af3-a21a-ec26ea07efb2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Marketing channel type'
+vid: marketing_channel_type
+description: 'List a single type of marketing channel used to sell the commodity produced by farmers enrolled in the project.'
+weight: 0

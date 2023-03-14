@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Avoided land conversion purpose'
+vid: avoided_land_conversion_purpose
+description: 'Purpose of tracking avoided land conversion in the enrolled field.'
+weight: 0

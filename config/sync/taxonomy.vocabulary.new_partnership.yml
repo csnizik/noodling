@@ -1,0 +1,8 @@
+uuid: d1e5ae4b-b7cb-4620-8b03-b01a614c2bb1
+langcode: en
+status: true
+dependencies: {  }
+name: 'New partnership'
+vid: new_partnership
+description: 'A new partnership means that the lead grantee and the partner organization have not had a formal working relationship (under con'
+weight: 0

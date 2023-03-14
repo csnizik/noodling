@@ -1,0 +1,8 @@
+uuid: a1c4c39b-44f5-4a03-b6b5-57da27f7c2ac
+langcode: en
+status: true
+dependencies: {  }
+name: 'Field commodity volume unit'
+vid: field_commodity_volume_unit
+description: 'The unit associated with the volume of the commodity produced on the enrolled field.'
+weight: 0

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduction in phosphorus loss purpose'
+vid: reduction_in_phosphorus_loss_pur
+description: 'Purpose of tracking reduction in phosphorus losses in the enrolled field.'
+weight: 0

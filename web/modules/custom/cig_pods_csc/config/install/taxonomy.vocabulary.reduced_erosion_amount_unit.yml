@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Reduced erosion amount unit'
+vid: reduced_erosion_amount_unit
+description: 'Unit for the total amount of erosion reduction from enrolled fields that is measured and reported by the project.'
+weight: 0

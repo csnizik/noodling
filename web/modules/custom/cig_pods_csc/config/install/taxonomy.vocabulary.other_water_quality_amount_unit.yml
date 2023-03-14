@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Other water quality amount unit'
+vid: other_water_quality_amount_unit
+description: 'Unit for the total amount of reduction in other water quality metrics that is measured in the enrolled field.'
+weight: 0

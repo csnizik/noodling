@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Practice standard'
+vid: practice_standard
+description: 'Is the CSAF practice being implemented on the field as part of enrollment in the project following a defined practice standard?'
+weight: 0

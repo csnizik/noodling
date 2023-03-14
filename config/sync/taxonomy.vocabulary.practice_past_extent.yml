@@ -1,0 +1,8 @@
+uuid: c6dd1fed-dd43-4b44-90f1-3ca91ce92044
+langcode: en
+status: true
+dependencies: {  }
+name: 'Practice past extent'
+vid: practice_past_extent
+description: 'Prior to enrollment, on what portion of the whole farm had this (these) CSAF practice(s) ever been used by the primary operator?'
+weight: 0

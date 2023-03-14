@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'GHG cumulative calculation'
+vid: ghg_cumulative_calculation
+description: 'List the method(s) that was used to calculate the total cumulative GHG benefits reported by the project this quarter.'
+weight: 0

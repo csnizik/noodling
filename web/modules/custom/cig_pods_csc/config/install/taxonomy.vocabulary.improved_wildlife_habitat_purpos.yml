@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Improved wildlife habitat purpose'
+vid: improved_wildlife_habitat_purpos
+description: 'Purpose of tracking improved wildlife habitat in the enrolled field.'
+weight: 0

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Commodity category'
+vid: commodity_category
+description: 'Category of commodity(ies) produced in field enrolled in the project'
+weight: 0

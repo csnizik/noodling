@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'CSAF market incentives'
+vid: csaf_market_incentives
+description: 'If this farm (under the primary operator) has implemented CSAF practices in the last ten years, was implementation supported by '
+weight: 0

@@ -1,0 +1,8 @@
+uuid: 12f0a4ad-89f2-4573-9663-f0806be01893
+langcode: en
+status: true
+dependencies: {  }
+name: 'Field irrigated'
+vid: field_irrigated
+description: 'Prior to enrollment, what was the most common irrigation practice on this field the past 3 years?'
+weight: 0

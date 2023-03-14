@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Marketing channel identification method'
+vid: marketing_channel_identification
+description: 'rovide the marketing channel identification method(s) used for this commodity in this market channel.'
+weight: 0
