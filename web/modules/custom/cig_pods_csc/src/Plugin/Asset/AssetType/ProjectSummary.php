@@ -1,0 +1,178 @@
+<?php
+
+namespace Drupal\cig_pods_csc\Plugin\Asset\AssetType;
+
+use Drupal\farm_entity\Plugin\Asset\AssetType\FarmAssetType;
+use Drupal\farm_field\FarmFieldFactory;
+
+/**
+ * Provides the CIG Project asset type.
+ *
+ * @AssetType(
+ * id = "project_summary",
+ * label = @Translation("Awardee"),
+ * )
+ */
+class ProjectSummary extends FarmAssetType {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildFieldDefinitions() {
+
+    $fields = parent::buildFieldDefinitions();
+
+    $field_info = [
+      'p_summary_commodity_type' => [
+        'type' => 'entity_reference',
+        'label' => 'Project Summary Commodity Type',
+        'description' => 'Project Summary Commodity Type',
+        'target_type' => 'taxonomy_term',
+        'target_bundle' => 'commodity_category',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
+      'p_summary_ghg_calculation_methods' => [
+        'type' => 'entity_reference',
+        'label' => 'Project Summary GHG Calculation Methods',
+        'description' => 'Project Summary GHG Calculation Methods',
+        'target_type' => 'taxonomy_term',
+        'target_bundle' => 'ghg_calculation_methods',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_ghg_cumulative_calculation' => [
+        'type' => 'entity_reference',
+        'label' => 'Project Summary GHG Cumulative Calculation',
+        'description' => 'Project Summary GHG Cumulative Calculation',
+        'target_type' => 'taxonomy_term',
+        'target_bundle' => 'ghg_cumulative_calculation',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_ghg_benefits' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Cumulative GHG Benefits',
+        'description' => 'Project Summary Cumulative GHG Benefits',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_cumulative_carbon_stack' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Cumulative Carbon Stack',
+        'description' => 'Project Summary Cumulative Carbon Stack',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_cumulative_co2_benefit' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Cumulative CO2 Benefit',
+        'description' => 'Project Summary Cumulative CO2 Benefit',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_cumulative_ch4_benefit' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Cumulative CH4 Benefit',
+        'description' => 'Project Summary Cumulative CH4 Benefit',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_cumulative_n2o_benefit' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Cumulative N2O Benefit',
+        'description' => 'Project Summary Cumulative N2O Benefit',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_offsets_produced' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Offsets Produced',
+        'description' => 'Project Summary Offsets Produced',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_offsets_produced' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Offsets Produced',
+        'description' => 'Project Summary Offsets Produced',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_offsets_sale' => [
+        'type' => 'string',
+        'label' => 'Project Summary Offsets Sale',
+        'description' => 'Project Summary Offsets Sale',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_offsets_price' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Offsets Price',
+        'description' => 'Project Summary Offsets Price',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_insets_produced' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Insets Produced',
+        'description' => 'Project Summary Insets Produced',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_cost_on_farm' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary Cost Of On-Farm TA',
+        'description' => 'Project Summary Cost Of On-Farm TA',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_mmrv_cost' => [
+        'type' => 'fraction',
+        'label' => 'Project Summary MMRV Cost',
+        'description' => 'Project Summary MMRV Cost',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_ghg_monitoring_method' => [
+        'type' => 'entity_reference',
+        'label' => 'Project Summary GHG Monitoring Method',
+        'description' => 'Project Summary GHG Monitoring Method',
+        'target_type' => 'taxonomy_term',
+        'target_bundle' => 'ghg_monitoring_method',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_ghg_reporting_method' => [
+        'type' => 'entity_reference',
+        'label' => 'Project Summary GHG Reporting Method',
+        'description' => 'Project Summary GHG Reporting Method',
+        'target_type' => 'taxonomy_term',
+        'target_bundle' => 'ghg_reporting_method',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_ghg_verification_method' => [
+        'type' => 'entity_reference',
+        'label' => 'Project Summary GHG Verification Method',
+        'description' => 'Project Summary GHG Verification Method',
+        'target_type' => 'taxonomy_term',
+        'target_bundle' => 'ghg_verification_method',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+    ];
+
+    $farmFieldFactory = new FarmFieldFactory();
+
+    foreach ($field_info as $name => $info) {
+      $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
+        ->setDisplayConfigurable('form', TRUE)
+        ->setDisplayConfigurable('view', TRUE);
+    }
+
+    return $fields;
+
+  }
+
+}
