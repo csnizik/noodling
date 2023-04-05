@@ -1,0 +1,31 @@
+csv_import.import_test:
+  path: '/csv_import/upload'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::upload'
+    _title: 'csv import upload'
+  requirements:
+    _permission: 'access content'
+
+csv_import.process_inputs:
+  path: '/csv_import/upload_inputs'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_project_summary'
+    _title: 'csv import inputs'
+  requirements:
+    _permission: 'access content'
+
+csv_import.process_market_activities:
+  path: '/csv_import/upload_market_activities'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_market_activities'
+    _title: 'csv import market_activities'
+  requirements:
+    _permission: 'access content'
+
+csv_import.process_combo:
+  path: '/csv_import/upload_combo'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_combo'
+    _title: 'csv import operations'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function csv_import_install() {
+  /*
+
+  Location for potentially neccesary install code.
+
+  */
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function csv_import_uninstall() {
+  /*
+
+  Location for potentially neccesary uninstall code.
+
+  */
+}
