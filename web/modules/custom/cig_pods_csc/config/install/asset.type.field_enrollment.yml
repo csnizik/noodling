@@ -1,12 +1,11 @@
-uuid: ee90e95d-220c-4d95-ab51-8ef39ceeff26
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: project_summary
-label: 'Project Summary'
-description: 'Project Summary'
+id: field_enrollment
+label: Field Enrollment
+description: Field Enrollment
 workflow: asset_default
 new_revision: true

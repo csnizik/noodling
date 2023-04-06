@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Practice Type'
+vid: practice_type
+description: 'Related Practices'
+weight: 0

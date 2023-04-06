@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'State'
+vid: state
+description: 'Abbreviation of the State'
+weight: 0

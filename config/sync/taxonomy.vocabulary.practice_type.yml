@@ -1,0 +1,8 @@
+uuid: fb37ccea-eacf-4a86-8434-b573af867e33
+langcode: en
+status: true
+dependencies: {  }
+name: 'Practice Type'
+vid: practice_type
+description: 'Related Practices'
+weight: 0

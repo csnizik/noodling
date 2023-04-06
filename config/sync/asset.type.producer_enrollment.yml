@@ -1,0 +1,12 @@
+uuid: e196bc20-f40b-4eb5-9a2f-c262127433bb
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: producer_enrollment
+label: 'Producer Enrollment'
+description: 'Producer Enrollment'
+workflow: asset_default
+new_revision: true
