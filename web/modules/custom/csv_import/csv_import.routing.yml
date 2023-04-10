@@ -22,6 +22,14 @@ csv_import.process_market_activities:
   requirements:
     _permission: 'access content'
 
+csv_import.process_field_enrollment:
+  path: '/csv_import/upload_field_enrollment'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_field_enrollment'
+    _title: 'csv import field_enrollment'
+  requirements:
+    _permission: 'access content'
+
 csv_import.process_combo:
   path: '/csv_import/upload_combo'
   defaults:

@@ -23,8 +23,13 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
-        marekt activities:
+        market activities:
         <form action="/csv_import/upload_market_activities" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        field enrollment:
+        <form action="/csv_import/upload_field_enrollment" enctype="multipart/form-data" method="post">
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
@@ -43,6 +48,7 @@ class CsvImportController extends ControllerBase {
     foreach($csv as $csv_line) {
       $market_activities_submission = [];
       $market_activities_submission['type'] = 'market_activities';
+      $market_activities_submission['name'] = $csv_line[0];
       $market_activities_submission['m_activities_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_category', 'name' => $csv_line[1]]));
       $market_activities_submission['m_activities_marketing_channel_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'marketing_channel_type', 'name' => $csv_line[2]]));
       $market_activities_submission['m_activities_marketing_channel_type_other'] = $csv_line[3];
@@ -75,6 +81,103 @@ class CsvImportController extends ControllerBase {
 
     return [
       "#children" => "added " . $out . " market activities.",
+    ];
+    
+  }
+
+  public function process_field_enrollment() {
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+
+    foreach($csv as $csv_line) {
+      $field_enrollment_submission = [];
+      $field_enrollment_submission['type'] = 'field_enrollment';
+      $field_enrollment_submission['name'] = $csv_line[0];
+      $field_enrollment_submission['f_enrollment_tract_id'] = $csv_line[1];
+      $field_enrollment_submission['f_enrollment_field_id'] = $csv_line[2];
+      $field_enrollment_submission['f_enrollment_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $csv_line[3]]));;
+      $field_enrollment_submission['f_enrollment_prior_field_id'] = $csv_line[4];
+      $field_enrollment_submission['f_enrollment_start_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[5])->getTimestamp();
+      $field_enrollment_submission['f_enrollment_total_field_area'] = $csv_line[6];
+      $field_enrollment_submission['f_enrollment_commodity_category'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_category', 'name' => $csv_line[7]]));;
+      $field_enrollment_submission['f_enrollment_baseline_yield'] = $csv_line[8];
+      $field_enrollment_submission['f_enrollment_baseline_yield_unit'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'baseline_yield_unit', 'name' => $csv_line[9]]));
+      $field_enrollment_submission['f_enrollment_baseline_yield_unit_other'] = $csv_line[10];
+      $field_enrollment_submission['f_enrollment_baseline_yield_location'] = $csv_line[11];
+      $field_enrollment_submission['f_enrollment_baseline_yield_location_other'] = $csv_line[12];
+      $field_enrollment_submission['f_enrollment_field_land_use'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_land_use', 'name' => $csv_line[13]]));
+      $field_enrollment_submission['f_enrollment_field_irrigated'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_irrigated', 'name' => $csv_line[14]]));
+      $field_enrollment_submission['f_enrollment_field_tillage'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_tillage', 'name' => $csv_line[15]]));
+      $field_enrollment_submission['f_enrollment_practice_prior_utilization_percent'] = $csv_line[16];
+      $field_enrollment_submission['f_enrollment_field_any_csaf_practice'] = $csv_line[17];
+      $field_enrollment_submission['f_enrollment_field_practice_prior_utilization'] = $csv_line[18];
+      $field_enrollment_submission['f_enrollment_practice_type_1'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $csv_line[19]]));
+      $field_enrollment_submission['f_enrollment_practice_standard_1'] = $csv_line[20];
+      $field_enrollment_submission['f_enrollment_practice_standard_other_1'] = $csv_line[21];
+      $field_enrollment_submission['f_enrollment_practice_year_1'] = $csv_line[22];
+      $field_enrollment_submission['f_enrollment_practice_extent_1'] = $csv_line[23];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_1'] = $csv_line[24];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_other_1'] = $csv_line[25];
+      $field_enrollment_submission['f_enrollment_practice_type_2'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $csv_line[26]]));
+      $field_enrollment_submission['f_enrollment_practice_standard_2'] = $csv_line[27];
+      $field_enrollment_submission['f_enrollment_practice_standard_other_2'] = $csv_line[28];
+      $field_enrollment_submission['f_enrollment_practice_year_2'] = $csv_line[29];
+      $field_enrollment_submission['f_enrollment_practice_extent_2'] = $csv_line[30];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_2'] = $csv_line[31];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_other_2'] = $csv_line[32];
+      $field_enrollment_submission['f_enrollment_practice_type_3'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $csv_line[33]]));
+      $field_enrollment_submission['f_enrollment_practice_standard_3'] = $csv_line[34];
+      $field_enrollment_submission['f_enrollment_practice_standard_other_3'] = $csv_line[35];
+      $field_enrollment_submission['f_enrollment_practice_year_3'] = $csv_line[36];
+      $field_enrollment_submission['f_enrollment_practice_extent_3'] = $csv_line[37];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_3'] = $csv_line[38];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_other_3'] = $csv_line[39];
+      $field_enrollment_submission['f_enrollment_practice_type_4'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $csv_line[40]]));
+      $field_enrollment_submission['f_enrollment_practice_standard_4'] = $csv_line[41];
+      $field_enrollment_submission['f_enrollment_practice_standard_other_4'] = $csv_line[42];
+      $field_enrollment_submission['f_enrollment_practice_year_4'] = $csv_line[43];
+      $field_enrollment_submission['f_enrollment_practice_extent_4'] = $csv_line[44];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_4'] = $csv_line[45];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_other_4'] = $csv_line[46];
+      $field_enrollment_submission['f_enrollment_practice_type_5'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $csv_line[47]]));
+      $field_enrollment_submission['f_enrollment_practice_standard_5'] = $csv_line[48];
+      $field_enrollment_submission['f_enrollment_practice_standard_other_5'] = $csv_line[49];
+      $field_enrollment_submission['f_enrollment_practice_year_5'] = $csv_line[50];
+      $field_enrollment_submission['f_enrollment_practice_extent_5'] = $csv_line[51];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_5'] = $csv_line[52];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_other_5'] = $csv_line[53];
+      $field_enrollment_submission['f_enrollment_practice_type_6'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $csv_line[54]]));
+      $field_enrollment_submission['f_enrollment_practice_standard_6'] = $csv_line[55];
+      $field_enrollment_submission['f_enrollment_practice_standard_other_6'] = $csv_line[56];
+      $field_enrollment_submission['f_enrollment_practice_year_6'] = $csv_line[57];
+      $field_enrollment_submission['f_enrollment_practice_extent_6'] = $csv_line[58];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_6'] = $csv_line[59];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_other_6'] = $csv_line[60];
+      $field_enrollment_submission['f_enrollment_practice_type_7'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $csv_line[61]]));
+      $field_enrollment_submission['f_enrollment_practice_standard_7'] = $csv_line[62];
+      $field_enrollment_submission['f_enrollment_practice_standard_other_7'] = $csv_line[63];
+      $field_enrollment_submission['f_enrollment_practice_year_7'] = $csv_line[64];
+      $field_enrollment_submission['f_enrollment_practice_extent_7'] = $csv_line[65];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_7'] = $csv_line[66];
+      $field_enrollment_submission['f_enrollment_practice_extent_unit_other_7'] = $csv_line[67];
+      
+
+
+      
+      
+      $ps_to_save = Asset::create($field_enrollment_submission);
+
+      $ps_to_save->save();
+
+      $out = $out + 1;
+    }
+
+    return [
+      "#children" => "added " . $out . " field enrollment.",
     ];
     
   }
