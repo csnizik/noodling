@@ -1,0 +1,12 @@
+uuid: 0cb80b1e-bd20-4a75-ac43-0bfa63328395
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: partner_activties
+label: 'Partner Activities'
+description: 'Partner Activities'
+workflow: asset_default
+new_revision: true

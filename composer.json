@@ -10,7 +10,7 @@
   ],
   "require": {
     "oomphinc/composer-installers-extender": "^2.0",
-    "farmos/farmos": "2.0.1",
+    "farmos/farmos": "2.0.4",
     "wikimedia/composer-merge-plugin": "^2.0",
     "drupal/structure_sync": "^2.0",
     "drupal/openid_connect": "2.0.0-alpha12",
