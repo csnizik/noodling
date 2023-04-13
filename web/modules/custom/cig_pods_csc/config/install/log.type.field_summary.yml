@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: field_summary
+label: 'Field Summary'
+description: 'Field Summary'
+name_pattern: 'Field Summary log [log:id]'
+workflow: log_default
+new_revision: true

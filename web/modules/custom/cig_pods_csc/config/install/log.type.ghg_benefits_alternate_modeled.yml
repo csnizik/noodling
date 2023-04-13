@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: ghg_benefits_alternate_modeled
+label: 'GHG Benefits - Alternate Modeled'
+description: 'GHG Benefits - Alternate Modeled'
+name_pattern: 'GHG Benefits Alternate Modeled log [log:id]'
+workflow: log_default
+new_revision: true

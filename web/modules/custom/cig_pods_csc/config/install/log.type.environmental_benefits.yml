@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: environmental_benefits
+label: 'Additional Environmental Benefits'
+description: 'Additional Environmental Benefits'
+name_pattern: 'Additional Environmental Benefits log [log:id]'
+workflow: log_default
+new_revision: true

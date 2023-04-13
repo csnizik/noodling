@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: ghg_benefits_measured
+label: 'GHG Benefits - Measured'
+description: 'GHG Benefits - Measured'
+name_pattern: 'GHG Benefits Measured log [log:id]'
+workflow: log_default
+new_revision: true
