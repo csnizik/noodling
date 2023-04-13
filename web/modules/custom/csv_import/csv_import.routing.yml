@@ -30,6 +30,14 @@ csv_import.process_field_enrollment:
   requirements:
     _permission: 'access content'
 
+csv_import.process_partner_activities:
+  path: '/csv_import/upload_partner_activities'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_partner_activities'
+    _title: 'csv import partner_activities'
+  requirements:
+    _permission: 'access content'
+
 csv_import.process_combo:
   path: '/csv_import/upload_combo'
   defaults:

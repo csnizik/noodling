@@ -9,11 +9,11 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the CIG Project asset type.
  *
  * @AssetType(
- * id = "partner_activties",
+ * id = "partner_activities",
  * label = @Translation("Awardee"),
  * )
  */
-class PartnerActivties extends FarmAssetType {
+class PartnerActivities extends FarmAssetType {
 
   /**
    * {@inheritdoc}

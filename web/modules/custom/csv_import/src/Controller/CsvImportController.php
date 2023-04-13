@@ -33,6 +33,11 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
+        partner activities:
+        <form action="/csv_import/upload_partner_activities" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
     ',
     ];
   }
@@ -178,6 +183,61 @@ class CsvImportController extends ControllerBase {
 
     return [
       "#children" => "added " . $out . " field enrollment.",
+    ];
+    
+  }
+
+  public function process_partner_activities() {
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+
+    foreach($csv as $csv_line) {
+      $partner_activities_submission = [];
+      $partner_activities_submission['type'] = 'partner_activities';
+      $partner_activities_submission['name'] = $csv_line[0];
+      $partner_activities_submission['partner_activity_partner_ein'] = $csv_line[1];
+      $partner_activities_submission['partner_activity_partner_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'partner_type', 'name' => $csv_line[2]]));;
+      $partner_activities_submission['partner_activity_partner_poc'] = $csv_line[3];
+      $partner_activities_submission['partner_activity_partner_poc_email'] = $csv_line[4];
+      $partner_activities_submission['partner_activity_partnership_start'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[5])->getTimestamp();
+      $partner_activities_submission['partner_activity_partnership_end'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[6])->getTimestamp();
+      $partner_activities_submission['partner_activity_partnership_initation'] = filter_var($csv_line[7], FILTER_VALIDATE_BOOLEAN);
+      $partner_activities_submission['partner_activity_partner_total_requested'] = $csv_line[8];
+      $partner_activities_submission['partner_activity_total_match_contribution'] = $csv_line[9];
+      $partner_activities_submission['partner_activity_total_match_incentives'] = $csv_line[10];
+      $partner_activities_submission['partner_activity_match_type_1'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'match_type', 'name' => $csv_line[11]]));;
+      $partner_activities_submission['partner_activity_match_amount_1'] = $csv_line[12];
+      $partner_activities_submission['partner_activity_match_type_2'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'match_type', 'name' => $csv_line[13]]));
+      $partner_activities_submission['partner_activity_match_amount_2'] = $csv_line[14];
+      $partner_activities_submission['partner_activity_match_type_3'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'match_type', 'name' => $csv_line[15]]));
+      $partner_activities_submission['partner_activity_match_amount_3'] = $csv_line[16];
+      $partner_activities_submission['partner_activity_match_type_other'] = $csv_line[17];
+      $partner_activities_submission['partner_activity_training_provided'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'training_provided', 'name' => $csv_line[18]]));
+      $partner_activities_submission['partner_activity_training_other'] = $csv_line[19];
+      $partner_activities_submission['partner_activity_activity1'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'activity_by_partner', 'name' => $csv_line[20]]));
+      $partner_activities_submission['partner_activity_activity1_cost'] = $csv_line[21];
+      $partner_activities_submission['partner_activity_activity2'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'activity_by_partner', 'name' => $csv_line[22]]));
+      $partner_activities_submission['partner_activity_activity2_cost'] = $csv_line[23];
+      $partner_activities_submission['partner_activity_activity3'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'activity_by_partner', 'name' => $csv_line[24]]));
+      $partner_activities_submission['partner_activity_activity3_cost'] = $csv_line[25];
+      $partner_activities_submission['partner_activity_activity_other'] = $csv_line[26];
+      $partner_activities_submission['partner_activity_products_supplied'] = $csv_line[27];
+      $partner_activities_submission['partner_activity_product_source'] = $csv_line[28];
+      
+      
+      $ps_to_save = Asset::create($partner_activities_submission);
+
+      $ps_to_save->save();
+
+      $out = $out + 1;
+    }
+
+    return [
+      "#children" => "added " . $out . " partner activities.",
     ];
     
   }
