@@ -28,7 +28,7 @@ class MarketActivities extends FarmLogType {
         'label' => 'Market Activities Commodity Type',
         'description' => 'Market Activities Commodity Type',
         'target_type' => 'taxonomy_term',
-        'target_bundle' => 'commodity_category',
+        'target_bundle' => 'commodity_term',
         'required' => TRUE,
         'multiple' => FALSE,
       ],

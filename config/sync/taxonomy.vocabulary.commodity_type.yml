@@ -1,0 +1,8 @@
+uuid: e5fe9048-207a-4d69-a557-c10a3a552fcf
+langcode: en
+status: true
+dependencies: {  }
+name: 'Commodity Term'
+vid: commodity_term
+description: 'Type of Commodity(ies)'
+weight: 0

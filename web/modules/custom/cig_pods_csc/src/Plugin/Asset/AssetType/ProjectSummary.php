@@ -28,7 +28,7 @@ class ProjectSummary extends FarmAssetType {
         'label' => 'Project Summary Commodity Type',
         'description' => 'Project Summary Commodity Type',
         'target_type' => 'taxonomy_term',
-        'target_bundle' => 'commodity_category',
+        'target_bundle' => 'commodity_term',
         'required' => TRUE,
         'multiple' => FALSE,
       ],

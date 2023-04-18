@@ -23,15 +23,15 @@ class FieldEnrollment extends FarmAssetType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-	    // 'f_enrollment_producer_id' => [
-      //   'type' => 'entity_refrence',
-      //   'label' => 'Field Enrollment Producer ID',
-      //   'description' => 'Field Enrollment Producer ID',
-      //   'target_type' => 'asset',
-      //   'target_bundle' => 'producer', 
-      //   'required' => TRUE,
-      //   'multiple' => FALSE,
-      // ],
+	    'f_enrollment_producer_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Producer ID',
+        'description' => 'Producer ID',
+		    'target_type' => 'asset',
+		    'target_bundle' => 'producer_enrollment',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
 	    'f_enrollment_tract_id' => [
         'type' => 'string',
         'label' => 'Field Enrollment Tract ID',
@@ -55,15 +55,15 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    #'f_enrollment_county' => [
-      #  'type' => 'entity_reference',
-      #  'label' => 'Field Enrollment County',
-      #  'description' => 'Field Enrollment County',
-		  #  'target_type' => 'taxonomy_term',
-      #  'target_bundle' => '',
-      #  'required' => TRUE,
-      #  'multiple' => FALSE,
-      #],
+	    'f_enrollment_county' => [
+        'type' => 'entity_reference',
+        'label' => 'Field Enrollment County',
+        'description' => 'Field Enrollment County',
+		    'target_type' => 'taxonomy_term',
+        'target_bundle' => 'county',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
 	    'f_enrollment_prior_field_id'=> [
         'type' => 'string',
         'label' => 'Field Enrollment Prior Field ID',
@@ -94,15 +94,15 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      #'f_enrollment_commodity_type' => [
-      #  'type' => 'string', 
-      #  'label' => 'Field Enrollment Commodity Type',
-      #  'description' => 'Field Enrollment Commodity Type',
-      #  'target_type' => 'taxonomy_term',
-      #  'target_bundle' => '',
-      #  'required' => TRUE ,
-      #  'multiple' => FALSE,
-      #],
+      'f_enrollment_commodity_type' => [
+        'type' => 'entity_reference', 
+        'label' => 'Field Enrollment Commodity Type',
+        'description' => 'Field Enrollment Commodity Type',
+        'target_type' => 'taxonomy_term',
+        'target_bundle' => 'commodity_term',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
       'f_enrollment_baseline_yield' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Baseline Yield',

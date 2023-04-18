@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Commodity Term'
+vid: commodity_term
+description: 'Type of Commodity(ies)'
+weight: 0

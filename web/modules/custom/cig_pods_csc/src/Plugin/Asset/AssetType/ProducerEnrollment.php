@@ -23,15 +23,15 @@ class ProducerEnrollment extends FarmAssetType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      // 'project_id' => [
-      //   'type' => 'entity_reference',
-      //   'label' => 'Project ID',
-      //   'description' => 'Project ID',
-	    //   'target_type' => 'asset',
-      //   'target_bundle' => 'project', 
-      //   'required' => TRUE,
-      //   'multiple' => FALSE,
-      // ],
+      'project_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Project ID',
+        'description' => 'Project ID',
+		    'target_type' => 'asset',
+		    'target_bundle' => 'project_summary',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'p_enrollment_farm_id' => [
         'type' => 'string',
         'label' => 'Farm ID',
@@ -45,16 +45,18 @@ class ProducerEnrollment extends FarmAssetType {
         'description' => 'State or Territory',
         'target_type' => 'taxonomy_term',
         'target_bundle' => 'state',
-        'required' => TRUE ,
+        'required' => TRUE,
         'multiple' => FALSE,
       ],
-      #'p_enrollment_county' => [
-       # 'type' => 'fraction',
-       # 'label' => 'County',
-       # 'description' => 'County',
-       # 'required' => TRUE ,
-        #'multiple' => FALSE,
-      #],
+      'p_enrollment_county' => [
+        'type' => 'entity_reference',
+        'label' => 'County',
+        'description' => 'County',
+        'target_type' => 'taxonomy_term',
+        'target_bundle' => 'county',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'p_enrollment_start_date' => [
         'type' => 'timestamp',
         'label' => 'Producer Start Date',
