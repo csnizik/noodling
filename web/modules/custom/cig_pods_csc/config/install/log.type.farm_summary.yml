@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: farm_summary
+label: 'Farm Summary'
+description: 'Farm Summary'
+name_pattern: 'Farm Summary log [log:id]'
+workflow: log_default
+new_revision: true
