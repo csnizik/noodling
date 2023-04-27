@@ -38,6 +38,14 @@ csv_import.process_partner_activities:
   requirements:
     _permission: 'access content'
 
+csv_import.process_producer_enrollment:
+  path: '/csv_import/upload_producer_enrollment'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_producer_enrollment'
+    _title: 'csv import producer_enrollment'
+  requirements:
+    _permission: 'access content'
+
 csv_import.process_combo:
   path: '/csv_import/upload_combo'
   defaults:

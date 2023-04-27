@@ -38,6 +38,11 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
+        producer enrollment:
+        <form action="/csv_import/upload_producer_enrollment" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
     ',
     ];
   }
@@ -104,11 +109,11 @@ class CsvImportController extends ControllerBase {
       $field_enrollment_submission['name'] = $csv_line[0];
       $field_enrollment_submission['f_enrollment_tract_id'] = $csv_line[1];
       $field_enrollment_submission['f_enrollment_field_id'] = $csv_line[2];
-      $field_enrollment_submission['f_enrollment_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $csv_line[3]]));;
+      $field_enrollment_submission['f_enrollment_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $csv_line[3]]));
       $field_enrollment_submission['f_enrollment_prior_field_id'] = $csv_line[4];
       $field_enrollment_submission['f_enrollment_start_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[5])->getTimestamp();
       $field_enrollment_submission['f_enrollment_total_field_area'] = $csv_line[6];
-      $field_enrollment_submission['f_enrollment_commodity_category'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_category', 'name' => $csv_line[7]]));;
+      $field_enrollment_submission['f_enrollment_commodity_category'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_category', 'name' => $csv_line[7]]));
       $field_enrollment_submission['f_enrollment_baseline_yield'] = $csv_line[8];
       $field_enrollment_submission['f_enrollment_baseline_yield_unit'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'baseline_yield_unit', 'name' => $csv_line[9]]));
       $field_enrollment_submission['f_enrollment_baseline_yield_unit_other'] = $csv_line[10];
@@ -200,7 +205,7 @@ class CsvImportController extends ControllerBase {
       $partner_activities_submission['type'] = 'partner_activities';
       $partner_activities_submission['name'] = $csv_line[0];
       $partner_activities_submission['partner_activity_partner_ein'] = $csv_line[1];
-      $partner_activities_submission['partner_activity_partner_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'partner_type', 'name' => $csv_line[2]]));;
+      $partner_activities_submission['partner_activity_partner_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'partner_type', 'name' => $csv_line[2]]));
       $partner_activities_submission['partner_activity_partner_poc'] = $csv_line[3];
       $partner_activities_submission['partner_activity_partner_poc_email'] = $csv_line[4];
       $partner_activities_submission['partner_activity_partnership_start'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[5])->getTimestamp();
@@ -209,7 +214,7 @@ class CsvImportController extends ControllerBase {
       $partner_activities_submission['partner_activity_partner_total_requested'] = $csv_line[8];
       $partner_activities_submission['partner_activity_total_match_contribution'] = $csv_line[9];
       $partner_activities_submission['partner_activity_total_match_incentives'] = $csv_line[10];
-      $partner_activities_submission['partner_activity_match_type_1'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'match_type', 'name' => $csv_line[11]]));;
+      $partner_activities_submission['partner_activity_match_type_1'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'match_type', 'name' => $csv_line[11]]));
       $partner_activities_submission['partner_activity_match_amount_1'] = $csv_line[12];
       $partner_activities_submission['partner_activity_match_type_2'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'match_type', 'name' => $csv_line[13]]));
       $partner_activities_submission['partner_activity_match_amount_2'] = $csv_line[14];
@@ -238,6 +243,59 @@ class CsvImportController extends ControllerBase {
 
     return [
       "#children" => "added " . $out . " partner activities.",
+    ];
+    
+  }
+
+  public function process_producer_enrollment() {
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+
+    foreach($csv as $csv_line) {
+      $producer_enrollment_submission = [];
+      $producer_enrollment_submission['type'] = 'producer_enrollment';
+      $producer_enrollment_submission['name'] = $csv_line[0];
+      $producer_enrollment_submission['project_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'project_summary', 'name' => $csv_line[1]]));
+      $producer_enrollment_submission['p_enrollment_farm_id'] = $csv_line[2];
+      $producer_enrollment_submission['p_enrollment_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $csv_line[3]]));
+      $producer_enrollment_submission['p_enrollment_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' => $csv_line[4]]));
+      $producer_enrollment_submission['p_enrollment_start_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[5])->getTimestamp();
+      $producer_enrollment_submission['p_enrollment_underserved_status'] = $csv_line[6];
+      $producer_enrollment_submission['p_enrollment_total_area'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'total_area', 'name' => $csv_line[7]]));
+      $producer_enrollment_submission['p_enrollment_total_crop_area'] = $csv_line[8];
+      $producer_enrollment_submission['p_enrollment_total_livestock_area'] = $csv_line[9];
+      $producer_enrollment_submission['p_enrollment_total_forest_area'] = $csv_line[10];
+      $producer_enrollment_submission['p_enrollment_livestock_type_1'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'livestock_type', 'name' => $csv_line[11]]));
+      $producer_enrollment_submission['p_enrollment_livestock_type_1_count'] = $csv_line[12];
+      $producer_enrollment_submission['p_enrollment_livestock_type_2'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'livestock_type', 'name' => $csv_line[13]]));
+      $producer_enrollment_submission['p_enrollment_livestock_type_2_count'] = $csv_line[14];
+      $producer_enrollment_submission['p_enrollment_livestock_type_3'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'livestock_type', 'name' => $csv_line[15]]));
+      $producer_enrollment_submission['p_enrollment_livestock_type_3_count'] = $csv_line[16];
+      $producer_enrollment_submission['p_enrollment_livestock_type_other'] = $csv_line[17];
+      $producer_enrollment_submission['p_enrollment_organic_farm'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'organic_farm', 'name' => $csv_line[18]]));
+      $producer_enrollment_submission['p_enrollment_organic_fields'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'organic_fields', 'name' => $csv_line[19]]));
+      $producer_enrollment_submission['p_enrollment_producer_motivation'] = $csv_line[20];
+      $producer_enrollment_submission['p_enrollment_producer_outreach'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'producer_outreach', 'name' => $csv_line[21]]));
+      $producer_enrollment_submission['p_enrollment_producer_outreach_other'] = $csv_line[22];
+      $producer_enrollment_submission['p_enrollment_csaf_experience'] =array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'csaf_experience', 'name' => $csv_line[23]]));
+      $producer_enrollment_submission['p_enrollment_csaf_federal_funds'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'csaf_federal_funds', 'name' => $csv_line[24]]));
+      $producer_enrollment_submission['p_enrollment_csaf_state_local_funds'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'csaf_state_or_local_funds', 'name' => $csv_line[25]]));
+      $producer_enrollment_submission['p_enrollment_csaf_nonprofit_funds'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'csaf_nonprofit_funds', 'name' => $csv_line[26]]));
+      $producer_enrollment_submission['p_enrollment_csaf_market_incentives'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'csaf_market_incentives', 'name' => $csv_line[27]]));
+      
+      $ps_to_save = Asset::create($producer_enrollment_submission);
+
+      $ps_to_save->save();
+
+      $out = $out + 1;
+    }
+
+    return [
+      "#children" => "added " . $out . " producer enrollment.",
     ];
     
   }
