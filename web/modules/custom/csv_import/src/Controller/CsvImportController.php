@@ -279,7 +279,12 @@ class CsvImportController extends ControllerBase {
       $producer_enrollment_submission['p_enrollment_organic_farm'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'organic_farm', 'name' => $csv_line[18]]));
       $producer_enrollment_submission['p_enrollment_organic_fields'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'organic_fields', 'name' => $csv_line[19]]));
       $producer_enrollment_submission['p_enrollment_producer_motivation'] = $csv_line[20];
-      $producer_enrollment_submission['p_enrollment_producer_outreach'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'producer_outreach', 'name' => $csv_line[21]]));
+      $producer_outreach_array = array_map('trim', explode('|', $csv_line[21]));
+      $producer_outreach_results = [];
+      foreach ($producer_outreach_array as $value) {
+        $producer_outreach_results = array_merge($producer_outreach_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'producer_outreach', 'name' => $value]));
+      }
+      $producer_enrollment_submission['p_enrollment_producer_outreach'] = $producer_outreach_results;
       $producer_enrollment_submission['p_enrollment_producer_outreach_other'] = $csv_line[22];
       $producer_enrollment_submission['p_enrollment_csaf_experience'] =array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'csaf_experience', 'name' => $csv_line[23]]));
       $producer_enrollment_submission['p_enrollment_csaf_federal_funds'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'csaf_federal_funds', 'name' => $csv_line[24]]));
