@@ -53,3 +53,11 @@ csv_import.process_combo:
     _title: 'csv import operations'
   requirements:
     _permission: 'access content'
+
+csv_import.field_summary:
+  path: '/csv_import/upload_field_summary'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_field_summary'
+    _title: 'csv import operations'
+  requirements:
+    _permission: 'access content'

@@ -43,6 +43,12 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
+        Field Summary:
+        <form action="/csv_import/upload_field_summary" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+
     ',
     ];
   }
@@ -416,5 +422,136 @@ class CsvImportController extends ControllerBase {
     ];
     
   }
+
+  public function process_field_summary() {
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+
+
+
+    array_shift($csv);
+
+    $out = 0;
+
+
+
+    foreach($csv as $csv_line) {
+
+
+
+
+      $field_summary_submission = [];
+      $field_summary_submission['type'] = 'field_summary';
+      $field_summary_submission['name'] = $csv_line[0];
+      $field_summary_submission['status'] = $csv_line[38];
+      $field_summary_submission['flag'] = $csv_line[36];
+      $field_summary_submission['notes'] = $csv_line[37];
+      $field_summary_submission['f_summary_contract_end_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[1])->getTimestamp();
+      $field_summary_submission['f_summary_implementation_cost_coverage'] = $csv_line[2];
+      $field_summary_submission['f_summary_implementation_cost'] = $csv_line[3];
+      $field_summary_submission['f_summary_implementation_cost_unit'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'cost_unit', 'name' => $csv_line[4]]));
+      $field_summary_submission['f_summary_date_practice_complete'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[5])->getTimestamp();
+      $field_summary_submission['f_summary_fiscal_quarter'] = $csv_line[6];
+      $field_summary_submission['f_summary_fiscal_year'] = $csv_line[7];
+      $field_summary_submission['f_summary_field_commodity_value'] = $csv_line[8];
+      $field_summary_submission['f_summary_field_commodity_volume'] = $csv_line[9];
+      $field_summary_submission['f_summary_field_commodity_volume_unit'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_commodity_volume_unit', 'name' => $csv_line[10]]));
+      $field_summary_submission['f_summary_field_ghg_calculation'] = $csv_line[11];
+
+      $summary_field_ghg_monitoring_array = array_map('trim', explode('|', $csv_line[12]));
+
+      $summary_field_ghg_monitoring_results = [];
+
+      foreach ($summary_field_ghg_monitoring_array as $value) {
+
+      $summary_field_ghg_monitoring_results = array_merge($summary_field_ghg_monitoring_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_monitoring', 'name' => $value]));
+
+      }
+
+
+      $field_summary_submission['f_summary_field_ghg_monitoring'] = $summary_field_ghg_monitoring_results;
+
+
+
+
+      $summary_field_ghg_reporting_array = array_map('trim', explode('|', $csv_line[13]));
+
+      $summary_field_ghg_reporting_results = [];
+
+      foreach ($summary_field_ghg_reporting_array as $value) {
+
+      $summary_field_ghg_reporting_results = array_merge($summary_field_ghg_reporting_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_reporting', 'name' => $value]));
+
+      }
+
+
+
+      $field_summary_submission['f_summary_field_ghg_reporting'] = $summary_field_ghg_reporting_results;
+
+
+
+      $summary_field_ghg_verification_array = array_map('trim', explode('|', $csv_line[14]));
+
+      $summary_field_ghg_verification_results = [];
+
+      foreach ($summary_field_ghg_verification_array as $value) {
+
+      $summary_field_ghg_verification_results = array_merge($summary_field_ghg_verification_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_verification', 'name' => $value]));
+
+      }
+
+
+      $field_summary_submission['f_summary_field_ghg_verification'] = $summary_field_ghg_verification_results;
+      $field_summary_submission['f_summary_field_insets'] = $csv_line[15];
+      $field_summary_submission['f_summary_field_carbon_stock'] = $csv_line[16];
+      $field_summary_submission['f_summary_field_ch4_emission_reduction'] = $csv_line[17];
+      $field_summary_submission['f_summary_field_co2_emission_reduction'] = $csv_line[18];
+      $field_summary_submission['f_summary_field_ghg_emission_reduction'] = $csv_line[19];
+      $field_summary_submission['f_summary_field_official_ghg_calculations'] = $csv_line[20];
+      $field_summary_submission['f_summary_field_n2o_emission_reduction'] = $csv_line[21];
+      $field_summary_submission['f_summary_field_offsets'] = $csv_line[22];
+      $field_summary_submission['f_summary_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $csv_line[23]]));
+      $field_summary_submission['f_summary_incentive_per_acre_or_head'] = $csv_line[24];
+      $field_summary_submission['f_summary_marketing_assistance_provided'] = $csv_line[25];
+      $field_summary_submission['f_summary_mmrv_assistance_provided'] = $csv_line[26];
+      $field_summary_submission['f_summary_implementation_cost_unit_other'] = $csv_line[27];
+      $field_summary_submission['f_summary_field_commodity_volume_unit_other'] = $csv_line[28];
+      $field_summary_submission['f_summary_field_ghg_monitoring_other'] = $csv_line[29];
+      $field_summary_submission['f_summary_field_ghg_reporting_other'] = $csv_line[30];
+      $field_summary_submission['f_summary_field_ghg_verification_other'] = $csv_line[31];
+      $field_summary_submission['f_summary_field_measurement_other'] = $csv_line[32];
+
+      $summary_practice_type_array = array_map('trim', explode('|', $csv_line[33]));
+
+      $summary_practice_type_results = [];
+
+      foreach ($summary_practice_type_array as $value) {
+
+      $summary_practice_type_results = array_merge($summary_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
+
+      }
+
+      $field_summary_submission['f_summary_practice_type'] = $summary_practice_type_results;
+
+
+      $field_summary_submission['f_summary_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[34]]));
+      
+
+      $ps_to_save = Log::create($field_summary_submission);
+
+      $ps_to_save->save();
+
+      $out = $out + 1;
+    }
+
+    return [
+      "#children" => "added " . $out . " field summary.",
+    ];
+
+  }  
+
+
 
 }
