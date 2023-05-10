@@ -22,6 +22,14 @@ csv_import.process_market_activities:
   requirements:
     _permission: 'access content'
 
+csv_import.process_environmental_benefits:
+  path: '/csv_import/upload_environmental_benefits'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_environmental_benefits'
+    _title: 'csv import environmental_benefits'
+  requirements:
+    _permission: 'access content'
+
 csv_import.process_field_enrollment:
   path: '/csv_import/upload_field_enrollment'
   defaults:

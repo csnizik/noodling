@@ -28,6 +28,11 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
+        environmental benefits:
+        <form action="/csv_import/upload_environmental_benefits" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
         field enrollment:
         <form action="/csv_import/upload_field_enrollment" enctype="multipart/form-data" method="post">
           <input type="file" id="file" name="file">
@@ -97,6 +102,86 @@ class CsvImportController extends ControllerBase {
 
     return [
       "#children" => "added " . $out . " market activities.",
+    ];
+    
+  }
+
+  public function process_environmental_benefits() {
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+
+    foreach($csv as $csv_line) {
+      $environmental_benefits_submission = [];
+      $environmental_benefits_submission['type'] = 'environmental_benefits';
+      $environmental_benefits_submission['name'] = $csv_line[0];
+      $environmental_benefits_submission['fiscal_year'] = $csv_line[1];
+      $environmental_benefits_submission['fiscal_quarter'] = $csv_line[2];
+      $environmental_benefits_submission['field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[3]]));
+      $environmental_benefits_submission['environmental_benefits'] = $csv_line[4];
+      $environmental_benefits_submission['nitrogen_loss'] = $csv_line[5];
+      $environmental_benefits_submission['nitrogen_loss_amount'] = $csv_line[6];
+      $environmental_benefits_submission['nitrogen_loss_amount_unit'] = $csv_line[7];
+      $environmental_benefits_submission['nitrogen_loss_amount_unit_other'] = $csv_line[8];
+      $environmental_benefits_submission['nitrogen_loss_purpose'] = $csv_line[9];
+      $environmental_benefits_submission['nitrogen_loss_purpose_other'] = $csv_line[10];
+      $environmental_benefits_submission['phosphorus_loss'] = $csv_line[11];
+      $environmental_benefits_submission['phosphorus_loss_amount'] = $csv_line[12];
+      $environmental_benefits_submission['phosphorus_loss_amount_unit'] = $csv_line[13];
+      $environmental_benefits_submission['phosphorus_loss_amount_unit_other'] = $csv_line[14];
+      $environmental_benefits_submission['phosphorus_loss_purpose'] = $csv_line[15];
+      $environmental_benefits_submission['phosphorus_loss_purpose_other'] = $csv_line[16];
+      $environmental_benefits_submission['other_water_quality'] = $csv_line[17];
+      $environmental_benefits_submission['other_water_quality_type'] = $csv_line[18];
+      $environmental_benefits_submission['other_water_quality_type_other'] = $csv_line[19];
+      $environmental_benefits_submission['other_water_quality_amount'] = $csv_line[20];
+      $environmental_benefits_submission['other_water_quality_amount_unit'] = $csv_line[21];
+      $environmental_benefits_submission['other_water_quality_amount_unit_other'] = $csv_line[22];
+      $environmental_benefits_submission['other_water_quality_purpose'] = $csv_line[23];
+      $environmental_benefits_submission['other_water_quality_purpose_other'] = $csv_line[24];
+      $environmental_benefits_submission['water_quality'] = $csv_line[25];
+      $environmental_benefits_submission['water_quality_amount'] = $csv_line[26];
+      $environmental_benefits_submission['water_quality_amount_unit'] = $csv_line[27];
+      $environmental_benefits_submission['water_quality_amount_unit_other'] = $csv_line[28];
+      $environmental_benefits_submission['water_quality_purpose'] = $csv_line[29];
+      $environmental_benefits_submission['water_quality_purpose_other'] = $csv_line[30];
+      $environmental_benefits_submission['reduced_erosion'] = $csv_line[31];
+      $environmental_benefits_submission['reduced_erosion_amount'] = $csv_line[32];
+      $environmental_benefits_submission['reduced_erosion_amount_unit'] = $csv_line[33];
+      $environmental_benefits_submission['reduced_erosion_amount_unit_other'] = $csv_line[34];
+      $environmental_benefits_submission['reduced_erosion_purpose'] = $csv_line[35];
+      $environmental_benefits_submission['reduced_erosion_purpose_other'] = $csv_line[36];
+      $environmental_benefits_submission['reduced_energy_use'] = $csv_line[37];
+      $environmental_benefits_submission['reduced_energy_use_amount'] = $csv_line[38];
+      $environmental_benefits_submission['reduced_energy_use_amount_unit'] = $csv_line[39];
+      $environmental_benefits_submission['reduced_energy_use_amount_unit_other'] = $csv_line[40];
+      $environmental_benefits_submission['reduced_energy_use_purpose'] = $csv_line[41];
+      $environmental_benefits_submission['reduced_energy_use_purpose_other'] = $csv_line[42];
+      $environmental_benefits_submission['avoided_land_conversion'] = $csv_line[43];
+      $environmental_benefits_submission['avoided_land_conversion_amount'] = $csv_line[44];
+      $environmental_benefits_submission['avoided_land_conversion_unit'] = $csv_line[45];
+      $environmental_benefits_submission['avoided_land_conversion_unit_other'] = $csv_line[46];
+      $environmental_benefits_submission['avoided_land_conversion_purpose'] = $csv_line[47];
+      $environmental_benefits_submission['avoided_land_conversion_purpose_other'] = $csv_line[48];
+      $environmental_benefits_submission['improved_wildlife_habitat'] = $csv_line[49];
+      $environmental_benefits_submission['improved_wildlife_habitat_amount'] = $csv_line[50];
+      $environmental_benefits_submission['improved_wildlife_habitat_unit'] = $csv_line[51];
+      $environmental_benefits_submission['improved_wildlife_habitat_amount_unit_other'] = $csv_line[52];
+      $environmental_benefits_submission['improved_wildlife_habitat_purpose'] = $csv_line[53];
+      $environmental_benefits_submission['improved_wildlife_habitat_purpose_other'] = $csv_line[54];
+      
+      $ps_to_save = Log::create($environmental_benefits_submission);
+
+      $ps_to_save->save();
+
+      $out = $out + 1;
+    }
+
+    return [
+      "#children" => "added " . $out . " Additional Environmental Benefits.",
     ];
     
   }
