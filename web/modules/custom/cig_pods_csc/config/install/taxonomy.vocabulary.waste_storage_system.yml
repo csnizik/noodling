@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
+name: 'Waste Storage System'
+vid: waste_storage_system
+description: ''
+weight: 0

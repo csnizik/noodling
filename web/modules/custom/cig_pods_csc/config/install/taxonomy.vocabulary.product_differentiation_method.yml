@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Product differentiation method'
 vid: product_differentiation_method
 description: 'Provide the methods used to differentiate the climate-smart commodity in this market channel.'

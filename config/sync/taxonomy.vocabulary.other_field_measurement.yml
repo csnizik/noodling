@@ -1,7 +1,10 @@
 uuid: 8cb68c35-ae21-485b-a759-95a2d1c0656e
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Other field measurement'
 vid: other_field_measurement
 description: 'Direct physical measurements or data collection taken in the field for any reason other than GHG benefits estimation.'

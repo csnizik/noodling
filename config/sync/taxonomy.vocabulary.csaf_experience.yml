@@ -1,7 +1,10 @@
 uuid: 3b6cfbc0-bc71-4446-b902-921db14c739c
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'CSAF experience'
 vid: csaf_experience
 description: 'Has this farm implemented climate-smart agriculture or forestry (CSAF) practices anywhere on the farm in the past 10 years or si'

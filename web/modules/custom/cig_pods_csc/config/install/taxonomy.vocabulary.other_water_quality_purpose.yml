@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Other water quality purpose'
 vid: other_water_quality_purpose
 description: 'Purpose of tracking other water quality benefits in the enrolled field.'

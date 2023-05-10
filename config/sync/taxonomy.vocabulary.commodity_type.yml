@@ -1,7 +1,10 @@
 uuid: e5fe9048-207a-4d69-a557-c10a3a552fcf
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Commodity Term'
 vid: commodity_term
 description: 'Type of Commodity(ies)'

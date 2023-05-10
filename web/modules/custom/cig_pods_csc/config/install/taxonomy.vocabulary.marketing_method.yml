@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Marketing method'
 vid: marketing_method
 description: 'Provide the method(s) used to market this commodity in this market channel.'

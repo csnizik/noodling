@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Reduction in nitrogen loss purpose'
 vid: reduction_in_nitrogen_loss_purpo
 description: 'Purpose of tracking reduction in nitrogen losses in the enrolled field.'

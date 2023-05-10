@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Environmental benefits'
 vid: environmental_benefits
 description: 'Tracking of environmental benefits other than greenhouse gas emission reductions and carbon sequestration in the enrolled field.'

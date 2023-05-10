@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Reduction in nitrogen loss'
 vid: reduction_in_nitrogen_loss
 description: 'Tracking reductions in nitrogen losses in the enrolled field.'

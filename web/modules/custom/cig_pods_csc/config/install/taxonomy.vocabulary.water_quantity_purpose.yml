@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Water quantity purpose'
 vid: water_quantity_purpose
 description: 'Purpose of tracking water conservation or reductions in water use in the enrolled field.'

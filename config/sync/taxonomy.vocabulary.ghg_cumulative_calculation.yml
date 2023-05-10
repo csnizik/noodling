@@ -1,7 +1,10 @@
 uuid: c260e921-beca-4550-a5e9-8557419ad1fa
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'GHG cumulative calculation'
 vid: ghg_cumulative_calculation
 description: 'List the method(s) that was used to calculate the total cumulative GHG benefits reported by the project this quarter.'

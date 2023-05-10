@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Field irrigated'
 vid: field_irrigated
 description: 'Prior to enrollment, what was the most common irrigation practice on this field the past 3 years?'

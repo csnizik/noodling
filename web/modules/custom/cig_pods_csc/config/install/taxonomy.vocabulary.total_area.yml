@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Total area'
 vid: total_area
 description: 'Total area of the farm associated with the Farm ID.'

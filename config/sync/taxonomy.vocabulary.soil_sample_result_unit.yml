@@ -1,7 +1,10 @@
 uuid: 179bcc66-e048-4675-a88c-24a5934a5dc4
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Soil sample result unit'
 vid: soil_sample_result_unit
 description: 'Unit for the corresponding soil sample result. The worksheet provides a drop-down list of choices for this data element.'

@@ -1,7 +1,10 @@
 uuid: dbfb9c32-83e8-4bc6-9952-1a64a4a353c0
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Producer motivation'
 vid: producer_motivation
 description: 'Primary operator’s motivation for enrolling in the project'

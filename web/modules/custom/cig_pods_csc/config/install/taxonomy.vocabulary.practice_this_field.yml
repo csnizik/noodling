@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Practice this field'
 vid: practice_this_field
 description: 'Prior to enrollment, had this (these) CSAF practice(s) been used in this field in the in the past 3 years?'

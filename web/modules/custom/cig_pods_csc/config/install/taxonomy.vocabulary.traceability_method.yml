@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Traceability method'
 vid: traceability_method
 description: 'Provide the traceability method(s) used for the climate-smart commodity in this market channel.'

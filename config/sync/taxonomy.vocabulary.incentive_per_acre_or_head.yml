@@ -1,7 +1,10 @@
 uuid: 333563bd-bf4e-4fd3-b711-8c9ce618ea12
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Incentive per acre or head'
 vid: incentive_per_acre_or_head
 description: 'Is this field receiving an incentive payment to implement a specific CSAF practice or set of practices on a per-acre or per-head'

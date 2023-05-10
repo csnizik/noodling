@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Commodity Term'
 vid: commodity_term
 description: 'Type of Commodity(ies)'

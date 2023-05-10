@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Field land use'
 vid: field_land_use
 description: 'Prior to enrollment, what was the most common land use for this field in the past 3 years?'

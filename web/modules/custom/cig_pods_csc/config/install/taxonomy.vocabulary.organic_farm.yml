@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Organic farm'
 vid: organic_farm
 description: 'USDA-certified organic means that the farm has been certified by an accredited organic certifying agent or is transitioning to U'

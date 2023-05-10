@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Training provided'
 vid: training_provided
 description: 'Types of training provided to the project partner as a result of participating in the project during the past quarter.'

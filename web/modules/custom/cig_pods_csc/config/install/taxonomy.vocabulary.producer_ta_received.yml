@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Producer TA received'
 vid: producer_ta_received
 description: 'Did the lead grantee or any partner provide technical assistance (TA) to the producer this year?'

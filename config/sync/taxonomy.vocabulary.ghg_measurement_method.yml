@@ -1,7 +1,10 @@
 uuid: c5235479-0343-4b3a-b1c9-0ac81c17da90
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'GHG measurement method'
 vid: ghg_measurement_method
 description: 'Field-based measurement method used to calculate GHG benefits. If “other” is chosen, enter the appropriate value as free text in'

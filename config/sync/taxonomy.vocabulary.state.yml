@@ -1,7 +1,10 @@
 uuid: f8bded34-6598-4782-ad0e-103d4580c569
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'State'
 vid: state
 description: 'Abbreviation of the State'

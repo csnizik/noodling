@@ -1,7 +1,10 @@
 uuid: cb625567-864c-4005-9884-8a5f370c8b99
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Field GHG verification'
 vid: field_ghg_verification
 description: 'Up to the top three of verification of GHG benefits as part of MMRV requirements.'

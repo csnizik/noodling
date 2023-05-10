@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Partner type'
 vid: partner_type
 description: 'Legal/financial structure of lead grantee or partner organization'

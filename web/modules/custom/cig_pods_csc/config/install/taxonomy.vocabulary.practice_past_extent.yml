@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Practice past extent'
 vid: practice_past_extent
 description: 'Prior to enrollment, on what portion of the whole farm had this (these) CSAF practice(s) ever been used by the primary operator?'

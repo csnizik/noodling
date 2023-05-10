@@ -1,7 +1,10 @@
 uuid: 310a6afa-6f66-43f7-8ac5-4120b875d384
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'GHG verification method'
 vid: ghg_verification_method
 description: 'Up to the five most common forms of verifying practice implementation used this year as part of MMRV requirements.'

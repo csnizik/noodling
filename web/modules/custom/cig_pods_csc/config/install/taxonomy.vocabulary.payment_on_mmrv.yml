@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Payment on MMRV'
 vid: payment_on_mmrv
 description: 'Any incentive payment provided to the producer upon completing the annual MMRV requirements included in the contract'

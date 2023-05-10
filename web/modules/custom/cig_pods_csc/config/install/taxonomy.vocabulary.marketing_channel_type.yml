@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Marketing channel type'
 vid: marketing_channel_type
 description: 'List a single type of marketing channel used to sell the commodity produced by farmers enrolled in the project.'

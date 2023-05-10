@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'New partnership'
 vid: new_partnership
 description: 'A new partnership means that the lead grantee and the partner organization have not had a formal working relationship (under con'

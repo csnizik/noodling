@@ -1,7 +1,10 @@
 uuid: 8626d5d0-0b26-48f6-b49c-b57263253ba1
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Field tillage'
 vid: field_tillage
 description: 'Prior to enrollment, what was the most common tillage approach during the past 3 years?'

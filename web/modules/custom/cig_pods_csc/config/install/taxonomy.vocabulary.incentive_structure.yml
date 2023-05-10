@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Incentive structure'
 vid: incentive_structure
 description: 'List the structures (units) corresponding to the top 4 (by dollar value) incentive payments to producers.'

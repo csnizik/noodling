@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Match type'
 vid: match_type
 description: 'Types of match contributions other than incentives provided directly to producers by the organization from the start of the part'

@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Payment on harvest'
 vid: payment_on_harvest
 description: 'Any incentive payment provided to the producer upon harvesting or slaughtering the commodity included in the contract.'

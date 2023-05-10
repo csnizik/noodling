@@ -4,6 +4,7 @@ dependencies:
   enforced:
     module:
       - farm_log_category
+      - cig_pods_csc
 _core:
   default_config_hash: LKZFJ7zxfUSUEZhjiHBPa1nCv4tEEt7p6tlMfgF76nU
 name: 'Log categories'

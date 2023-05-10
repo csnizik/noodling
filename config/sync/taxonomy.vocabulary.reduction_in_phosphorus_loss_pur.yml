@@ -1,7 +1,10 @@
 uuid: 59070b98-a3aa-496d-bbf6-bb5429a91ba5
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Reduction in phosphorus loss purpose'
 vid: reduction_in_phosphorus_loss_pur
 description: 'Purpose of tracking reduction in phosphorus losses in the enrolled field.'

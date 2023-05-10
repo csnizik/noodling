@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Marketing assistance provided'
 vid: marketing_assistance_provided
 description: 'Was any marketing assistance provided to the primary operator for the commodity(ies) produced from this field?'

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
+name: 'Nutrient Type'
+vid: nutrient_type
+description: ''
+weight: 0

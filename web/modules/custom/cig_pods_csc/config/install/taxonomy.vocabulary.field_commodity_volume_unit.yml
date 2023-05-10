@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Field commodity volume unit'
 vid: field_commodity_volume_unit
 description: 'The unit associated with the volume of the commodity produced on the enrolled field.'

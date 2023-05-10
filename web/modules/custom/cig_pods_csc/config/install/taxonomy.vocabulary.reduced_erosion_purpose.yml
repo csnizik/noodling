@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Reduced erosion purpose'
 vid: reduced_erosion_purpose
 description: 'Purpose of tracking reduced erosion the enrolled field.'

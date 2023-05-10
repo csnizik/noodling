@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Avoided land conversion amount unit'
 vid: avoided_land_conversion_amount_u
 description: 'Unit for the total amount of avoided land conversion that is measured in the enrolled field.'

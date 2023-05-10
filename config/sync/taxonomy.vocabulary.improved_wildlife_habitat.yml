@@ -1,7 +1,10 @@
 uuid: 4907e1ca-d6d9-4d75-b462-60995ddc438b
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Improved wildlife habitat'
 vid: improved_wildlife_habitat
 description: 'Tracking of improvements to wildlife in and around the enrolled field.'

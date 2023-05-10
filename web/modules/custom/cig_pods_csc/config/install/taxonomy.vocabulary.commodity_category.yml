@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Commodity category'
 vid: commodity_category
 description: 'Category of commodity(ies) produced in field enrolled in the project'

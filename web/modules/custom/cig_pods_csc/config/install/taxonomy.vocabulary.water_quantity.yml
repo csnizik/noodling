@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Water quantity'
 vid: water_quantity
 description: 'Tracking of water conservation or reduction in use in the enrolled field.'

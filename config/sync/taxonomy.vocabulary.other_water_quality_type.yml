@@ -1,7 +1,10 @@
 uuid: 61540d15-5825-42ed-aa7b-f132b2aaacb9
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Other water quality type'
 vid: other_water_quality_type
 description: 'Type of other water quality metric (besides nitrogen loss and phosphorus loss reductions) that is measured in the field.'

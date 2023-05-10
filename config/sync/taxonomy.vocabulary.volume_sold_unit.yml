@@ -1,7 +1,10 @@
 uuid: 3e6fbb9e-5884-4ba0-8f4f-b7e9a9e88452
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Volume sold unit'
 vid: volume_sold_unit
 description: 'The unit associated with the volume of the commodity sold in the marketing channel.'

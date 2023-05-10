@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_cscs
 name: 'Other water quality type'
 vid: other_water_quality_type
 description: 'Type of other water quality metric (besides nitrogen loss and phosphorus loss reductions) that is measured in the field.'

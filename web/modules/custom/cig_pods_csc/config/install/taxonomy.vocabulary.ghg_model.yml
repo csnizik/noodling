@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'GHG model'
 vid: ghg_model
 description: 'Select the model used for the alternate calculation of the field’s GHG benefits.'

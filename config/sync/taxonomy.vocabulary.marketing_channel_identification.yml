@@ -1,7 +1,10 @@
 uuid: c9f22f27-ebba-47da-a6e9-0e411f92bd91
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Marketing channel identification method'
 vid: marketing_channel_identification
 description: 'rovide the marketing channel identification method(s) used for this commodity in this market channel.'

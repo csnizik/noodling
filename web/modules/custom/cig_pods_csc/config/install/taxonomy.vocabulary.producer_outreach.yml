@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Producer outreach'
 vid: producer_outreach
 description: 'Up to three most common types of outreach provided to producer prior to enrollment.'

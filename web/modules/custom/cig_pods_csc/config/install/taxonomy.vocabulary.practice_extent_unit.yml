@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Practice extent unit'
 vid: practice_extent_unit
 description: 'Unit for extent of practice implementation on the field specified by the contract.'

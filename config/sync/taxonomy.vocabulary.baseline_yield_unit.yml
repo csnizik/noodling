@@ -1,7 +1,10 @@
 uuid: 7cfe24a6-9e57-4e9f-9bd9-5db1b15f7450
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Baseline yield unit'
 vid: baseline_yield_unit
 description: 'Unit of average annual yield of commodity in enrolled field in 3 years prior to enrollment.'

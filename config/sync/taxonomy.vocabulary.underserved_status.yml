@@ -1,7 +1,10 @@
 uuid: e96fb133-6a81-45fe-a7bb-ea99d48e3167
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Underserved status'
 vid: underserved_status
 description: 'Underserved status of the primary operator of the enrolled operation.'

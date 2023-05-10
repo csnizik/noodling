@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Marketing channel geography'
 vid: marketing_channel_geography
 description: 'The primary geography of the type of marketing channel.'

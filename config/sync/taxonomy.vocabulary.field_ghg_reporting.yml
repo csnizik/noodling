@@ -1,7 +1,10 @@
 uuid: 6a338efc-e26d-485b-a54c-a4c30e211b82
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Field GHG reporting'
 vid: field_ghg_reporting
 description: 'Up to the top three forms of reporting on GHG benefits as part of MMRV requirements.'

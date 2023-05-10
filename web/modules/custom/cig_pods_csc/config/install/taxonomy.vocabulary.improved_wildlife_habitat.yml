@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Improved wildlife habitat'
 vid: improved_wildlife_habitat
 description: 'Tracking of improvements to wildlife in and around the enrolled field.'

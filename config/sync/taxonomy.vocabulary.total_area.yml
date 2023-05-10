@@ -1,7 +1,10 @@
 uuid: 6f6f7945-c0a7-4b78-87fe-6aac8e7f4742
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Total area'
 vid: total_area
 description: 'Total area of the farm associated with the Farm ID.'

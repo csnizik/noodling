@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Avoided land conversion purpose'
 vid: avoided_land_conversion_purpose
 description: 'Purpose of tracking avoided land conversion in the enrolled field.'

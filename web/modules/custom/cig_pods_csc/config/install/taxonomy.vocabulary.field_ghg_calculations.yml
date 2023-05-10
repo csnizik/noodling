@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Field GHG calculations'
 vid: field_ghg_calculations
 description: 'List the method(s) used to calculate GHG benefits in this field.'

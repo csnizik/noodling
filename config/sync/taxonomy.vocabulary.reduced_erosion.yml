@@ -1,7 +1,10 @@
 uuid: 5b6b6d6f-52a4-40d2-8be7-61a0c6914050
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Reduced erosion'
 vid: reduced_erosion
 description: 'Tracking of reduced soil erosion in the enrolled field.'

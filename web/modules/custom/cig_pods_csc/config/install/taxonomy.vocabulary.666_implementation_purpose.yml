@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
+name: '666 Implementation Purpose'
+vid: 666_implementation_purpose
+description: ''

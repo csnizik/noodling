@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Other water quality'
 vid: other_water_quality
 description: 'Project tracking of other water quality metrics in the enrolled field.'

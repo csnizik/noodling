@@ -1,7 +1,10 @@
 uuid: 357b7037-1fab-47ca-89dc-2144ea4550fe
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'GHG reporting method'
 vid: ghg_reporting_method
 description: 'Up to the five most common forms of tracking and reporting on practice implementation used this year as part of MMRV requirement'

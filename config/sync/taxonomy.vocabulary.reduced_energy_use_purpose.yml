@@ -1,7 +1,10 @@
 uuid: fda8f2d7-5a63-4d80-ac03-6bf6c786a231
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Reduced energy use purpose'
 vid: reduced_energy_use_purpose
 description: 'Purpose of tracking reduced energy use in the enrolled field.'

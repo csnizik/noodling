@@ -1,7 +1,10 @@
 uuid: 943afb19-c249-40c3-9d05-29004160559a
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Water quantity'
 vid: water_quantity
 description: 'Tracking of water conservation or reduction in use in the enrolled field.'

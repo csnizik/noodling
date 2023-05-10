@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Measurement type'
 vid: measurement_type
 description: 'Type of soil analysis conducted. The worksheet provides a drop-down list of choices for this data element.'

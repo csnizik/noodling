@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'Reduction in phosphorus loss'
 vid: reduction_in_phosphorus_loss
 description: 'Tracking of reductions in phosphorus losses in the enrolled field.'

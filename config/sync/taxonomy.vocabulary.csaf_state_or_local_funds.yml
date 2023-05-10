@@ -1,7 +1,10 @@
 uuid: bc786403-0230-48f7-8ade-2556223b5f02
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'CSAF state or local funds'
 vid: csaf_state_or_local_funds
 description: 'If this farm (under the primary operator) has implemented CSAF practices in the last ten years, was implementation supported by '

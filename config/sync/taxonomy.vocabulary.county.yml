@@ -1,7 +1,10 @@
 uuid: f7c02293-938c-4fe1-a249-7ba5aedc07b1
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: County
 vid: county
 description: 'List of County Names'

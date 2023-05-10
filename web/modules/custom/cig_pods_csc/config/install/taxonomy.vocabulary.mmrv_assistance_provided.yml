@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+ enforced:
+    module:
+      - cig_pods_csc
 name: 'MMRV assistance provided'
 vid: mmrv_assistance_provided
 description: 'Was any MMRV assistance provided to the primary operator for this field?'
