@@ -30,6 +30,14 @@ csv_import.process_environmental_benefits:
   requirements:
     _permission: 'access content'
 
+csv_import.process_farm_summary:
+  path: '/csv_import/upload_farm_summary'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_farm_summary'
+    _title: 'csv import farm_summary'
+  requirements:
+    _permission: 'access content'
+
 csv_import.process_field_enrollment:
   path: '/csv_import/upload_field_enrollment'
   defaults:

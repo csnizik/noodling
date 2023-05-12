@@ -33,6 +33,11 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
+        farm summary:
+        <form action="/csv_import/upload_farm_summary" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
         field enrollment:
         <form action="/csv_import/upload_field_enrollment" enctype="multipart/form-data" method="post">
           <input type="file" id="file" name="file">
@@ -182,6 +187,70 @@ class CsvImportController extends ControllerBase {
 
     return [
       "#children" => "added " . $out . " Additional Environmental Benefits.",
+    ];
+    
+  }
+
+  public function process_farm_summary() {
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+
+    foreach($csv as $csv_line) {
+      $farm_summary_submission = [];
+      $farm_summary_submission['type'] = 'farm_summary';
+      $farm_summary_submission['name'] = $csv_line[0];
+      $farm_summary_submission['farm_summary_fiscal_year'] = $csv_line[1];
+      $farm_summary_submission['farm_summary_fiscal_quarter'] = $csv_line[2];
+      $farm_summary_submission['farm_summary_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $csv_line[3]]));
+      $farm_summary_submission['farm_summary_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' => $csv_line[4]]));
+      $producer_ta_received_array = array_map('trim', explode('|', $csv_line[5]));
+      $producer_ta_received_results = [];
+      foreach ($producer_ta_received_array as $value) {
+        $producer_ta_received_results = array_merge($producer_ta_received_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'producer_ta_received', 'name' => $value]));
+      }
+      $farm_summary_submission['farm_summary_producer_ta_received'] = $producer_ta_received_results;
+      $farm_summary_submission['farm_summary_producer_ta_received_other'] = $csv_line[6];
+      $farm_summary_submission['farm_summary_producer_incentive_amount'] = $csv_line[7];
+      $incentive_reason_array = array_map('trim', explode('|', $csv_line[8]));
+      $incentive_reason_results = [];
+      foreach ($incentive_reason_array as $value) {
+        $incentive_reason_results = array_merge($incentive_reason_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'incentive_reason', 'name' => $value]));
+      }
+      $farm_summary_submission['farm_summary_incentive_reason'] = $incentive_reason_results;
+      $farm_summary_submission['farm_summary_incentive_reason_other'] = $csv_line[9];
+      $incentive_structure_array = array_map('trim', explode('|', $csv_line[10]));
+      $incentive_structure_results = [];
+      foreach ($incentive_structure_array as $value) {
+        $incentive_structure_results = array_merge($incentive_structure_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'incentive_structure', 'name' => $value]));
+      }
+      $farm_summary_submission['farm_summary_incentive_structure'] = $incentive_structure_results;
+      $farm_summary_submission['farm_summary_incentive_structure_other'] = $csv_line[11];
+      $incentive_type_array = array_map('trim', explode('|', $csv_line[12]));
+      $incentive_type_results = [];
+      foreach ($incentive_type_array as $value) {
+        $incentive_type_results = array_merge($incentive_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'incentive_type', 'name' => $value]));
+      }
+      $farm_summary_submission['farm_summary_incentive_type'] = $incentive_type_results;
+      $farm_summary_submission['farm_summary_incentive_type_other'] = $csv_line[13];
+      $farm_summary_submission['farm_summary_payment_on_enrollment'] = $csv_line[14];
+      $farm_summary_submission['farm_summary_payment_on_implementation'] = $csv_line[15];
+      $farm_summary_submission['farm_summary_payment_on_harvest'] = $csv_line[16];
+      $farm_summary_submission['farm_summary_payment_on_mmrv'] = $csv_line[17];
+      $farm_summary_submission['farm_summary_payment_on_sale'] = $csv_line[18];
+      
+      $ps_to_save = Log::create($farm_summary_submission);
+
+      $ps_to_save->save();
+
+      $out = $out + 1;
+    }
+
+    return [
+      "#children" => "added " . $out . " Farm Summary.",
     ];
     
   }
