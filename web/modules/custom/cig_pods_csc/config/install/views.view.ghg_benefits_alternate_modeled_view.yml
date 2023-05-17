@@ -1,0 +1,1277 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - log.type.ghg_benefits_alternate_modeled
+    - system.menu.account
+  module:
+    - csv_serialization
+    - fraction
+    - log
+    - rest
+    - serialization
+    - user
+id: ghg_benefits_alternate_modeled_view
+label: 'GHG Benefits - Alternate Modeled View'
+module: views
+description: ''
+tag: ''
+base_table: log_field_data
+base_field: id
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      title: 'GHG Benefits - Alternate Modeled View'
+      fields:
+        name:
+          id: name
+          table: log_field_data
+          field: name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: null
+          entity_field: name
+          plugin_id: field
+          label: Name
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_fiscal_year_value:
+          id: g_benefits_alternate_modeled_fiscal_year_value
+          table: log__g_benefits_alternate_modeled_fiscal_year
+          field: g_benefits_alternate_modeled_fiscal_year_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_fiscal_year
+          plugin_id: field
+          label: 'Federal Fiscal Year of report submission'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_fiscal_quarter_value:
+          id: g_benefits_alternate_modeled_fiscal_quarter_value
+          table: log__g_benefits_alternate_modeled_fiscal_quarter
+          field: g_benefits_alternate_modeled_fiscal_quarter_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_fiscal_quarter
+          plugin_id: field
+          label: 'Federal Fiscal Quarter of report submission'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        timestamp:
+          id: timestamp
+          table: log_field_data
+          field: timestamp
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: timestamp
+          plugin_id: log_field
+          label: Timestamp
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: medium
+            custom_date_format: ''
+            timezone: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_field_id_target_id:
+          id: g_benefits_alternate_modeled_field_id_target_id
+          table: log__g_benefits_alternate_modeled_field_id
+          field: g_benefits_alternate_modeled_field_id_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_field_id
+          plugin_id: field
+          label: 'Field ID'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_commodity_type_target_id:
+          id: g_benefits_alternate_modeled_commodity_type_target_id
+          table: log__g_benefits_alternate_modeled_commodity_type
+          field: g_benefits_alternate_modeled_commodity_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_commodity_type
+          plugin_id: field
+          label: 'Field Summary Commodity Type'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_practice_type_target_id:
+          id: g_benefits_alternate_modeled_practice_type_target_id
+          table: log__g_benefits_alternate_modeled_practice_type
+          field: g_benefits_alternate_modeled_practice_type_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_practice_type
+          plugin_id: field
+          label: 'Practice Type'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: '|'
+          field_api_classes: false
+        g_benefits_alternate_modeled_ghg_model_target_id:
+          id: g_benefits_alternate_modeled_ghg_model_target_id
+          table: log__g_benefits_alternate_modeled_ghg_model
+          field: g_benefits_alternate_modeled_ghg_model_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_ghg_model
+          plugin_id: field
+          label: 'Result GHG Model'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_ghg_model_other_value:
+          id: g_benefits_alternate_modeled_ghg_model_other_value
+          table: log__g_benefits_alternate_modeled_ghg_model_other
+          field: g_benefits_alternate_modeled_ghg_model_other_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_ghg_model_other
+          plugin_id: field
+          label: 'Other GHG Model'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_model_start_date_value:
+          id: g_benefits_alternate_modeled_model_start_date_value
+          table: log__g_benefits_alternate_modeled_model_start_date
+          field: g_benefits_alternate_modeled_model_start_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_model_start_date
+          plugin_id: field
+          label: 'Model Start Date'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: medium
+            custom_date_format: ''
+            timezone: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_model_end_date_value:
+          id: g_benefits_alternate_modeled_model_end_date_value
+          table: log__g_benefits_alternate_modeled_model_end_date
+          field: g_benefits_alternate_modeled_model_end_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_model_end_date
+          plugin_id: field
+          label: 'Model End Date'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: timestamp
+          settings:
+            date_format: medium
+            custom_date_format: ''
+            timezone: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_ghg_benefits_estimated_numerator:
+          id: g_benefits_alternate_modeled_ghg_benefits_estimated_numerator
+          table: log__g_benefits_alternate_modeled_ghg_benefits_estimated
+          field: g_benefits_alternate_modeled_ghg_benefits_estimated_numerator
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_ghg_benefits_estimated
+          plugin_id: field
+          label: 'Total GHG Benefits Estimated'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: numerator
+          type: fraction_decimal
+          settings:
+            precision: 2
+            auto_precision: true
+            prefix_suffix: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_carbon_stock_estimated_numerator:
+          id: g_benefits_alternate_modeled_carbon_stock_estimated_numerator
+          table: log__g_benefits_alternate_modeled_carbon_stock_estimated
+          field: g_benefits_alternate_modeled_carbon_stock_estimated_numerator
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_carbon_stock_estimated
+          plugin_id: field
+          label: 'Total Carbon Stock Estimated'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: numerator
+          type: fraction_decimal
+          settings:
+            precision: 2
+            auto_precision: true
+            prefix_suffix: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_co2_estimated_numerator:
+          id: g_benefits_alternate_modeled_co2_estimated_numerator
+          table: log__g_benefits_alternate_modeled_co2_estimated
+          field: g_benefits_alternate_modeled_co2_estimated_numerator
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_co2_estimated
+          plugin_id: field
+          label: 'Total CO2 Estimated'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: numerator
+          type: fraction_decimal
+          settings:
+            precision: 2
+            auto_precision: true
+            prefix_suffix: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_ch4_estimated_numerator:
+          id: g_benefits_alternate_modeled_ch4_estimated_numerator
+          table: log__g_benefits_alternate_modeled_ch4_estimated
+          field: g_benefits_alternate_modeled_ch4_estimated_numerator
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_ch4_estimated
+          plugin_id: field
+          label: 'Total CH4 Estimated'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: numerator
+          type: fraction_decimal
+          settings:
+            precision: 2
+            auto_precision: true
+            prefix_suffix: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        g_benefits_alternate_modeled_n2o_estimated_numerator:
+          id: g_benefits_alternate_modeled_n2o_estimated_numerator
+          table: log__g_benefits_alternate_modeled_n2o_estimated
+          field: g_benefits_alternate_modeled_n2o_estimated_numerator
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: g_benefits_alternate_modeled_n2o_estimated
+          plugin_id: field
+          label: 'Total N2O Estimated'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: numerator
+          type: fraction_decimal
+          settings:
+            precision: 2
+            auto_precision: true
+            prefix_suffix: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Apply
+          reset_button: false
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+      access:
+        type: perm
+        options:
+          perm: 'view any log'
+      cache:
+        type: tag
+        options: {  }
+      empty: {  }
+      sorts: {  }
+      arguments: {  }
+      filters:
+        type:
+          id: type
+          table: log_field_data
+          field: type
+          entity_type: log
+          entity_field: type
+          plugin_id: bundle
+          value:
+            ghg_benefits_alternate_modeled: ghg_benefits_alternate_modeled
+          expose:
+            operator_limit_selection: false
+            operator_list: {  }
+      style:
+        type: table
+      row:
+        type: fields
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
+      header: {  }
+      footer:
+        display_link:
+          id: display_link
+          table: views
+          field: display_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_link
+          label: 'Export CSV'
+          empty: false
+          display_id: rest_export_1
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: 'Displaying @start - @end of @total'
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 1
+    display_options:
+      display_extenders:
+        collapsible_filter:
+          collapsible: false
+      path: logs/ghg_benefits_alternate_modeled
+      menu:
+        type: normal
+        title: 'GHG Benefits - Alternate Modeled'
+        description: ''
+        weight: 0
+        expanded: false
+        menu_name: account
+        parent: ''
+        context: '0'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - user.permissions
+      tags: {  }
+  rest_export_1:
+    id: rest_export_1
+    display_title: 'REST export'
+    display_plugin: rest_export
+    position: 2
+    display_options:
+      pager:
+        type: none
+        options:
+          offset: 0
+      style:
+        type: serializer
+        options:
+          formats:
+            csv: csv
+      row:
+        type: data_field
+        options:
+          field_options:
+            name:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_fiscal_year_value:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_fiscal_quarter_value:
+              alias: ''
+              raw_output: false
+            timestamp:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_field_id_target_id:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_commodity_type_target_id:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_practice_type_target_id:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_ghg_model_target_id:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_ghg_model_other_value:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_model_start_date_value:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_model_end_date_value:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_ghg_benefits_estimated_numerator:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_carbon_stock_estimated_numerator:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_co2_estimated_numerator:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_ch4_estimated_numerator:
+              alias: ''
+              raw_output: false
+            g_benefits_alternate_modeled_n2o_estimated_numerator:
+              alias: ''
+              raw_output: false
+      defaults:
+        style: false
+        row: false
+        fields: true
+      display_extenders:
+        collapsible_filter:
+          collapsible: false
+      path: log_ghg_benefits_alternate_modeled.csv
+      auth:
+        - cookie
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - user.permissions
+      tags: {  }

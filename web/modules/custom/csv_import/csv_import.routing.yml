@@ -77,3 +77,11 @@ csv_import.field_summary:
     _title: 'csv import operations'
   requirements:
     _permission: 'access content'
+
+csv_import.ghg_benefits_alternate_modeled:
+  path: '/csv_import/upload_ghg_benefits_alternate_modeled'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_g_benefits_alternate_modeled'
+    _title: 'csv import GHG benefits alternate modeled'
+  requirements:
+    _permission: 'access content'

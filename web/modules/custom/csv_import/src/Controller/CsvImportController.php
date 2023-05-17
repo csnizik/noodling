@@ -58,7 +58,11 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
-
+        GHG Benefits - Alternate Modeled:
+        <form action="/csv_import/upload_ghg_benefits_alternate_modeled" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
     ',
     ];
   }
@@ -706,6 +710,89 @@ class CsvImportController extends ControllerBase {
 
   }  
 
+  public function process_g_benefits_alternate_modeled() {
+
+    $file = \Drupal::request()->files->get("file");
+
+    $fName = $file->getClientOriginalName();
+
+    $fLoc = $file->getRealPath();
+
+    $csv = array_map('str_getcsv', file($fLoc));
+
+
+    array_shift($csv);
+
+    $out = 0;
+
+
+
+    foreach($csv as $csv_line) {
+
+      $g_benefits_alternate_modeledsubmission = [];
+
+      $g_benefits_alternate_modeledsubmission['name'] = $csv_line[0];
+
+      $g_benefits_alternate_modeledsubmission['type'] = 'ghg_benefits_alternate_modeled';
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_fiscal_year'] = $csv_line[1];
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_fiscal_quarter'] = $csv_line[2];
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[4]]));
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $csv_line[5]]));
+
+
+      $g_benefits_alternate_modeled_practice_type_array = array_map('trim', explode('|', $csv_line[6]));
+
+      $g_benefits_alternate_modeled_practice_type_results = [];
+
+      foreach ($g_benefits_alternate_modeled_practice_type_array as $value) {
+
+      $g_benefits_alternate_modeled_practice_type_results = array_merge($g_benefits_alternate_modeled_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
+
+      }
+
+
+      
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_practice_type'] = $g_benefits_alternate_modeled_practice_type_results;
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_model'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_model', 'name' => $csv_line[7]]));
+
+
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_model_other'] = $csv_line[8];
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_model_start_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[9])->getTimestamp();
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_model_end_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[10])->getTimestamp();
+
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_benefits_estimated'] = $csv_line[11];
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_carbon_stock_estimated'] = $csv_line[12];
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_co2_estimated'] = $csv_line[13];
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ch4_estimated'] = $csv_line[14];
+      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_n2o_estimated'] = $csv_line[15];
+
+
+      $gbam_to_save = log::create($g_benefits_alternate_modeledsubmission);
+
+      $gbam_to_save->save();
+
+      $out = $out + 1;      
+
+    }
+
+
+
+  
+
+    return [
+      "#children" => "added " . $out . " GHG benefits alternate modeled.",
+    ];
+
+    }
 
 
 }
