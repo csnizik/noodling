@@ -14,7 +14,8 @@
     "wikimedia/composer-merge-plugin": "^2.0",
     "drupal/structure_sync": "^2.0",
     "drupal/openid_connect": "2.0.0-alpha12",
-    "drupal/scss_compiler": "^1.1"
+    "drupal/scss_compiler": "^1.1",
+    "phpoffice/phpspreadsheet": "^1.28"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

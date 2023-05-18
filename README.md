@@ -126,3 +126,11 @@ arrow next to "Listen for XDebug". Add a breakpoint to a line of code (eg:
 request and stop execution at the breakpoint. Variables can be examined, and
 execution can be resumed or stepped forward one line at a time using the
 debugger controls.
+
+### Raise upload_max_filesize for excel workbook import
+
+- In docker terminal, install vim.
+- locate the php.ini file using php -i grep -i "load configuration file". You will need to copy and create php.ini file using php.ini-development if php.ini is missing.
+- modify php.ini (also php.ini-development, php.ini-production) file and increase upload_max_filesize to 10M (also increase post_max_size to larger than upload_max_filesize).
+
+- restart server in docker.

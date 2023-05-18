@@ -6,11 +6,19 @@ csv_import.import_test:
   requirements:
     _permission: 'access content'
 
-csv_import.process_inputs:
-  path: '/csv_import/upload_inputs'
+csv_import.process_workbook:
+  path: '/csv_import/upload_workbook'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_workbook'
+    _title: 'csv import workbook'
+  requirements:
+    _permission: 'access content'
+
+csv_import.process_project_summary:
+  path: '/csv_import/upload_project_summary'
   defaults:
     _controller: '\Drupal\csv_import\Controller\CsvImportController::process_project_summary'
-    _title: 'csv import inputs'
+    _title: 'csv import project_summary'
   requirements:
     _permission: 'access content'
 
@@ -62,19 +70,19 @@ csv_import.process_producer_enrollment:
   requirements:
     _permission: 'access content'
 
-csv_import.process_combo:
-  path: '/csv_import/upload_combo'
-  defaults:
-    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_combo'
-    _title: 'csv import operations'
-  requirements:
-    _permission: 'access content'
-
-csv_import.field_summary:
+csv_import.process_field_summary:
   path: '/csv_import/upload_field_summary'
   defaults:
     _controller: '\Drupal\csv_import\Controller\CsvImportController::process_field_summary'
-    _title: 'csv import operations'
+    _title: 'csv import field_summary'
+  requirements:
+    _permission: 'access content'
+
+csv_import.process_ghg_benefits_measured:
+  path: '/csv_import/upload_ghg_benefits_measured'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_ghg_benefits_measured'
+    _title: 'csv import ghg_benefits_measured'
   requirements:
     _permission: 'access content'
 

@@ -1,9 +1,13 @@
 <?php
 namespace Drupal\csv_import\Controller;
+include 'csvImportFunctions.php';
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\asset\Entity\Asset;
 use Drupal\log\Entity\Log;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+
 /**
  * Provides route responses for the Example module.
  */
@@ -18,8 +22,14 @@ class CsvImportController extends ControllerBase {
   public function upload() {
     return [
       '#children' => '
+        import excel workbook (.xlsx, .xls):
+        <form class="form-horizontal" action="/csv_import/upload_workbook" method="post"
+				name="frmExcelImport" id="frmExcelImport" enctype="multipart/form-data" onsubmit="return validateFile()">
+          <input type="file" name="file" id="file" class="file" accept=".xls,.xlsx">
+          <input type="submit" id="submit" name="import" class="btn-submit" />
+        </form>
         project summary:
-        <form action="/csv_import/upload_inputs" enctype="multipart/form-data" method="post">
+        <form action="/csv_import/upload_project_summary" enctype="multipart/form-data" method="post">
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
@@ -53,18 +63,197 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
-        Field Summary:
+        field summary:
         <form action="/csv_import/upload_field_summary" enctype="multipart/form-data" method="post">
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
-        GHG Benefits - Alternate Modeled:
+        ghg benefit - measured:
+        <form action="/csv_import/upload_ghg_benefits_measured" enctype="multipart/form-data" method="post">
+        <input type="file" id="file" name="file">
+        <input type="submit">
+        </form>
+        ghg benefits - alternate modeled:
         <form action="/csv_import/upload_ghg_benefits_alternate_modeled" enctype="multipart/form-data" method="post">
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
     ',
     ];
+  }
+
+
+  public function process_workbook() {
+    $out = [];      //output messages: imported sheets;
+    $output = '';     //output messages: skipped sheets;
+
+    if (isset($_POST["import"])) {
+      $allowedFileType = [
+          'application/vnd.ms-excel',
+          'text/xls',
+          'text/xlsx',
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+      ];
+
+      if (in_array($_FILES["file"]["type"], $allowedFileType)) {
+
+          //temporarily save imported file
+          $folderPath = realpath($_FILES['file']['tmp_name']);
+          $targetPath = $folderPath . $_FILES['file']['name'];
+          move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
+
+          //get file extension
+          $extension = ucfirst(strtolower(pathinfo($targetPath, PATHINFO_EXTENSION)));
+          
+          //read the workbook but only get the sheets that is relevent
+          $sheetnames = ['Project Summary', 'Partner Activities', 'Marketing Activities', 'Producer Enrollment', 'Field Enrollment', 'Farm Summary', 'Field Summary', 'GHG Benefits - Alt Models', 'GHG Benefits - Measured', 'Addl Envl Benefits'];
+          $reader = IOFactory::createReader($extension);
+          $reader->setReadDataOnly(TRUE);
+          $reader->setLoadSheetsOnly($sheetnames);
+          $spreadSheet = $reader->load($targetPath);
+          $sheetCount = $spreadSheet->getSheetCount();
+          
+
+          // Process each sheet in the workbook.
+          for ($i = 0; $i < $sheetCount; $i++) {
+            $sheet = $spreadSheet->getSheet($i);
+            $sheet_name = $sheet->getTitle();
+            
+            // $csv = $spreadSheet->getSheet($i)->toArray();
+
+            // // Skip sheets that don't have data.
+            // if (empty($csv)) {
+            //   continue;
+            // }
+
+            // Process the data in the sheet based on its name.
+            switch ($sheet_name) {
+              //import project summary
+              case $sheetnames[0]:
+                $end_column = 35;
+                $records = $this->processImport($sheet, 'import_project_summary', $end_column);
+
+                //output message
+                $out[] = array('name' =>'Project Summary', 'records' => $records);
+                
+                break;
+
+              //import partner activities
+              case $sheetnames[1]:
+                $end_column = 32;
+                $records = $this->processImport($sheet, 'import_partner_activities', $end_column);
+
+                //output message
+                $out[] = array('name' =>'Partner Activities', 'records' => $records);
+
+                break;
+              
+              //import market actitivies
+              case $sheetnames[2]:
+                $end_column = 31;
+                $records = $this->processImport($sheet, 'import_market_activities', $end_column);
+
+                //output message
+                $out[] = array('name' =>'Market Actitivies', 'records' => $records);
+                
+                break;
+
+              //import producer enrollment
+              case $sheetnames[3]:
+                $end_column = 31;
+                $records = $this->processImport($sheet, 'import_producer_enrollment', $end_column);
+
+                //output message
+                $out[] = array('name' =>'Producer Enrollment', 'records' => $records);
+
+                break;
+
+              //import field enrollment
+              case $sheetnames[4]:
+                $end_column = 72;
+                $records = $this->processImport($sheet, 'import_field_enrollment', $end_column);
+
+                //output message
+                $out[] = array('name' =>'Field Enrollment', 'records' => $records);
+
+                break;
+
+              //import farm summary
+              case $sheetnames[5]:
+                $end_column = 29;
+                $records = $this->processImport($sheet, 'import_farm_summary', $end_column);
+
+                //output message
+                $out[] = array('name' =>'Farm Summary', 'records' => $records);
+
+                break;
+
+              //import field summary
+              case $sheetnames[6]:
+                $end_column = 49;
+                $records = $this->processImport($sheet, 'import_field_summary', $end_column);
+
+                //output message
+                $out[] = array('name' =>'Field Summary', 'records' => $records);
+
+                break;
+
+              //import ghg benefits alt models
+              case $sheetnames[7]:
+                $end_column = 28;
+                $records = $this->processImport($sheet, 'import_ghg_benefits_alt_models', $end_column);
+
+                //output message
+                $out[] = array('name' =>'GHG Benefits Alt Models', 'records' => $records);
+  
+                break;     
+
+              //import ghg benefits measured
+              case $sheetnames[8]:
+                $end_column = 20;
+                $records = $this->processImport($sheet, 'import_ghg_benefits_measured', $end_column);
+
+                //output message
+                $out[] = array('name' =>'GHG_Benefits_Measured', 'records' => $records);
+  
+                break;   
+
+              //import addl envl benefits
+              case $sheetnames[9]:
+                $end_column = 57;
+                $records = $this->processImport($sheet, 'import_addl_envl_benefits', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Addl Envl Benefits', 'records' => $records);
+
+                break;   
+
+              default:
+                // Unknown sheet name.
+                $output .= "<p>Skipping unknown sheet \"$sheet_name\".</p>";
+                break;
+            }
+
+          }
+
+          //Purge the uploaded file after import is completed.
+          unlink($targetPath);
+          
+      } else {    
+          $output = "Invalid File Type. Upload Excel File.";
+      }
+    }
+
+    $out_msg = "";
+    foreach ($out as $it){
+      $out_msg .= $it['name'] . ': ' . $it['records'] . ' records.' . '<br>';
+    } 
+
+    return [
+      '#children' => 'Workbook has been imported:' . '<br><br>' . $out_msg . '<br>' . $output,
+    ];
+
+
   }
 
   public function process_market_activities() {
@@ -339,10 +528,6 @@ class CsvImportController extends ControllerBase {
       $field_enrollment_submission['f_enrollment_practice_extent_unit_7'] = $csv_line[66];
       $field_enrollment_submission['f_enrollment_practice_extent_unit_other_7'] = $csv_line[67];
       
-
-
-      
-      
       $ps_to_save = Asset::create($field_enrollment_submission);
 
       $ps_to_save->save();
@@ -396,7 +581,6 @@ class CsvImportController extends ControllerBase {
       $partner_activities_submission['partner_activity_activity_other'] = $csv_line[26];
       $partner_activities_submission['partner_activity_products_supplied'] = $csv_line[27];
       $partner_activities_submission['partner_activity_product_source'] = $csv_line[28];
-      
       
       $ps_to_save = Asset::create($partner_activities_submission);
 
@@ -480,17 +664,24 @@ class CsvImportController extends ControllerBase {
     foreach($csv as $csv_line) {
       $project_summary_submission = [];
       $project_summary_submission['type'] = 'project_summary';
-      $project_summary_submission['p_summary_ghg_benefits'] = $csv_line[3]; //strtotime($csv_line[1]);
-      $project_summary_submission['p_summary_cumulative_carbon_stack'] = $csv_line[4];
-      $project_summary_submission['p_summary_cumulative_co2_benefit'] = $csv_line[5];
-      $project_summary_submission['p_summary_cumulative_ch4_benefit'] = $csv_line[6];
-      $project_summary_submission['p_summary_cumulative_n2o_benefit'] = $csv_line[7];
-      $project_summary_submission['p_summary_offsets_produced'] = $csv_line[8];
-      $project_summary_submission['p_summary_offsets_sale'] = $csv_line[9];
-      $project_summary_submission['p_summary_offsets_price'] = $csv_line[10];
-      $project_summary_submission['p_summary_insets_produced'] = $csv_line[11];
-      $project_summary_submission['p_summary_cost_on_farm'] = $csv_line[12];
-      $project_summary_submission['p_summary_mmrv_cost'] = $csv_line[13];
+      $project_summary_submission['name'] = $csv_line[0];
+      $project_summary_submission['p_summary_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_category', 'name' => $csv_line[5]]));
+      $project_summary_submission['p_summary_ghg_calculation_methods'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_calculation_methods', 'name' => $csv_line[6]]));
+      $project_summary_submission['p_summary_ghg_cumulative_calculation'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_cumulative_calculation', 'name' => $csv_line[7]]));
+      $project_summary_submission['p_summary_ghg_benefits'] = $csv_line[8]; //strtotime($csv_line[1]);
+      $project_summary_submission['p_summary_cumulative_carbon_stack'] = $csv_line[9];
+      $project_summary_submission['p_summary_cumulative_co2_benefit'] = $csv_line[10];
+      $project_summary_submission['p_summary_cumulative_ch4_benefit'] = $csv_line[11];
+      $project_summary_submission['p_summary_cumulative_n2o_benefit'] = $csv_line[12];
+      $project_summary_submission['p_summary_offsets_produced'] = $csv_line[13];
+      $project_summary_submission['p_summary_offsets_sale'] = $csv_line[14];
+      $project_summary_submission['p_summary_offsets_price'] = $csv_line[15];
+      $project_summary_submission['p_summary_insets_produced'] = $csv_line[16];
+      $project_summary_submission['p_summary_cost_on_farm'] = $csv_line[17];
+      $project_summary_submission['p_summary_mmrv_cost'] = $csv_line[18];
+      $project_summary_submission['p_summary_ghg_monitoring_method'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_monitoring_method', 'name' => $csv_line[19]]));
+      $project_summary_submission['p_summary_ghg_reporting_method'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_reporting_method', 'name' => $csv_line[20]]));
+      $project_summary_submission['p_summary_ghg_verification_method'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_verification_method', 'name' => $csv_line[21]]));
       
       $ps_to_save = Asset::create($project_summary_submission);
 
@@ -505,100 +696,60 @@ class CsvImportController extends ControllerBase {
     
   }
 
-  public function process_combo() {
-    // grab the contents of the file and same some info
-    $file = \Drupal::request()->files->get("file");
-    $file_name = $file->getClientOriginalName();
-    $item_count = 0;
-    $file_loc = $file->getRealPath();
-    
-    $csv = array_map('str_getcsv', file($file_loc));
-    array_shift($csv);
-
-    $out_str = "test";
-
-    return [
-      "#children" => $out_str,
-    ];
-    
-  }
-  
-  public function process_operations_with_other_costs() {
+  public function process_ghg_benefits_measured() {
     $file = \Drupal::request()->files->get("file");
     $fName = $file->getClientOriginalName();
     $fLoc = $file->getRealPath();
     $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
 
-    $oc_index =  array_search("other_costs",$csv[0]);
-
-    $csv_oc = $csv[1][$oc_index];
-
-    $result = str_replace( '"', '', $csv_oc);
-
-    $exps = explode("|",$result);
-
-    $csid = [];
-
-    foreach( $exps as $exp){
+    foreach($csv as $csv_line) {
+      $ghg_benefits_measured_submission = [];
+      $ghg_benefits_measured_submission['type'] = 'ghg_benefits_measured';
+      $ghg_benefits_measured_submission['name'] = $csv_line[0];
+      $ghg_benefits_measured_submission['g_benefits_measured_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[1]]));
+      $ghg_benefits_measured_submission['g_benefits_measured_fiscal_quarter'] = $csv_line[2];
+      $ghg_benefits_measured_submission['g_benefits_measured_fiscal_year'] = $csv_line[3];
+      $ghg_benefits_measured_submission['g_benefits_measured_ghg_measurement_method'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_measurement_method', 'name' => $csv_line[4]]));
+      $ghg_benefits_measured_submission['g_benefits_measured_ghg_measurement_method_other'] = $csv_line[5];
+      $ghg_benefits_measured_submission['g_benefits_measured_lab_name'] = $csv_line[6];
+      $ghg_benefits_measured_submission['g_benefits_measured_measurement_start_date'] = \DateTime::createFromFormat("Y-m-d", $csv_line[7])->getTimestamp();
+      $ghg_benefits_measured_submission['g_benefits_measured_measurement_end_date'] = \DateTime::createFromFormat("Y-m-d", $csv_line[8])->getTimestamp();
+      $ghg_benefits_measured_submission['g_benefits_measured_total_co2_reduction'] = $csv_line[9];
+      $ghg_benefits_measured_submission['g_benefits_measured_total_field_carbon_stock'] = $csv_line[10];
+      $ghg_benefits_measured_submission['g_benefits_measured_total_ch4_reduction'] = $csv_line[11];
+      $ghg_benefits_measured_submission['g_benefits_measured_total_n2o_reduction'] = $csv_line[12];
+      $ghg_benefits_measured_submission['g_benefits_measured_soil_sample_result'] = $csv_line[13];
+      $ghg_benefits_measured_submission['g_benefits_measured_soil_sample_result_unit'] = $csv_line[14];
+      $ghg_benefits_measured_submission['g_benefits_measured_soil_sample_result_unit_other'] = $csv_line[15];
+      $ghg_benefits_measured_submission['g_benefits_measured_measurement_type'] = $csv_line[16];
+      $ghg_benefits_measured_submission['g_benefits_measured_measurement_type_other'] = $csv_line[17];
       
-      $cval = explode(",",$exp);
-      $cost = $cval[0];
-      $cost_type = $cval[1];
-      
-      //create cost sequence
-      $cost_sequence = [];
-      $cost_sequence['type'] = 'cost_sequence';
-      $cost_sequence['field_cost_type'] = ['target_id' => $cost_type];
-      $cost_sequence['field_cost'] = $cost;
-      $cost_sequenceN = Asset::create($cost_sequence);
-      $cost_sequenceN->save();
-      $nid = $cost_sequenceN->id();
-      $csid[] = $nid;
+      $ps_to_save = Log::create($ghg_benefits_measured_submission);
 
+      $ps_to_save->save();
+
+      $out = $out + 1;
     }
 
-    $shmu = \Drupal::entityTypeManager()->getStorage('asset')->load($csv[1][0]);
-    $project = \Drupal::entityTypeManager()->getStorage('asset')->load($shmu->get('project')->target_id);
-    $field_input = \Drupal::entityTypeManager()->getStorage('asset')->load($csv[1][2]);
-    $operation_submission = [];
-    $operation_submission['type'] = 'operation';
-    $operation_submission['shmu'] = $shmu;
-    $operation_submission['field_operation_date'] = strtotime($csv[1][1]);
-    $operation_submission['field_operation'] = $csv[1][3];
-    $operation_submission['field_ownership_status'] = $csv[1][4];
-    $operation_submission['field_tractor_self_propelled_machine'] = $csv[1][5];
-    $operation_submission['field_row_number'] = $csv[1][6];
-    $operation_submission['field_width'] = $csv[1][7];
-    $operation_submission['field_horsepower'] = $csv[1][8];
-    $operation_submission['project'] = $project;
-    $operation_submission['field_operation_cost_sequences'] = $csid;
-    $operation_to_save = Asset::create($operation_submission);
-    $operation_to_save->save();
-
     return [
-      "#children" => nl2br(print_r("saved", true)),
+      "#children" => "added " . $out . " ghg benefit measured.",
     ];
     
   }
-
+  
   public function process_field_summary() {
     $file = \Drupal::request()->files->get("file");
     $fName = $file->getClientOriginalName();
     $fLoc = $file->getRealPath();
     $csv = array_map('str_getcsv', file($fLoc));
 
-
-
     array_shift($csv);
 
     $out = 0;
 
-
-
     foreach($csv as $csv_line) {
-
-
-
 
       $field_summary_submission = [];
       $field_summary_submission['type'] = 'field_summary';
@@ -619,47 +770,27 @@ class CsvImportController extends ControllerBase {
       $field_summary_submission['f_summary_field_ghg_calculation'] = $csv_line[11];
 
       $summary_field_ghg_monitoring_array = array_map('trim', explode('|', $csv_line[12]));
-
       $summary_field_ghg_monitoring_results = [];
 
       foreach ($summary_field_ghg_monitoring_array as $value) {
-
-      $summary_field_ghg_monitoring_results = array_merge($summary_field_ghg_monitoring_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_monitoring', 'name' => $value]));
-
+        $summary_field_ghg_monitoring_results = array_merge($summary_field_ghg_monitoring_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_monitoring', 'name' => $value]));
       }
 
-
       $field_summary_submission['f_summary_field_ghg_monitoring'] = $summary_field_ghg_monitoring_results;
-
-
-
-
       $summary_field_ghg_reporting_array = array_map('trim', explode('|', $csv_line[13]));
-
       $summary_field_ghg_reporting_results = [];
 
       foreach ($summary_field_ghg_reporting_array as $value) {
-
-      $summary_field_ghg_reporting_results = array_merge($summary_field_ghg_reporting_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_reporting', 'name' => $value]));
-
+        $summary_field_ghg_reporting_results = array_merge($summary_field_ghg_reporting_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_reporting', 'name' => $value]));
       }
 
-
-
       $field_summary_submission['f_summary_field_ghg_reporting'] = $summary_field_ghg_reporting_results;
-
-
-
       $summary_field_ghg_verification_array = array_map('trim', explode('|', $csv_line[14]));
-
       $summary_field_ghg_verification_results = [];
 
       foreach ($summary_field_ghg_verification_array as $value) {
-
-      $summary_field_ghg_verification_results = array_merge($summary_field_ghg_verification_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_verification', 'name' => $value]));
-
+        $summary_field_ghg_verification_results = array_merge($summary_field_ghg_verification_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_verification', 'name' => $value]));
       }
-
 
       $field_summary_submission['f_summary_field_ghg_verification'] = $summary_field_ghg_verification_results;
       $field_summary_submission['f_summary_field_insets'] = $csv_line[15];
@@ -682,21 +813,15 @@ class CsvImportController extends ControllerBase {
       $field_summary_submission['f_summary_field_measurement_other'] = $csv_line[32];
 
       $summary_practice_type_array = array_map('trim', explode('|', $csv_line[33]));
-
       $summary_practice_type_results = [];
 
       foreach ($summary_practice_type_array as $value) {
-
-      $summary_practice_type_results = array_merge($summary_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
-
+        $summary_practice_type_results = array_merge($summary_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
       }
 
       $field_summary_submission['f_summary_practice_type'] = $summary_practice_type_results;
-
-
       $field_summary_submission['f_summary_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[34]]));
       
-
       $ps_to_save = Log::create($field_summary_submission);
 
       $ps_to_save->save();
@@ -710,71 +835,41 @@ class CsvImportController extends ControllerBase {
 
   }  
 
+  
   public function process_g_benefits_alternate_modeled() {
 
     $file = \Drupal::request()->files->get("file");
-
     $fName = $file->getClientOriginalName();
-
     $fLoc = $file->getRealPath();
-
     $csv = array_map('str_getcsv', file($fLoc));
-
-
     array_shift($csv);
-
     $out = 0;
 
-
-
     foreach($csv as $csv_line) {
-
       $g_benefits_alternate_modeledsubmission = [];
-
       $g_benefits_alternate_modeledsubmission['name'] = $csv_line[0];
-
       $g_benefits_alternate_modeledsubmission['type'] = 'ghg_benefits_alternate_modeled';
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_fiscal_year'] = $csv_line[1];
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_fiscal_quarter'] = $csv_line[2];
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[4]]));
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $csv_line[5]]));
 
-
       $g_benefits_alternate_modeled_practice_type_array = array_map('trim', explode('|', $csv_line[6]));
-
       $g_benefits_alternate_modeled_practice_type_results = [];
-
       foreach ($g_benefits_alternate_modeled_practice_type_array as $value) {
-
-      $g_benefits_alternate_modeled_practice_type_results = array_merge($g_benefits_alternate_modeled_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
-
+        $g_benefits_alternate_modeled_practice_type_results = array_merge($g_benefits_alternate_modeled_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
       }
 
-
-      
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_practice_type'] = $g_benefits_alternate_modeled_practice_type_results;
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_model'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_model', 'name' => $csv_line[7]]));
-
-
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_model_other'] = $csv_line[8];
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_model_start_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[9])->getTimestamp();
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_model_end_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[10])->getTimestamp();
-
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_benefits_estimated'] = $csv_line[11];
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_carbon_stock_estimated'] = $csv_line[12];
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_co2_estimated'] = $csv_line[13];
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ch4_estimated'] = $csv_line[14];
       $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_n2o_estimated'] = $csv_line[15];
-
 
       $gbam_to_save = log::create($g_benefits_alternate_modeledsubmission);
 
@@ -794,5 +889,42 @@ class CsvImportController extends ControllerBase {
 
     }
 
+  public function processImport($in_sheet, $importFunction, $end_column){
+    $record_count = 0;
+                
+    $start_column = 2;
 
+    $row = 7;
+
+    //the import template for field summary entity has its data starts on row 6
+    //while all other sheets start on row 7. the follow 3 line of code is created
+    //to adjust for this discrepancy. 
+    if($importFunction == 'import_field_summary'){
+      $row = 6;
+    }
+
+    for($row; ; $row++){
+      $startCell = Coordinate::stringFromColumnIndex($start_column) . $row;
+      $endCell = Coordinate::stringFromColumnIndex($end_column) . $row;
+
+      //read the entire row
+      $dataArray = $in_sheet
+        ->rangeToArray($startCell . ':' . $endCell);
+
+      //if the row is empty then we reach the end of rows and stop importing
+      if(empty(array_filter($dataArray[0]))){
+        break;
+      }
+      
+      //increment record count
+      $record_count = $record_count + 1;
+
+      //import new project summary record
+      $importFunction($dataArray[0], $record_count);
+      
+    }
+
+    return $record_count;
+    
+  }
 }
