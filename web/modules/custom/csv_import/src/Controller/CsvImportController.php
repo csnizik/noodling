@@ -268,11 +268,11 @@ class CsvImportController extends ControllerBase {
       $market_activities_submission = [];
       $market_activities_submission['type'] = 'market_activities';
       $market_activities_submission['name'] = $csv_line[0];
-      $market_activities_submission['m_activities_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_category', 'name' => $csv_line[1]]));
+      $market_activities_submission['m_activities_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $csv_line[1]]));
       $market_activities_submission['m_activities_marketing_channel_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'marketing_channel_type', 'name' => $csv_line[2]]));
       $market_activities_submission['m_activities_marketing_channel_type_other'] = $csv_line[3];
       $market_activities_submission['m_activities_number_of_buyers'] = $csv_line[4];
-      $market_activities_submission['m_activities_buyer_names'] = $csv_line[5];
+      $market_activities_submission['m_activities_buyer_names'] = array_map('trim', explode('|', $csv_line[5]));
       $market_activities_submission['m_activities_marketing_channel_geography'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'marketing_channel_geography', 'name' => $csv_line[6]]));
       $market_activities_submission['m_activities_value_sold'] = $csv_line[7];
       $market_activities_submission['m_activities_volume_sold'] = $csv_line[8];
@@ -282,13 +282,33 @@ class CsvImportController extends ControllerBase {
       $market_activities_submission['m_activities_price_premium_unit'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'price_premium_unit', 'name' => $csv_line[12]]));
       $market_activities_submission['m_activities_price_premium_unit_other'] = $csv_line[13];
       $market_activities_submission['m_activities_price_premium_to_producer'] = $csv_line[14];
-      $market_activities_submission['m_activities_product_differentiation_method'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'product_differentiation_method', 'name' => $csv_line[15]]));
+      $product_differentiation_method_array = array_map('trim', explode('|', $csv_line[15]));
+      $product_differentiation_method_results = [];
+      foreach ($product_differentiation_method_array as $value) {
+        $product_differentiation_method_results = array_merge($product_differentiation_method_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'product_differentiation_method', 'name' => $value]));
+      }
+      $market_activities_submission['m_activities_product_differentiation_method'] = $product_differentiation_method_results;
       $market_activities_submission['m_activities_product_differentiation_method_other'] = $csv_line[16];
-      $market_activities_submission['m_activities_marketing_method'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'marketing_method', 'name' => $csv_line[17]]));
+      $marketing_method_array = array_map('trim', explode('|', $csv_line[17]));
+      $marketing_method_results = [];
+      foreach ($marketing_method_array as $value) {
+        $marketing_method_results = array_merge($marketing_method_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'marketing_method', 'name' => $value]));
+      }
+      $market_activities_submission['m_activities_marketing_method'] = $marketing_method_results;
       $market_activities_submission['m_activities_marketing_method_other'] = $csv_line[18];
-      $market_activities_submission['m_activities_marketing_channel_identification'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'marketing_channel_identification', 'name' => $csv_line[19]]));
+      $marketing_channel_identification_array = array_map('trim', explode('|', $csv_line[19]));
+      $marketing_channel_identification_results = [];
+      foreach ($marketing_channel_identification_array as $value) {
+        $marketing_channel_identification_results = array_merge($marketing_channel_identification_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'marketing_channel_identification', 'name' => $value]));
+      }
+      $market_activities_submission['m_activities_marketing_channel_identification'] = $marketing_channel_identification_results;
       $market_activities_submission['m_activities_marketing_channel_id_methods_other'] = $csv_line[20];
-      $market_activities_submission['m_activities_traceability_method'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'traceability_method', 'name' => $csv_line[21]]));
+      $traceability_method_array = array_map('trim', explode('|', $csv_line[21]));
+      $traceability_method_results = [];
+      foreach ($traceability_method_array as $value) {
+        $traceability_method_results = array_merge($traceability_method_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'traceability_method', 'name' => $value]));
+      }
+      $market_activities_submission['m_activities_traceability_method'] = $traceability_method_results;
       $market_activities_submission['m_activities_traceability_method_other'] = $csv_line[22];
       
       $ps_to_save = Log::create($market_activities_submission);
@@ -570,7 +590,12 @@ class CsvImportController extends ControllerBase {
       $partner_activities_submission['partner_activity_match_type_3'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'match_type', 'name' => $csv_line[15]]));
       $partner_activities_submission['partner_activity_match_amount_3'] = $csv_line[16];
       $partner_activities_submission['partner_activity_match_type_other'] = $csv_line[17];
-      $partner_activities_submission['partner_activity_training_provided'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'training_provided', 'name' => $csv_line[18]]));
+      $training_provided_array = array_map('trim', explode('|', $csv_line[18]));
+      $training_provided_results = [];
+      foreach ($training_provided_array as $value) {
+        $training_provided_results = array_merge($training_provided_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'training_provided', 'name' => $value]));
+      }
+      $partner_activities_submission['partner_activity_training_provided'] = $training_provided_results;
       $partner_activities_submission['partner_activity_training_other'] = $csv_line[19];
       $partner_activities_submission['partner_activity_activity1'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'activity_by_partner', 'name' => $csv_line[20]]));
       $partner_activities_submission['partner_activity_activity1_cost'] = $csv_line[21];

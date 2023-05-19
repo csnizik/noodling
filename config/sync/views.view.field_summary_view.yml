@@ -3796,7 +3796,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: '|'
+          separator: ' | '
           field_api_classes: false
         f_summary_field_ghg_reporting_target_id:
           id: f_summary_field_ghg_reporting_target_id
@@ -3861,7 +3861,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: '|'
+          separator: ' | '
           field_api_classes: false
         f_summary_field_ghg_verification_target_id:
           id: f_summary_field_ghg_verification_target_id
@@ -3926,7 +3926,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: '|'
+          separator: ' | '
           field_api_classes: false
         f_summary_field_insets_numerator:
           id: f_summary_field_insets_numerator
@@ -5170,7 +5170,7 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: '|'
+          separator: ' | '
           field_api_classes: false
         f_summary_field_id_target_id:
           id: f_summary_field_id_target_id
@@ -5430,10 +5430,9 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: some
+        type: none
         options:
           offset: 0
-          items_per_page: 10
       style:
         type: serializer
         options:
