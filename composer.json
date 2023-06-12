@@ -6,9 +6,23 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "nrcsapps/pods_eauth",
+        "version": "1.0.0",
+        "type": "drupal-module",
+        "source": {
+          "url": "https://bitbucket.fpac.usda.gov/scm/nrcsapps/pods_eauth.git",
+          "type": "git",
+          "reference": "CIGCPDPH2-815-standalone-eauth-module"
+        }
+      }
     }
   ],
   "require": {
+    "nrcsapps/pods_eauth": "^1",
     "oomphinc/composer-installers-extender": "^2.0",
     "farmos/farmos": "2.0.4",
     "wikimedia/composer-merge-plugin": "^2.0",

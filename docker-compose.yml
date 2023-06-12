@@ -37,7 +37,9 @@ services:
           (cd /opt/drupal/ && git checkout -- web)
 
           # Build the PODS CSC codebase via Composer.
+          git config --global http.sslverify false
           composer install
+          rm auth.json
 
           # Install Drupal via Drush.
           drush site-install -y --existing-config --db-url=mysql://pods_csc:pods_csc@db/pods_csc --account-pass=admin farm farm.modules="base"
