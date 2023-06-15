@@ -32,6 +32,20 @@ class ProjectSummary extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+      'p_summary_commodity_sales' => [
+        'type' => 'boolean',
+        'label' => 'Commodity Sales',
+        'description' => 'Commodity Sales',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
+      'p_summary_farms_enrolled' => [
+        'type' => 'boolean',
+        'label' => 'Farms Enrolled',
+        'description' => 'Farms Enrolled',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'p_summary_ghg_calculation_methods' => [
         'type' => 'entity_reference',
         'label' => 'Project Summary GHG Calculation Methods',
