@@ -259,9 +259,9 @@ class EnvironmentalBenefits extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'water_quality' => [
+      'water_quantity' => [
         'type' => 'list_string',
-        'label' => 'Water Quality',
+        'label' => 'Water Quantity',
         'description' => 'Water Quality',
         'allowed_values' => [
           'Yes' => t(string: 'Yes'),
@@ -271,17 +271,17 @@ class EnvironmentalBenefits extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'water_quality_amount' => [
+      'water_quantity_amount' => [
         'type' => 'fraction',
-        'label' => 'Water Quality Amount',
-        'description' => 'Water Quality Amount',
+        'label' => 'Water Quantity Amount',
+        'description' => 'Water Quantity Amount',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'water_quality_amount_unit' => [
+      'water_quantity_amount_unit' => [
         'type' => 'list_string',
-        'label' => 'Water Quality Amount Unit',
-        'description' => 'Water Quality Amount Unit',
+        'label' => 'Water Quantity Amount Unit',
+        'description' => 'Water Quantity Amount Unit',
         'allowed_values' => [
           'Acre-Feet' => t(string: 'Acre-Feet'),
           'Cubic Feet' => t(string: 'Cubic Feet'),
@@ -290,17 +290,17 @@ class EnvironmentalBenefits extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'water_quality_amount_unit_other' => [
+      'water_quantity_amount_unit_other' => [
         'type' => 'string',
-        'label' => 'Other Water Quality Amount Unit',
-        'description' => 'Other Water Quality Amount Unit',
+        'label' => 'Other Water Quantity Amount Unit',
+        'description' => 'Other Water Quantity Amount Unit',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'water_quality_purpose' => [
+	    'water_quantity_purpose' => [
         'type' => 'list_string',
-        'label' => 'Water Quality Purpose',
-        'description' => 'Water Quality Purpose',
+        'label' => 'Water Quantity Purpose',
+        'description' => 'Water Quantity Purpose',
         'allowed_values' => [
           'Commodity Marketing' => t(string: 'Commodity Marketing'),
           'Producing Insets' => t(string: 'Producing Insets'),
@@ -311,10 +311,10 @@ class EnvironmentalBenefits extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'water_quality_purpose_other' => [
+	    'water_quantity_purpose_other' => [
         'type' => 'string',
-        'label' => 'Other Water Quality Purpose',
-        'description' => 'Other Water Quality Purpose',
+        'label' => 'Other Water Quantity Purpose',
+        'description' => 'Other Water Quantity Purpose',
         'required' => TRUE,
         'multiple' => FALSE,
       ],

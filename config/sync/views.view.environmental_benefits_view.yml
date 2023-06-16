@@ -1644,17 +1644,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quality_value:
-          id: water_quality_value
-          table: log__water_quality
-          field: water_quality_value
+        water_quantity_value:
+          id: water_quantity_value
+          table: log__water_quantity
+          field: water_quantity_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quality
+          entity_field: water_quantity
           plugin_id: field
-          label: 'Water Quality'
+          label: 'Water Quantity'
           exclude: false
           alter:
             alter_text: false
@@ -1708,17 +1708,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quality_amount_numerator:
-          id: water_quality_amount_numerator
-          table: log__water_quality_amount
-          field: water_quality_amount_numerator
+        water_quantity_amount_numerator:
+          id: water_quantity_amount_numerator
+          table: log__water_quantity_amount
+          field: water_quantity_amount_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quality_amount
+          entity_field: water_quantity_amount
           plugin_id: field
-          label: 'Water Quality Amount'
+          label: 'Water Quantity Amount'
           exclude: false
           alter:
             alter_text: false
@@ -1760,11 +1760,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: numerator
-          type: fraction_decimal
+          type: fraction
           settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
+            separator: /
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1775,17 +1773,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quality_amount_unit_value:
-          id: water_quality_amount_unit_value
-          table: log__water_quality_amount_unit
-          field: water_quality_amount_unit_value
+        water_quantity_amount_unit_value:
+          id: water_quantity_amount_unit_value
+          table: log__water_quantity_amount_unit
+          field: water_quantity_amount_unit_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quality_amount_unit
+          entity_field: water_quantity_amount_unit
           plugin_id: field
-          label: 'Water Quality Amount Unit'
+          label: 'Water Quantity Amount Unit'
           exclude: false
           alter:
             alter_text: false
@@ -1839,17 +1837,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quality_amount_unit_other_value:
-          id: water_quality_amount_unit_other_value
-          table: log__water_quality_amount_unit_other
-          field: water_quality_amount_unit_other_value
+        water_quantity_amount_unit_other_value:
+          id: water_quantity_amount_unit_other_value
+          table: log__water_quantity_amount_unit_other
+          field: water_quantity_amount_unit_other_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quality_amount_unit_other
+          entity_field: water_quantity_amount_unit_other
           plugin_id: field
-          label: 'Other Water Quality Amount Unit'
+          label: 'Other Water Quantity Amount Unit'
           exclude: false
           alter:
             alter_text: false
@@ -1904,17 +1902,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quality_purpose_value:
-          id: water_quality_purpose_value
-          table: log__water_quality_purpose
-          field: water_quality_purpose_value
+        water_quantity_purpose_value:
+          id: water_quantity_purpose_value
+          table: log__water_quantity_purpose
+          field: water_quantity_purpose_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quality_purpose
+          entity_field: water_quantity_purpose
           plugin_id: field
-          label: 'Water Quality Purpose'
+          label: 'Water Quantity Purpose'
           exclude: false
           alter:
             alter_text: false
@@ -1968,17 +1966,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quality_purpose_other_value:
-          id: water_quality_purpose_other_value
-          table: log__water_quality_purpose_other
-          field: water_quality_purpose_other_value
+        water_quantity_purpose_other_value:
+          id: water_quantity_purpose_other_value
+          table: log__water_quantity_purpose_other
+          field: water_quantity_purpose_other_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quality_purpose_other
+          entity_field: water_quantity_purpose_other
           plugin_id: field
-          label: 'Other Water Quality Purpose'
+          label: 'Other Water Quantity Purpose'
           exclude: false
           alter:
             alter_text: false
