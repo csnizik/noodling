@@ -436,7 +436,7 @@ class SupplementalData extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p422_species_density' => [
+      'p422_species_category' => [
         'type' => 'list_string',
         'label' => 'Supplemental Data 422 Species category',
         'description' => 'Supplemental Data 422 Species category',
