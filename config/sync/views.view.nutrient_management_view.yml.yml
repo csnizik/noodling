@@ -27,7 +27,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Mulching View'
+      title: 'Nutrient Management View'
       fields:
         name:
           id: name
@@ -82,7 +82,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -782,10 +783,10 @@ display:
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: logs/mulching
+      path: logs/nutrient_management
       menu:
         type: normal
-        title: 'Additional Environmental Benefits Menu'
+        title: 'Nutrient Management Menu'
         description: ''
         weight: 0
         expanded: false
@@ -1343,7 +1344,7 @@ display:
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: mulching.csv
+      path: nutrient_management_logs.csv
       auth:
         - cookie
     cache_metadata:
