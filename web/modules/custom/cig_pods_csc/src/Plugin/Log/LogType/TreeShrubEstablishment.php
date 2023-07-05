@@ -13,7 +13,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * label = @Translation("Tree Shrub Establishment Log"),
  * )
  */
-class Tree_Shrub_Establishment extends FarmLogType {
+class TreeShrubEstablishment extends FarmLogType {
 
   /**
    * {@inheritdoc}
