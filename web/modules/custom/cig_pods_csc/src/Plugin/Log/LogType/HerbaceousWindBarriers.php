@@ -23,6 +23,15 @@ class HerbaceousWindBarriers extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
+      'project_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Project ID',
+        'description' => 'Project ID',
+        'target_type' => 'asset',
+        'target_bundle' => 'project_summary',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'p603_species_category' => [
         'type' => 'list_string',
         'label' => 'Supplemental Data 603 Species category',
