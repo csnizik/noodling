@@ -46,6 +46,15 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+      'project_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Project ID',
+        'description' => 'Project ID',
+        'target_type' => 'asset',
+        'target_bundle' => 'project_summary',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'f_summary_commodity_type' => [
         'type' => 'entity_reference',
         'label' => 'Field Summary Commodity Type',

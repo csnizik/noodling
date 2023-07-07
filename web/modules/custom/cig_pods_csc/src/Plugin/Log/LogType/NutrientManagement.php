@@ -32,6 +32,15 @@ class NutrientManagement extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+      'field_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Field ID',
+        'description' => 'Field ID',
+		    'target_type' => 'asset',
+		    'target_bundle' => 'field_enrollment',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'p590_nutrient_type' => [
         'type' => 'entity_reference',
         'label' => 'Nutrient Management Nutrient type with CPS 590',

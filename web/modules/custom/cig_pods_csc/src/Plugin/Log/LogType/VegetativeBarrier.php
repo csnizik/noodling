@@ -32,6 +32,15 @@ class VegetativeBarrier extends FarmLogType {
           'required' => TRUE,
           'multiple' => FALSE,
         ],
+        'field_id' => [
+          'type' => 'entity_reference',
+          'label' => 'Field ID',
+          'description' => 'Field ID',
+          'target_type' => 'asset',
+          'target_bundle' => 'field_enrollment',
+          'required' => TRUE,
+          'multiple' => FALSE,
+        ],
         'p601_species_category' => [
           'type' => 'list_string',
           'label' => 'Supplemental Data 601 Species Category',

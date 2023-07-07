@@ -32,6 +32,15 @@ class WasteStorageFacility extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+      'field_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Field ID',
+        'description' => 'Field ID',
+		    'target_type' => 'asset',
+		    'target_bundle' => 'field_enrollment',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'p313_prior_waste_storage_system' => [
         'type' => 'entity_reference',
         'label' => 'Supplemental Data Waste storage system prior to installing your waste storage facility',

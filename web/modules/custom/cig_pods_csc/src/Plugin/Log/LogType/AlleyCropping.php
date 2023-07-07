@@ -51,6 +51,15 @@ class AlleyCropping extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+      'field_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Field ID',
+        'description' => 'Field ID',
+		    'target_type' => 'asset',
+		    'target_bundle' => 'field_enrollment',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
     ];
 
     $farmFieldFactory = new FarmFieldFactory();

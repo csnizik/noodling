@@ -46,6 +46,15 @@ class EnvironmentalBenefits extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+      'project_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Project ID',
+        'description' => 'Project ID',
+        'target_type' => 'asset',
+        'target_bundle' => 'project_summary',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'environmental_benefits' => [
         'type' => 'list_string',
         'label' => 'Environmental benefits',

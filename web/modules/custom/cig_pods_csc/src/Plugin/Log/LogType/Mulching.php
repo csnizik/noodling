@@ -32,6 +32,15 @@ class Mulching extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+      'field_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Field ID',
+        'description' => 'Field ID',
+		    'target_type' => 'asset',
+		    'target_bundle' => 'field_enrollment',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'p484_mulch_coverage' => [
         'type' => 'fraction',
         'label' => 'Mulching, Mulch cover',

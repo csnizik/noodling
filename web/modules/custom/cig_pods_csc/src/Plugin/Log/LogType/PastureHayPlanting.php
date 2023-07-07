@@ -32,6 +32,15 @@ class PastureHayPlanting extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+      'field_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Field ID',
+        'description' => 'Field ID',
+		    'target_type' => 'asset',
+		    'target_bundle' => 'field_enrollment',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'p512_species_category' => [
         'type' => 'list_string',
         'label' => 'Pasture and Hay Planting Species Category',
