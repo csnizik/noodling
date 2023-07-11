@@ -1,19 +1,17 @@
-uuid: 97e98bda-6b8e-4ec8-b548-c7de79d76fd0
 langcode: en
 status: true
 dependencies:
   config:
-    - log.type.waste_separation_facility
-    - system.menu.account
+    - log.type.riparian_forest_buffer
   module:
     - csv_serialization
+    - fraction
     - log
     - options
     - rest
     - serialization
-    - user
-id: waste_separation_facility_view
-label: 'Waste Separation Facility View'
+id: riparian_forest_buffer_view
+label: 'Riparian Forest Buffer View'
 module: views
 description: ''
 tag: ''
@@ -26,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Waste Separation Facility View'
+      title: 'Riparian Forest Buffer View'
       fields:
         name:
           id: name
@@ -38,7 +36,7 @@ display:
           entity_type: null
           entity_field: name
           plugin_id: field
-          label: ''
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -135,7 +133,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -157,17 +155,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        p632_separation_type_value:
-          id: p632_separation_type_value
-          table: log__p632_separation_type
-          field: p632_separation_type_value
+        p391_species_category_value:
+          id: p391_species_category_value
+          table: log__p391_species_category
+          field: p391_species_category_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: p632_separation_type
+          entity_field: p391_species_category
           plugin_id: field
-          label: 'Supplemental Data Separation type'
+          label: 'Riparian Forest Buffer Species Category'
           exclude: false
           alter:
             alter_text: false
@@ -221,17 +219,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        p632_use_of_solids_value:
-          id: p632_use_of_solids_value
-          table: log__p632_use_of_solids
-          field: p632_use_of_solids_value
+        p391_species_density_numerator:
+          id: p391_species_density_numerator
+          table: log__p391_species_density
+          field: p391_species_density_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: p632_use_of_solids
+          entity_field: p391_species_density
           plugin_id: field
-          label: 'Most common use of solids'
+          label: 'Riparian Forest Buffer Species Density'
           exclude: false
           alter:
             alter_text: false
@@ -272,75 +270,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        p632_use_of_solids_other_value:
-          id: p632_use_of_solids_other_value
-          table: log__p632_use_of_solids_other
-          field: p632_use_of_solids_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: p632_use_of_solids_other
-          plugin_id: field
-          label: 'Other most common use of solids'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
+          click_sort_column: numerator
+          type: fraction_decimal
           settings:
-            link_to_entity: false
-          group_column: value
+            precision: 2
+            auto_precision: false
+            prefix_suffix: false
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -351,10 +287,23 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: none
+        type: mini
         options:
           offset: 0
-          items_per_page: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -366,9 +315,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
-        options:
-          perm: 'view any log'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -384,57 +332,12 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            waste_separation_facility: waste_separation_facility
+            riparian_forest_buffer: riparian_forest_buffer
           expose:
             operator_limit_selection: false
             operator_list: {  }
       style:
         type: table
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          columns:
-            name: name
-            p632_separation_type_value: p632_separation_type_value
-            p632_use_of_solids_value: p632_use_of_solids_value
-            p632_use_of_solids_other_value: p632_use_of_solids_other_value
-          default: '-1'
-          info:
-            name:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            p632_separation_type_value:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            p632_use_of_solids_value:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            p632_use_of_solids_other_value:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          override: true
-          sticky: false
-          summary: ''
-          empty_table: false
-          caption: ''
-          description: ''
       row:
         type: fields
       query:
@@ -456,26 +359,16 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: display_link
-          label: 'Export CSV'
+          label: 'CSV Export'
           empty: false
           display_id: rest_export_1
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Displaying @start - @end of @total'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   page_1:
     id: page_1
@@ -483,25 +376,14 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders:
-        collapsible_filter:
-          collapsible: false
-      path: logs/waste-separation-facility
-      menu:
-        type: normal
-        title: 'Waste Separation Facility Menu'
-        description: ''
-        weight: 0
-        expanded: false
-        menu_name: account
-        parent: ''
-        context: '0'
+      display_extenders: {  }
+      path: riparian-forest-buffer-view
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   rest_export_1:
     id: rest_export_1
@@ -510,12 +392,14 @@ display:
     position: 2
     display_options:
       pager:
-        type: none
+        type: some
         options:
           offset: 0
+          items_per_page: 10
       style:
         type: serializer
         options:
+          uses_fields: false
           formats:
             csv: csv
       row:
@@ -525,27 +409,23 @@ display:
             name:
               alias: ''
               raw_output: false
-            p632_separation_type_value:
+            p391_species_category_value:
               alias: ''
-              raw_output: false
-            p632_use_of_solids_value:
+              raw_output: true
+            p391_species_density_numerator:
               alias: ''
-              raw_output: false
-            p632_use_of_solids_other_value:
-              alias: ''
-              raw_output: false
+              raw_output: true
       defaults:
         style: false
         row: false
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: waste_separation_facility_logs.csv
+      path: riparian_forest_buffer_log.csv
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - request_format
-        - user.permissions
       tags: {  }

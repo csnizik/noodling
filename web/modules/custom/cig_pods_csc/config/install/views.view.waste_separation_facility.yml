@@ -5,6 +5,7 @@ dependencies:
     - log.type.waste_separation_facility
     - system.menu.account
   module:
+    - csv_serialization
     - log
     - options
     - rest
@@ -513,6 +514,9 @@ display:
           offset: 0
       style:
         type: serializer
+        options:
+          formats:
+            csv: csv
       row:
         type: data_field
         options:

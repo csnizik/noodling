@@ -4,6 +4,7 @@ dependencies:
   config:
     - log.type.anaerobic_digester
   module:
+    - csv_serialization
     - log
     - options
     - rest
@@ -540,7 +541,18 @@ display:
           query_tags: {  }
       relationships: {  }
       header: {  }
-      footer: {  }
+      footer:
+        display_link:
+          id: display_link
+          table: views
+          field: display_link
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: display_link
+          label: 'CSV Export'
+          empty: false
+          display_id: rest_export_1
       display_extenders: {  }
     cache_metadata:
       max-age: -1
@@ -577,13 +589,40 @@ display:
           items_per_page: 10
       style:
         type: serializer
+        options:
+          formats:
+            csv: csv
       row:
-        type: data_entity
-        options: {  }
+        type: data_field
+        options:
+          field_options:
+            name:
+              alias: ''
+              raw_output: false
+            project_id_target_id:
+              alias: ''
+              raw_output: false
+            p366_prior_waste_storage_system_target_id:
+              alias: ''
+              raw_output: true
+            p366_digester_type_value:
+              alias: ''
+              raw_output: true
+            p366_digester_type_other_value:
+              alias: ''
+              raw_output: true
+            p366_addtl_feedback_source_value:
+              alias: ''
+              raw_output: true
+            p366_addtl_feedback_source_other_value:
+              alias: ''
+              raw_output: true
       defaults:
         style: false
         row: false
-      display_extenders: {  }
+      display_extenders:
+        collapsible_filter:
+          collapsible: false
       path: anaerobic_digester_log.csv
     cache_metadata:
       max-age: -1

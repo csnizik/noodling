@@ -158,17 +158,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        p393_strip_width_numerator:
-          id: p393_strip_width_numerator
-          table: log__p393_strip_width
-          field: p393_strip_width_numerator
+        p585_strip_width_numerator:
+          id: p585_strip_width_numerator
+          table: log__p585_strip_width
+          field: p585_strip_width_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: p393_strip_width
+          entity_field: p585_strip_width
           plugin_id: field
-          label: 'Supplemental Data Strip width (Feet)'
+          label: 'Stripcropping Strip width (Feet)'
           exclude: false
           alter:
             alter_text: false

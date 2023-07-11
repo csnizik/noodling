@@ -6,6 +6,7 @@ dependencies:
     - log.type.waste_storage_facility
     - system.menu.account
   module:
+    - csv_serialization
     - log
     - rest
     - serialization
@@ -340,6 +341,9 @@ display:
           offset: 0
       style:
         type: serializer
+        options:
+          formats:
+            csv: csv
       row:
         type: data_field
         options:

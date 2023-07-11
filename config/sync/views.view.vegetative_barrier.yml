@@ -6,6 +6,7 @@ dependencies:
     - log.type.vegetative_barrier
     - system.menu.account
   module:
+    - csv_serialization
     - fraction
     - log
     - options
@@ -413,6 +414,9 @@ display:
           offset: 0
       style:
         type: serializer
+        options:
+          formats:
+            csv: csv
       row:
         type: data_field
         options:
