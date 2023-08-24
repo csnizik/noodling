@@ -38,7 +38,7 @@ display:
           entity_type: null
           entity_field: name
           plugin_id: field
-          label: ''
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -81,7 +81,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -551,7 +552,7 @@ display:
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: logs/waste-separation-facility
+      path: logs/waste_separation_facility
       menu:
         type: normal
         title: 'Waste Separation Facility Menu'

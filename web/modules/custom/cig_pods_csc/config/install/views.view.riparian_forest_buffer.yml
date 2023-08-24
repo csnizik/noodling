@@ -79,7 +79,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -441,8 +442,10 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: riparian-forest-buffer-view
+      display_extenders:
+        collapsible_filter:
+          collapsible: false
+      path: logs/riparian_forest_buffer
     cache_metadata:
       max-age: -1
       contexts:
