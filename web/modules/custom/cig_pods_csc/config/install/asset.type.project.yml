@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: project
+label: Project
+description: Project
+workflow: asset_default
+new_revision: true

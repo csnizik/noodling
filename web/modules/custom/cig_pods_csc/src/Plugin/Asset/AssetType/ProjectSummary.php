@@ -23,6 +23,20 @@ class ProjectSummary extends FarmAssetType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
+      'p_summary_fiscal_year' => [
+        'type' => 'string',
+        'label' => 'Federal Fiscal Year of Report Submission',
+        'description' => 'Federal Fiscal Year of Report Submission',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'p_summary_fiscal_quarter' => [
+        'type' => 'string',
+        'label' => 'Federal Fiscal Quarter of Report Submission',
+        'description' => 'Federal Fiscal Quarter of Report Submission',
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
       'p_summary_commodity_type' => [
         'type' => 'entity_reference',
         'label' => 'Project Summary Commodity Type',
