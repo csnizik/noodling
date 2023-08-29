@@ -18,17 +18,6 @@ case $input in
             ;;
 esac
 
-echo Please provide USDA Bitbucket Login information to install modules.
-read -r -p "Enter Username: " username
-while true; do
-  read -s -p "Enter Password: " password1
-  echo
-  read -s -p "Confirm Password: " password2
-  echo
-  [ "$password1" = "$password2" ] && break
-  echo "Passwords do not match. Please try again."
-done
-
 # Get this script's path and parent directory.
 SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 PARENTPATH="$(dirname $SCRIPTPATH)"
@@ -41,9 +30,6 @@ rm $PARENTPATH/INSTALLED
 
 #The following rm should be removed if we transfer over to a WSL2 enviornment
 yes| rm -r $PARENTPATH/web
-
-rm -f -- auth.json
-echo "{\"http-basic\": {\"bitbucket.fpac.usda.gov\": {\"username\": \"$username\", \"password\": \"$password1\"}}}" > auth.json
 
 # Build the Docker image.
 docker-compose -f $PARENTPATH/docker-compose.yml build --no-cache
