@@ -46,7 +46,7 @@ class GrassedWaterway extends FarmLogType {
         'label' => 'Supplemental Data 412 Species category',
         'description' => 'Supplemental Data 412 Species category',
 		    'allowed_values' => [
-          'Flowering plants,' => t(string: 'Flowering plants'),
+          'Flowering plants' => t(string: 'Flowering plants'),
           'Forbs' => t(string: 'Forbs'),
           'Grasses' => t(string: 'Grasses'),
         ],

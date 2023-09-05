@@ -58,7 +58,7 @@ class CoverCrop extends FarmLogType {
               'Herbicide application' => t(string: 'Herbicide application'),
               'Incorporation, mowing' => t(string: 'Incorporation, mowing'),
               'Rolling/crimping' => t(string: 'Rolling/crimping'),
-              'Winter kill/frost ' => t(string: 'Winter kill/frost'),
+              'Winter kill/frost' => t(string: 'Winter kill/frost'),
             ],
             'required' => FALSE,
             'multiple' => FALSE,

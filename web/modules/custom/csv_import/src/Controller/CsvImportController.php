@@ -78,6 +78,181 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
+        supplemental log - alley cropping:
+        <form action="/csv_import/upload_alley_cropping" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - anaerobic digester:
+        <form action="/csv_import/upload_anaerobic_digester" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - combustion system improvement:
+        <form action="/csv_import/upload_combustion_system_improvement" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - conservation cover:
+        <form action="/csv_import/upload_conservation_cover" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - conservation crop rotation:
+        <form action="/csv_import/upload_conservation_crop_rotation" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - contour buffer strips:
+        <form action="/csv_import/upload_contour_buffer_strips" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - cover crop:
+        <form action="/csv_import/upload_cover_crop" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - critical area planting:
+        <form action="/csv_import/upload_critical_area_planting" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - feed management:
+        <form action="/csv_import/upload_feed_management" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - field_border:
+        <form action="/csv_import/upload_field_border" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - filter strip:
+        <form action="/csv_import/upload_filter_strip" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - forest_farming:
+        <form action="/csv_import/upload_forest_farming" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - forest stand improvement:
+        <form action="/csv_import/upload_forest_stand_improvement" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - grassed waterway:
+        <form action="/csv_import/upload_grassed_waterway" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - hedgerow planting:
+        <form action="/csv_import/upload_hedgerow_planting" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - herbaceous wind barriers:
+        <form action="/csv_import/upload_herbaceous_wind_barriers" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - mulching:
+        <form action="/csv_import/upload_mulching" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - nutrient management:
+        <form action="/csv_import/upload_nutrient_management" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - pasture and hay planting:
+        <form action="/csv_import/upload_pasture_and_hay_planting" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - prescribed grazing:
+        <form action="/csv_import/upload_prescribed_grazing" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - range planting:
+        <form action="/csv_import/upload_range_planting" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - residue and tillage management no till:
+        <form action="/csv_import/upload_residue_and_tillage_management_notill" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - residue and tillage management reduced till:
+        <form action="/csv_import/upload_residue_and_tillage_management_redtill" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - riparian forest buffer:
+        <form action="/csv_import/upload_riparian_forest_buffer" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - riparian herbaceous cover:
+        <form action="/csv_import/upload_riparian_herbaceous_cover" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - roofs and covers:
+        <form action="/csv_import/upload_roofs_and_covers" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - silvopasture:
+        <form action="/csv_import/upload_silvopasture" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - stripcropping:
+        <form action="/csv_import/upload_stripcropping" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - tree shrub establishment:
+        <form action="/csv_import/upload_tree_shrub_establishment" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - vegetative barrier:
+        <form action="/csv_import/upload_vegetative_barrier" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - waste separation facility:
+        <form action="/csv_import/upload_waste_separation_facility" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - waste storage facility:
+        <form action="/csv_import/upload_waste_storage_facility" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - waste treatment:
+        <form action="/csv_import/upload_waste_treatment" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - waste treatment lagoon:
+        <form action="/csv_import/upload_waste_treatment_lagoon" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
+        supplemental log - windbreak/shelterbelt establishment and renovation:
+        <form action="/csv_import/upload_windshelter_est_reno" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
     ',
     ];
   }
@@ -106,7 +281,15 @@ class CsvImportController extends ControllerBase {
           $extension = ucfirst(strtolower(pathinfo($targetPath, PATHINFO_EXTENSION)));
           
           //read the workbook but only get the sheets that is relevent
-          $sheetnames = ['Project Summary', 'Partner Activities', 'Marketing Activities', 'Producer Enrollment', 'Field Enrollment', 'Farm Summary', 'Field Summary', 'GHG Benefits - Alt Models', 'GHG Benefits - Measured', 'Addl Envl Benefits'];
+          $sheetnames = ['Project Summary', 'Partner Activities', 'Marketing Activities', 'Producer Enrollment', 'Field Enrollment', 
+                          'Farm Summary', 'Field Summary', 'GHG Benefits - Alt Models', 'GHG Benefits - Measured', 'Addl Envl Benefits',
+                          'Alley Cropping', 'Combustion System Improvement', 'Conservation Cover', 'Conservation Crop Rotation', 
+                          'Contour Buffer Strips', 'Cover Crop', 'Critical Area Planting', 'Feed Mgmt', 'Field Border', 'Filter Strip',
+                          'Forest Farming', 'Forest Stand Improvement', 'Grassed Waterway', 'Hedgerow Planting', 'Herbaceous Wind Barriers',
+                          'Mulching', 'Nutrient Mgmt', 'Pasture & Hay Planting', 'Prescribed Grazing', 'Range Planting',
+                          'Residue & Tillage Mgmt_NoTill', 'Residue & Tillage Mgmt_RedTill', 'Riparian Forest Buffer', 'Riparian Herbaceous Cover',
+                          'Roofs & Covers', 'Silvopasture', 'Stripcropping', 'Tree Shrub Establishment', 'Vegetative Barrier', 'Waste Separation Facility',
+                          'Waste Storage Facility', 'Waste Treatment', 'Waste Treatment Lagoon', 'WindShelter Est Reno', 'Anaerobic Digester'];
           $reader = IOFactory::createReader($extension);
           $reader->setReadDataOnly(TRUE);
           $reader->setLoadSheetsOnly($sheetnames);
@@ -227,6 +410,358 @@ class CsvImportController extends ControllerBase {
                 $out[] = array('name' =>'Import Addl Envl Benefits', 'records' => $records);
 
                 break;   
+
+              //import alley cropping
+              case $sheetnames[10]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_alley_cropping', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Alley Cropping', 'records' => $records);
+
+                break;
+              
+              //import combustion system improvement
+              case $sheetnames[11]:
+                $end_column = 16;
+                $records = $this->processImport($sheet, 'import_combustion_system_improvement', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Combustion System Improvement', 'records' => $records);
+
+                break;
+
+              //import conservation cover
+              case $sheetnames[12]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_conservation_cover', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Conservation Cover', 'records' => $records);
+
+                break;
+              
+              //import conservation crop rotation
+              case $sheetnames[13]:
+                $end_column = 11;
+                $records = $this->processImport($sheet, 'import_conservation_crop_rotation', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Conservation Crop Rotation', 'records' => $records);
+
+                break;
+              
+              //import contour buffer strips
+              case $sheetnames[14]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_contour_buffer_strips', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Contour Buffer Strips', 'records' => $records);
+
+                break;
+
+              //import cover crop
+              case $sheetnames[15]:
+                $end_column = 9;
+                $records = $this->processImport($sheet, 'import_cover_crop', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Cover Crop', 'records' => $records);
+
+                break;
+
+              //import critical area planting
+              case $sheetnames[16]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_critical_area_planting', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Critical Area Planting', 'records' => $records);
+
+                break;
+
+              //import feed management
+              case $sheetnames[17]:
+                $end_column = 10;
+                $records = $this->processImport($sheet, 'import_feed_management', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Feed Management', 'records' => $records);
+
+                break;
+
+              //import field border
+              case $sheetnames[18]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_field_border', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Field Border', 'records' => $records);
+
+                break;
+
+              //import filter strip
+              case $sheetnames[19]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_filter_strip', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Filter Strip', 'records' => $records);
+
+                break;
+
+              //import forest farming
+              case $sheetnames[20]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_forest_farming', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Forest Farming', 'records' => $records);
+
+                break;
+
+              //import forest stand improvement
+              case $sheetnames[21]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_forest_stand_improvement', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Forest Stand Improvement', 'records' => $records);
+
+                break;
+
+              //import grassed waterway
+              case $sheetnames[22]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_grassed_waterway', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Grassed Waterway', 'records' => $records);
+
+                break;
+
+              //import hedgerow planting
+              case $sheetnames[23]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_hedgerow_planting', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Hedgerow Planting', 'records' => $records);
+
+                break;
+
+              //import herbaceous wind barriers
+              case $sheetnames[24]:
+                $end_column = 9;
+                $records = $this->processImport($sheet, 'import_herbaceous_wind_barriers', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Herbaceous Wind Barriers', 'records' => $records);
+
+                break;
+
+              //import mulching
+              case $sheetnames[25]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_mulching', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Mulching', 'records' => $records);
+
+                break;
+
+              //import nutrient management
+              case $sheetnames[26]:
+                $end_column = 14;
+                $records = $this->processImport($sheet, 'import_nutrient_management', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Nutrient Management', 'records' => $records);
+
+                break;
+
+              //import pasture and hay planting
+              case $sheetnames[27]:
+                $end_column = 9;
+                $records = $this->processImport($sheet, 'import_pasture_and_hay_planting', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Pasture and Hay Planting', 'records' => $records);
+
+                break;
+
+              //import Perscribed Grazing
+              case $sheetnames[28]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_prescribed_grazing', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Prescribed Grazing', 'records' => $records);
+
+                break;
+
+              //import Range Planting
+              case $sheetnames[29]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_range_planting', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Range Planting', 'records' => $records);
+
+                break;
+
+              //import Residue and Tillage Management - No-till
+              case $sheetnames[30]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_residue_and_tillage_management_notill', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Residue & Tillage Management - No-till', 'records' => $records);
+
+                break;
+
+              //import Residue and Tillage Management - Reduced-till
+              case $sheetnames[31]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_residue_and_tillage_management_redtill', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Residue & Tillage Management - Reduced-till', 'records' => $records);
+
+                break;
+
+              //import Riparian Forest Buffer
+              case $sheetnames[32]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_riparian_forest_buffer', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Riparian Forest Buffer', 'records' => $records);
+
+                break;
+
+              //import Riparian Herbaceous Cover
+              case $sheetnames[33]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_riparian_herbaceous_cover', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Riparian Herbaceous Cover', 'records' => $records);
+
+                break;
+
+              //import Roofs & Covers
+              case $sheetnames[34]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_roofs_and_covers', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Roofs & Covers', 'records' => $records);
+
+                break;
+
+              //import Silvopasture
+              case $sheetnames[35]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_silvopasture', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Silvopasture', 'records' => $records);
+
+                break;
+
+              //import Stripcropping
+              case $sheetnames[36]:
+                $end_column = 9;
+                $records = $this->processImport($sheet, 'import_stripcropping', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Stripcropping', 'records' => $records);
+
+                break;
+
+              //import Tree Shrub Establishment
+              case $sheetnames[37]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_tree_shrub_establishment', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Tree Shrub Establishment', 'records' => $records);
+
+                break;
+
+
+              //import Vegetative Barrier
+              case $sheetnames[38]:
+                $end_column = 8;
+                $records = $this->processImport($sheet, 'import_vegetative_barrier', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Vegetative Barrier', 'records' => $records);
+
+                break;
+
+              //import Waste Separation Facility
+              case $sheetnames[39]:
+                $end_column = 9;
+                $records = $this->processImport($sheet, 'import_waste_separation_facility', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Waste Separation Facility', 'records' => $records);
+
+                break;
+
+              //import Waste Storage Facility
+              case $sheetnames[40]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_waste_storage_facility', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Waste Storage Facility', 'records' => $records);
+
+                break;
+
+              //import Waste Treatment
+              case $sheetnames[41]:
+                $end_column = 7;
+                $records = $this->processImport($sheet, 'import_waste_treatment', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Waste Treatment', 'records' => $records);
+
+                break;
+
+              //import Waste Treatment Lagoon
+              case $sheetnames[42]:
+                $end_column = 9;
+                $records = $this->processImport($sheet, 'import_waste_treatment_lagoon', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Waste Treatment Lagoon', 'records' => $records);
+
+                break;
+
+              //import Windbreak/Shelterbelt Establishment and Renovation
+              case $sheetnames[43]:
+                $end_column = 9;
+                $records = $this->processImport($sheet, 'import_windshelter_est_reno', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Windbreak/Shelterbelt Establishment and Renovation', 'records' => $records);
+
+                break;
+
+                //import Anaerobic Digester
+              case $sheetnames[44]:
+                $end_column = 11;
+                $records = $this->processImport($sheet, 'import_anaerobic_digester', $end_column);
+  
+                //output message
+                $out[] = array('name' =>'Import Anaerobic Digester', 'records' => $records);
+
+                break;
+
 
               default:
                 // Unknown sheet name.
@@ -859,7 +1394,6 @@ class CsvImportController extends ControllerBase {
     ];
 
   }  
-
   
   public function process_g_benefits_alternate_modeled() {
 
@@ -901,20 +1435,1227 @@ class CsvImportController extends ControllerBase {
       $gbam_to_save->save();
 
       $out = $out + 1;      
-
     }
-
-
-
-  
 
     return [
       "#children" => "added " . $out . " GHG benefits alternate modeled.",
     ];
 
+  }
+
+  public function process_alley_cropping(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line_raw);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'alley_cropping';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p311_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p311_species_density'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+
     }
 
-  public function processImport($in_sheet, $importFunction, $end_column){
+    return [
+      "#children" => "added " . $out . " Alley Cropping.",
+    ];
+  }
+
+  public function process_anaerobic_digester(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'anaerobic_digester';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p366_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $in_data_array[6]]));
+      $supplemental_data_submission['p366_digester_type'] = $in_data_array[7];
+      $supplemental_data_submission['p366_digester_type_other'] = $in_data_array[8];
+      $supplemental_data_submission['p366_addtl_feedback_source'] = $in_data_array[9];
+      $supplemental_data_submission['p366_addtl_feedback_source_other'] = $in_data_array[10];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Anaerobic Digester",
+    ];
+  }
+
+
+  public function process_combustion_system_improvement(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'combustion_system_improvement';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p372_prior_fuel_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $csv_line[6]]));
+      $supplemental_data_submission['p372_prior_fuel_type_other'] = $csv_line[7];
+      $supplemental_data_submission['p372_prior_fuel_amount'] = $csv_line[8];
+      $supplemental_data_submission['p372_prior_fuel_amount_unit'] = $csv_line[9];
+      $supplemental_data_submission['p372_prior_fuel_amount_unit_other'] = $csv_line[10];
+      $supplemental_data_submission['p372_fuel_type_after'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $csv_line[11]]));
+      $supplemental_data_submission['p372_fuel_type_after_other'] = $csv_line[12];
+      $supplemental_data_submission['p372_fuel_amount_after'] = $csv_line[13];
+      $supplemental_data_submission['p372_fuel_amount_unit_after'] = $csv_line[14];
+      $supplemental_data_submission['p372_fuel_amount_unit_after_other'] = $csv_line[15];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Combustion System Improvement.",
+    ];
+  }
+
+  public function process_conservation_cover(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'conservation_cover';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p327_species_category'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Conservation Cover.",
+    ];
+  }
+
+  public function process_conservation_crop_rotation(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'conservation_crop_rotation';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p328_conservation_crop_type'] = $csv_line[6];
+      $supplemental_data_submission['p328_change_implemented'] = $csv_line[7];
+      $supplemental_data_submission['p328_rotation_tillage_type'] = $csv_line[8];
+      $supplemental_data_submission['p328_rotation_tillage_type_other'] = $csv_line[9];
+      $supplemental_data_submission['p328_total_rotation_length'] = $csv_line[10];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Conservation Crop Rotation.",
+    ];
+  }
+
+  public function process_contour_buffer_strips(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'contour_buffer_strips';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p332_strip_width'] = $csv_line[6];
+      $supplemental_data_submission['p332_species_category'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Contour Buffer Strips.",
+    ];
+  }
+
+  public function process_cover_crop(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'cover_crop';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p340_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p340_planned_management'] = $csv_line[7];
+      $supplemental_data_submission['p340_termination_method'] = $csv_line[8];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Cover Crop.",
+    ];
+  }
+
+  public function process_critical_area_planting(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'critical_area_planting';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p342_species_category'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Critical Area Planting.",
+    ];
+  }
+
+  public function process_feed_management(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'feed_management';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p592_crude_protein_percent'] = $csv_line[6];
+      $supplemental_data_submission['p592_fat_percent'] = $csv_line[7];
+      $supplemental_data_submission['p592_feed_additives'] = $csv_line[8];
+      $supplemental_data_submission['p592_feed_additives_other'] = $csv_line[9];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Feed Management.",
+    ];
+  }
+
+  public function process_field_border(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'field_border';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p386_species_category'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Field Border.",
+    ];
+  }
+
+  public function process_filter_strip(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'filter_strip';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p393_strip_width'] = $csv_line[6];
+      $supplemental_data_submission['p393_species_category'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Filter Strip.",
+    ];
+  }
+
+  public function process_forest_farming(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'forest_farming';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p379_land_use_previous_years'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Forest Farming.",
+    ];
+  }
+
+  public function process_forest_stand_improvement(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'forest_stand_improvement';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p666_implementation_purpose'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => '666_implementation_purpose', 'name' => $csv_line[6]]));;
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Forest Stand Improvemet.",
+    ];
+  }
+
+  public function process_grassed_waterway(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'grassed_waterway';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p412_species_category'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Grassed Waterway.",
+    ];
+  }
+
+  public function process_hedgerow_planting(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'hedgerow_planting';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p422_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p422_species_density'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Hedgerow Planting.",
+    ];
+  }
+
+  public function process_herbaceous_wind_barriers(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'herbaceous_wind_barriers';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p603_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p603_barrier_width'] = $csv_line[7];
+      $supplemental_data_submission['p603_number_of_rows'] = $csv_line[8];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Herbaceous Wind Barriers.",
+    ];
+  }
+
+  public function process_mulching(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'mulching';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p484_mulch_type'] = $csv_line[6];
+      $supplemental_data_submission['p484_mulch_coverage'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Mulching.",
+    ];
+  }
+
+  public function process_nutrient_management(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'nutrient_management';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p590_nutrient_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'nutrient_type', 'name' => $csv_line[6]]));
+      $supplemental_data_submission['p590_application_method'] = $csv_line[7];
+      $supplemental_data_submission['p590_prior_application_method'] = $csv_line[8];
+      $supplemental_data_submission['p590_application_timing'] = $csv_line[9];
+      $supplemental_data_submission['p590_prior_application_timing'] = $csv_line[10];
+      $supplemental_data_submission['p590_application_rate'] = $csv_line[11];
+      $supplemental_data_submission['p590_application_rate_unit'] = $csv_line[12];
+      $supplemental_data_submission['p590_application_rate_change'] = $csv_line[13];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Nutrient Management.",
+    ];
+  }
+
+  public function process_pasture_and_hay_planting(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'pasture_hay_planting';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p512_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p512_termination_process'] = $csv_line[7];
+      $supplemental_data_submission['p512_other_termination_process'] = $csv_line[8];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Pasture & Hay Planting.",
+    ];
+  }
+
+  public function process_prescribed_grazing(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'prescribed_grazing';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p528_grazing_type'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Prescribed Grazing.",
+    ];
+  }
+
+  public function process_range_planting(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'range_planting';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p550_species_category'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Range Planting.",
+    ];
+  }
+
+  public function process_residue_and_tillage_management_notill(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'residue_tillage_no_till';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p329_surface_disturbance'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Residue & Tillage Management, No Till.",
+    ];
+  }
+
+  public function process_residue_and_tillage_management_redtill(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'residue_tillage_reduced_till';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p345_surface_disturbance'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Residue & Tillage Management, Reduced Till.",
+    ];
+  }
+
+  public function process_riparian_forest_buffer(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'riparian_forest_buffer';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p391_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p391_species_density'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Riparian Forest Buffer.",
+    ];
+  }
+
+
+  public function process_riparian_herbaceous_cover(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'riparian_herbaceous_cover';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p390_species_category'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Riparean Herbaceous Cover.",
+    ];
+  }
+
+
+  public function process_roofs_and_covers(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'roofs_and_covers';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p367_roof_cover_type'] = $csv_line[6];
+      $supplemental_data_submission['p367_roof_cover_type_other'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Roofs and Covers.",
+    ];
+  }
+
+  public function process_silvopasture(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'silvopasture';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p381_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p381_species_density'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Silvopasture.",
+    ];
+  }
+
+
+  public function process_stripcropping(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'stripcropping';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p585_strip_width'] = $csv_line[6];
+      $supplemental_data_submission['p585_crop_category'] = $csv_line[7];
+      $supplemental_data_submission['p585_number_of_strips'] = $csv_line[8];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Stripcropping.",
+    ];
+  }
+
+
+  public function process_tree_shrub_establishment(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'tree_shrub_establishment';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p612_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p612_species_density'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Tree Shrub Establishment.",
+    ];
+  }
+
+  public function process_vegetative_barrier(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'vegetative_barrier';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p601_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p601_barrier_width'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Vegetative Barrier.",
+    ];
+  }
+
+  public function process_waste_separation_facility(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'waste_separation_facility';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p632_separation_type'] = $csv_line[6];
+      $supplemental_data_submission['p632_use_of_solids'] = $csv_line[7];
+      $supplemental_data_submission['p632_use_of_solids_other'] = $csv_line[8];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Waste Separation Facility.",
+    ];
+  }
+
+
+  public function process_waste_storage_facility(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'waste_storage_facility';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p313_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $csv_line[6]]));
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Waste Storage Facility.",
+    ];
+  }
+
+  public function process_waste_treatment(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'waste_treatment';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p629_treatment_type'] = $csv_line[6];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Waste Treatment.",
+    ];
+  }
+
+  public function process_waste_treatment_lagoon(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'waste_treatment_lagoon';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p359_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $csv_line[6]]));
+      $supplemental_data_submission['p359_lagoon_cover_or_crust'] = filter_var($csv_line[7], FILTER_VALIDATE_BOOLEAN);
+      $supplemental_data_submission['p359_lagoon_aeration'] = filter_var($csv_line[8], FILTER_VALIDATE_BOOLEAN);
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Waste Treatment Lagoon.",
+    ];
+  }
+
+  public function process_windshelter_est_reno(){
+    $file = \Drupal::request()->files->get("file");
+    $fName = $file->getClientOriginalName();
+    $fLoc = $file->getRealPath();
+    $csv = array_map('str_getcsv', file($fLoc));
+    array_shift($csv);
+    $out = 0;
+    
+    foreach($csv as $csv_line_raw) {
+      $csv_line = array_map('trim', $csv_line);
+
+      $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $csv_line[3]]));
+      $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
+      $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
+
+      $supplemental_data_submission = [];
+      $supplemental_data_submission['type'] = 'windbreak_shelterbelt';
+      $supplemental_data_submission['name'] = $csv_line[0];
+      $supplemental_data_submission['field_id'] = $field_id;
+      $supplemental_data_submission['project_id'] = $project_id;
+      $supplemental_data_submission['p380_species_category'] = $csv_line[6];
+      $supplemental_data_submission['p380_species_density'] = $csv_line[7];
+
+      $ps_to_save = Log::create($supplemental_data_submission);
+
+      $ps_to_save->save();
+      $out = $out + 1;      
+    }
+
+    return [
+      "#children" => "added " . $out . " Windbreak/Shelterbelt Establishment and Renovation.",
+    ];
+  }
+
+  public function processImport($in_sheet, $importFunction, $end_column, $log_name="", $fields=""){
     $record_count = 0;
                 
     $start_column = 2;

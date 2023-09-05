@@ -187,7 +187,7 @@ class ProducerEnrollment extends FarmAssetType {
         'label' => 'Producer Motivation',
         'description' => 'Producer Motivation',
         'allowed_values' => [
-          'Environment benefit' => t(string: 'Environment benefit'),
+          'Environmental benefit' => t(string: 'Environmental benefit'),
           'Financial benefit' => t(string: 'Financial benefit'),
           'New market opportunity' => t(string: 'New market opportunity'),
           'Partnerships or networks' => t(string: 'Partnerships or networks'),

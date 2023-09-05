@@ -32,7 +32,7 @@ class CriticalAreaPlanting extends FarmLogType {
               'Grass legume/forb mix' => t(string: 'Grass legume/forb mix'),
               'Herbaceous woody mix' => t(string: 'Herbaceous woody mix'),
               'Perennial or reseeding' => t(string: 'Perennial or reseeding'),
-              'Shrubs ' => t(string: 'Shrubs'),
+              'Shrubs' => t(string: 'Shrubs'),
               'Trees' => t(string: 'Trees'),
             ],
             'required' => FALSE,

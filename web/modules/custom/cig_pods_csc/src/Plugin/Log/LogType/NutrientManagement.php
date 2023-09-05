@@ -55,7 +55,7 @@ class NutrientManagement extends FarmLogType {
         'label' => 'Nutrient Management Nutrient application method with CPS 590',
         'description' => 'Supplemental Data Nutrient application method with CPS 590',
 		    'allowed_values' => [
-          'Banded,' => t(string: 'Banded'),
+          'Banded' => t(string: 'Banded'),
           'Broadcast' => t(string: 'Broadcast'),
           'Injection' => t(string: 'Injection'),
           'Irrigation' => t(string: 'Irrigation'),
@@ -71,7 +71,7 @@ class NutrientManagement extends FarmLogType {
         'label' => 'Nutrient Management Nutrient application method in the previous year',
         'description' => 'Supplemental Data Nutrient application method in the previous year',
 		    'allowed_values' => [
-          'Banded,' => t(string: 'Banded'),
+          'Banded' => t(string: 'Banded'),
           'Broadcast' => t(string: 'Broadcast'),
           'Injection' => t(string: 'Injection'),
           'Irrigation' => t(string: 'Irrigation'),
@@ -89,7 +89,7 @@ class NutrientManagement extends FarmLogType {
 		    'allowed_values' => [
           'Single pre-planting' => t(string: 'Single pre-planting'),
           'Broadcast' => t(string: 'Broadcast'),
-          'Single post-planning' => t(string: 'Single post-planning'),
+          'Single post-planting' => t(string: 'Single post-planting'),
           'Split pre- and post-planting' => t(string: 'Split pre- and post-planting'),
           'Split post-planting' => t(string: 'Split post-planting'),
         ],
@@ -103,7 +103,7 @@ class NutrientManagement extends FarmLogType {
 		    'allowed_values' => [
           'Single pre-planting' => t(string: 'Single pre-planting'),
           'Broadcast' => t(string: 'Broadcast'),
-          'Single post-planning' => t(string: 'Single post-planning'),
+          'Single post-planting' => t(string: 'Single post-planting'),
           'Split pre- and post-planting' => t(string: 'Split pre- and post-planting'),
           'Split post-planting' => t(string: 'Split post-planting'),
         ],

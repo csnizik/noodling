@@ -28,11 +28,11 @@ class ForestFarming extends FarmLogType {
         'label' => 'Forest Farming Land use in previous years',
         'description' => 'Forest Farming Land use in previous years',
 		    'allowed_values' => [
-          'Forest,' => t(string: 'Forest'),
+          'Forest' => t(string: 'Forest'),
           'Multi-story cropping' => t(string: 'Multi-story cropping'),
           'Row crops' => t(string: 'Row crops'),
           'Pasture/grazing land' => t(string: 'Pasture/grazing land'),
-          'Other agroforestry ' => t(string: 'Other agroforestry '),
+          'Other agroforestry' => t(string: 'Other agroforestry '),
         ],
         'required' => FALSE,
         'multiple' => FALSE,

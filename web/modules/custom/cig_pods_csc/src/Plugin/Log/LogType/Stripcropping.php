@@ -36,6 +36,7 @@ class Stripcropping extends FarmLogType {
         'description' => 'Stripcropping Crop category',
 		    'allowed_values' => [
           'Erosion resistant crops' => t(string: 'Erosion resistant crops'),
+          'Fallow' => t(string: 'Fallow'),
           'Sediment trapping crops' => t(string: 'Sediment trapping crops'),
         ],
         'required' => FALSE,

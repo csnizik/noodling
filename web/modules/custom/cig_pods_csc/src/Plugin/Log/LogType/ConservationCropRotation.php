@@ -56,7 +56,7 @@ class ConservationCropRotation extends FarmLogType {
             'description' => 'Supplemental Data Conservation crop rotation tillage type',
                 'allowed_values' => [
               'Conventional (plow, chisel, disk)' => t(string: 'Conventional (plow, chisel, disk)'),
-              'No-till direct seed' => t(string: 'No-till direct seed'),
+              'No-till, direct seed' => t(string: 'No-till, direct seed'),
               'Reduced till' => t(string: 'Reduced till'),
               'Strip till' => t(string: 'Strip till'),
               'None' => t(string: 'None'),

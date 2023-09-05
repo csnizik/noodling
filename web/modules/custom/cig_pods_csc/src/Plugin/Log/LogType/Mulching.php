@@ -53,7 +53,7 @@ class Mulching extends FarmLogType {
         'label' => 'Mulching, Mulch Type',
         'description' => 'Mulching, Mulch Type',
 		    'allowed_values' => [
-          'Gravel,' => t(string: 'Gravel'),
+          'Gravel' => t(string: 'Gravel'),
           'Natural' => t(string: 'Natural'),
           'Synthetic' => t(string: 'Synthetic'),
           'Wood' => t(string: 'Wood'),

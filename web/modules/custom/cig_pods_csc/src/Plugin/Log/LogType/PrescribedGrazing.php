@@ -47,8 +47,8 @@ class PrescribedGrazing extends FarmLogType {
         'description' => 'Supplemental Data Grazing type',
 		    'allowed_values' => [
           'Cell grazing' => t(string: 'Cell grazing'),
-          'Deferred rotation' => t(string: 'Deferred rotation'),
-          'Management rotation' => t(string: 'Warm-season broadleaf'),
+          'Deferred rotational' => t(string: 'Deferred rotation'),
+          'Management intensive' => t(string: 'Warm-season broadleaf'),
           'Rest-rotation' => t(string: 'Rest-rotation'),
         ],
         'required' => FALSE,

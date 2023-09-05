@@ -28,7 +28,7 @@ class FieldBorder extends FarmLogType {
         'label' => 'Field Border 386 Species category',
         'description' => 'Field Border 386 Species category',
 		    'allowed_values' => [
-          'Forbs,' => t(string: 'Forbs'),
+          'Forbs' => t(string: 'Forbs'),
           'Grasses' => t(string: 'Grasses'),
           'Mix' => t(string: 'Mix'),
           'Shrubs' => t(string: 'Shrubs'),
