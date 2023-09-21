@@ -23,7 +23,7 @@ class Project extends FarmAssetType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'project_id_field' => [
         'type' => 'string',
         'label' => 'Project ID',
         'description' => 'Project ID',

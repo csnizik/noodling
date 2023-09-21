@@ -3,6 +3,30 @@
 use Drupal\asset\Entity\Asset;
 use Drupal\log\Entity\Log;
 
+function import_coversheet($in_data_array){
+    $in_data_array = array_map('trim', $in_data_array);
+
+    $coversheet_submission = [];
+    $coversheet_submission['type'] = 'project';
+    $coversheet_submission['name'] = $in_data_array[0];
+    $coversheet_submission['project_id_field'] = $in_data_array[1];
+    $coversheet_submission['project_grantee_org'] = $in_data_array[2];
+    $coversheet_submission['project_grantee_contact_name'] = $in_data_array[3];
+    $coversheet_submission['project_grantee_contact_email'] = $in_data_array[4];
+
+    $ndate = convertExcelDate($in_data_array[7]);
+    $coversheet_submission['project_start'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+
+    $ndate = convertExcelDate($in_data_array[8]);
+    $coversheet_submission['project_end'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+
+    $coversheet_submission['project_budget'] = $in_data_array[9];
+
+    $cs_to_save = Asset::create($coversheet_submission);
+            
+    $cs_to_save->save();
+}
+
 function import_project_summary($in_data_array, $cur_count){
     $dateConst = date('mdYhis', time());
     $entry_name = 'ps'. $dateConst . $cur_count;
@@ -215,7 +239,7 @@ function import_market_activities($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_producer_enrollment($in_data_array, $cur_count){
+function import_producer_enrollment($in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'pe'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -223,7 +247,7 @@ function import_producer_enrollment($in_data_array, $cur_count){
     $producer_enrollment_submission = [];
     $producer_enrollment_submission['type'] = 'producer_enrollment';
     $producer_enrollment_submission['name'] = $entry_name;
-    $producer_enrollment_submission['project_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'project_summary', 'name' => $entry_name]));
+    $producer_enrollment_submission['project_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'project', 'project_id_field' => $project_id_field]));
     $producer_enrollment_submission['p_enrollment_farm_id'] = $in_data_array[0];
     $producer_enrollment_submission['p_enrollment_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' =>  $in_data_array[1]]));
     $producer_enrollment_submission['p_enrollment_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' =>  $in_data_array[2]]));
@@ -277,7 +301,7 @@ function import_producer_enrollment($in_data_array, $cur_count){
 
 }
 
-function import_field_enrollment($in_data_array, $cur_count){
+function import_field_enrollment($in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'fe'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -285,17 +309,24 @@ function import_field_enrollment($in_data_array, $cur_count){
     $field_enrollment_submission = [];
     $field_enrollment_submission['type'] = 'field_enrollment';
     $field_enrollment_submission['name'] = $entry_name;
+
+    $project = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'project', 'project_id_field' => $project_id_field]));
+    $project_id = $project->id();
+    $field_enrollment_submission['f_enrollment_producer_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'producer_enrollment', 'project_id' => $project_id]));
+
     $field_enrollment_submission['f_enrollment_tract_id'] = $in_data_array[1];
     $field_enrollment_submission['f_enrollment_field_id'] = $in_data_array[2];
     $field_enrollment_submission['f_enrollment_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $in_data_array[3]]));
     $field_enrollment_submission['f_enrollment_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' => $in_data_array[4]]));
     $field_enrollment_submission['f_enrollment_prior_field_id'] = $in_data_array[5];
 
+    /*
     $producer_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')
         ->loadByProperties(['type' => 'producer_enrollment', 
                             'p_enrollment_farm_id' => $in_data_array[0], 
                             'p_enrollment_state.entity.name' => $in_data_array[3]]));
     $field_enrollment_submission['f_enrollment_producer_id'] = $producer_id;
+    */
 
     $ndate = convertExcelDate($in_data_array[7]);
     $field_enrollment_submission['f_enrollment_start_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();

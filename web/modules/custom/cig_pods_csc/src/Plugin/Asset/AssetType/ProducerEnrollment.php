@@ -28,7 +28,7 @@ class ProducerEnrollment extends FarmAssetType {
         'label' => 'Project ID',
         'description' => 'Project ID',
 		    'target_type' => 'asset',
-		    'target_bundle' => 'project_summary',
+		    'target_bundle' => 'project',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
