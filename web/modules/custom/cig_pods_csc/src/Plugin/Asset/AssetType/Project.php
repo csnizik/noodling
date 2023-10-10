@@ -79,6 +79,38 @@ class Project extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
+      'project_year_reporting' => [
+        'type' => 'list_string',
+        'label' => 'Choose Year of Reporting',
+        'description' => 'Choose Year of Reporting',
+        'allowed_values' => [
+          '2023' => t(string: '2023'),
+        ],
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      'project_month_reporting' => [
+        'type' => 'list_string',
+        'label' => 'Choose Month of Reporting',
+        'description' => 'Choose Month of Reporting',
+        'allowed_values' => [
+          'Jan 1 - March 31' => t(string: 'Jan 1 - March 31'),
+          'April 1 - June 30' => t(string: 'April 1 - June 30'),
+          'July 1 - September 30' => t(string: 'July 1 - September 30'),
+          'October 1 - December 31' => t(string: 'October 1 - December 31'),
+        ],
+        'required' => TRUE ,
+        'multiple' => FALSE,
+      ],
+      // 'file_upload' => [
+      //     'type' => 'file',
+      //     'label' => 'Excel file to be imported',
+      //     // 'upload_validators' => [
+      //     //   'file_validate_extensions' => [
+      //     //     'png gif jpg',
+      //     //   ],
+      //     // ],
+      // ],
     ];
 
     $farmFieldFactory = new FarmFieldFactory();
