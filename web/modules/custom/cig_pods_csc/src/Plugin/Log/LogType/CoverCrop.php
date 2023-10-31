@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Cover Crop log type.
  *
  * @LogType(
- * id = "cover_crop",
+ * id = "csc_cover_crop",
  * label = @Translation("CoverCrop"),
  * )
  */
@@ -23,7 +23,7 @@ class CoverCrop extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-        'p340_species_category' => [
+        'csc_p340_species_category' => [
             'type' => 'list_string',
             'label' => 'Supplemental Data 340 Species category',
             'description' => 'Supplemental Data 340 Species category',
@@ -37,7 +37,7 @@ class CoverCrop extends FarmLogType {
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'p340_planned_management' => [
+        'csc_p340_planned_management' => [
             'type' => 'list_string',
             'label' => 'Supplemental Data Cover crop planned management',
             'description' => 'Supplemental Data Cover crop planned management',
@@ -49,7 +49,7 @@ class CoverCrop extends FarmLogType {
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'p340_termination_method' => [
+        'csc_p340_termination_method' => [
             'type' => 'list_string',
             'label' => 'Supplemental Data Cover crop termination method',
             'description' => 'Supplemental Data Cover crop termination method',
@@ -63,7 +63,7 @@ class CoverCrop extends FarmLogType {
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'project_id' => [
+        'csc_project_id' => [
             'type' => 'entity_reference',
             'label' => 'Project ID',
             'description' => 'Project ID',
@@ -72,7 +72,7 @@ class CoverCrop extends FarmLogType {
             'required' => TRUE,
             'multiple' => FALSE,
         ],
-        'field_id' => [
+        'csc_field_id' => [
           'type' => 'entity_reference',
           'label' => 'Field ID',
           'description' => 'Field ID',

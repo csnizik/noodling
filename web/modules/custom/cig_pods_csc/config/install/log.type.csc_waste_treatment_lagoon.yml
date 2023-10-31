@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_waste_treatment_lagoon
+label: 'Waste Treatment Lagoon'
+description: 'Waste Treatment Lagoon'
+name_pattern: 'Waste Treatment Lagoon [log:id]'
+workflow: log_default
+new_revision: true

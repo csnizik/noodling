@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Vegetative Barrier log type.
  *
  * @LogType(
- * id = "vegetative_barrier",
+ * id = "csc_vegetative_barrier",
  * label = @Translation("VegetativeBarrier"),
  * )
  */
@@ -23,7 +23,7 @@ class VegetativeBarrier extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-        'project_id' => [
+        'csc_project_id' => [
           'type' => 'entity_reference',
           'label' => 'Project ID',
           'description' => 'Project ID',
@@ -32,7 +32,7 @@ class VegetativeBarrier extends FarmLogType {
           'required' => TRUE,
           'multiple' => FALSE,
         ],
-        'field_id' => [
+        'csc_field_id' => [
           'type' => 'entity_reference',
           'label' => 'Field ID',
           'description' => 'Field ID',
@@ -41,7 +41,7 @@ class VegetativeBarrier extends FarmLogType {
           'required' => TRUE,
           'multiple' => FALSE,
         ],
-        'p601_species_category' => [
+        'csc_p601_species_category' => [
           'type' => 'list_string',
           'label' => 'Supplemental Data 601 Species Category',
           'description' => 'Supplemental Data 601 Species Category',
@@ -53,7 +53,7 @@ class VegetativeBarrier extends FarmLogType {
           'required' => FALSE,
           'multiple' => FALSE,
         ],
-        'p601_barrier_width' => [
+        'csc_p601_barrier_width' => [
           'type' => 'fraction',
           'label' => 'Supplemental Data Barrier Width (feet)',
           'description' => 'Supplemental Data Barrier Width (feet)',

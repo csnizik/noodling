@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Hedgerow Planting log type.
  *
  * @LogType(
- * id = "hedgerow_planting",
+ * id = "csc_hedgerow_planting",
  * label = @Translation("Hedgerow Planting"),
  * )
  */
@@ -23,7 +23,7 @@ class HedgerowPlanting extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class HedgerowPlanting extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class HedgerowPlanting extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p422_species_category' => [
+      'csc_p422_species_category' => [
         'type' => 'list_string',
         'label' => 'Supplemental Data 422 Species category',
         'description' => 'Supplemental Data 422 Species category',
@@ -53,7 +53,7 @@ class HedgerowPlanting extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p422_species_density' => [
+      'csc_p422_species_density' => [
         'type' => 'fraction',
         'label' => 'Supplemental Data 422 Species density',
         'description' => 'Supplemental Data 422 Species density',

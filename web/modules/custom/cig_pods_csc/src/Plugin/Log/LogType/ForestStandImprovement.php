@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Forest Stand Improvement log type.
  *
  * @LogType(
- * id = "forest_stand_improvement",
+ * id = "csc_forest_stand_improvement",
  * label = @Translation("Forest Stand Improvement"),
  * )
  */
@@ -23,7 +23,7 @@ class ForestStandImprovement extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class ForestStandImprovement extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class ForestStandImprovement extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p666_implementation_purpose' => [
+      'csc_p666_implementation_purpose' => [
         'type' => 'entity_reference',
         'label' => 'Supplemental Data Purpose for implementation',
         'description' => 'Supplemental Data Purpose for implementation',

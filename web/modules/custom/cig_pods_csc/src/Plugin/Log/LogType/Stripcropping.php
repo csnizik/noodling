@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Stripcropping log type.
  *
  * @LogType(
- * id = "stripcropping",
+ * id = "csc_stripcropping",
  * label = @Translation("Stripcropping Log"),
  * )
  */
@@ -23,14 +23,14 @@ class Stripcropping extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p585_strip_width' => [
+      'csc_p585_strip_width' => [
         'type' => 'fraction',
         'label' => 'Stripcropping Strip width (Feet)',
         'description' => 'Stripcropping Strip width (Feet)',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p585_crop_category' => [
+      'csc_p585_crop_category' => [
         'type' => 'list_string',
         'label' => 'Stripcropping Crop category',
         'description' => 'Stripcropping Crop category',
@@ -42,14 +42,14 @@ class Stripcropping extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p585_number_of_strips' => [
+      'csc_p585_number_of_strips' => [
         'type' => 'fraction',
         'label' => 'Stripcropping number of strips',
         'description' => 'Stripcropping number of strips',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -58,7 +58,7 @@ class Stripcropping extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

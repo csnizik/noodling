@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_stripcropping
+label: 'Stripcropping'
+description: 'Stripcropping'
+name_pattern: 'Stripcropping log [log:id]'
+workflow: log_default
+new_revision: true

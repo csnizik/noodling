@@ -1,0 +1,13 @@
+uuid: 73440d05-39a6-475d-ba5e-e42cf1c40725
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_anaerobic_digester
+label: 'Anaerobic Digester'
+description: 'Anaerobic Digester'
+name_pattern: 'Anaerobic Digester log [log:id]'
+workflow: log_default
+new_revision: true

@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Riparian Forest Buffer log type.
  *
  * @LogType(
- * id = "riparian_forest_buffer",
+ * id = "csc_riparian_forest_buffer",
  * label = @Translation("Riparian Forest Buffer Log"),
  * )
  */
@@ -23,7 +23,7 @@ class RiparianForestBuffer extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p391_species_category' => [
+      'csc_p391_species_category' => [
         'type' => 'list_string',
         'label' => 'Riparian Forest Buffer Species Category',
         'description' => 'Riparian Forest Buffer Species Category',
@@ -35,14 +35,14 @@ class RiparianForestBuffer extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p391_species_density' => [
+      'csc_p391_species_density' => [
         'type' => 'fraction',
         'label' => 'Riparian Forest Buffer Species Density',
         'description' => 'Riparian Forest Buffer Species Density',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -51,7 +51,7 @@ class RiparianForestBuffer extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

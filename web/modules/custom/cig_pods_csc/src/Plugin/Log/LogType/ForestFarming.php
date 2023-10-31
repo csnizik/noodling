@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Forest Farming log type.
  *
  * @LogType(
- * id = "forest_farming",
+ * id = "csc_forest_farming",
  * label = @Translation("Forest Farming"),
  * )
  */
@@ -23,7 +23,7 @@ class ForestFarming extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p379_land_use_previous_years' => [
+      'csc_p379_land_use_prev_years' => [
         'type' => 'list_string',
         'label' => 'Forest Farming Land use in previous years',
         'description' => 'Forest Farming Land use in previous years',
@@ -37,7 +37,7 @@ class ForestFarming extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -46,7 +46,7 @@ class ForestFarming extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

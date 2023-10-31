@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Tree Shrub Establishment log type.
  *
  * @LogType(
- * id = "tree_shrub_establishment",
+ * id = "csc_tree_shrub_establishment",
  * label = @Translation("Tree Shrub Establishment Log"),
  * )
  */
@@ -23,7 +23,7 @@ class TreeShrubEstablishment extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p612_species_category' => [
+      'csc_p612_species_category' => [
         'type' => 'list_string',
         'label' => 'Tree Shrub Establishment 612 Species Category',
         'description' => 'Tree Shrub Establishment 612 Species Category',
@@ -35,14 +35,14 @@ class TreeShrubEstablishment extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p612_species_density' => [
+      'csc_p612_species_density' => [
         'type' => 'fraction',
         'label' => 'Tree Shrub Establishment 612 Species density',
         'description' => 'Tree Shrub Establishment 612 Species density',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -51,7 +51,7 @@ class TreeShrubEstablishment extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

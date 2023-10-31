@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Anaerobic Digester log type.
  *
  * @LogType(
- * id = "anaerobic_digester",
+ * id = "csc_anaerobic_digester",
  * label = @Translation("Anaerobic Digester Log"),
  * )
  */
@@ -23,7 +23,7 @@ class AnaerobicDigester extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p366_prior_waste_storage_system' => [
+      'csc_p366_prior_waste_storage_sys' => [
         'type' => 'entity_reference',
         'label' => 'Anaerobic Digester Waste storage system prior to installing',
         'description' => 'Anaerobic Digester Waste storage system prior to installing',
@@ -32,7 +32,7 @@ class AnaerobicDigester extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p366_digester_type' => [
+      'csc_p366_digester_type' => [
         'type' => 'list_string',
         'label' => 'Anaerobic Digester Digester type',
         'description' => 'Anaerobic Digester Digester type',
@@ -47,14 +47,14 @@ class AnaerobicDigester extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p366_digester_type_other' => [
+      'csc_p366_digester_type_other' => [
         'type' => 'string',
         'label' => 'Anaerobic Digester Other digester type',
         'description' => 'Anaerobic Digester Other digester type',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p366_addtl_feedback_source' => [
+      'csc_p366_addtl_fdbk_source_otr' => [
         'type' => 'list_string',
         'label' => 'Anaerobic Digester Additional feedstock source',
         'description' => 'Anaerobic Digester Additional feedstock source',
@@ -67,14 +67,14 @@ class AnaerobicDigester extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p366_addtl_feedback_source_other' => [
+      'csc_p366_addtl_feedback_source_other' => [
         'type' => 'string',
         'label' => 'Anaerobic Digester Other additional feedstock source',
         'description' => 'Anaerobic Digester Other additional feedstock source',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -83,7 +83,7 @@ class AnaerobicDigester extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

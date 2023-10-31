@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Waste Separation Facility log type.
  *
  * @LogType(
- * id = "waste_separation_facility",
+ * id = "csc_waste_separation_facility",
  * label = @Translation("WasteSeparationFacility"),
  * )
  */
@@ -23,7 +23,7 @@ class WasteSeparationFacility extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class WasteSeparationFacility extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class WasteSeparationFacility extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p632_separation_type' => [
+      'csc_p632_separation_type' => [
         'type' => 'list_string',
         'label' => 'Supplemental Data Separation type',
         'description' => 'Supplemental Data Separation type',
@@ -53,7 +53,7 @@ class WasteSeparationFacility extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p632_use_of_solids' => [
+      'csc_p632_use_of_solids' => [
         'type' => 'list_string',
         'label' => 'Supplemental Data Most common use of solids',
         'description' => 'Supplemental Data Most common use of solids',
@@ -65,7 +65,7 @@ class WasteSeparationFacility extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p632_use_of_solids_other' => [
+      'csc_p632_use_of_solids_other' => [
         'type' => 'string',
         'label' => 'Supplemental Data Other most common use of solids',
         'description' => 'Supplemental Data Other most common use of solids',

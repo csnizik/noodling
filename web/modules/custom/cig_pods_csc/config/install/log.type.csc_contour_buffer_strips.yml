@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_contour_buffer_strips
+label: 'Contour Buffer Strips'
+description: 'Contour Buffer Strips'
+name_pattern: 'Contour Buffer Strips log [log:id]'
+workflow: log_default
+new_revision: true

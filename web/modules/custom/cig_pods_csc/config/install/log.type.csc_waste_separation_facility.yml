@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_waste_separation_facility
+label: 'Waste Separation Facility'
+description: 'Waste Separation Facility'
+name_pattern: 'Waste Separation Facility log [log:id]'
+workflow: log_default
+new_revision: true

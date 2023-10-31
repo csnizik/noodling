@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Herbaceous Wind Barriers log type.
  *
  * @LogType(
- * id = "herbaceous_wind_barriers",
+ * id = "csc_herbaceous_wind_barriers",
  * label = @Translation("Herbaceous Wind Barriers"),
  * )
  */
@@ -23,7 +23,7 @@ class HerbaceousWindBarriers extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class HerbaceousWindBarriers extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class HerbaceousWindBarriers extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p603_species_category' => [
+      'csc_p603_species_category' => [
         'type' => 'list_string',
         'label' => 'Supplemental Data 603 Species category',
         'description' => 'Supplemental Data 603 Species category',
@@ -54,14 +54,14 @@ class HerbaceousWindBarriers extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p603_barrier_width' => [
+      'csc_p603_barrier_width' => [
         'type' => 'fraction',
         'label' => 'Supplemental Data Barrier Width',
         'description' => 'Supplemental Data Barrier Width',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p603_number_of_rows' => [
+      'csc_p603_number_of_rows' => [
         'type' => 'fraction',
         'label' => 'Supplemental Data Number of Rows',
         'description' => 'Supplemental Data Number of Rows',

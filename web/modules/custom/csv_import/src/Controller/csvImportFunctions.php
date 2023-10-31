@@ -806,17 +806,17 @@ function import_alley_cropping($in_data_array, $cur_count){
     $entry_name = 'ac'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'alley_cropping';
+    $supplemental_data_submission['type'] = 'csc_alley_cropping';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p311_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p311_species_density'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p311_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p311_species_density'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -828,25 +828,25 @@ function import_combustion_system_improvement($in_data_array, $cur_count){
     $entry_name = 'csi'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'combustion_system_improvement';
+    $supplemental_data_submission['type'] = 'csc_combustion_sys_improvement';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p372_prior_fuel_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $in_data_array[5]]));
-    $supplemental_data_submission['p372_prior_fuel_type_other'] = $in_data_array[6];
-    $supplemental_data_submission['p372_prior_fuel_amount'] = $in_data_array[7];
-    $supplemental_data_submission['p372_prior_fuel_amount_unit'] = $in_data_array[8];
-    $supplemental_data_submission['p372_prior_fuel_amount_unit_other'] = $in_data_array[9];
-    $supplemental_data_submission['p372_fuel_type_after'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $in_data_array[10]]));
-    $supplemental_data_submission['p372_fuel_type_after_other'] = $in_data_array[11];
-    $supplemental_data_submission['p372_fuel_amount_after'] = $in_data_array[12];
-    $supplemental_data_submission['p372_fuel_amount_unit_after'] = $in_data_array[13];
-    $supplemental_data_submission['p372_fuel_amount_unit_after_other'] = $in_data_array[14];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p372_prior_fuel_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $in_data_array[5]]));
+    $supplemental_data_submission['csc_p372_prior_fuel_type_other'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p372_prior_fuel_amount'] = $in_data_array[7];
+    $supplemental_data_submission['csc_p372_prior_fuel_amount_unit'] = $in_data_array[8];
+    $supplemental_data_submission['csc_p372_prior_fuel_amount_unit_other'] = $in_data_array[9];
+    $supplemental_data_submission['csc_p372_fuel_type_after'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $in_data_array[10]]));
+    $supplemental_data_submission['csc_p372_fuel_type_after_other'] = $in_data_array[11];
+    $supplemental_data_submission['csc_p372_fuel_amount_after'] = $in_data_array[12];
+    $supplemental_data_submission['csc_p372_fuel_amount_unit_after'] = $in_data_array[13];
+    $supplemental_data_submission['csc_p372_fuel_amount_unit_after_other'] = $in_data_array[14];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -858,16 +858,16 @@ function import_conservation_cover($in_data_array, $cur_count){
     $entry_name = 'cc'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'conservation_cover';
+    $supplemental_data_submission['type'] = 'csc_conservation_cover';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p327_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p327_species_category'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -879,20 +879,20 @@ function import_conservation_crop_rotation($in_data_array, $cur_count){
     $entry_name = 'ccr'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'conservation_crop_rotation';
+    $supplemental_data_submission['type'] = 'csc_conservation_crop_rotation';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p328_conservation_crop_type'] = $in_data_array[5];
-    $supplemental_data_submission['p328_change_implemented'] = $in_data_array[6];
-    $supplemental_data_submission['p328_rotation_tillage_type'] = $in_data_array[7];
-    $supplemental_data_submission['p328_rotation_tillage_type_other'] = $in_data_array[8];
-    $supplemental_data_submission['p328_total_rotation_length'] = $in_data_array[9];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p328_conservation_crop_type'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p328_change_implemented'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p328_rotation_tillage_type'] = $in_data_array[7];
+    $supplemental_data_submission['csc_p328_rotation_tillage_type_other'] = $in_data_array[8];
+    $supplemental_data_submission['csc_p328_total_rotation_length'] = $in_data_array[9];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -904,17 +904,17 @@ function import_contour_buffer_strips($in_data_array, $cur_count){
     $entry_name = 'cbs'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'contour_buffer_strips';
+    $supplemental_data_submission['type'] = 'csc_contour_buffer_strips';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p332_strip_width'] = $in_data_array[5];
-    $supplemental_data_submission['p332_species_category'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p332_strip_width'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p332_species_category'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -926,18 +926,18 @@ function import_cover_crop($in_data_array, $cur_count){
     $entry_name = 'cocr'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'cover_crop';
+    $supplemental_data_submission['type'] = 'csc_cover_crop';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p340_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p340_planned_management'] = $in_data_array[6];
-    $supplemental_data_submission['p340_termination_method'] = $in_data_array[7];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p340_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p340_planned_management'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p340_termination_method'] = $in_data_array[7];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -949,16 +949,16 @@ function import_critical_area_planting($in_data_array, $cur_count){
     $entry_name = 'cap'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'critical_area_planting';
+    $supplemental_data_submission['type'] = 'csc_critical_area_planting';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p342_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p342_species_category'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -970,19 +970,19 @@ function import_feed_management($in_data_array, $cur_count){
     $entry_name = 'fm'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'feed_management';
+    $supplemental_data_submission['type'] = 'csc_feed_management';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p592_crude_protein_percent'] = $in_data_array[5];
-    $supplemental_data_submission['p592_fat_percent'] = $in_data_array[6];
-    $supplemental_data_submission['p592_feed_additives'] = $in_data_array[7];
-    $supplemental_data_submission['p592_feed_additives_other'] = $in_data_array[8];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p592_crude_protein_percent'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p592_fat_percent'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p592_feed_additives'] = $in_data_array[7];
+    $supplemental_data_submission['csc_p592_feed_additives_other'] = $in_data_array[8];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -994,16 +994,16 @@ function import_field_border($in_data_array, $cur_count){
     $entry_name = 'fb'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'field_border';
+    $supplemental_data_submission['type'] = 'csc_field_border';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p386_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p386_species_category'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1015,17 +1015,17 @@ function import_filter_strip($in_data_array, $cur_count){
     $entry_name = 'fs'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'filter_strip';
+    $supplemental_data_submission['type'] = 'csc_filter_strip';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p393_strip_width'] = $in_data_array[5];
-    $supplemental_data_submission['p393_species_category'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p393_strip_width'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p393_species_category'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1037,16 +1037,16 @@ function import_forest_farming($in_data_array, $cur_count){
     $entry_name = 'ff'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'forest_farming';
+    $supplemental_data_submission['type'] = 'csc_forest_farming';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p379_land_use_previous_years'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p379_land_use_previous_years'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1058,16 +1058,16 @@ function import_forest_stand_improvement($in_data_array, $cur_count){
     $entry_name = 'fsi'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'forest_stand_improvement';
+    $supplemental_data_submission['type'] = 'csc_forest_stand_improvement';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p666_implementation_purpose'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => '666_implementation_purpose', 'name' => $in_data_array[5]]));;
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p666_implementation_purpose'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => '666_implementation_purpose', 'name' => $in_data_array[5]]));;
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1079,16 +1079,16 @@ function import_grassed_waterway($in_data_array, $cur_count){
     $entry_name = 'gw'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'grassed_waterway';
+    $supplemental_data_submission['type'] = 'csc_grassed_waterway';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p412_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p412_species_category'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1100,17 +1100,17 @@ function import_hedgerow_planting($in_data_array, $cur_count){
     $entry_name = 'hp'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'hedgerow_planting';
+    $supplemental_data_submission['type'] = 'csc_hedgerow_planting';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p422_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p422_species_density'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p422_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p422_species_density'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1122,18 +1122,18 @@ function import_herbaceous_wind_barriers($in_data_array, $cur_count){
     $entry_name = 'hwb'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'herbaceous_wind_barriers';
+    $supplemental_data_submission['type'] = 'csc_herbaceous_wind_barriers';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p603_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p603_barrier_width'] = $in_data_array[6];
-    $supplemental_data_submission['p603_number_of_rows'] = $in_data_array[7];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p603_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p603_barrier_width'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p603_number_of_rows'] = $in_data_array[7];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1145,17 +1145,17 @@ function import_mulching($in_data_array, $cur_count){
     $entry_name = 'm'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'mulching';
+    $supplemental_data_submission['type'] = 'csc_mulching';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p484_mulch_type'] = $in_data_array[5];
-    $supplemental_data_submission['p484_mulch_coverage'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p484_mulch_type'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p484_mulch_coverage'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1167,23 +1167,23 @@ function import_nutrient_management($in_data_array, $cur_count){
     $entry_name = 'nm'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'nutrient_management';
+    $supplemental_data_submission['type'] = 'csc_nutrient_management';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p590_nutrient_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'nutrient_type', 'name' => $in_data_array[5]]));
-    $supplemental_data_submission['p590_application_method'] = $in_data_array[6];
-    $supplemental_data_submission['p590_prior_application_method'] = $in_data_array[7];
-    $supplemental_data_submission['p590_application_timing'] = $in_data_array[8];
-    $supplemental_data_submission['p590_prior_application_timing'] = $in_data_array[9];
-    $supplemental_data_submission['p590_application_rate'] = $in_data_array[10];
-    $supplemental_data_submission['p590_application_rate_unit'] = $in_data_array[11];
-    $supplemental_data_submission['p590_application_rate_change'] = $in_data_array[12];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p590_nutrient_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'nutrient_type', 'name' => $in_data_array[5]]));
+    $supplemental_data_submission['csc_p590_application_method'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p590_prior_application_method'] = $in_data_array[7];
+    $supplemental_data_submission['csc_p590_application_timing'] = $in_data_array[8];
+    $supplemental_data_submission['csc_p590_prior_application_timing'] = $in_data_array[9];
+    $supplemental_data_submission['csc_p590_application_rate'] = $in_data_array[10];
+    $supplemental_data_submission['csc_p590_application_rate_unit'] = $in_data_array[11];
+    $supplemental_data_submission['csc_p590_application_rate_change'] = $in_data_array[12];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1195,18 +1195,18 @@ function import_pasture_and_hay_planting($in_data_array, $cur_count){
     $entry_name = 'pahp'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'pasture_hay_planting';
+    $supplemental_data_submission['type'] = 'csc_pasture_hay_planting';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p512_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p512_termination_process'] = $in_data_array[6];
-    $supplemental_data_submission['p512_other_termination_process'] = $in_data_array[7];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p512_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p512_termination_process'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p512_other_termination_process'] = $in_data_array[7];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1218,16 +1218,16 @@ function import_prescribed_grazing($in_data_array, $cur_count){
     $entry_name = 'pg'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'prescribed_grazing';
+    $supplemental_data_submission['type'] = 'csc_prescribed_grazing';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p528_grazing_type'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p528_grazing_type'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1239,16 +1239,16 @@ function import_range_planting($in_data_array, $cur_count){
     $entry_name = 'rp'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'range_planting';
+    $supplemental_data_submission['type'] = 'csc_range_planting';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p550_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p550_species_category'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1260,16 +1260,16 @@ function import_residue_and_tillage_management_notill($in_data_array, $cur_count
     $entry_name = 'rtmnt'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'residue_tillage_no_till';
+    $supplemental_data_submission['type'] = 'csc_residue_tillage_no_till';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p329_surface_disturbance'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p329_surface_disturbance'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1281,16 +1281,16 @@ function import_residue_and_tillage_management_redtill($in_data_array, $cur_coun
     $entry_name = 'rtmrt'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'residue_tillage_reduced_till';
+    $supplemental_data_submission['type'] = 'csc_residue_till_reduced_till';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p345_surface_disturbance'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p345_surface_disturbance'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1302,17 +1302,17 @@ function import_riparian_forest_buffer($in_data_array, $cur_count){
     $entry_name = 'rfb'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'riparian_forest_buffer';
+    $supplemental_data_submission['type'] = 'csc_riparian_forest_buffer';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p391_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p391_species_density'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p391_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p391_species_density'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1325,16 +1325,16 @@ function import_riparian_herbaceous_cover($in_data_array, $cur_count){
     $entry_name = 'rhc'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'riparian_herbaceous_cover';
+    $supplemental_data_submission['type'] = 'csc_riparian_herbaceous_cover';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p390_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p390_species_category'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1347,17 +1347,17 @@ function import_roofs_and_covers($in_data_array, $cur_count){
     $entry_name = 'rac'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'roofs_and_covers';
+    $supplemental_data_submission['type'] = 'csc_roofs_and_covers';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p367_roof_cover_type'] = $in_data_array[5];
-    $supplemental_data_submission['p367_roof_cover_type_other'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p367_roof_cover_type'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p367_roof_cover_type_other'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1369,17 +1369,17 @@ function import_silvopasture($in_data_array, $cur_count){
     $entry_name = 'silvop'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'silvopasture';
+    $supplemental_data_submission['type'] = 'csc_silvopasture';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p381_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p381_species_density'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p381_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p381_species_density'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1392,18 +1392,18 @@ function import_stripcropping($in_data_array, $cur_count){
     $entry_name = 'strip'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'stripcropping';
+    $supplemental_data_submission['type'] = 'csc_stripcropping';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p585_strip_width'] = $in_data_array[5];
-    $supplemental_data_submission['p585_crop_category'] = $in_data_array[6];
-    $supplemental_data_submission['p585_number_of_strips'] = $in_data_array[7];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p585_strip_width'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p585_crop_category'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p585_number_of_strips'] = $in_data_array[7];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1416,17 +1416,17 @@ function import_tree_shrub_establishment($in_data_array, $cur_count){
     $entry_name = 'tse'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'tree_shrub_establishment';
+    $supplemental_data_submission['type'] = 'csc_tree_shrub_establishment';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p612_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p612_species_density'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p612_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p612_species_density'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1438,17 +1438,17 @@ function import_vegetative_barrier($in_data_array, $cur_count){
     $entry_name = 'vb'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'vegetative_barrier';
+    $supplemental_data_submission['type'] = 'csc_vegetative_barrier';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p601_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p601_barrier_width'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p601_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p601_barrier_width'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1460,18 +1460,18 @@ function import_waste_separation_facility($in_data_array, $cur_count){
     $entry_name = 'wsepf'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'waste_separation_facility';
+    $supplemental_data_submission['type'] = 'csc_waste_separation_facility';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p632_separation_type'] = $in_data_array[5];
-    $supplemental_data_submission['p632_use_of_solids'] = $in_data_array[6];
-    $supplemental_data_submission['p632_use_of_solids_other'] = $in_data_array[7];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p632_separation_type'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p632_use_of_solids'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p632_use_of_solids_other'] = $in_data_array[7];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1484,16 +1484,16 @@ function import_waste_storage_facility($in_data_array, $cur_count){
     $entry_name = 'wstof'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'waste_storage_facility';
+    $supplemental_data_submission['type'] = 'csc_waste_storage_facility';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p313_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $in_data_array[5]]));
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p313_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $in_data_array[5]]));
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1505,16 +1505,16 @@ function import_waste_treatment($in_data_array, $cur_count){
     $entry_name = 'wt'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'waste_treatment';
+    $supplemental_data_submission['type'] = 'csc_waste_treatment';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p629_treatment_type'] = $in_data_array[5];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p629_treatment_type'] = $in_data_array[5];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1526,18 +1526,18 @@ function import_waste_treatment_lagoon($in_data_array, $cur_count){
     $entry_name = 'wtl'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'waste_treatment_lagoon';
+    $supplemental_data_submission['type'] = 'csc_waste_treatment_lagoon';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p359_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $in_data_array[5]]));
-    $supplemental_data_submission['p359_lagoon_cover_or_crust'] = filter_var($in_data_array[6], FILTER_VALIDATE_BOOLEAN);
-    $supplemental_data_submission['p359_lagoon_aeration'] = filter_var($in_data_array[7], FILTER_VALIDATE_BOOLEAN);
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p359_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $in_data_array[5]]));
+    $supplemental_data_submission['csc_p359_lagoon_cover_or_crust'] = filter_var($in_data_array[6], FILTER_VALIDATE_BOOLEAN);
+    $supplemental_data_submission['csc_p359_lagoon_aeration'] = filter_var($in_data_array[7], FILTER_VALIDATE_BOOLEAN);
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1549,17 +1549,17 @@ function import_windshelter_est_reno($in_data_array, $cur_count){
     $entry_name = 'wreno'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'windbreak_shelterbelt';
+    $supplemental_data_submission['type'] = 'csc_windbreak_shelterbelt';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p380_species_category'] = $in_data_array[5];
-    $supplemental_data_submission['p380_species_density'] = $in_data_array[6];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p380_species_category'] = $in_data_array[5];
+    $supplemental_data_submission['csc_p380_species_density'] = $in_data_array[6];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1571,20 +1571,20 @@ function import_anaerobic_digester($in_data_array, $cur_count){
     $entry_name = 'ad'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
 
-    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
+    $field_id = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'f_enrollment_field_id' => $in_data_array[2]]));
     $producer_id = $field_id->f_enrollment_producer_id->first()->get('entity')->getTarget()->getValue();
     $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
     $supplemental_data_submission = [];
-    $supplemental_data_submission['type'] = 'anaerobic_digester';
+    $supplemental_data_submission['type'] = 'csc_anaerobic_digester';
     $supplemental_data_submission['name'] = $entry_name;
-    $supplemental_data_submission['field_id'] = $field_id;
-    $supplemental_data_submission['project_id'] = $project_id;
-    $supplemental_data_submission['p366_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $in_data_array[5]]));
-    $supplemental_data_submission['p366_digester_type'] = $in_data_array[6];
-    $supplemental_data_submission['p366_digester_type_other'] = $in_data_array[7];
-    $supplemental_data_submission['p366_addtl_feedback_source'] = $in_data_array[8];
-    $supplemental_data_submission['p366_addtl_feedback_source_other'] = $in_data_array[9];
+    $supplemental_data_submission['csc_field_id'] = $field_id;
+    $supplemental_data_submission['csc_project_id'] = $project_id;
+    $supplemental_data_submission['csc_p366_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $in_data_array[5]]));
+    $supplemental_data_submission['csc_p366_digester_type'] = $in_data_array[6];
+    $supplemental_data_submission['csc_p366_digester_type_other'] = $in_data_array[7];
+    $supplemental_data_submission['csc_p366_addtl_feedback_source'] = $in_data_array[8];
+    $supplemental_data_submission['csc_p366_addtl_feedback_source_other'] = $in_data_array[9];
 
     $ps_to_save = Log::create($supplemental_data_submission);
 

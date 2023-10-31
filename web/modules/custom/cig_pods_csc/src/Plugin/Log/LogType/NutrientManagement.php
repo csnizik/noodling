@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Nutrient Management log type.
  *
  * @LogType(
- * id = "nutrient_management",
+ * id = "csc_nutrient_management",
  * label = @Translation("Nutrient Management Log"),
  * )
  */
@@ -23,7 +23,7 @@ class NutrientManagement extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class NutrientManagement extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class NutrientManagement extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p590_nutrient_type' => [
+      'csc_p590_nutrient_type' => [
         'type' => 'entity_reference',
         'label' => 'Nutrient Management Nutrient type with CPS 590',
         'description' => 'Supplemental Data Nutrient type with CPS 590',
@@ -50,7 +50,7 @@ class NutrientManagement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p590_application_method' => [
+      'csc_p590_application_method' => [
         'type' => 'list_string',
         'label' => 'Nutrient Management Nutrient application method with CPS 590',
         'description' => 'Supplemental Data Nutrient application method with CPS 590',
@@ -66,7 +66,7 @@ class NutrientManagement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p590_prior_application_method' => [
+      'csc_p590_pri_aplctn_method' => [
         'type' => 'list_string',
         'label' => 'Nutrient Management Nutrient application method in the previous year',
         'description' => 'Supplemental Data Nutrient application method in the previous year',
@@ -82,7 +82,7 @@ class NutrientManagement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p590_application_timing' => [
+      'csc_p590_application_timing' => [
         'type' => 'list_string',
         'label' => 'Nutrient Management Nutrient application timing with CPS 590',
         'description' => 'Supplemental Data Nutrient application timing with CPS 590',
@@ -96,7 +96,7 @@ class NutrientManagement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p590_prior_application_timing' => [
+      'csc_p590_pri_aplctn_timing' => [
         'type' => 'list_string',
         'label' => 'Nutrient Management Nutrient application timing in the previous year',
         'description' => 'Supplemental Data Nutrient application timing in the previous year',
@@ -110,14 +110,14 @@ class NutrientManagement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p590_application_rate' => [
+      'csc_p590_application_rate' => [
         'type' => 'fraction',
         'label' => 'Nutrient Management Nutrient application rate with CPS 590',
         'description' => 'Supplemental Data Nutrient application rate with CPS 590',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p590_application_rate_unit' => [
+      'csc_p590_application_rate_unit' => [
         'type' => 'list_string',
         'label' => 'Nutrient Management Nutrient application rate unit with CPS 590',
         'description' => 'Supplemental Data Nutrient application rate unit with CPS 590',
@@ -128,7 +128,7 @@ class NutrientManagement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p590_application_rate_change' => [
+      'csc_p590_aplctn_rate_change' => [
         'type' => 'list_string',
         'label' => 'Nutrient Management Nutrient application rate change',
         'description' => 'Supplemental Data Nutrient application rate change',

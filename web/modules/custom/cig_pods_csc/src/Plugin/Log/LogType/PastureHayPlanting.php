@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Pasture and Hay Planting log type.
  *
  * @LogType(
- * id = "pasture_hay_planting",
+ * id = "csc_pasture_hay_planting",
  * label = @Translation("Pasture and Hay Planting Log"),
  * )
  */
@@ -23,7 +23,7 @@ class PastureHayPlanting extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class PastureHayPlanting extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class PastureHayPlanting extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p512_species_category' => [
+      'csc_p512_species_category' => [
         'type' => 'list_string',
         'label' => 'Pasture and Hay Planting Species Category',
         'description' => 'Supplemental Data Species Category',
@@ -54,7 +54,7 @@ class PastureHayPlanting extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p512_termination_process' => [
+      'csc_p512_termination_process' => [
         'type' => 'list_string',
         'label' => 'Pasture and Hay Planting Termination process',
         'description' => 'Supplemental Data Termination process',
@@ -66,7 +66,7 @@ class PastureHayPlanting extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p512_other_termination_process' => [
+      'csc_p512_otr_term_process' => [
         'type' => 'string',
         'label' => 'Pasture and Hay Planting Other termination process',
         'description' => 'Supplemental Data Other termination process',

@@ -1,0 +1,13 @@
+uuid: 9377a23a-3ce3-4094-a225-403675499f7b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_mulching
+label: 'Mulching'
+description: 'Mulching'
+name_pattern: 'Mulching log [log:id]'
+workflow: log_default
+new_revision: true

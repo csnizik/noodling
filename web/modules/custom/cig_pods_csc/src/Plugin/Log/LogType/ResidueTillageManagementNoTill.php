@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Residue Tillage Management No Till log type.
  *
  * @LogType(
- * id = "residue_tillage_no_till",
+ * id = "csc_residue_tillage_no_till",
  * label = @Translation("Residue Tillage Management No Till Log"),
  * )
  */
@@ -23,7 +23,7 @@ class ResidueTillageManagementNoTill extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p329_surface_disturbance' => [
+      'csc_p329_surface_disturbance' => [
         'type' => 'list_string',
         'label' => 'Supplemental Data 329 Surface Disturbance',
         'description' => 'Supplemental Data 329 Surface Disturbance',
@@ -34,7 +34,7 @@ class ResidueTillageManagementNoTill extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -43,7 +43,7 @@ class ResidueTillageManagementNoTill extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

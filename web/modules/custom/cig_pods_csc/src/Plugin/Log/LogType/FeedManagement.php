@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Field Management log type.
  *
  * @LogType(
- * id = "feed_management",
+ * id = "csc_feed_management",
  * label = @Translation("Feed Management"),
  * )
  */
@@ -23,21 +23,21 @@ class FeedManagement extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p592_crude_protein_percent' => [
+      'csc_p592_crude_protein_percent' => [
         'type' => 'fraction',
         'label' => 'Feed Management Crude protein (Percent)',
         'description' => 'Feed Management Crude protein (Percent)',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p592_fat_percent' => [
+      'csc_p592_fat_percent' => [
         'type' => 'fraction',
         'label' => 'Feed Management Fat (percent)',
         'description' => 'Feed Management Fat (percent)',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p592_feed_additives' => [
+      'csc_p592_feed_additives' => [
         'type' => 'list_string',
         'label' => 'Feed Management Feed additives/supplements',
         'description' => 'Feed Management Feed additives/supplements',
@@ -50,14 +50,14 @@ class FeedManagement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p592_feed_additives_other' => [
+      'csc_p592_feed_additives_other' => [
         'type' => 'string',
         'label' => 'Feed Management Other Feed additives/supplements',
         'description' => 'Feed Management Other feed additives/supplements',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -66,7 +66,7 @@ class FeedManagement extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

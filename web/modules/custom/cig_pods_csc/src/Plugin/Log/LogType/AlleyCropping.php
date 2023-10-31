@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Alley Cropping log type.
  *
  * @LogType(
- * id = "alley_cropping",
+ * id = "csc_alley_cropping",
  * label = @Translation("Alley Cropping Log"),
  * )
  */
@@ -23,7 +23,7 @@ class AlleyCropping extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p311_species_category' => [
+      'csc_p311_species_category' => [
         'type' => 'list_string',
         'label' => 'Alley Cropping Species Category',
         'description' => 'Alley Cropping Species Category',
@@ -35,14 +35,14 @@ class AlleyCropping extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p311_species_density' => [
+      'csc_p311_species_density' => [
         'type' => 'fraction',
         'label' => 'Alley Cropping Species Density',
         'description' => 'Alley Cropping Species Density',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -51,7 +51,7 @@ class AlleyCropping extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

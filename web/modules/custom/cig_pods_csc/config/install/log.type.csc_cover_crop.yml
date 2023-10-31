@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_cover_crop
+label: 'Cover Crop'
+description: 'Cover Crop'
+name_pattern: 'Cover Crop log [log:id]'
+workflow: log_default
+new_revision: true

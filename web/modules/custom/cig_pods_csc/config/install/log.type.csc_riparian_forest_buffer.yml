@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_riparian_forest_buffer
+label: 'Riparian Forest Buffer'
+description: 'Riparian Forest Buffer'
+name_pattern: 'Riparian Forest Buffer log [log:id]'
+workflow: log_default
+new_revision: true

@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Riparian Herbaceous Cover log type.
  *
  * @LogType(
- * id = "riparian_herbaceous_cover",
+ * id = "csc_riparian_herbaceous_cover",
  * label = @Translation("Riparian Herbaceous Cover Log"),
  * )
  */
@@ -23,7 +23,7 @@ class RiparianHerbaceousCover extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p390_species_category' => [
+      'csc_p390_species_category' => [
         'type' => 'list_string',
         'label' => 'Riparian Herbaceous Cover Species Category',
         'description' => 'Riparian Herbaceous Cover Species Category',
@@ -38,7 +38,7 @@ class RiparianHerbaceousCover extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -47,7 +47,7 @@ class RiparianHerbaceousCover extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

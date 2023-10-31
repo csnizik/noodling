@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Silvopasture log type.
  *
  * @LogType(
- * id = "silvopasture",
+ * id = "csc_silvopasture",
  * label = @Translation("Silvopasture Log"),
  * )
  */
@@ -23,7 +23,7 @@ class Silvopasture extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p381_species_category' => [
+      'csc_p381_species_category' => [
         'type' => 'list_string',
         'label' => 'Silvopasture 381 Species category',
         'description' => 'Silvopasture 381 Species category',
@@ -36,14 +36,14 @@ class Silvopasture extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p381_species_density' => [
+      'csc_p381_species_density' => [
         'type' => 'fraction',
         'label' => 'Silvopasture 381 Species density',
         'description' => 'Silvopasture 381 Species density',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -52,7 +52,7 @@ class Silvopasture extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

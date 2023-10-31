@@ -1643,12 +1643,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'alley_cropping';
+      $supplemental_data_submission['type'] = 'csc_alley_cropping';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p311_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p311_species_density'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p311_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p311_species_density'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1678,15 +1678,15 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'anaerobic_digester';
+      $supplemental_data_submission['type'] = 'csc_anaerobic_digester';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p366_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $in_data_array[6]]));
-      $supplemental_data_submission['p366_digester_type'] = $in_data_array[7];
-      $supplemental_data_submission['p366_digester_type_other'] = $in_data_array[8];
-      $supplemental_data_submission['p366_addtl_feedback_source'] = $in_data_array[9];
-      $supplemental_data_submission['p366_addtl_feedback_source_other'] = $in_data_array[10];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p366_prior_waste_storage_sys'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $in_data_array[6]]));
+      $supplemental_data_submission['csc_p366_digester_type'] = $in_data_array[7];
+      $supplemental_data_submission['csc_p366_digester_type_other'] = $in_data_array[8];
+      $supplemental_data_submission['csc_p366_addtl_feedback_source'] = $in_data_array[9];
+      $supplemental_data_submission['csc_p366_addtl_fdbk_source_otr'] = $in_data_array[10];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1716,20 +1716,20 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'combustion_system_improvement';
+      $supplemental_data_submission['type'] = 'csc_combustion_sys_improvement';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p372_prior_fuel_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $csv_line[6]]));
-      $supplemental_data_submission['p372_prior_fuel_type_other'] = $csv_line[7];
-      $supplemental_data_submission['p372_prior_fuel_amount'] = $csv_line[8];
-      $supplemental_data_submission['p372_prior_fuel_amount_unit'] = $csv_line[9];
-      $supplemental_data_submission['p372_prior_fuel_amount_unit_other'] = $csv_line[10];
-      $supplemental_data_submission['p372_fuel_type_after'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $csv_line[11]]));
-      $supplemental_data_submission['p372_fuel_type_after_other'] = $csv_line[12];
-      $supplemental_data_submission['p372_fuel_amount_after'] = $csv_line[13];
-      $supplemental_data_submission['p372_fuel_amount_unit_after'] = $csv_line[14];
-      $supplemental_data_submission['p372_fuel_amount_unit_after_other'] = $csv_line[15];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p372_prior_fuel_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $csv_line[6]]));
+      $supplemental_data_submission['csc_p372_prior_fuel_type_other'] = $csv_line[7];
+      $supplemental_data_submission['csc_p372_prior_fuel_amount'] = $csv_line[8];
+      $supplemental_data_submission['csc_p372_prior_fuel_amount_unit'] = $csv_line[9];
+      $supplemental_data_submission['csc_p372_pri_fuel_amnt_unit_otr'] = $csv_line[10];
+      $supplemental_data_submission['csc_p372_fuel_type_after'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'fuel_type', 'name' => $csv_line[11]]));
+      $supplemental_data_submission['csc_p372_fuel_type_after_other'] = $csv_line[12];
+      $supplemental_data_submission['csc_p372_fuel_amount_after'] = $csv_line[13];
+      $supplemental_data_submission['csc_p372_fuel_amount_unit_after'] = $csv_line[14];
+      $supplemental_data_submission['csc_p372_fuel_amnt_unit_aft_otr'] = $csv_line[15];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1758,11 +1758,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'conservation_cover';
+      $supplemental_data_submission['type'] = 'csc_conservation_cover';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p327_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p327_species_category'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1791,15 +1791,15 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'conservation_crop_rotation';
+      $supplemental_data_submission['type'] = 'csc_conservation_crop_rotation';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p328_conservation_crop_type'] = $csv_line[6];
-      $supplemental_data_submission['p328_change_implemented'] = $csv_line[7];
-      $supplemental_data_submission['p328_rotation_tillage_type'] = $csv_line[8];
-      $supplemental_data_submission['p328_rotation_tillage_type_other'] = $csv_line[9];
-      $supplemental_data_submission['p328_total_rotation_length'] = $csv_line[10];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p328_conservation_crop_type'] = $csv_line[6];
+      $supplemental_data_submission['csc_p328_change_implemented'] = $csv_line[7];
+      $supplemental_data_submission['csc_p328_rotation_tillage_type'] = $csv_line[8];
+      $supplemental_data_submission['csc_p328_rotation_till_type_otr'] = $csv_line[9];
+      $supplemental_data_submission['csc_p328_total_rotation_length'] = $csv_line[10];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1828,12 +1828,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'contour_buffer_strips';
+      $supplemental_data_submission['type'] = 'csc_contour_buffer_strips';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p332_strip_width'] = $csv_line[6];
-      $supplemental_data_submission['p332_species_category'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p332_strip_width'] = $csv_line[6];
+      $supplemental_data_submission['csc_p332_species_category'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1862,13 +1862,13 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'cover_crop';
+      $supplemental_data_submission['type'] = 'csc_cover_crop';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p340_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p340_planned_management'] = $csv_line[7];
-      $supplemental_data_submission['p340_termination_method'] = $csv_line[8];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p340_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p340_planned_management'] = $csv_line[7];
+      $supplemental_data_submission['csc_p340_termination_method'] = $csv_line[8];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1897,11 +1897,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'critical_area_planting';
+      $supplemental_data_submission['type'] = 'csc_critical_area_planting';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p342_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p342_species_category'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1930,14 +1930,14 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'feed_management';
+      $supplemental_data_submission['type'] = 'csc_feed_management';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p592_crude_protein_percent'] = $csv_line[6];
-      $supplemental_data_submission['p592_fat_percent'] = $csv_line[7];
-      $supplemental_data_submission['p592_feed_additives'] = $csv_line[8];
-      $supplemental_data_submission['p592_feed_additives_other'] = $csv_line[9];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p592_crude_protein_percent'] = $csv_line[6];
+      $supplemental_data_submission['csc_p592_fat_percent'] = $csv_line[7];
+      $supplemental_data_submission['csc_p592_feed_additives'] = $csv_line[8];
+      $supplemental_data_submission['csc_p592_feed_additives_other'] = $csv_line[9];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1966,11 +1966,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'field_border';
+      $supplemental_data_submission['type'] = 'csc_field_border';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p386_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p386_species_category'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -1999,12 +1999,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'filter_strip';
+      $supplemental_data_submission['type'] = 'csc_filter_strip';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p393_strip_width'] = $csv_line[6];
-      $supplemental_data_submission['p393_species_category'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p393_strip_width'] = $csv_line[6];
+      $supplemental_data_submission['csc_p393_species_category'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2033,11 +2033,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'forest_farming';
+      $supplemental_data_submission['type'] = 'csc_forest_farming';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p379_land_use_previous_years'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p379_land_use_prev_years'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2066,11 +2066,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'forest_stand_improvement';
+      $supplemental_data_submission['type'] = 'csc_forest_stand_improvement';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p666_implementation_purpose'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => '666_implementation_purpose', 'name' => $csv_line[6]]));;
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p666_implementation_purpose'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => '666_implementation_purpose', 'name' => $csv_line[6]]));;
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2099,11 +2099,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'grassed_waterway';
+      $supplemental_data_submission['type'] = 'csc_grassed_waterway';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p412_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p412_species_category'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2132,12 +2132,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'hedgerow_planting';
+      $supplemental_data_submission['type'] = 'csc_hedgerow_planting';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p422_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p422_species_density'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p422_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p422_species_density'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2166,13 +2166,13 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'herbaceous_wind_barriers';
+      $supplemental_data_submission['type'] = 'csc_herbaceous_wind_barriers';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p603_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p603_barrier_width'] = $csv_line[7];
-      $supplemental_data_submission['p603_number_of_rows'] = $csv_line[8];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p603_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p603_barrier_width'] = $csv_line[7];
+      $supplemental_data_submission['csc_p603_number_of_rows'] = $csv_line[8];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2201,12 +2201,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'mulching';
+      $supplemental_data_submission['type'] = 'csc_mulching';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p484_mulch_type'] = $csv_line[6];
-      $supplemental_data_submission['p484_mulch_coverage'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p484_mulch_type'] = $csv_line[6];
+      $supplemental_data_submission['csc_p484_mulch_coverage'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2235,18 +2235,18 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'nutrient_management';
+      $supplemental_data_submission['type'] = 'csc_nutrient_management';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p590_nutrient_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'nutrient_type', 'name' => $csv_line[6]]));
-      $supplemental_data_submission['p590_application_method'] = $csv_line[7];
-      $supplemental_data_submission['p590_prior_application_method'] = $csv_line[8];
-      $supplemental_data_submission['p590_application_timing'] = $csv_line[9];
-      $supplemental_data_submission['p590_prior_application_timing'] = $csv_line[10];
-      $supplemental_data_submission['p590_application_rate'] = $csv_line[11];
-      $supplemental_data_submission['p590_application_rate_unit'] = $csv_line[12];
-      $supplemental_data_submission['p590_application_rate_change'] = $csv_line[13];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p590_nutrient_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['csc_vid' => 'nutrient_type', 'name' => $csv_line[6]]));
+      $supplemental_data_submission['csc_p590_application_method'] = $csv_line[7];
+      $supplemental_data_submission['csc_p590_pri_aplctn_method'] = $csv_line[8];
+      $supplemental_data_submission['csc_p590_pri_aplctn_timing'] = $csv_line[9];
+      $supplemental_data_submission['csc_p590_prior_application_timing'] = $csv_line[10];
+      $supplemental_data_submission['csc_p590_application_rate'] = $csv_line[11];
+      $supplemental_data_submission['csc_p590_application_rate_unit'] = $csv_line[12];
+      $supplemental_data_submission['csc_p590_aplctn_rate_change'] = $csv_line[13];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2275,13 +2275,13 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'pasture_hay_planting';
+      $supplemental_data_submission['type'] = 'csc_pasture_hay_planting';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p512_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p512_termination_process'] = $csv_line[7];
-      $supplemental_data_submission['p512_other_termination_process'] = $csv_line[8];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p512_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p512_termination_process'] = $csv_line[7];
+      $supplemental_data_submission['csc_p512_otr_term_process'] = $csv_line[8];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2310,11 +2310,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'prescribed_grazing';
+      $supplemental_data_submission['type'] = 'csc_prescribed_grazing';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p528_grazing_type'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p528_grazing_type'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2343,11 +2343,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'range_planting';
+      $supplemental_data_submission['type'] = 'csc_range_planting';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p550_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p550_species_category'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2376,11 +2376,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'residue_tillage_no_till';
+      $supplemental_data_submission['type'] = 'csc_residue_tillage_no_till';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p329_surface_disturbance'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p329_surface_disturbance'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2409,11 +2409,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'residue_tillage_reduced_till';
+      $supplemental_data_submission['type'] = 'csc_residue_till_reduced_till';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p345_surface_disturbance'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p345_surface_disturbance'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2442,12 +2442,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'riparian_forest_buffer';
+      $supplemental_data_submission['type'] = 'csc_riparian_forest_buffer';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p391_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p391_species_density'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p391_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p391_species_density'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2477,11 +2477,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'riparian_herbaceous_cover';
+      $supplemental_data_submission['type'] = 'csc_riparian_herbaceous_cover';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p390_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p390_species_category'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2511,12 +2511,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'roofs_and_covers';
+      $supplemental_data_submission['type'] = 'csc_roofs_and_covers';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p367_roof_cover_type'] = $csv_line[6];
-      $supplemental_data_submission['p367_roof_cover_type_other'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p367_roof_cover_type'] = $csv_line[6];
+      $supplemental_data_submission['csc_p367_roof_cover_type_other'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2545,12 +2545,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'silvopasture';
+      $supplemental_data_submission['type'] = 'csc_silvopasture';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p381_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p381_species_density'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p381_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p381_species_density'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2580,13 +2580,13 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'stripcropping';
+      $supplemental_data_submission['type'] = 'csc_stripcropping';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p585_strip_width'] = $csv_line[6];
-      $supplemental_data_submission['p585_crop_category'] = $csv_line[7];
-      $supplemental_data_submission['p585_number_of_strips'] = $csv_line[8];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p585_strip_width'] = $csv_line[6];
+      $supplemental_data_submission['csc_p585_crop_category'] = $csv_line[7];
+      $supplemental_data_submission['csc_p585_number_of_strips'] = $csv_line[8];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2616,12 +2616,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'tree_shrub_establishment';
+      $supplemental_data_submission['type'] = 'csc_tree_shrub_establishment';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p612_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p612_species_density'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p612_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p612_species_density'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2650,12 +2650,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'vegetative_barrier';
+      $supplemental_data_submission['type'] = 'csc_vegetative_barrier';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p601_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p601_barrier_width'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p601_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p601_barrier_width'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2684,13 +2684,13 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'waste_separation_facility';
+      $supplemental_data_submission['type'] = 'csc_waste_separation_facility';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p632_separation_type'] = $csv_line[6];
-      $supplemental_data_submission['p632_use_of_solids'] = $csv_line[7];
-      $supplemental_data_submission['p632_use_of_solids_other'] = $csv_line[8];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p632_separation_type'] = $csv_line[6];
+      $supplemental_data_submission['csc_p632_use_of_solids'] = $csv_line[7];
+      $supplemental_data_submission['csc_p632_use_of_solids_other'] = $csv_line[8];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2720,11 +2720,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'waste_storage_facility';
+      $supplemental_data_submission['type'] = 'csc_waste_storage_facility';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p313_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $csv_line[6]]));
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p313_pri_waste_storage_sys'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $csv_line[6]]));
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2753,11 +2753,11 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'waste_treatment';
+      $supplemental_data_submission['type'] = 'csc_waste_treatment';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p629_treatment_type'] = $csv_line[6];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p629_treatment_type'] = $csv_line[6];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2786,13 +2786,13 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'waste_treatment_lagoon';
+      $supplemental_data_submission['type'] = 'csc_waste_treatment_lagoon';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p359_prior_waste_storage_system'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'waste_storage_system', 'name' => $csv_line[6]]));
-      $supplemental_data_submission['p359_lagoon_cover_or_crust'] = filter_var($csv_line[7], FILTER_VALIDATE_BOOLEAN);
-      $supplemental_data_submission['p359_lagoon_aeration'] = filter_var($csv_line[8], FILTER_VALIDATE_BOOLEAN);
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p359_pri_waste_storage_sys'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['csc_vid' => 'waste_storage_system', 'name' => $csv_line[6]]));
+      $supplemental_data_submission['csc_p359_lagoon_cover_or_crust'] = filter_var($csv_line[7], FILTER_VALIDATE_BOOLEAN);
+      $supplemental_data_submission['csc_p359_lagoon_aeration'] = filter_var($csv_line[8], FILTER_VALIDATE_BOOLEAN);
 
       $ps_to_save = Log::create($supplemental_data_submission);
 
@@ -2821,12 +2821,12 @@ class CsvImportController extends ControllerBase {
       $project_id = $producer_id->project_id->first()->get('entity')->getTarget()->getValue();
 
       $supplemental_data_submission = [];
-      $supplemental_data_submission['type'] = 'windbreak_shelterbelt';
+      $supplemental_data_submission['type'] = 'csc_windbreak_shelterbelt';
       $supplemental_data_submission['name'] = $csv_line[0];
-      $supplemental_data_submission['field_id'] = $field_id;
-      $supplemental_data_submission['project_id'] = $project_id;
-      $supplemental_data_submission['p380_species_category'] = $csv_line[6];
-      $supplemental_data_submission['p380_species_density'] = $csv_line[7];
+      $supplemental_data_submission['csc_field_id'] = $field_id;
+      $supplemental_data_submission['csc_project_id'] = $project_id;
+      $supplemental_data_submission['csc_p380_species_category'] = $csv_line[6];
+      $supplemental_data_submission['csc_p380_species_density'] = $csv_line[7];
 
       $ps_to_save = Log::create($supplemental_data_submission);
 

@@ -1,0 +1,13 @@
+uuid: 975d8745-f5a7-48f1-97af-b0784db527b8
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_residue_till_reduced_till
+label: 'Residue Tillage Management Reduced Till'
+description: 'Residue Tillage Management Reduced Till'
+name_pattern: 'Residue Tillage Management Reduced Till log [log:id]'
+workflow: log_default
+new_revision: true

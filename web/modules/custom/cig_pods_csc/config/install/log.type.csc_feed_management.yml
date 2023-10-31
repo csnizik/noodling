@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_feed_management
+label: 'Feed Management'
+description: 'Feed Management'
+name_pattern: 'Feed Management log [log:id]'
+workflow: log_default
+new_revision: true

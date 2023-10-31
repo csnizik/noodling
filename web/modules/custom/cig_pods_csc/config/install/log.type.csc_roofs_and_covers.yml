@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_roofs_and_covers
+label: 'Roofs And Covers'
+description: 'Roofs And Covers'
+name_pattern: 'Roofs And Covers log [log:id]'
+workflow: log_default
+new_revision: true

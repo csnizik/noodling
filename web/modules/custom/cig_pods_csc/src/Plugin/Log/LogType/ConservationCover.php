@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Conservation Cover log type.
  *
  * @LogType(
- * id = "conservation_cover",
+ * id = "csc_conservation_cover",
  * label = @Translation("Conservation Cover Log"),
  * )
  */
@@ -23,7 +23,7 @@ class ConservationCover extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p327_species_category' => [
+      'csc_p327_species_category' => [
         'type' => 'list_string',
         'label' => 'Conservation Cover Species category',
         'description' => 'Conservation Cover Species category',
@@ -37,7 +37,7 @@ class ConservationCover extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -46,7 +46,7 @@ class ConservationCover extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

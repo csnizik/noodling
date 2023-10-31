@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Windbreak Shelterbelt log type.
  *
  * @LogType(
- * id = "windbreak_shelterbelt",
+ * id = "csc_windbreak_shelterbelt",
  * label = @Translation("Windbreak Shelterbelt"),
  * )
  */
@@ -23,7 +23,7 @@ class WindbreakShelterbelt extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class WindbreakShelterbelt extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class WindbreakShelterbelt extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p380_species_category' => [
+      'csc_p380_species_category' => [
         'type' => 'list_string',
         'label' => 'Windbreak Shelterbelt 380 Species category',
         'description' => 'Windbreak Shelterbelt 380 Species category',
@@ -53,7 +53,7 @@ class WindbreakShelterbelt extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p380_species_density' => [
+      'csc_p380_species_density' => [
         'type' => 'fraction',
         'label' => 'Windbreak Shelterbelt 380 Species Density',
         'description' => 'Windbreak Shelterbelt 380 Species Density',

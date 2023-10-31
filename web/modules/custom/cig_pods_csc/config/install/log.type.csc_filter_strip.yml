@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_filter_strip
+label: 'Filter Strip'
+description: 'Filter Strip'
+name_pattern: 'Filter Strip log [log:id]'
+workflow: log_default
+new_revision: true

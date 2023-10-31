@@ -1,0 +1,13 @@
+uuid: feec9acd-6641-4ee0-a122-b4ba454884e0
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_herbaceous_wind_barriers
+label: 'Herbaceous Wind Barriers'
+description: 'Herbaceous Wind Barriers'
+name_pattern: 'Herbaceous Wind Barriers [log:id]'
+workflow: log_default
+new_revision: true

@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Waste Treatment log type.
  *
  * @LogType(
- * id = "waste_treatment",
+ * id = "csc_waste_treatment",
  * label = @Translation("Waste Treatment"),
  * )
  */
@@ -23,7 +23,7 @@ class WasteTreatment extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class WasteTreatment extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class WasteTreatment extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p629_treatment_type' => [
+      'csc_p629_treatment_type' => [
         'type' => 'list_string',
         'label' => 'Waste Treatment Treatment Type',
         'description' => 'Waste Treatment Treatment Type',

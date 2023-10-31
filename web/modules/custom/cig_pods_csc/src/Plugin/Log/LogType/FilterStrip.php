@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Filter Strip log type.
  *
  * @LogType(
- * id = "filter_strip",
+ * id = "csc_filter_strip",
  * label = @Translation("Filter Strip"),
  * )
  */
@@ -23,14 +23,14 @@ class FilterStrip extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p393_strip_width' => [
+      'csc_p393_strip_width' => [
         'type' => 'fraction',
         'label' => 'Filter Strip, Strip width (Feet)',
         'description' => 'Filter Strip, Strip width (Feet)',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p393_species_category' => [
+      'csc_p393_species_category' => [
         'type' => 'list_string',
         'label' => 'Filter Strip, 393 Species category',
         'description' => 'Filter Strip, 393 Species category',
@@ -43,7 +43,7 @@ class FilterStrip extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -52,7 +52,7 @@ class FilterStrip extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

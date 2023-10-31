@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Combustion System Improvement log type.
  *
  * @LogType(
- * id = "combustion_system_improvement",
+ * id = "csc_combustion_sys_improvement",
  * label = @Translation("Combustion System Improvement Log"),
  * )
  */
@@ -23,7 +23,7 @@ class CombustionSystemImprovement extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p372_prior_fuel_type' => [
+      'csc_p372_prior_fuel_type' => [
         'type' => 'entity_reference',
         'label' => 'Combustion System Improvement Fuel type before installation',
         'description' => 'Combustion System Improvement Fuel type before installation',
@@ -32,21 +32,21 @@ class CombustionSystemImprovement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p372_prior_fuel_type_other' => [
+      'csc_p372_prior_fuel_type_other' => [
         'type' => 'string',
         'label' => 'Combustion System Improvement Other fuel type before installation',
         'description' => 'Combustion System Improvement Other fuel type before installation',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p372_prior_fuel_amount' => [
+      'csc_p372_prior_fuel_amount' => [
         'type' => 'fraction',
         'label' => 'Combustion System Improvement Fuel amount before installation',
         'description' => 'Combustion System Improvement Fuel amount before installation',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p372_prior_fuel_amount_unit' => [
+      'csc_p372_prior_fuel_amount_unit' => [
         'type' => 'list_string',
         'label' => 'Combustion System Improvement Fuel amount unit before installation',
         'description' => 'Combustion System Improvement Fuel amount unit before installation',
@@ -60,14 +60,14 @@ class CombustionSystemImprovement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p372_prior_fuel_amount_unit_other' => [
+      'csc_p372_pri_fuel_amnt_unit_otr' => [
         'type' => 'string',
         'label' => 'Combustion System Improvement Other fuel amount unit before installation',
         'description' => 'Combustion System Improvement Other fuel amount unit before installation',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p372_fuel_type_after' => [
+      'csc_p372_fuel_type_after' => [
         'type' => 'entity_reference',
         'label' => 'Combustion System Improvement Fuel type after installation',
         'description' => 'Combustion System Improvement Fuel type after installation',
@@ -76,21 +76,21 @@ class CombustionSystemImprovement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p372_fuel_type_after_other' => [
+      'csc_p372_fuel_type_after_other' => [
         'type' => 'string',
         'label' => 'Combustion System Improvement Other fuel type after installation',
         'description' => 'Combustion System Improvement Other fuel type after installation',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p372_fuel_amount_after' => [
+      'csc_p372_fuel_amount_after' => [
         'type' => 'fraction',
         'label' => 'Combustion System Improvement Fuel amount after installation',
         'description' => 'Combustion System Improvement Fuel amount after installation',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p372_fuel_amount_unit_after' => [
+      'csc_p372_fuel_amount_unit_after' => [
         'type' => 'list_string',
         'label' => 'Combustion System Improvement Fuel amount unit after installation',
         'description' => 'Combustion System Improvement Fuel amount unit after installation',
@@ -104,14 +104,14 @@ class CombustionSystemImprovement extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p372_fuel_amount_unit_after_other' => [
+      'csc_p372_fuel_amnt_unit_aft_otr' => [
         'type' => 'string',
         'label' => 'Combustion System Improvement Other fuel amount unit after installation',
         'description' => 'Combustion System Improvement Other fuel amount unit after installation',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -120,7 +120,7 @@ class CombustionSystemImprovement extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

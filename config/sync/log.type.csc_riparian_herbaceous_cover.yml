@@ -1,0 +1,13 @@
+uuid: 51d855f7-9dce-4a94-b376-2070b06983bc
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_riparian_herbaceous_cover
+label: 'Riparian Herbaceous Cover'
+description: 'Riparian Herbaceous Cover'
+name_pattern: 'Riparian Herbaceous Cover log [log:id]'
+workflow: log_default
+new_revision: true

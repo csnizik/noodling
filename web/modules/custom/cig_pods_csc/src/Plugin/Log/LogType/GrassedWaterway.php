@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Grassed Waterway log type.
  *
  * @LogType(
- * id = "grassed_waterway",
+ * id = "csc_grassed_waterway",
  * label = @Translation("Grassed Waterway"),
  * )
  */
@@ -23,7 +23,7 @@ class GrassedWaterway extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class GrassedWaterway extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class GrassedWaterway extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p412_species_category' => [
+      'csc_p412_species_category' => [
         'type' => 'list_string',
         'label' => 'Supplemental Data 412 Species category',
         'description' => 'Supplemental Data 412 Species category',

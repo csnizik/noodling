@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Conservation Crop Rotation log type.
  *
  * @LogType(
- * id = "conservation_crop_rotation",
+ * id = "csc_conservation_crop_rotation",
  * label = @Translation("ConservationCropRotation"),
  * )
  */
@@ -23,7 +23,7 @@ class ConservationCropRotation extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-        'p328_conservation_crop_type' => [
+        'csc_p328_conservation_crop_type' => [
             'type' => 'list_string',
             'label' => 'Supplemental Data Conservation Crop Type',
             'description' => 'Supplemental Data Conservation Crop Type',
@@ -37,7 +37,7 @@ class ConservationCropRotation extends FarmLogType {
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'p328_change_implemented' => [
+        'csc_p328_change_implemented' => [
             'type' => 'list_string',
             'label' => 'Supplemental Data Change implemented',
             'description' => 'Supplemental Data Change implemented',
@@ -50,7 +50,7 @@ class ConservationCropRotation extends FarmLogType {
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'p328_rotation_tillage_type' => [
+        'csc_p328_rotation_tillage_type' => [
             'type' => 'list_string',
             'label' => 'Supplemental Data Conservation crop rotation tillage type',
             'description' => 'Supplemental Data Conservation crop rotation tillage type',
@@ -65,21 +65,21 @@ class ConservationCropRotation extends FarmLogType {
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'p328_rotation_tillage_type_other' => [
+        'csc_p328_rotation_till_type_otr' => [
             'type' => 'string',
             'label' => 'Supplemental Data Other conservation crop rotation tillage type',
             'description' => 'Supplemental Data Other conservation crop rotation tillage type',
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'p328_total_rotation_length' => [
+        'csc_p328_total_rotation_length' => [
             'type' => 'fraction',
             'label' => 'Supplemental Data Total conservation crop rotation length in days',
             'description' => 'Supplemental Data Total conservation crop rotation length in days',
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'project_id' => [
+        'csc_project_id' => [
             'type' => 'entity_reference',
             'label' => 'Project ID',
             'description' => 'Project ID',
@@ -88,7 +88,7 @@ class ConservationCropRotation extends FarmLogType {
             'required' => TRUE,
             'multiple' => FALSE,
         ],
-        'field_id' => [
+        'csc_field_id' => [
           'type' => 'entity_reference',
           'label' => 'Field ID',
           'description' => 'Field ID',

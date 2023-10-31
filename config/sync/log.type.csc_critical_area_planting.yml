@@ -1,0 +1,13 @@
+uuid: 3579685b-d6eb-4c91-bf08-c37d7ace53d9
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_critical_area_planting
+label: 'Critical Area Planting'
+description: 'Critical Area Planting'
+name_pattern: 'Critical Area Planting log [log:id]'
+workflow: log_default
+new_revision: true

@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_critical_area_planting
+label: 'Critical Area Planting'
+description: 'Critical Area Planting'
+name_pattern: 'Critical Area Planting log [log:id]'
+workflow: log_default
+new_revision: true

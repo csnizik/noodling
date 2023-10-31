@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_conservation_crop_rotation
+label: 'Conservation Crop Rotation'
+description: 'Conservation Crop Rotation'
+name_pattern: 'Conservation Crop Rotation log [log:id]'
+workflow: log_default
+new_revision: true

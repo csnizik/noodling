@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Range Planting log type.
  *
  * @LogType(
- * id = "range_planting",
+ * id = "csc_range_planting",
  * label = @Translation("Range Planting Log"),
  * )
  */
@@ -23,7 +23,7 @@ class RangePlanting extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-        'p550_species_category' => [
+        'csc_p550_species_category' => [
             'type' => 'list_string',
             'label' => 'Supplemental Data 550 Species category',
             'description' => 'Supplemental Data 550 Species category',
@@ -37,7 +37,7 @@ class RangePlanting extends FarmLogType {
             'required' => FALSE,
             'multiple' => FALSE,
           ],
-          'project_id' => [
+          'csc_project_id' => [
             'type' => 'entity_reference',
             'label' => 'Project ID',
             'description' => 'Project ID',
@@ -46,7 +46,7 @@ class RangePlanting extends FarmLogType {
             'required' => TRUE,
             'multiple' => FALSE,
           ],
-          'field_id' => [
+          'csc_field_id' => [
             'type' => 'entity_reference',
             'label' => 'Field ID',
             'description' => 'Field ID',

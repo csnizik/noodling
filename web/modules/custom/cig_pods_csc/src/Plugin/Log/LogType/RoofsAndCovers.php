@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Roofs And Covers log type.
  *
  * @LogType(
- * id = "roofs_and_covers",
+ * id = "csc_roofs_and_covers",
  * label = @Translation("Roofs And Covers Log"),
  * )
  */
@@ -23,7 +23,7 @@ class RoofsAndCovers extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p367_roof_cover_type' => [
+      'csc_p367_roof_cover_type' => [
         'type' => 'list_string',
         'label' => 'Roofs And Covers Roof/cover type',
         'description' => 'Roofs And Covers Roof/cover type',
@@ -38,14 +38,14 @@ class RoofsAndCovers extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p367_roof_cover_type_other' => [
+      'csc_p367_roof_cover_type_other' => [
         'type' => 'string',
         'label' => 'Roofs And Covers Other roof/cover type',
         'description' => 'Roofs And Covers Other roof/cover type',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -54,7 +54,7 @@ class RoofsAndCovers extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

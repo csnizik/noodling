@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Residue Tillage Management Reduced Till log type.
  *
  * @LogType(
- * id = "residue_tillage_reduced_till",
+ * id = "csc_residue_till_reduced_till",
  * label = @Translation("Residue Tillage Management Reduced Till Log"),
  * )
  */
@@ -23,7 +23,7 @@ class ResidueTillageManagementReducedTill extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p345_surface_disturbance' => [
+      'csc_p345_surface_disturbance' => [
         'type' => 'list_string',
         'label' => 'Supplemental Data 345 Surface Disturbance',
         'description' => 'Supplemental Data 345 Surface Disturbance',
@@ -36,7 +36,7 @@ class ResidueTillageManagementReducedTill extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -45,7 +45,7 @@ class ResidueTillageManagementReducedTill extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

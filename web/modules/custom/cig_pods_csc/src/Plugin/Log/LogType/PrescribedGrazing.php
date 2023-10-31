@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Prescribed Grazing log type.
  *
  * @LogType(
- * id = "prescribed_grazing",
+ * id = "csc_prescribed_grazing",
  * label = @Translation("Prescribed Grazing Log"),
  * )
  */
@@ -23,7 +23,7 @@ class PrescribedGrazing extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class PrescribedGrazing extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class PrescribedGrazing extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p528_grazing_type' => [
+      'csc_p528_grazing_type' => [
         'type' => 'list_string',
         'label' => 'Prescribed Grazing Grazing type',
         'description' => 'Supplemental Data Grazing type',

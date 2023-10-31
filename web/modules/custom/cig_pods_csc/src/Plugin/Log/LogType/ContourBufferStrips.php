@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Contour Buffer Strips log type.
  *
  * @LogType(
- * id = "contour_buffer_strips",
+ * id = "csc_contour_buffer_strips",
  * label = @Translation("ContourBufferStrips"),
  * )
  */
@@ -23,14 +23,14 @@ class ContourBufferStrips extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-        'p332_strip_width' => [
+        'csc_p332_strip_width' => [
             'type' => 'fraction',
             'label' => 'Supplemental Data Strip width (feet)',
             'description' => 'Supplemental Data Strip width (feet)',
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'p332_species_category' => [
+        'csc_p332_species_category' => [
             'type' => 'list_string',
             'label' => 'Supplemental Data 332 Species category',
             'description' => 'Supplemental 332 Data Species category',
@@ -42,7 +42,7 @@ class ContourBufferStrips extends FarmLogType {
             'required' => FALSE,
             'multiple' => FALSE,
         ],
-        'project_id' => [
+        'csc_project_id' => [
             'type' => 'entity_reference',
             'label' => 'Project ID',
             'description' => 'Project ID',
@@ -51,7 +51,7 @@ class ContourBufferStrips extends FarmLogType {
             'required' => TRUE,
             'multiple' => FALSE,
         ],
-        'field_id' => [
+        'csc_field_id' => [
           'type' => 'entity_reference',
           'label' => 'Field ID',
           'description' => 'Field ID',

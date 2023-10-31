@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Waste Storage Facility log type.
  *
  * @LogType(
- * id = "waste_storage_facility",
+ * id = "csc_waste_storage_facility",
  * label = @Translation("WasteStorageFacility"),
  * )
  */
@@ -23,7 +23,7 @@ class WasteStorageFacility extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class WasteStorageFacility extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,7 +41,7 @@ class WasteStorageFacility extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p313_prior_waste_storage_system' => [
+      'csc_p313_pri_waste_storage_sys' => [
         'type' => 'entity_reference',
         'label' => 'Supplemental Data Waste storage system prior to installing your waste storage facility',
         'description' => 'Supplemental Data Waste storage system prior to installing your waste storage facility',

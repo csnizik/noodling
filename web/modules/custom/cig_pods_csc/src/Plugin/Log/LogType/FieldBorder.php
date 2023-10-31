@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Field Border log type.
  *
  * @LogType(
- * id = "field_border",
+ * id = "csc_field_border",
  * label = @Translation("Field Border"),
  * )
  */
@@ -23,7 +23,7 @@ class FieldBorder extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'p386_species_category' => [
+      'csc_p386_species_category' => [
         'type' => 'list_string',
         'label' => 'Field Border 386 Species category',
         'description' => 'Field Border 386 Species category',
@@ -36,7 +36,7 @@ class FieldBorder extends FarmLogType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -45,7 +45,7 @@ class FieldBorder extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',

@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Mulching log type.
  *
  * @LogType(
- * id = "mulching",
+ * id = "csc_mulching",
  * label = @Translation("Mulching Log"),
  * )
  */
@@ -23,7 +23,7 @@ class Mulching extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -32,7 +32,7 @@ class Mulching extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'field_id' => [
+      'csc_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -41,14 +41,14 @@ class Mulching extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p484_mulch_coverage' => [
+      'csc_p484_mulch_coverage' => [
         'type' => 'fraction',
         'label' => 'Mulching, Mulch cover',
         'description' => 'Mulching, Mulch cover',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p484_mulch_type' => [
+      'csc_p484_mulch_type' => [
         'type' => 'list_string',
         'label' => 'Mulching, Mulch Type',
         'description' => 'Mulching, Mulch Type',
