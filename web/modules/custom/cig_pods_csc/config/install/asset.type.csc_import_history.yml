@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_import_history
+label: 'Import Attempt History'
+description: 'Import Attempt History'
+workflow: asset_default
+new_revision: true
