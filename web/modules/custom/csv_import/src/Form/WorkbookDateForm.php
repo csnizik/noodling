@@ -95,4 +95,12 @@ class WorkbookDateForm extends FormBase {
     return 'workbook_date_form';
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  
+  public function SubmitForm(array &$form, FormStateInterface $form_state) {
+    return 'workbook_date_form';
+  }
+
 }

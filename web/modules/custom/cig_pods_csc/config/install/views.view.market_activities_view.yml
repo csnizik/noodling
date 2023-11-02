@@ -2,20 +2,19 @@ langcode: en
 status: true
 dependencies:
   config:
-    - asset.type.csc_producer_enrollment
+    - log.type.csc_market_activities
   module:
-    - asset
     - csv_serialization
     - fraction
-    - options
+    - log
     - rest
     - serialization
-id: producer_enrollment_view
-label: 'Producer Enrollment View'
+id: market_activities_view
+label: 'Market Activities View'
 module: views
 description: ''
 tag: ''
-base_table: asset_field_data
+base_table: log_field_data
 base_field: id
 display:
   default:
@@ -24,11 +23,11 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Producer Enrollment View'
+      title: 'Market Activities View'
       fields:
         name:
           id: name
-          table: asset_field_data
+          table: log_field_data
           field: name
           relationship: none
           group_type: group
@@ -91,17 +90,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_project_id_target_id:
-          id: csc_project_id_target_id
-          table: asset__csc_project_id
-          field: csc_project_id_target_id
+        csc_m_activities_commodity_type_target_id:
+          id: csc_m_activities_commodity_type_target_id
+          table: log__csc_m_activities_commodity_type
+          field: csc_m_activities_commodity_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_project_id
+          entity_type: log
+          entity_field: csc_m_activities_commodity_type
           plugin_id: field
-          label: 'Project ID'
+          label: 'Commodity Type'
           exclude: false
           alter:
             alter_text: false
@@ -156,17 +155,82 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrollment_farm_id_value:
-          id: csc_p_enrollment_farm_id_value
-          table: asset__csc_p_enrollment_farm_id
-          field: csc_p_enrollment_farm_id_value
+        csc_m_act_mktng_chnl_type_target_id:
+          id: csc_m_act_mktng_chnl_type_target_id
+          table: log__csc_m_act_mktng_chnl_type
+          field: csc_m_act_mktng_chnl_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrollment_farm_id
+          entity_type: log
+          entity_field: csc_m_act_mktng_chnl_type
           plugin_id: field
-          label: 'Farm ID'
+          label: 'Marketing Channel Type'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_act_mktng_chnl_type_otr_value:
+          id: csc_m_act_mktng_chnl_type_otr_value
+          table: log__csc_m_act_mktng_chnl_type_otr
+          field: csc_m_act_mktng_chnl_type_otr_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_act_mktng_chnl_type_otr
+          plugin_id: field
+          label: 'Other Marketing Channel Type'
           exclude: false
           alter:
             alter_text: false
@@ -221,343 +285,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrollment_state_target_id:
-          id: csc_p_enrollment_state_target_id
-          table: asset__csc_p_enrollment_state
-          field: csc_p_enrollment_state_target_id
+        csc_m_act_number_of_buyers_numerator:
+          id: csc_m_act_number_of_buyers_numerator
+          table: log__csc_m_act_number_of_buyers
+          field: csc_m_act_number_of_buyers_numerator
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrollment_state
+          entity_type: log
+          entity_field: csc_m_act_number_of_buyers
           plugin_id: field
-          label: 'State or Territory'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrollment_county_target_id:
-          id: csc_p_enrollment_county_target_id
-          table: asset__csc_p_enrollment_county
-          field: csc_p_enrollment_county_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrollment_county
-          plugin_id: field
-          label: County
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrollment_start_date_value:
-          id: csc_p_enrollment_start_date_value
-          table: asset__csc_p_enrollment_start_date
-          field: csc_p_enrollment_start_date_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrollment_start_date
-          plugin_id: field
-          label: 'Producer Start Date'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
-          settings:
-            date_format: medium
-            custom_date_format: ''
-            timezone: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_underserved_status_value:
-          id: csc_p_enrlmnt_underserved_status_value
-          table: asset__csc_p_enrlmnt_underserved_status
-          field: csc_p_enrlmnt_underserved_status_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_underserved_status
-          plugin_id: field
-          label: 'Underserved Status'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrollment_total_area_target_id:
-          id: csc_p_enrollment_total_area_target_id
-          table: asset__csc_p_enrollment_total_area
-          field: csc_p_enrollment_total_area_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrollment_total_area
-          plugin_id: field
-          label: 'Total Area'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_total_crop_area_numerator:
-          id: csc_p_enrlmnt_total_crop_area_numerator
-          table: asset__csc_p_enrlmnt_total_crop_area
-          field: csc_p_enrlmnt_total_crop_area_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_total_crop_area
-          plugin_id: field
-          label: 'Total Crop Area'
+          label: 'Number of Buyers'
           exclude: false
           alter:
             alter_text: false
@@ -614,547 +352,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrlmnt_total_livstk_area_numerator:
-          id: csc_p_enrlmnt_total_livstk_area_numerator
-          table: asset__csc_p_enrlmnt_total_livstk_area
-          field: csc_p_enrlmnt_total_livstk_area_numerator
+        csc_m_activities_buyer_names_value:
+          id: csc_m_activities_buyer_names_value
+          table: log__csc_m_activities_buyer_names
+          field: csc_m_activities_buyer_names_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_total_livstk_area
+          entity_type: log
+          entity_field: csc_m_activities_buyer_names
           plugin_id: field
-          label: 'Total Livestock Area'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: false
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_total_forest_area_numerator:
-          id: csc_p_enrlmnt_total_forest_area_numerator
-          table: asset__csc_p_enrlmnt_total_forest_area
-          field: csc_p_enrlmnt_total_forest_area_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_total_forest_area
-          plugin_id: field
-          label: 'Total Forest Area'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: false
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_livstk_type_1_target_id:
-          id: csc_p_enrlmnt_livstk_type_1_target_id
-          table: asset__csc_p_enrlmnt_livstk_type_1
-          field: csc_p_enrlmnt_livstk_type_1_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_livstk_type_1
-          plugin_id: field
-          label: 'Livestock Type 1'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_livstk_type_1_cnt_numerator:
-          id: csc_p_enrlmnt_livstk_type_1_cnt_numerator
-          table: asset__csc_p_enrlmnt_livstk_type_1_cnt
-          field: csc_p_enrlmnt_livstk_type_1_cnt_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_livstk_type_1_cnt
-          plugin_id: field
-          label: 'Livestock head (type 1 avg annual)'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: false
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_livstk_type_2_target_id:
-          id: csc_p_enrlmnt_livstk_type_2_target_id
-          table: asset__csc_p_enrlmnt_livstk_type_2
-          field: csc_p_enrlmnt_livstk_type_2_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_livstk_type_2
-          plugin_id: field
-          label: 'Livestock Type 2'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_livstk_type_2_cnt_numerator:
-          id: csc_p_enrlmnt_livstk_type_2_cnt_numerator
-          table: asset__csc_p_enrlmnt_livstk_type_2_cnt
-          field: csc_p_enrlmnt_livstk_type_2_cnt_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_livstk_type_2_cnt
-          plugin_id: field
-          label: 'Livestock head (type 2 avg annual)'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: false
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_livstk_type_3_target_id:
-          id: csc_p_enrlmnt_livstk_type_3_target_id
-          table: asset__csc_p_enrlmnt_livstk_type_3
-          field: csc_p_enrlmnt_livstk_type_3_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_livstk_type_3
-          plugin_id: field
-          label: 'Livestock Type 3'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_livstk_type_3_cnt_numerator:
-          id: csc_p_enrlmnt_livstk_type_3_cnt_numerator
-          table: asset__csc_p_enrlmnt_livstk_type_3_cnt
-          field: csc_p_enrlmnt_livstk_type_3_cnt_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_livstk_type_3_cnt
-          plugin_id: field
-          label: 'Livestock head (type 3 avg annual)'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: false
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_livstk_type_otr_value:
-          id: csc_p_enrlmnt_livstk_type_otr_value
-          table: asset__csc_p_enrlmnt_livstk_type_otr
-          field: csc_p_enrlmnt_livstk_type_otr_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_livstk_type_otr
-          plugin_id: field
-          label: 'Other Livestock Type'
+          label: 'Names of Buyers'
           exclude: false
           alter:
             alter_text: false
@@ -1209,17 +417,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrollment_organic_farm_target_id:
-          id: csc_p_enrollment_organic_farm_target_id
-          table: asset__csc_p_enrollment_organic_farm
-          field: csc_p_enrollment_organic_farm_target_id
+        csc_m_act_mktng_chnl_geography_target_id:
+          id: csc_m_act_mktng_chnl_geography_target_id
+          table: log__csc_m_act_mktng_chnl_geography
+          field: csc_m_act_mktng_chnl_geography_target_id
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrollment_organic_farm
+          entity_type: log
+          entity_field: csc_m_act_mktng_chnl_geography
           plugin_id: field
-          label: 'Organic Farm'
+          label: 'Marketing Channel Geography'
           exclude: false
           alter:
             alter_text: false
@@ -1274,17 +482,151 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrollment_organic_fields_target_id:
-          id: csc_p_enrollment_organic_fields_target_id
-          table: asset__csc_p_enrollment_organic_fields
-          field: csc_p_enrollment_organic_fields_target_id
+        csc_m_activities_value_sold_numerator:
+          id: csc_m_activities_value_sold_numerator
+          table: log__csc_m_activities_value_sold
+          field: csc_m_activities_value_sold_numerator
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrollment_organic_fields
+          entity_type: log
+          entity_field: csc_m_activities_value_sold
           plugin_id: field
-          label: 'Organic Fields'
+          label: 'Value Sold'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: numerator
+          type: fraction_decimal
+          settings:
+            precision: 2
+            auto_precision: false
+            prefix_suffix: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_activities_volume_sold_numerator:
+          id: csc_m_activities_volume_sold_numerator
+          table: log__csc_m_activities_volume_sold
+          field: csc_m_activities_volume_sold_numerator
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_activities_volume_sold
+          plugin_id: field
+          label: 'Volume Sold'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: numerator
+          type: fraction_decimal
+          settings:
+            precision: 2
+            auto_precision: false
+            prefix_suffix: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_act_volume_sold_unit_target_id:
+          id: csc_m_act_volume_sold_unit_target_id
+          table: log__csc_m_act_volume_sold_unit
+          field: csc_m_act_volume_sold_unit_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_act_volume_sold_unit
+          plugin_id: field
+          label: 'Volume Sold Unit'
           exclude: false
           alter:
             alter_text: false
@@ -1339,146 +681,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrlmnt_prod_motivation_value:
-          id: csc_p_enrlmnt_prod_motivation_value
-          table: asset__csc_p_enrlmnt_prod_motivation
-          field: csc_p_enrlmnt_prod_motivation_value
+        csc_m_act_volume_unit_otr_value:
+          id: csc_m_act_volume_unit_otr_value
+          table: log__csc_m_act_volume_unit_otr
+          field: csc_m_act_volume_unit_otr_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_prod_motivation
+          entity_type: log
+          entity_field: csc_m_act_volume_unit_otr
           plugin_id: field
-          label: 'Producer Motivation'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_prod_outreach_target_id:
-          id: csc_p_enrlmnt_prod_outreach_target_id
-          table: asset__csc_p_enrlmnt_prod_outreach
-          field: csc_p_enrlmnt_prod_outreach_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_prod_outreach
-          plugin_id: field
-          label: 'Producer Outreach'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        csc_p_enrlmnt_prod_outreach_otr_value:
-          id: csc_p_enrlmnt_prod_outreach_otr_value
-          table: asset__csc_p_enrlmnt_prod_outreach_otr
-          field: csc_p_enrlmnt_prod_outreach_otr_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_prod_outreach_otr
-          plugin_id: field
-          label: 'Other Producer Outreach'
+          label: 'Other Volume Sold Unit'
           exclude: false
           alter:
             alter_text: false
@@ -1533,17 +746,84 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrlmnt_csaf_experience_target_id:
-          id: csc_p_enrlmnt_csaf_experience_target_id
-          table: asset__csc_p_enrlmnt_csaf_experience
-          field: csc_p_enrlmnt_csaf_experience_target_id
+        csc_m_activities_price_premium_numerator:
+          id: csc_m_activities_price_premium_numerator
+          table: log__csc_m_activities_price_premium
+          field: csc_m_activities_price_premium_numerator
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_csaf_experience
+          entity_type: log
+          entity_field: csc_m_activities_price_premium
           plugin_id: field
-          label: 'CSAF Experience'
+          label: 'Price Premium'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: numerator
+          type: fraction_decimal
+          settings:
+            precision: 2
+            auto_precision: false
+            prefix_suffix: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_act_price_premium_unit_target_id:
+          id: csc_m_act_price_premium_unit_target_id
+          table: log__csc_m_act_price_premium_unit
+          field: csc_m_act_price_premium_unit_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_act_price_premium_unit
+          plugin_id: field
+          label: 'Price Premium Unit'
           exclude: false
           alter:
             alter_text: false
@@ -1598,17 +878,149 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrlmnt_csaf_federal_fds_target_id:
-          id: csc_p_enrlmnt_csaf_federal_fds_target_id
-          table: asset__csc_p_enrlmnt_csaf_federal_fds
-          field: csc_p_enrlmnt_csaf_federal_fds_target_id
+        csc_m_act_price_premium_unit_otr_value:
+          id: csc_m_act_price_premium_unit_otr_value
+          table: log__csc_m_act_price_premium_unit_otr
+          field: csc_m_act_price_premium_unit_otr_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_csaf_federal_fds
+          entity_type: log
+          entity_field: csc_m_act_price_premium_unit_otr
           plugin_id: field
-          label: 'CSAF Federal Funds'
+          label: 'Other Price Premium Unit'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_act_price_premium_to_prod_numerator:
+          id: csc_m_act_price_premium_to_prod_numerator
+          table: log__csc_m_act_price_premium_to_prod
+          field: csc_m_act_price_premium_to_prod_numerator
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_act_price_premium_to_prod
+          plugin_id: field
+          label: 'Price Premium to Producer'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: numerator
+          type: fraction_decimal
+          settings:
+            precision: 2
+            auto_precision: false
+            prefix_suffix: false
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_act_product_diff_mthd_target_id:
+          id: csc_m_act_product_diff_mthd_target_id
+          table: log__csc_m_act_product_diff_mthd
+          field: csc_m_act_product_diff_mthd_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_act_product_diff_mthd
+          plugin_id: field
+          label: 'Product Differentiation Method'
           exclude: false
           alter:
             alter_text: false
@@ -1663,17 +1075,82 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrlmnt_csaf_st_local_fds_target_id:
-          id: csc_p_enrlmnt_csaf_st_local_fds_target_id
-          table: asset__csc_p_enrlmnt_csaf_st_local_fds
-          field: csc_p_enrlmnt_csaf_st_local_fds_target_id
+        csc_m_act_product_diff_mthd_otr_value:
+          id: csc_m_act_product_diff_mthd_otr_value
+          table: log__csc_m_act_product_diff_mthd_otr
+          field: csc_m_act_product_diff_mthd_otr_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_csaf_st_local_fds
+          entity_type: log
+          entity_field: csc_m_act_product_diff_mthd_otr
           plugin_id: field
-          label: 'CSAF State Local Funds'
+          label: 'Other Product Differentiation Method'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_act_mktng_mthd_target_id:
+          id: csc_m_act_mktng_mthd_target_id
+          table: log__csc_m_act_mktng_mthd
+          field: csc_m_act_mktng_mthd_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_act_mktng_mthd
+          plugin_id: field
+          label: 'Marketing Method'
           exclude: false
           alter:
             alter_text: false
@@ -1728,17 +1205,82 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrlmnt_csaf_nonprofit_fds_target_id:
-          id: csc_p_enrlmnt_csaf_nonprofit_fds_target_id
-          table: asset__csc_p_enrlmnt_csaf_nonprofit_fds
-          field: csc_p_enrlmnt_csaf_nonprofit_fds_target_id
+        csc_m_act_mktng_mthd_otr_value:
+          id: csc_m_act_mktng_mthd_otr_value
+          table: log__csc_m_act_mktng_mthd_otr
+          field: csc_m_act_mktng_mthd_otr_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_csaf_nonprofit_fds
+          entity_type: log
+          entity_field: csc_m_act_mktng_mthd_otr
           plugin_id: field
-          label: 'CSAF Nonprofit Funds'
+          label: 'Other Marketing Method'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_act_mktng_chnl_id_target_id:
+          id: csc_m_act_mktng_chnl_id_target_id
+          table: log__csc_m_act_mktng_chnl_id
+          field: csc_m_act_mktng_chnl_id_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_act_mktng_chnl_id
+          plugin_id: field
+          label: 'Marketing Channel Identification'
           exclude: false
           alter:
             alter_text: false
@@ -1793,17 +1335,82 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        csc_p_enrlmnt_csaf_market_incent_target_id:
-          id: csc_p_enrlmnt_csaf_market_incent_target_id
-          table: asset__csc_p_enrlmnt_csaf_market_incent
-          field: csc_p_enrlmnt_csaf_market_incent_target_id
+        csc_m_act_mktng_chnl_id_mthd_otr_value:
+          id: csc_m_act_mktng_chnl_id_mthd_otr_value
+          table: log__csc_m_act_mktng_chnl_id_mthd_otr
+          field: csc_m_act_mktng_chnl_id_mthd_otr_value
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: asset
-          entity_field: csc_p_enrlmnt_csaf_market_incent
+          entity_type: log
+          entity_field: csc_m_act_mktng_chnl_id_mthd_otr
           plugin_id: field
-          label: 'CSAF Market Incentives'
+          label: 'Other Marketing Channel Identification Method'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_act_traceability_mthd_target_id:
+          id: csc_m_act_traceability_mthd_target_id
+          table: log__csc_m_act_traceability_mthd
+          field: csc_m_act_traceability_mthd_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_act_traceability_mthd
+          plugin_id: field
+          label: 'Traceability Method'
           exclude: false
           alter:
             alter_text: false
@@ -1849,6 +1456,71 @@ display:
           settings:
             link: true
           group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_m_act_traceability_mthd_otr_value:
+          id: csc_m_act_traceability_mthd_otr_value
+          table: log__csc_m_act_traceability_mthd_otr
+          field: csc_m_act_traceability_mthd_otr_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_m_act_traceability_mthd_otr
+          plugin_id: field
+          label: 'Other Traceability Method'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1898,30 +1570,235 @@ display:
       filters:
         type:
           id: type
-          table: asset_field_data
+          table: log_field_data
           field: type
-          entity_type: asset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
           entity_field: type
           plugin_id: bundle
+          operator: in
           value:
-            csc_producer_enrollment: csc_producer_enrollment
+            csc_market_activities: csc_market_activities
+          group: 1
+          exposed: false
           expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
             operator_limit_selection: false
             operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups: {  }
       style:
         type: table
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          uses_fields: false
-          columns: {  }
-          default: ''
-          info: {  }
+          columns:
+            name: name
+            csc_m_activities_commodity_type_target_id: csc_m_activities_commodity_type_target_id
+            csc_m_act_mktng_chnl_type_target_id: csc_m_act_mktng_chnl_type_target_id
+            csc_m_act_mktng_chnl_type_otr_value: csc_m_act_mktng_chnl_type_otr_value
+            csc_m_act_number_of_buyers_numerator: csc_m_act_number_of_buyers_numerator
+            csc_m_activities_buyer_names_value: csc_m_activities_buyer_names_value
+            csc_m_act_mktng_chnl_geography_target_id: csc_m_act_mktng_chnl_geography_target_id
+            csc_m_activities_value_sold_numerator: csc_m_activities_value_sold_numerator
+            csc_m_activities_volume_sold_numerator: csc_m_activities_volume_sold_numerator
+            csc_m_act_volume_sold_unit_target_id: csc_m_act_volume_sold_unit_target_id
+            csc_m_act_volume_unit_otr_value: csc_m_act_volume_unit_otr_value
+            csc_m_activities_price_premium_numerator: csc_m_activities_price_premium_numerator
+            csc_m_act_price_premium_unit_target_id: csc_m_act_price_premium_unit_target_id
+            csc_m_act_price_premium_unit_otr_value: csc_m_act_price_premium_unit_otr_value
+            csc_m_act_price_premium_to_prod_numerator: csc_m_act_price_premium_to_prod_numerator
+            csc_m_act_product_diff_mthd_target_id: csc_m_act_product_diff_mthd_target_id
+            csc_m_act_product_diff_mthd_otr_value: csc_m_act_product_diff_mthd_otr_value
+            csc_m_act_mktng_mthd_target_id: csc_m_act_mktng_mthd_target_id
+            csc_m_act_mktng_mthd_otr_value: csc_m_act_mktng_mthd_otr_value
+            csc_m_act_mktng_chnl_id_target_id: csc_m_act_mktng_chnl_id_target_id
+            csc_m_act_mktng_chnl_id_mthd_otr_value: csc_m_act_mktng_chnl_id_mthd_otr_value
+            csc_m_act_traceability_mthd_target_id: csc_m_act_traceability_mthd_target_id
+            csc_m_act_traceability_mthd_otr_value: csc_m_act_traceability_mthd_otr_value
+          default: '-1'
+          info:
+            name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_activities_commodity_type_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_mktng_chnl_type_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_mktng_chnl_type_otr_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_number_of_buyers_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_activities_buyer_names_value:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_mktng_chnl_geography_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_activities_value_sold_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_activities_volume_sold_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_volume_sold_unit_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_volume_unit_otr_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_activities_price_premium_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_price_premium_unit_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_price_premium_unit_otr_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_price_premium_to_prod_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_product_diff_mthd_target_id:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_product_diff_mthd_otr_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_mktng_mthd_target_id:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_mktng_mthd_otr_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_mktng_chnl_id_target_id:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_mktng_chnl_id_mthd_otr_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_traceability_mthd_target_id:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_m_act_traceability_mthd_otr_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
           override: true
           sticky: false
           summary: ''
-          order: asc
           empty_table: false
           caption: ''
           description: ''
@@ -1946,7 +1823,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: display_link
-          label: assets_producer_enrollment.csv
+          label: 'CSV Export'
           empty: false
           display_id: rest_export_1
       display_extenders: {  }
@@ -1966,7 +1843,7 @@ display:
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: assets/csc_producer_enrollment
+      path: logs/csc_market_activities
     cache_metadata:
       max-age: -1
       contexts:
@@ -2000,7 +1877,7 @@ display:
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: assets_producer_enrollment.csv
+      path: market_activities_logs.csv
     cache_metadata:
       max-age: -1
       contexts:

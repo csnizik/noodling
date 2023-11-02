@@ -5,7 +5,7 @@ dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: project
+id: csc_project
 label: Project
 description: Project
 workflow: asset_default

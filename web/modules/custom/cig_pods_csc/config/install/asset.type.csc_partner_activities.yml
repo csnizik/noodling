@@ -4,7 +4,7 @@ dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: partner_activities
+id: csc_partner_activities
 label: Partner Activities
 description: Partner Activities
 workflow: asset_default

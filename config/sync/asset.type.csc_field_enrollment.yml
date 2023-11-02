@@ -1,12 +1,12 @@
-uuid: 0cb80b1e-bd20-4a75-ac43-0bfa63328395
+uuid: 2a49699f-e1c4-4dd6-bd30-10b52e559c0e
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: partner_activities
-label: 'Partner Activities'
-description: 'Partner Activities'
+id: csc_field_enrollment
+label: 'Field Enrollment'
+description: 'Field Enrollment'
 workflow: asset_default
 new_revision: true

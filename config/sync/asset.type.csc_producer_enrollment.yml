@@ -5,7 +5,7 @@ dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: producer_enrollment
+id: csc_producer_enrollment
 label: 'Producer Enrollment'
 description: 'Producer Enrollment'
 workflow: asset_default

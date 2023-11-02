@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the CIG Producer asset type.
  *
  * @AssetType(
- * id = "producer_enrollment",
+ * id = "csc_producer_enrollment",
  * label = @Translation("ProducerEnrollment"),
  * )
  */
@@ -23,23 +23,23 @@ class ProducerEnrollment extends FarmAssetType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
 		    'target_type' => 'asset',
-		    'target_bundle' => 'project',
+		    'target_bundle' => 'csc_project',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p_enrollment_farm_id' => [
+      'csc_p_enrollment_farm_id' => [
         'type' => 'string',
         'label' => 'Farm ID',
         'description' => 'Farm ID',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'p_enrollment_state' => [
+      'csc_p_enrollment_state' => [
         'type' => 'entity_reference',
         'label' => 'State or Territory',
         'description' => 'State or Territory',
@@ -48,7 +48,7 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p_enrollment_county' => [
+      'csc_p_enrollment_county' => [
         'type' => 'entity_reference',
         'label' => 'County',
         'description' => 'County',
@@ -57,14 +57,14 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p_enrollment_start_date' => [
+      'csc_p_enrollment_start_date' => [
         'type' => 'timestamp',
         'label' => 'Producer Start Date',
         'description' => 'Producer Start Date',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'p_enrollment_underserved_status' => [
+      'csc_p_enrlmnt_underserved_status' => [
         'type' => 'list_string',
         'label' => 'Underserved Status',
         'description' => 'Underserved Status',
@@ -79,7 +79,7 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'p_enrollment_total_area' => [
+      'csc_p_enrollment_total_area' => [
         'type' => 'entity_reference',
         'label' => 'Total Area',
         'description' => 'Total Area',
@@ -88,28 +88,28 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'p_enrollment_total_crop_area' => [
+      'csc_p_enrlmnt_total_crop_area' => [
         'type' => 'fraction',
         'label' => 'Total Crop Area',
         'description' => 'Total Crop Area',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'p_enrollment_total_livestock_area' => [
+      'csc_p_enrlmnt_total_livstk_area' => [
         'type' => 'fraction',
         'label' => 'Total Livestock Area',
         'description' => 'Total Livestock Area',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'p_enrollment_total_forest_area' => [
+      'csc_p_enrlmnt_total_forest_area' => [
         'type' => 'fraction',
         'label' => 'Total Forest Area',
         'description' => 'Total Forest Area',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'p_enrollment_livestock_type_1' => [
+      'csc_p_enrlmnt_livstk_type_1' => [
         'type' => 'entity_reference',
         'label' => 'Livestock Type 1',
         'description' => 'Livestock Type 1',
@@ -118,14 +118,14 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p_enrollment_livestock_type_1_count' => [
+      'csc_p_enrlmnt_livstk_type_1_cnt' => [
         'type' => 'fraction',
         'label' => 'Livestock head (type 1 avg annual)',
         'description' => 'Livestock head (type 1 avg annual)',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'p_enrollment_livestock_type_2' => [
+      'csc_p_enrlmnt_livstk_type_2' => [
         'type' => 'entity_reference',
         'label' => 'Livestock Type 2',
         'description' => 'Livestock Type 2',
@@ -134,14 +134,14 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p_enrollment_livestock_type_2_count' => [
+      'csc_p_enrlmnt_livstk_type_2_cnt' => [
         'type' => 'fraction',
         'label' => 'Livestock head (type 2 avg annual)',
         'description' => 'Livestock head (type 2 avg annual)',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p_enrollment_livestock_type_3' => [
+      'csc_p_enrlmnt_livstk_type_3' => [
         'type' => 'entity_reference',
         'label' => 'Livestock Type 3',
         'description' => 'Livestock Type 3',
@@ -150,21 +150,21 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'p_enrollment_livestock_type_3_count' => [
+      'csc_p_enrlmnt_livstk_type_3_cnt' => [
         'type' => 'fraction',
         'label' => 'Livestock head (type 3 avg annual)',
         'description' => 'Livestock head (type 3 avg annual)',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_livestock_type_other' => [
+	    'csc_p_enrlmnt_livstk_type_otr' => [
         'type' => 'string',
         'label' => 'Other livestock type',
         'description' => 'Other livestock type',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_organic_farm' => [
+	    'csc_p_enrollment_organic_farm' => [
         'type' => 'entity_reference',
         'label' => 'Organic Farm',
         'description' => 'Organic Farm',
@@ -173,7 +173,7 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_organic_fields' => [
+	    'csc_p_enrollment_organic_fields' => [
         'type' => 'entity_reference',
         'label' => 'Organic Fields',
         'description' => 'Organic Fields',
@@ -182,7 +182,7 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_producer_motivation' => [
+	    'csc_p_enrlmnt_prod_motivation' => [
         'type' => 'list_string',
         'label' => 'Producer Motivation',
         'description' => 'Producer Motivation',
@@ -196,7 +196,7 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_producer_outreach' => [
+	    'csc_p_enrlmnt_prod_outreach' => [
         'type' => 'entity_reference',
         'label' => 'Producer Outreach',
         'description' => 'Producer Outreach',
@@ -205,53 +205,53 @@ class ProducerEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => TRUE,
       ],
-	    'p_enrollment_producer_outreach_other' => [
+	    'csc_p_enrlmnt_prod_outreach_otr' => [
         'type' => 'string',
         'label' => 'Other Producer Outreach',
         'description' => 'Other Producer Outreach',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_csaf_experience' => [
+	    'csc_p_enrlmnt_csaf_experience' => [
         'type' => 'entity_reference',
-        'label' => 'CASF Experience',
+        'label' => 'CSAF Experience',
         'description' => 'CSAF Experience',
         'target_type' => 'taxonomy_term',
         'target_bundle' => 'csaf_experience',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_csaf_federal_funds' => [
+	    'csc_p_enrlmnt_csaf_federal_fds' => [
         'type' => 'entity_reference',
-        'label' => 'CASF Federal Funds',
+        'label' => 'CSAF Federal Funds',
         'description' => 'CSAF Federal Funds',
         'target_type' => 'taxonomy_term',
         'target_bundle' => 'csaf_federal_funds',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_csaf_state_local_funds' => [
+	    'csc_p_enrlmnt_csaf_st_local_fds' => [
         'type' => 'entity_reference',
-        'label' => 'CASF State Local Funds',
+        'label' => 'CSAF State Local Funds',
         'description' => 'CSAF State Local Funds',
         'target_type' => 'taxonomy_term',
         'target_bundle' => 'csaf_state_or_local_funds',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_csaf_nonprofit_funds' => [
+	    'csc_p_enrlmnt_csaf_nonprofit_fds' => [
         'type' => 'entity_reference',
-        'label' => 'CASF nonprofit Funds',
-        'description' => 'CASF nonprofit Funds',
+        'label' => 'CSAF nonprofit Funds',
+        'description' => 'CSAF nonprofit Funds',
         'target_type' => 'taxonomy_term',
         'target_bundle' => 'csaf_nonprofit_funds',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'p_enrollment_csaf_market_incentives' => [
+	    'csc_p_enrlmnt_csaf_market_incent' => [
         'type' => 'entity_reference',
-        'label' => 'CASF market incentives',
-        'description' => 'CASF market incentives',
+        'label' => 'CSAF market incentives',
+        'description' => 'CSAF market incentives',
         'target_type' => 'taxonomy_term',
         'target_bundle' => 'csaf_market_incentives',
         'required' => TRUE,

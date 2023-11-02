@@ -6,10 +6,10 @@ use Drupal\farm_entity\Plugin\Asset\AssetType\FarmAssetType;
 use Drupal\farm_field\FarmFieldFactory;
 
 /**
- * Provides the CIG Project asset type.
+ * Provides the CIG csc_project asset type.
  *
  * @AssetType(
- * id = "field_enrollment",
+ * id = "csc_field_enrollment",
  * label = @Translation("FieldEnrollment"),
  * )
  */
@@ -23,30 +23,30 @@ class FieldEnrollment extends FarmAssetType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-	    'f_enrollment_producer_id' => [
+	    'csc_f_enrollment_producer_id' => [
         'type' => 'entity_reference',
         'label' => 'Producer ID',
         'description' => 'Producer ID',
 		    'target_type' => 'asset',
-		    'target_bundle' => 'producer_enrollment',
+		    'target_bundle' => 'csc_producer_enrollment',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_tract_id' => [
+	    'csc_f_enrollment_tract_id' => [
         'type' => 'string',
         'label' => 'Field Enrollment Tract ID',
         'description' => 'Field Enrollment Tract ID',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_field_id' => [
+	    'csc_f_enrollment_field_id' => [
         'type' => 'string',
         'label' => 'Field Enrollment Field ID',
         'description' => 'Field Enrollment Field ID',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_state' => [
+	    'csc_f_enrollment_state' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment State or Territory',
         'description' => 'Field Enrollment State or Territory',
@@ -55,7 +55,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_county' => [
+	    'csc_f_enrollment_county' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment County',
         'description' => 'Field Enrollment County',
@@ -64,28 +64,28 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_prior_field_id'=> [
+	    'csc_f_enrollment_prior_field_id'=> [
         'type' => 'string',
         'label' => 'Field Enrollment Prior Field ID',
         'description' => 'Field Enrollment Prior Field ID',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_start_date' => [
+      'csc_f_enrollment_start_date' => [
         'type' => 'timestamp',
         'label' => 'Field Enrollment Contract Start Date',
         'description' => 'Field Enrollment Contract Start Date',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_total_field_area' => [
+	    'csc_f_nrlmnt_total_field_area' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Total Field Area',
         'description' => 'Field Enrollment Total Field Area',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'f_enrollment_commodity_category' => [
+      'csc_f_nrlmnt_commodity_category' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Commodity Category',
         'description' => 'Field Enrollment Commodity Category',
@@ -94,7 +94,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'f_enrollment_commodity_type' => [
+      'csc_f_enrollment_commodity_type' => [
         'type' => 'entity_reference', 
         'label' => 'Field Enrollment Commodity Type',
         'description' => 'Field Enrollment Commodity Type',
@@ -103,14 +103,14 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'f_enrollment_baseline_yield' => [
+      'csc_f_enrollment_baseline_yield' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Baseline Yield',
         'description' => 'Field Enrollment Baseline Yield',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'f_enrollment_baseline_yield_unit' => [
+      'csc_f_nrlmnt_base_yield_unit' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Baseline Yield Unit',
         'description' => 'Field Enrollment Baseline Yield Unit',
@@ -119,14 +119,14 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_baseline_yield_unit_other' => [
+	    'csc_f_nrlmnt_base_yield_unit_otr' => [
         'type' => 'string',
         'label' => 'Field Enrollment Baseline Yield Unit Other',
         'description' => 'Field Enrollment Baseline Yield Unit Other',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'f_enrollment_baseline_yield_location' => [
+      'csc_f_nrlmnt_base_yield_loc' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Baseline Yield Location',
         'description' => 'Field Enrollment Baseline Yield Location',
@@ -138,14 +138,14 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_baseline_yield_location_other' => [
+	    'csc_f_nrlmnt_base_yield_loc_otr' => [
         'type' => 'string',
         'label' => 'Field Enrollment Baseline Yield Location Other',
         'description' => 'Field Enrollment Baseline Yield Location Other',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'f_enrollment_field_land_use' => [
+      'csc_f_enrollment_field_land_use' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Field Land Use',
         'description' => 'Field Enrollment Field Land Use',
@@ -154,7 +154,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'f_enrollment_field_irrigated' => [
+      'csc_f_nrlmnt_field_irrigated' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Field Irrigated',
         'description' => 'Field Enrollment Field Irrigated',		
@@ -163,7 +163,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'f_enrollment_field_tillage' => [
+      'csc_f_enrollment_field_tillage' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Field Tillage',
         'description' => 'Field Enrollment Field Tillage',
@@ -172,7 +172,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_prior_utilization_percent' => [
+	    'csc_f_nrlmnt_prac_pri_util_prcnt' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice (Combination) Past Extent - Farm',
         'description' => 'Field Enrollment Practice (Combination) Past Extent - Farm',
@@ -186,7 +186,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'f_enrollment_field_any_csaf_practice' => [
+      'csc_f_nrlmnt_field_any_csaf_prac' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Field any CSAF Practice',
         'description' => 'Field Enrollment Field any CSAF Practice',		
@@ -198,9 +198,9 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_field_practice_prior_utilization' => [
+	    'csc_f_nrlmnt_field_prac_pri_util' => [
         'type' => 'list_string',
-        'label' => 'Field Enrollment Practice (Combination) Past Use - This Feild',
+        'label' => 'Field Enrollment Practice (Combination) Past Use - This Field',
         'description' => 'Field Enrollment Practice (Combination) Past Use - This Field',
         'allowed_values' => [
           'Used on less than 25% of operation' => t(string: 'Used on less than 25% of operation'),
@@ -212,7 +212,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_type_1' => [
+      'csc_f_nrlmnt_prac_type_1' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Practice 1 Type',
         'description' => 'Field Enrollment Practice 1 Type',
@@ -221,7 +221,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_standard_1' => [
+      'csc_f_nrlmnt_prac_std_1' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 1 Standard',
         'description' => 'Field Enrollment Practice 1 Standard',
@@ -232,28 +232,28 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_standard_other_1' => [
+	    'csc_f_nrlmnt_prac_std_otr_1' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 1 Standard',
         'description' => 'Field Enrollment Other Practice 1 Standard',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_year_1' => [
+      'csc_f_enrlmnt_prac_year_1' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Planned Practice 1 Implementation Year',
         'description' => 'Field Enrollment Planned Practice 1 Implementation Year',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_extent_1' => [
+      'csc_f_nrlmnt_prac_ext_1' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Practice 1 Extent',
         'description' => 'Field Enrollment Practice 1 Extent',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_1' => [
+	    'csc_f_nrlmnt_prac_ext_unit_1' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 1 Extent Unit',
         'description' => 'Field Enrollment Practice 1 Extent Unit',
@@ -267,14 +267,14 @@ class FieldEnrollment extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_other_1' => [
+	    'csc_f_nrlmnt_prac_ext_unit_otr_1' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 1 Extent Unit',
         'description' => 'Field Enrollment Other Practice 1 Extent Unit',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	   'f_enrollment_practice_type_2' => [
+	   'csc_f_nrlmnt_prac_type_2' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Practice 2 Type',
         'description' => 'Field Enrollment Practice 2 Type',		
@@ -283,7 +283,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_standard_2' => [
+      'csc_f_nrlmnt_prac_std_2' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 2 Standard',
         'description' => 'Field Enrollment Practice 2 Standard',
@@ -294,28 +294,28 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_standard_other_2' => [
+	    'csc_f_nrlmnt_prac_std_otr_2' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 2 Standard',
         'description' => 'Field Enrollment Other Practice 2 Standard',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_year_2' => [
+      'csc_f_nrlmnt_prac_year_2' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Planned Practice 2 Implementation Year',
         'description' => 'Field Enrollment Planned Practice 2 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_extent_2' => [
+      'csc_f_nrlmnt_prac_ext_2' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Practice 2 Extent',
         'description' => 'Field Enrollment Practice 2 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_2' => [
+	    'csc_f_nrlmnt_prac_ext_unit_2' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 2 Extent Unit',
         'description' => 'Field Enrollment Practice 2 Extent Unit',
@@ -329,14 +329,14 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	   'f_enrollment_practice_extent_unit_other_2' => [
+	   'csc_f_nrlmnt_prac_ext_unit_otr_2' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 2 Extent Unit',
         'description' => 'Field Enrollment Other Practice 2 Extent Unit',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_type_3' => [
+	    'csc_f_nrlmnt_prac_type_3' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Practice 3 Type',
         'description' => 'Field Enrollment Practice 3 Type',
@@ -345,7 +345,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_standard_3' => [
+      'csc_f_nrlmnt_prac_std_3' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 3 Standard',
         'description' => 'Field Enrollment Practice 3 Standard',
@@ -356,28 +356,28 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_standard_other_3' => [
+	    'csc_f_nrlmnt_prac_std_otr_3' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 3 Standard',
         'description' => 'Field Enrollment Other Practice 3 Standard',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_year_3' => [
+      'csc_f_nrlmnt_prac_year_3' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Planned Practice 3 Implementation Year',
         'description' => 'Field Enrollment Planned Practice 3 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_extent_3' => [
+      'csc_f_nrlmnt_prac_ext_3' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Practice 3 Extent',
         'description' => 'Field Enrollment Practice 3 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_3' => [
+	    'csc_f_nrlmnt_prac_ext_unit_3' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 3 Extent Unit',
         'description' => 'Field Enrollment Practice 3 Extent Unit',
@@ -391,14 +391,14 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_other_3' => [
+	    'csc_f_nrlmnt_prac_ext_unit_otr_3' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 3 Extent Unit',
         'description' => 'Field Enrollment Other Practice 3 Extent Unit',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_type_4' => [
+	    'csc_f_nrlmnt_prac_type_4' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Practice 4 Type',
         'description' => 'Field Enrollment Practice 4 Type',
@@ -407,7 +407,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_standard_4' => [
+      'csc_f_nrlmnt_prac_std_4' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 4 Standard',
         'description' => 'Field Enrollment Practice 4 Standard',
@@ -418,28 +418,28 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_standard_other_4' => [
+	    'csc_f_nrlmnt_prac_std_otr_4' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 4 Standard',
         'description' => 'Field Enrollment Other Practice 4 Standard',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_year_4' => [
+      'csc_f_nrlmnt_prac_year_4' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Planned Practice 4 Implementation Year',
         'description' => 'Field Enrollment Planned Practice 4 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_extent_4' => [
+      'csc_f_nrlmnt_prac_ext_4' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Practice 4 Extent',
         'description' => 'Field Enrollment Practice 4 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_4' => [
+	    'csc_f_nrlmnt_prac_ext_unit_4' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 4 Extent Unit',
         'description' => 'Field Enrollment Practice 4 Extent Unit',
@@ -450,14 +450,14 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_other_4' => [
+	    'csc_f_nrlmnt_prac_ext_unit_otr_4' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 4 Extent Unit',
         'description' => 'Field Enrollment Other Practice 4 Extent Unit',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_type_5' => [
+	    'csc_f_nrlmnt_prac_type_5' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Practice 5 Type',
         'description' => 'Field Enrollment Practice 5 Type',
@@ -466,7 +466,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_standard_5' => [
+      'csc_f_nrlmnt_prac_std_5' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 5 Standard',
         'description' => 'Field Enrollment Practice 5 Standard',
@@ -477,28 +477,28 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_standard_other_5' => [
+	    'csc_f_nrlmnt_prac_std_otr_5' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 5 Standard',
         'description' => 'Field Enrollment Other Practice 5 Standard',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_year_5' => [
+      'csc_f_nrlmnt_prac_year_5' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Planned Practice 5 Implementation Year',
         'description' => 'Field Enrollment Planned Practice 5 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_extent_5' => [
+      'csc_f_nrlmnt_prac_ext_5' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Practice 5 Extent',
         'description' => 'Field Enrollment Practice 5 Extent',
 		    'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_5' => [
+	    'csc_f_nrlmnt_prac_ext_unit_5' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 5 Extent Unit',
         'description' => 'Field Enrollment Practice 5 Extent Unit',
@@ -512,14 +512,14 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_other_5' => [
+	    'csc_f_nrlmnt_prac_ext_unit_otr_5' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 5 Extent Unit',
         'description' => 'Field Enrollment Other Practice 5 Extent Unit',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_type_6' => [
+	    'csc_f_nrlmnt_prac_type_6' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Practice 6 Type',
         'description' => 'Field Enrollment Practice 6 Type',
@@ -528,7 +528,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_standard_6' => [
+      'csc_f_nrlmnt_prac_std_6' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 6 Standard',
         'description' => 'Field Enrollment Practice 6 Standard',
@@ -539,28 +539,28 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_standard_other_6' => [
+	    'csc_f_nrlmnt_prac_std_otr_6' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 6 Standard',
         'description' => 'Field Enrollment Other Practice 6 Standard',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_year_6' => [
+      'csc_f_nrlmnt_prac_year_6' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Planned Practice 6 Implementation Year',
         'description' => 'Field Enrollment Planned Practice 6 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_extent_6' => [
+      'csc_f_nrlmnt_prac_ext_6' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Practice 6 Extent',
         'description' => 'Field Enrollment Practice 6 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_6' => [
+	    'csc_f_nrlmnt_prac_ext_unit_6' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 6 Extent Unit',
         'description' => 'Field Enrollment Practice 6 Extent Unit',
@@ -574,14 +574,14 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_other_6' => [
+	    'csc_f_nrlmnt_prac_ext_unit_otr_6' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 6 Extent Unit',
         'description' => 'Field Enrollment Other Practice 6 Extent Unit',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_type_7' => [
+	    'csc_f_nrlmnt_prac_type_7' => [
         'type' => 'entity_reference',
         'label' => 'Field Enrollment Practice 7 Type',
         'description' => 'Field Enrollment Practice 7 Type',
@@ -590,7 +590,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_standard_7' => [
+      'csc_f_nrlmnt_prac_std_7' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 7 Standard',
         'description' => 'Field Enrollment Practice 7 Standard',
@@ -601,28 +601,28 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_standard_other_7' => [
+	    'csc_f_nrlmnt_prac_std_otr_7' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 7 Standard',
         'description' => 'Field Enrollment Other Practice 7 Standard',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_year_7' => [
+      'csc_f_nrlmnt_prac_year_7' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Planned Practice 7 Implementation Year',
         'description' => 'Field Enrollment Planned Practice 7 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-      'f_enrollment_practice_extent_7' => [
+      'csc_f_nrlmnt_prac_ext_7' => [
         'type' => 'fraction',
         'label' => 'Field Enrollment Practice 7 Extent',
         'description' => 'Field Enrollment Practice 7 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_7' => [
+	    'csc_f_nrlmnt_prac_ext_unit_7' => [
         'type' => 'list_string',
         'label' => 'Field Enrollment Practice 7 Extent Unit',
         'description' => 'Field Enrollment Practice 7 Extent Unit',
@@ -636,7 +636,7 @@ class FieldEnrollment extends FarmAssetType {
         'required' => FALSE,
         'multiple' => FALSE,
       ],
-	    'f_enrollment_practice_extent_unit_other_7' => [
+	    'csc_f_nrlmnt_prac_ext_unit_otr_7' => [
         'type' => 'string',
         'label' => 'Field Enrollment Other Practice 7 Extent Unit',
         'description' => 'Field Enrollment Other Practice 7 Extent Unit',

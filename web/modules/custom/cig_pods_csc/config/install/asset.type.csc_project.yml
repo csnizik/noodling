@@ -4,8 +4,8 @@ dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: producer_enrollment
-label: Producer Enrollment
-description: Producer Enrollment
+id: csc_project
+label: Project
+description: Project
 workflow: asset_default
 new_revision: true

@@ -6,10 +6,10 @@ use Drupal\farm_entity\Plugin\Asset\AssetType\FarmAssetType;
 use Drupal\farm_field\FarmFieldFactory;
 
 /**
- * Provides the CIG Project asset type.
+ * Provides the CIG csc_project asset type.
  *
  * @AssetType(
- * id = "project",
+ * id = "csc_project",
  * label = @Translation("Project"),
  * )
  */
@@ -23,63 +23,63 @@ class Project extends FarmAssetType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'project_id_field' => [
+      'csc_project_id_field' => [
         'type' => 'string',
         'label' => 'Project ID',
         'description' => 'Project ID',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'project_grantee_org' => [
+      'csc_project_grantee_org' => [
         'type' => 'string',
         'label' => 'Grantee Organization Name',
         'description' => 'Grantee Organization Name',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'project_grantee_contact_name' => [
+      'csc_project_grantee_cont_name' => [
         'type' => 'string',
         'label' => 'Grantee Primary Point of Contact',
         'description' => 'Grantee Primary Point of Contact',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'project_grantee_contact_email' => [
+      'csc_project_grantee_cont_email' => [
         'type' => 'string',
         'label' => 'Grantee Primary Point of Contact Email',
         'description' => 'Grantee Primary Point of Contact Email',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'project_start' => [
+      'csc_project_start' => [
         'type' => 'timestamp',
         'label' => 'Overall Project Start Date',
         'description' => 'Overall Project Start Date',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'project_end' => [
+      'csc_project_end' => [
         'type' => 'timestamp',
         'label' => 'Overall Project End Date',
         'description' => 'Overall Project End Date',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'project_budget' => [
+      'csc_project_budget' => [
           'type' => 'fraction',
           'label' => 'Total Award Budget',
           'description' => 'Total Award Budget',
           'required' => TRUE,
           'multiple' => FALSE,
       ],
-      'project_comet_version' => [
+      'csc_project_comet_version' => [
         'type' => 'string',
         'label' => 'COMET-Planner Version',
         'description' => 'COMET-Planner Version',
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'project_year_reporting' => [
+      'csc_project_year_reporting' => [
         'type' => 'list_string',
         'label' => 'Choose Year of Reporting',
         'description' => 'Choose Year of Reporting',
@@ -89,7 +89,7 @@ class Project extends FarmAssetType {
         'required' => TRUE ,
         'multiple' => FALSE,
       ],
-      'project_month_reporting' => [
+      'csc_project_month_reporting' => [
         'type' => 'list_string',
         'label' => 'Choose Month of Reporting',
         'description' => 'Choose Month of Reporting',

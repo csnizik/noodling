@@ -1,9 +1,9 @@
+uuid: ec914f5c-0b3e-458c-b499-6d6a34411fca
 langcode: en
 status: true
 dependencies:
   config:
-    - asset.type.field_enrollment
-    - system.menu.account
+    - asset.type.csc_field_enrollment
   module:
     - asset
     - csv_serialization
@@ -11,9 +11,8 @@ dependencies:
     - options
     - rest
     - serialization
-    - user
-id: field_enrollment_view
-label: 'Field Enrollment View'
+id: csc_field_enrollment
+label: 'Field Enrollment'
 module: views
 description: ''
 tag: ''
@@ -26,7 +25,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Field Enrollment View'
+      title: 'Field Enrollment'
       fields:
         name:
           id: name
@@ -38,7 +37,202 @@ display:
           entity_type: null
           entity_field: name
           plugin_id: field
-          label: ''
+          label: Name
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_enrollment_producer_id_target_id:
+          id: csc_f_enrollment_producer_id_target_id
+          table: asset__csc_f_enrollment_producer_id
+          field: csc_f_enrollment_producer_id_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_enrollment_producer_id
+          plugin_id: field
+          label: 'Producer ID'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_enrollment_tract_id_value:
+          id: csc_f_enrollment_tract_id_value
+          table: asset__csc_f_enrollment_tract_id
+          field: csc_f_enrollment_tract_id_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_enrollment_tract_id
+          plugin_id: field
+          label: 'Tract ID'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_enrollment_field_id_value:
+          id: csc_f_enrollment_field_id_value
+          table: asset__csc_f_enrollment_field_id
+          field: csc_f_enrollment_field_id_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_enrollment_field_id
+          plugin_id: field
+          label: 'Field ID'
           exclude: false
           alter:
             alter_text: false
@@ -93,17 +287,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_producer_id_target_id:
-          id: f_enrollment_producer_id_target_id
-          table: asset__f_enrollment_producer_id
-          field: f_enrollment_producer_id_target_id
+        csc_f_enrollment_state_target_id:
+          id: csc_f_enrollment_state_target_id
+          table: asset__csc_f_enrollment_state
+          field: csc_f_enrollment_state_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_producer_id
+          entity_field: csc_f_enrollment_state
           plugin_id: field
-          label: 'Producer ID'
+          label: 'State or Territory'
           exclude: false
           alter:
             alter_text: false
@@ -136,7 +330,72 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_enrollment_county_target_id:
+          id: csc_f_enrollment_county_target_id
+          table: asset__csc_f_enrollment_county
+          field: csc_f_enrollment_county_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_enrollment_county
+          plugin_id: field
+          label: County
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -158,17 +417,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_tract_id_value:
-          id: f_enrollment_tract_id_value
-          table: asset__f_enrollment_tract_id
-          field: f_enrollment_tract_id_value
+        csc_f_enrollment_prior_field_id_value:
+          id: csc_f_enrollment_prior_field_id_value
+          table: asset__csc_f_enrollment_prior_field_id
+          field: csc_f_enrollment_prior_field_id_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_tract_id
+          entity_field: csc_f_enrollment_prior_field_id
           plugin_id: field
-          label: 'Field Enrollment Tract ID'
+          label: 'Prior Field ID'
           exclude: false
           alter:
             alter_text: false
@@ -201,7 +460,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -223,17 +482,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_field_id_value:
-          id: f_enrollment_field_id_value
-          table: asset__f_enrollment_field_id
-          field: f_enrollment_field_id_value
+        csc_f_enrollment_start_date_value:
+          id: csc_f_enrollment_start_date_value
+          table: asset__csc_f_enrollment_start_date
+          field: csc_f_enrollment_start_date_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_field_id
+          entity_field: csc_f_enrollment_start_date
           plugin_id: field
-          label: 'Field Enrollment Field ID'
+          label: 'Contract Start Date'
           exclude: false
           alter:
             alter_text: false
@@ -266,202 +525,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        f_enrollment_state_target_id:
-          id: f_enrollment_state_target_id
-          table: asset__f_enrollment_state
-          field: f_enrollment_state_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: f_enrollment_state
-          plugin_id: field
-          label: 'Field Enrollment State or Territory'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        f_enrollment_prior_field_id_value:
-          id: f_enrollment_prior_field_id_value
-          table: asset__f_enrollment_prior_field_id
-          field: f_enrollment_prior_field_id_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: f_enrollment_prior_field_id
-          plugin_id: field
-          label: 'Field Enrollment Prior Field ID'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        f_enrollment_start_date_value:
-          id: f_enrollment_start_date_value
-          table: asset__f_enrollment_start_date
-          field: f_enrollment_start_date_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: f_enrollment_start_date
-          plugin_id: field
-          label: 'Field Enrollment Contract Start Date'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -485,17 +549,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_total_field_area_numerator:
-          id: f_enrollment_total_field_area_numerator
-          table: asset__f_enrollment_total_field_area
-          field: f_enrollment_total_field_area_numerator
+        csc_f_nrlmnt_total_field_area_numerator:
+          id: csc_f_nrlmnt_total_field_area_numerator
+          table: asset__csc_f_nrlmnt_total_field_area
+          field: csc_f_nrlmnt_total_field_area_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_total_field_area
+          entity_field: csc_f_nrlmnt_total_field_area
           plugin_id: field
-          label: 'Field Enrollment Total Field Area'
+          label: 'Total Field Area'
           exclude: false
           alter:
             alter_text: false
@@ -528,7 +592,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -540,7 +604,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -552,17 +616,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_commodity_category_target_id:
-          id: f_enrollment_commodity_category_target_id
-          table: asset__f_enrollment_commodity_category
-          field: f_enrollment_commodity_category_target_id
+        csc_f_nrlmnt_commodity_category_target_id:
+          id: csc_f_nrlmnt_commodity_category_target_id
+          table: asset__csc_f_nrlmnt_commodity_category
+          field: csc_f_nrlmnt_commodity_category_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_commodity_category
+          entity_field: csc_f_nrlmnt_commodity_category
           plugin_id: field
-          label: 'Field Enrollment Commodity Category'
+          label: 'Commodity Category'
           exclude: false
           alter:
             alter_text: false
@@ -595,7 +659,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -617,17 +681,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_baseline_yield_numerator:
-          id: f_enrollment_baseline_yield_numerator
-          table: asset__f_enrollment_baseline_yield
-          field: f_enrollment_baseline_yield_numerator
+        csc_f_enrollment_commodity_type_target_id:
+          id: csc_f_enrollment_commodity_type_target_id
+          table: asset__csc_f_enrollment_commodity_type
+          field: csc_f_enrollment_commodity_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_baseline_yield
+          entity_field: csc_f_enrollment_commodity_type
           plugin_id: field
-          label: 'Field Enrollment Baseline Yield'
+          label: 'Commodity Type'
           exclude: false
           alter:
             alter_text: false
@@ -660,74 +724,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        f_enrollment_baseline_yield_unit_target_id:
-          id: f_enrollment_baseline_yield_unit_target_id
-          table: asset__f_enrollment_baseline_yield_unit
-          field: f_enrollment_baseline_yield_unit_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: f_enrollment_baseline_yield_unit
-          plugin_id: field
-          label: 'Field Enrollment Baseline Yield Unit'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -749,17 +746,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_baseline_yield_unit_other_value:
-          id: f_enrollment_baseline_yield_unit_other_value
-          table: asset__f_enrollment_baseline_yield_unit_other
-          field: f_enrollment_baseline_yield_unit_other_value
+        csc_f_enrollment_baseline_yield_numerator:
+          id: csc_f_enrollment_baseline_yield_numerator
+          table: asset__csc_f_enrollment_baseline_yield
+          field: csc_f_enrollment_baseline_yield_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_baseline_yield_unit_other
+          entity_field: csc_f_enrollment_baseline_yield
           plugin_id: field
-          label: 'Field Enrollment Baseline Yield Unit Other'
+          label: 'Baseline Yield'
           exclude: false
           alter:
             alter_text: false
@@ -792,7 +789,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -800,11 +797,13 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: string
+          click_sort_column: numerator
+          type: fraction_decimal
           settings:
-            link_to_entity: false
-          group_column: value
+            precision: 2
+            auto_precision: false
+            prefix_suffix: false
+          group_column: ''
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -814,17 +813,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_baseline_yield_location_value:
-          id: f_enrollment_baseline_yield_location_value
-          table: asset__f_enrollment_baseline_yield_location
-          field: f_enrollment_baseline_yield_location_value
+        csc_f_nrlmnt_base_yield_unit_target_id:
+          id: csc_f_nrlmnt_base_yield_unit_target_id
+          table: asset__csc_f_nrlmnt_base_yield_unit
+          field: csc_f_nrlmnt_base_yield_unit_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_baseline_yield_location
+          entity_field: csc_f_nrlmnt_base_yield_unit
           plugin_id: field
-          label: 'Field Enrollment Baseline Yield Location'
+          label: 'Baseline Yield Unit'
           exclude: false
           alter:
             alter_text: false
@@ -857,136 +856,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        f_enrollment_baseline_yield_location_other_value:
-          id: f_enrollment_baseline_yield_location_other_value
-          table: asset__f_enrollment_baseline_yield_location_other
-          field: f_enrollment_baseline_yield_location_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: f_enrollment_baseline_yield_location_other
-          plugin_id: field
-          label: 'Field Enrollment Baseline Yield Location Other'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        f_enrollment_field_land_use_target_id:
-          id: f_enrollment_field_land_use_target_id
-          table: asset__f_enrollment_field_land_use
-          field: f_enrollment_field_land_use_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: f_enrollment_field_land_use
-          plugin_id: field
-          label: 'Field Enrollment Field Land Use'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1008,17 +878,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_field_irrigated_target_id:
-          id: f_enrollment_field_irrigated_target_id
-          table: asset__f_enrollment_field_irrigated
-          field: f_enrollment_field_irrigated_target_id
+        csc_f_nrlmnt_base_yield_unit_otr_value:
+          id: csc_f_nrlmnt_base_yield_unit_otr_value
+          table: asset__csc_f_nrlmnt_base_yield_unit_otr
+          field: csc_f_nrlmnt_base_yield_unit_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_field_irrigated
+          entity_field: csc_f_nrlmnt_base_yield_unit_otr
           plugin_id: field
-          label: 'Field Enrollment Field Irrigated'
+          label: 'Baseline Yield Unit Other'
           exclude: false
           alter:
             alter_text: false
@@ -1051,7 +921,201 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_nrlmnt_base_yield_loc_value:
+          id: csc_f_nrlmnt_base_yield_loc_value
+          table: asset__csc_f_nrlmnt_base_yield_loc
+          field: csc_f_nrlmnt_base_yield_loc_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_nrlmnt_base_yield_loc
+          plugin_id: field
+          label: 'Baseline Yield Location'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_nrlmnt_base_yield_loc_otr_value:
+          id: csc_f_nrlmnt_base_yield_loc_otr_value
+          table: asset__csc_f_nrlmnt_base_yield_loc_otr
+          field: csc_f_nrlmnt_base_yield_loc_otr_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_nrlmnt_base_yield_loc_otr
+          plugin_id: field
+          label: 'Baseline Yield Location Other'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_enrollment_field_land_use_target_id:
+          id: csc_f_enrollment_field_land_use_target_id
+          table: asset__csc_f_enrollment_field_land_use
+          field: csc_f_enrollment_field_land_use_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_enrollment_field_land_use
+          plugin_id: field
+          label: 'Field Land Use'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1073,17 +1137,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_field_tillage_target_id:
-          id: f_enrollment_field_tillage_target_id
-          table: asset__f_enrollment_field_tillage
-          field: f_enrollment_field_tillage_target_id
+        csc_f_nrlmnt_field_irrigated_target_id:
+          id: csc_f_nrlmnt_field_irrigated_target_id
+          table: asset__csc_f_nrlmnt_field_irrigated
+          field: csc_f_nrlmnt_field_irrigated_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_field_tillage
+          entity_field: csc_f_nrlmnt_field_irrigated
           plugin_id: field
-          label: 'Field Enrollment Field Tillage'
+          label: 'Field Irrigated'
           exclude: false
           alter:
             alter_text: false
@@ -1116,7 +1180,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1138,17 +1202,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_prior_utilization_percent_value:
-          id: f_enrollment_practice_prior_utilization_percent_value
-          table: asset__f_enrollment_practice_prior_utilization_percent
-          field: f_enrollment_practice_prior_utilization_percent_value
+        csc_f_enrollment_field_tillage_target_id:
+          id: csc_f_enrollment_field_tillage_target_id
+          table: asset__csc_f_enrollment_field_tillage
+          field: csc_f_enrollment_field_tillage_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_prior_utilization_percent
+          entity_field: csc_f_enrollment_field_tillage
           plugin_id: field
-          label: 'Field Enrollment Practice (Combination) Past Extent - Farm'
+          label: 'Field Tillage'
           exclude: false
           alter:
             alter_text: false
@@ -1181,199 +1245,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        f_enrollment_field_any_csaf_practice_value:
-          id: f_enrollment_field_any_csaf_practice_value
-          table: asset__f_enrollment_field_any_csaf_practice
-          field: f_enrollment_field_any_csaf_practice_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: f_enrollment_field_any_csaf_practice
-          plugin_id: field
-          label: 'Field Enrollment Field any CSAF Practice'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        f_enrollment_field_practice_prior_utilization_value:
-          id: f_enrollment_field_practice_prior_utilization_value
-          table: asset__f_enrollment_field_practice_prior_utilization
-          field: f_enrollment_field_practice_prior_utilization_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: f_enrollment_field_practice_prior_utilization
-          plugin_id: field
-          label: 'Field Enrollment Practice (Combination) Past Use - This Feild'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        f_enrollment_practice_type_1_target_id:
-          id: f_enrollment_practice_type_1_target_id
-          table: asset__f_enrollment_practice_type_1
-          field: f_enrollment_practice_type_1_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: f_enrollment_practice_type_1
-          plugin_id: field
-          label: 'Field Enrollment Practice 1 Type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1395,17 +1267,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_1_value:
-          id: f_enrollment_practice_standard_1_value
-          table: asset__f_enrollment_practice_standard_1
-          field: f_enrollment_practice_standard_1_value
+        csc_f_nrlmnt_prac_pri_util_prcnt_value:
+          id: csc_f_nrlmnt_prac_pri_util_prcnt_value
+          table: asset__csc_f_nrlmnt_prac_pri_util_prcnt
+          field: csc_f_nrlmnt_prac_pri_util_prcnt_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_1
+          entity_field: csc_f_nrlmnt_prac_pri_util_prcnt
           plugin_id: field
-          label: 'Field Enrollment Practice 1 Standard'
+          label: 'Practice Past Extent'
           exclude: false
           alter:
             alter_text: false
@@ -1438,7 +1310,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1459,17 +1331,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_other_1_value:
-          id: f_enrollment_practice_standard_other_1_value
-          table: asset__f_enrollment_practice_standard_other_1
-          field: f_enrollment_practice_standard_other_1_value
+        csc_f_nrlmnt_field_any_csaf_prac_value:
+          id: csc_f_nrlmnt_field_any_csaf_prac_value
+          table: asset__csc_f_nrlmnt_field_any_csaf_prac
+          field: csc_f_nrlmnt_field_any_csaf_prac_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_other_1
+          entity_field: csc_f_nrlmnt_field_any_csaf_prac
           plugin_id: field
-          label: 'Field Enrollment Other Practice 1 Standard'
+          label: 'Field Any CSAF Practice'
           exclude: false
           alter:
             alter_text: false
@@ -1502,7 +1374,264 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_nrlmnt_field_prac_pri_util_value:
+          id: csc_f_nrlmnt_field_prac_pri_util_value
+          table: asset__csc_f_nrlmnt_field_prac_pri_util
+          field: csc_f_nrlmnt_field_prac_pri_util_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_nrlmnt_field_prac_pri_util
+          plugin_id: field
+          label: 'Practice Past Use'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_nrlmnt_prac_type_1_target_id:
+          id: csc_f_nrlmnt_prac_type_1_target_id
+          table: asset__csc_f_nrlmnt_prac_type_1
+          field: csc_f_nrlmnt_prac_type_1_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_nrlmnt_prac_type_1
+          plugin_id: field
+          label: 'Practice 1 Type'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_nrlmnt_prac_std_1_value:
+          id: csc_f_nrlmnt_prac_std_1_value
+          table: asset__csc_f_nrlmnt_prac_std_1
+          field: csc_f_nrlmnt_prac_std_1_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_nrlmnt_prac_std_1
+          plugin_id: field
+          label: 'Practice 1 Standard'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_f_nrlmnt_prac_std_otr_1_value:
+          id: csc_f_nrlmnt_prac_std_otr_1_value
+          table: asset__csc_f_nrlmnt_prac_std_otr_1
+          field: csc_f_nrlmnt_prac_std_otr_1_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: asset
+          entity_field: csc_f_nrlmnt_prac_std_otr_1
+          plugin_id: field
+          label: 'Other Practice 1 Standard'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1524,17 +1653,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_year_1_numerator:
-          id: f_enrollment_practice_year_1_numerator
-          table: asset__f_enrollment_practice_year_1
-          field: f_enrollment_practice_year_1_numerator
+        csc_f_enrlmnt_prac_year_1_numerator:
+          id: csc_f_enrlmnt_prac_year_1_numerator
+          table: asset__csc_f_enrlmnt_prac_year_1
+          field: csc_f_enrlmnt_prac_year_1_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_year_1
+          entity_field: csc_f_enrlmnt_prac_year_1
           plugin_id: field
-          label: 'Field Enrollment Planned Practice 1 Implementation Year'
+          label: 'Practice 1 Implementation Year'
           exclude: false
           alter:
             alter_text: false
@@ -1567,7 +1696,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1579,7 +1708,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -1591,17 +1720,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_1_numerator:
-          id: f_enrollment_practice_extent_1_numerator
-          table: asset__f_enrollment_practice_extent_1
-          field: f_enrollment_practice_extent_1_numerator
+        csc_f_nrlmnt_prac_ext_1_numerator:
+          id: csc_f_nrlmnt_prac_ext_1_numerator
+          table: asset__csc_f_nrlmnt_prac_ext_1
+          field: csc_f_nrlmnt_prac_ext_1_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_1
+          entity_field: csc_f_nrlmnt_prac_ext_1
           plugin_id: field
-          label: 'Field Enrollment Practice 1 Extent'
+          label: 'Practice 1 Extent'
           exclude: false
           alter:
             alter_text: false
@@ -1634,7 +1763,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1646,7 +1775,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -1658,17 +1787,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_1_value:
-          id: f_enrollment_practice_extent_unit_1_value
-          table: asset__f_enrollment_practice_extent_unit_1
-          field: f_enrollment_practice_extent_unit_1_value
+        csc_f_nrlmnt_prac_ext_unit_1_value:
+          id: csc_f_nrlmnt_prac_ext_unit_1_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_1
+          field: csc_f_nrlmnt_prac_ext_unit_1_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_1
+          entity_field: csc_f_nrlmnt_prac_ext_unit_1
           plugin_id: field
-          label: 'Field Enrollment Practice 1 Extent Unit'
+          label: 'Practice 1 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -1701,7 +1830,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1722,17 +1851,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_other_1_value:
-          id: f_enrollment_practice_extent_unit_other_1_value
-          table: asset__f_enrollment_practice_extent_unit_other_1
-          field: f_enrollment_practice_extent_unit_other_1_value
+        csc_f_nrlmnt_prac_ext_unit_otr_1_value:
+          id: csc_f_nrlmnt_prac_ext_unit_otr_1_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_otr_1
+          field: csc_f_nrlmnt_prac_ext_unit_otr_1_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_other_1
+          entity_field: csc_f_nrlmnt_prac_ext_unit_otr_1
           plugin_id: field
-          label: 'Field Enrollment Other Practice 1 Extent Unit'
+          label: 'Other Practice 1 Extent'
           exclude: false
           alter:
             alter_text: false
@@ -1765,7 +1894,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1787,17 +1916,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_type_2_target_id:
-          id: f_enrollment_practice_type_2_target_id
-          table: asset__f_enrollment_practice_type_2
-          field: f_enrollment_practice_type_2_target_id
+        csc_f_nrlmnt_prac_type_2_target_id:
+          id: csc_f_nrlmnt_prac_type_2_target_id
+          table: asset__csc_f_nrlmnt_prac_type_2
+          field: csc_f_nrlmnt_prac_type_2_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_type_2
+          entity_field: csc_f_nrlmnt_prac_type_2
           plugin_id: field
-          label: 'Field Enrollment Practice 2 Type'
+          label: 'Practice 2 Type'
           exclude: false
           alter:
             alter_text: false
@@ -1830,7 +1959,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1852,17 +1981,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_2_value:
-          id: f_enrollment_practice_standard_2_value
-          table: asset__f_enrollment_practice_standard_2
-          field: f_enrollment_practice_standard_2_value
+        csc_f_nrlmnt_prac_std_2_value:
+          id: csc_f_nrlmnt_prac_std_2_value
+          table: asset__csc_f_nrlmnt_prac_std_2
+          field: csc_f_nrlmnt_prac_std_2_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_2
+          entity_field: csc_f_nrlmnt_prac_std_2
           plugin_id: field
-          label: 'Field Enrollment Practice 2 Standard'
+          label: 'Practice 2 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -1895,7 +2024,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1916,17 +2045,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_other_2_value:
-          id: f_enrollment_practice_standard_other_2_value
-          table: asset__f_enrollment_practice_standard_other_2
-          field: f_enrollment_practice_standard_other_2_value
+        csc_f_nrlmnt_prac_std_otr_2_value:
+          id: csc_f_nrlmnt_prac_std_otr_2_value
+          table: asset__csc_f_nrlmnt_prac_std_otr_2
+          field: csc_f_nrlmnt_prac_std_otr_2_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_other_2
+          entity_field: csc_f_nrlmnt_prac_std_otr_2
           plugin_id: field
-          label: 'Field Enrollment Other Practice 2 Standard'
+          label: 'Other Practice 2 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -1959,7 +2088,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1981,17 +2110,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_year_2_numerator:
-          id: f_enrollment_practice_year_2_numerator
-          table: asset__f_enrollment_practice_year_2
-          field: f_enrollment_practice_year_2_numerator
+        csc_f_nrlmnt_prac_year_2_numerator:
+          id: csc_f_nrlmnt_prac_year_2_numerator
+          table: asset__csc_f_nrlmnt_prac_year_2
+          field: csc_f_nrlmnt_prac_year_2_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_year_2
+          entity_field: csc_f_nrlmnt_prac_year_2
           plugin_id: field
-          label: 'Field Enrollment Planned Practice 2 Implementation Year'
+          label: 'Practice 2 Implementation Year'
           exclude: false
           alter:
             alter_text: false
@@ -2024,7 +2153,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2036,7 +2165,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -2048,17 +2177,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_2_numerator:
-          id: f_enrollment_practice_extent_2_numerator
-          table: asset__f_enrollment_practice_extent_2
-          field: f_enrollment_practice_extent_2_numerator
+        csc_f_nrlmnt_prac_ext_2_numerator:
+          id: csc_f_nrlmnt_prac_ext_2_numerator
+          table: asset__csc_f_nrlmnt_prac_ext_2
+          field: csc_f_nrlmnt_prac_ext_2_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_2
+          entity_field: csc_f_nrlmnt_prac_ext_2
           plugin_id: field
-          label: 'Field Enrollment Practice 2 Extent'
+          label: 'Practice 2 Extent'
           exclude: false
           alter:
             alter_text: false
@@ -2091,7 +2220,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2103,7 +2232,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -2115,17 +2244,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_2_value:
-          id: f_enrollment_practice_extent_unit_2_value
-          table: asset__f_enrollment_practice_extent_unit_2
-          field: f_enrollment_practice_extent_unit_2_value
+        csc_f_nrlmnt_prac_ext_unit_2_value:
+          id: csc_f_nrlmnt_prac_ext_unit_2_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_2
+          field: csc_f_nrlmnt_prac_ext_unit_2_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_2
+          entity_field: csc_f_nrlmnt_prac_ext_unit_2
           plugin_id: field
-          label: 'Field Enrollment Practice 2 Extent Unit'
+          label: 'Practice 2 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -2158,7 +2287,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2179,17 +2308,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_other_2_value:
-          id: f_enrollment_practice_extent_unit_other_2_value
-          table: asset__f_enrollment_practice_extent_unit_other_2
-          field: f_enrollment_practice_extent_unit_other_2_value
+        csc_f_nrlmnt_prac_ext_unit_otr_2_value:
+          id: csc_f_nrlmnt_prac_ext_unit_otr_2_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_otr_2
+          field: csc_f_nrlmnt_prac_ext_unit_otr_2_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_other_2
+          entity_field: csc_f_nrlmnt_prac_ext_unit_otr_2
           plugin_id: field
-          label: 'Field Enrollment Other Practice 2 Extent Unit'
+          label: 'Other Practice 2 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -2222,7 +2351,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2244,17 +2373,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_type_3_target_id:
-          id: f_enrollment_practice_type_3_target_id
-          table: asset__f_enrollment_practice_type_3
-          field: f_enrollment_practice_type_3_target_id
+        csc_f_nrlmnt_prac_type_3_target_id:
+          id: csc_f_nrlmnt_prac_type_3_target_id
+          table: asset__csc_f_nrlmnt_prac_type_3
+          field: csc_f_nrlmnt_prac_type_3_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_type_3
+          entity_field: csc_f_nrlmnt_prac_type_3
           plugin_id: field
-          label: 'Field Enrollment Practice 3 Type'
+          label: 'Practice 3 Type'
           exclude: false
           alter:
             alter_text: false
@@ -2287,7 +2416,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2309,17 +2438,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_3_value:
-          id: f_enrollment_practice_standard_3_value
-          table: asset__f_enrollment_practice_standard_3
-          field: f_enrollment_practice_standard_3_value
+        csc_f_nrlmnt_prac_std_3_value:
+          id: csc_f_nrlmnt_prac_std_3_value
+          table: asset__csc_f_nrlmnt_prac_std_3
+          field: csc_f_nrlmnt_prac_std_3_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_3
+          entity_field: csc_f_nrlmnt_prac_std_3
           plugin_id: field
-          label: 'Field Enrollment Practice 3 Standard'
+          label: 'Practice 3 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -2352,7 +2481,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2373,17 +2502,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_other_3_value:
-          id: f_enrollment_practice_standard_other_3_value
-          table: asset__f_enrollment_practice_standard_other_3
-          field: f_enrollment_practice_standard_other_3_value
+        csc_f_nrlmnt_prac_std_otr_3_value:
+          id: csc_f_nrlmnt_prac_std_otr_3_value
+          table: asset__csc_f_nrlmnt_prac_std_otr_3
+          field: csc_f_nrlmnt_prac_std_otr_3_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_other_3
+          entity_field: csc_f_nrlmnt_prac_std_otr_3
           plugin_id: field
-          label: 'Field Enrollment Other Practice 3 Standard'
+          label: 'Other Practice 3 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -2416,7 +2545,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2438,17 +2567,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_year_3_numerator:
-          id: f_enrollment_practice_year_3_numerator
-          table: asset__f_enrollment_practice_year_3
-          field: f_enrollment_practice_year_3_numerator
+        csc_f_nrlmnt_prac_year_3_numerator:
+          id: csc_f_nrlmnt_prac_year_3_numerator
+          table: asset__csc_f_nrlmnt_prac_year_3
+          field: csc_f_nrlmnt_prac_year_3_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_year_3
+          entity_field: csc_f_nrlmnt_prac_year_3
           plugin_id: field
-          label: 'Field Enrollment Planned Practice 3 Implementation Year'
+          label: 'Practice 3 Implementation Year'
           exclude: false
           alter:
             alter_text: false
@@ -2481,7 +2610,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2493,7 +2622,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -2505,17 +2634,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_3_numerator:
-          id: f_enrollment_practice_extent_3_numerator
-          table: asset__f_enrollment_practice_extent_3
-          field: f_enrollment_practice_extent_3_numerator
+        csc_f_nrlmnt_prac_ext_3_numerator:
+          id: csc_f_nrlmnt_prac_ext_3_numerator
+          table: asset__csc_f_nrlmnt_prac_ext_3
+          field: csc_f_nrlmnt_prac_ext_3_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_3
+          entity_field: csc_f_nrlmnt_prac_ext_3
           plugin_id: field
-          label: 'Field Enrollment Practice 3 Extent'
+          label: 'Practice 3 Extent'
           exclude: false
           alter:
             alter_text: false
@@ -2548,7 +2677,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2560,7 +2689,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -2572,17 +2701,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_3_value:
-          id: f_enrollment_practice_extent_unit_3_value
-          table: asset__f_enrollment_practice_extent_unit_3
-          field: f_enrollment_practice_extent_unit_3_value
+        csc_f_nrlmnt_prac_ext_unit_3_value:
+          id: csc_f_nrlmnt_prac_ext_unit_3_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_3
+          field: csc_f_nrlmnt_prac_ext_unit_3_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_3
+          entity_field: csc_f_nrlmnt_prac_ext_unit_3
           plugin_id: field
-          label: 'Field Enrollment Practice 3 Extent Unit'
+          label: 'Practice 3 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -2615,7 +2744,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2636,17 +2765,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_other_3_value:
-          id: f_enrollment_practice_extent_unit_other_3_value
-          table: asset__f_enrollment_practice_extent_unit_other_3
-          field: f_enrollment_practice_extent_unit_other_3_value
+        csc_f_nrlmnt_prac_ext_unit_otr_3_value:
+          id: csc_f_nrlmnt_prac_ext_unit_otr_3_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_otr_3
+          field: csc_f_nrlmnt_prac_ext_unit_otr_3_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_other_3
+          entity_field: csc_f_nrlmnt_prac_ext_unit_otr_3
           plugin_id: field
-          label: 'Field Enrollment Other Practice 3 Extent Unit'
+          label: 'Other Practice 3 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -2679,7 +2808,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2701,17 +2830,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_type_4_target_id:
-          id: f_enrollment_practice_type_4_target_id
-          table: asset__f_enrollment_practice_type_4
-          field: f_enrollment_practice_type_4_target_id
+        csc_f_nrlmnt_prac_type_4_target_id:
+          id: csc_f_nrlmnt_prac_type_4_target_id
+          table: asset__csc_f_nrlmnt_prac_type_4
+          field: csc_f_nrlmnt_prac_type_4_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_type_4
+          entity_field: csc_f_nrlmnt_prac_type_4
           plugin_id: field
-          label: 'Field Enrollment Practice 4 Type'
+          label: 'Practice 4 Type'
           exclude: false
           alter:
             alter_text: false
@@ -2744,7 +2873,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2766,17 +2895,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_4_value:
-          id: f_enrollment_practice_standard_4_value
-          table: asset__f_enrollment_practice_standard_4
-          field: f_enrollment_practice_standard_4_value
+        csc_f_nrlmnt_prac_std_4_value:
+          id: csc_f_nrlmnt_prac_std_4_value
+          table: asset__csc_f_nrlmnt_prac_std_4
+          field: csc_f_nrlmnt_prac_std_4_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_4
+          entity_field: csc_f_nrlmnt_prac_std_4
           plugin_id: field
-          label: 'Field Enrollment Practice 4 Standard'
+          label: 'Practice 4 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -2809,7 +2938,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2830,17 +2959,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_other_4_value:
-          id: f_enrollment_practice_standard_other_4_value
-          table: asset__f_enrollment_practice_standard_other_4
-          field: f_enrollment_practice_standard_other_4_value
+        csc_f_nrlmnt_prac_std_otr_4_value:
+          id: csc_f_nrlmnt_prac_std_otr_4_value
+          table: asset__csc_f_nrlmnt_prac_std_otr_4
+          field: csc_f_nrlmnt_prac_std_otr_4_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_other_4
+          entity_field: csc_f_nrlmnt_prac_std_otr_4
           plugin_id: field
-          label: 'Field Enrollment Other Practice 4 Standard'
+          label: 'Other Practice 4 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -2873,7 +3002,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2895,17 +3024,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_year_4_numerator:
-          id: f_enrollment_practice_year_4_numerator
-          table: asset__f_enrollment_practice_year_4
-          field: f_enrollment_practice_year_4_numerator
+        csc_f_nrlmnt_prac_year_4_numerator:
+          id: csc_f_nrlmnt_prac_year_4_numerator
+          table: asset__csc_f_nrlmnt_prac_year_4
+          field: csc_f_nrlmnt_prac_year_4_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_year_4
+          entity_field: csc_f_nrlmnt_prac_year_4
           plugin_id: field
-          label: 'Field Enrollment Planned Practice 4 Implementation Year'
+          label: 'Practice 4 Implementation Year'
           exclude: false
           alter:
             alter_text: false
@@ -2938,7 +3067,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -2950,7 +3079,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -2962,17 +3091,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_4_numerator:
-          id: f_enrollment_practice_extent_4_numerator
-          table: asset__f_enrollment_practice_extent_4
-          field: f_enrollment_practice_extent_4_numerator
+        csc_f_nrlmnt_prac_ext_4_numerator:
+          id: csc_f_nrlmnt_prac_ext_4_numerator
+          table: asset__csc_f_nrlmnt_prac_ext_4
+          field: csc_f_nrlmnt_prac_ext_4_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_4
+          entity_field: csc_f_nrlmnt_prac_ext_4
           plugin_id: field
-          label: 'Field Enrollment Practice 4 Extent'
+          label: 'Practice 4 Extent'
           exclude: false
           alter:
             alter_text: false
@@ -3005,7 +3134,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3017,7 +3146,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -3029,17 +3158,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_4_value:
-          id: f_enrollment_practice_extent_unit_4_value
-          table: asset__f_enrollment_practice_extent_unit_4
-          field: f_enrollment_practice_extent_unit_4_value
+        csc_f_nrlmnt_prac_ext_unit_4_value:
+          id: csc_f_nrlmnt_prac_ext_unit_4_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_4
+          field: csc_f_nrlmnt_prac_ext_unit_4_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_4
+          entity_field: csc_f_nrlmnt_prac_ext_unit_4
           plugin_id: field
-          label: 'Field Enrollment Practice 4 Extent Unit'
+          label: 'Practice 4 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -3072,7 +3201,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3093,17 +3222,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_other_4_value:
-          id: f_enrollment_practice_extent_unit_other_4_value
-          table: asset__f_enrollment_practice_extent_unit_other_4
-          field: f_enrollment_practice_extent_unit_other_4_value
+        csc_f_nrlmnt_prac_ext_unit_otr_4_value:
+          id: csc_f_nrlmnt_prac_ext_unit_otr_4_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_otr_4
+          field: csc_f_nrlmnt_prac_ext_unit_otr_4_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_other_4
+          entity_field: csc_f_nrlmnt_prac_ext_unit_otr_4
           plugin_id: field
-          label: 'Field Enrollment Other Practice 4 Extent Unit'
+          label: 'Other Practice 4 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -3136,7 +3265,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3158,17 +3287,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_type_5_target_id:
-          id: f_enrollment_practice_type_5_target_id
-          table: asset__f_enrollment_practice_type_5
-          field: f_enrollment_practice_type_5_target_id
+        csc_f_nrlmnt_prac_type_5_target_id:
+          id: csc_f_nrlmnt_prac_type_5_target_id
+          table: asset__csc_f_nrlmnt_prac_type_5
+          field: csc_f_nrlmnt_prac_type_5_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_type_5
+          entity_field: csc_f_nrlmnt_prac_type_5
           plugin_id: field
-          label: 'Field Enrollment Practice 5 Type'
+          label: 'Practice 5 Type'
           exclude: false
           alter:
             alter_text: false
@@ -3201,7 +3330,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3223,17 +3352,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_5_value:
-          id: f_enrollment_practice_standard_5_value
-          table: asset__f_enrollment_practice_standard_5
-          field: f_enrollment_practice_standard_5_value
+        csc_f_nrlmnt_prac_std_5_value:
+          id: csc_f_nrlmnt_prac_std_5_value
+          table: asset__csc_f_nrlmnt_prac_std_5
+          field: csc_f_nrlmnt_prac_std_5_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_5
+          entity_field: csc_f_nrlmnt_prac_std_5
           plugin_id: field
-          label: 'Field Enrollment Practice 5 Standard'
+          label: 'Practice 5 Stardard'
           exclude: false
           alter:
             alter_text: false
@@ -3266,7 +3395,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3287,17 +3416,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_other_5_value:
-          id: f_enrollment_practice_standard_other_5_value
-          table: asset__f_enrollment_practice_standard_other_5
-          field: f_enrollment_practice_standard_other_5_value
+        csc_f_nrlmnt_prac_std_otr_5_value:
+          id: csc_f_nrlmnt_prac_std_otr_5_value
+          table: asset__csc_f_nrlmnt_prac_std_otr_5
+          field: csc_f_nrlmnt_prac_std_otr_5_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_other_5
+          entity_field: csc_f_nrlmnt_prac_std_otr_5
           plugin_id: field
-          label: 'Field Enrollment Other Practice 5 Standard'
+          label: 'Other Practice 5 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -3330,7 +3459,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3352,17 +3481,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_year_5_numerator:
-          id: f_enrollment_practice_year_5_numerator
-          table: asset__f_enrollment_practice_year_5
-          field: f_enrollment_practice_year_5_numerator
+        csc_f_nrlmnt_prac_year_5_numerator:
+          id: csc_f_nrlmnt_prac_year_5_numerator
+          table: asset__csc_f_nrlmnt_prac_year_5
+          field: csc_f_nrlmnt_prac_year_5_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_year_5
+          entity_field: csc_f_nrlmnt_prac_year_5
           plugin_id: field
-          label: 'Field Enrollment Planned Practice 5 Implementation Year'
+          label: 'Practice 5 Implementation Year'
           exclude: false
           alter:
             alter_text: false
@@ -3395,7 +3524,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3407,7 +3536,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -3419,17 +3548,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_5_numerator:
-          id: f_enrollment_practice_extent_5_numerator
-          table: asset__f_enrollment_practice_extent_5
-          field: f_enrollment_practice_extent_5_numerator
+        csc_f_nrlmnt_prac_ext_5_numerator:
+          id: csc_f_nrlmnt_prac_ext_5_numerator
+          table: asset__csc_f_nrlmnt_prac_ext_5
+          field: csc_f_nrlmnt_prac_ext_5_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_5
+          entity_field: csc_f_nrlmnt_prac_ext_5
           plugin_id: field
-          label: 'Field Enrollment Practice 5 Extent'
+          label: 'Practice 5 Extent'
           exclude: false
           alter:
             alter_text: false
@@ -3462,7 +3591,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3474,7 +3603,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -3486,17 +3615,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_5_value:
-          id: f_enrollment_practice_extent_unit_5_value
-          table: asset__f_enrollment_practice_extent_unit_5
-          field: f_enrollment_practice_extent_unit_5_value
+        csc_f_nrlmnt_prac_ext_unit_5_value:
+          id: csc_f_nrlmnt_prac_ext_unit_5_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_5
+          field: csc_f_nrlmnt_prac_ext_unit_5_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_5
+          entity_field: csc_f_nrlmnt_prac_ext_unit_5
           plugin_id: field
-          label: 'Field Enrollment Practice 5 Extent Unit'
+          label: 'Practice 5 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -3529,7 +3658,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3550,17 +3679,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_other_5_value:
-          id: f_enrollment_practice_extent_unit_other_5_value
-          table: asset__f_enrollment_practice_extent_unit_other_5
-          field: f_enrollment_practice_extent_unit_other_5_value
+        csc_f_nrlmnt_prac_ext_unit_otr_5_value:
+          id: csc_f_nrlmnt_prac_ext_unit_otr_5_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_otr_5
+          field: csc_f_nrlmnt_prac_ext_unit_otr_5_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_other_5
+          entity_field: csc_f_nrlmnt_prac_ext_unit_otr_5
           plugin_id: field
-          label: 'Field Enrollment Other Practice 5 Extent Unit'
+          label: 'Other Practice 5 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -3593,7 +3722,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3615,17 +3744,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_type_6_target_id:
-          id: f_enrollment_practice_type_6_target_id
-          table: asset__f_enrollment_practice_type_6
-          field: f_enrollment_practice_type_6_target_id
+        csc_f_nrlmnt_prac_type_6_target_id:
+          id: csc_f_nrlmnt_prac_type_6_target_id
+          table: asset__csc_f_nrlmnt_prac_type_6
+          field: csc_f_nrlmnt_prac_type_6_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_type_6
+          entity_field: csc_f_nrlmnt_prac_type_6
           plugin_id: field
-          label: 'Field Enrollment Practice 6 Type'
+          label: 'Practice 6 Type'
           exclude: false
           alter:
             alter_text: false
@@ -3658,7 +3787,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3680,17 +3809,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_6_value:
-          id: f_enrollment_practice_standard_6_value
-          table: asset__f_enrollment_practice_standard_6
-          field: f_enrollment_practice_standard_6_value
+        csc_f_nrlmnt_prac_std_6_value:
+          id: csc_f_nrlmnt_prac_std_6_value
+          table: asset__csc_f_nrlmnt_prac_std_6
+          field: csc_f_nrlmnt_prac_std_6_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_6
+          entity_field: csc_f_nrlmnt_prac_std_6
           plugin_id: field
-          label: 'Field Enrollment Practice 6 Standard'
+          label: 'Practice 6 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -3723,7 +3852,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3744,17 +3873,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_other_6_value:
-          id: f_enrollment_practice_standard_other_6_value
-          table: asset__f_enrollment_practice_standard_other_6
-          field: f_enrollment_practice_standard_other_6_value
+        csc_f_nrlmnt_prac_std_otr_6_value:
+          id: csc_f_nrlmnt_prac_std_otr_6_value
+          table: asset__csc_f_nrlmnt_prac_std_otr_6
+          field: csc_f_nrlmnt_prac_std_otr_6_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_other_6
+          entity_field: csc_f_nrlmnt_prac_std_otr_6
           plugin_id: field
-          label: 'Field Enrollment Other Practice 6 Standard'
+          label: 'Practice 6 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -3787,7 +3916,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3809,17 +3938,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_year_6_numerator:
-          id: f_enrollment_practice_year_6_numerator
-          table: asset__f_enrollment_practice_year_6
-          field: f_enrollment_practice_year_6_numerator
+        csc_f_nrlmnt_prac_year_6_numerator:
+          id: csc_f_nrlmnt_prac_year_6_numerator
+          table: asset__csc_f_nrlmnt_prac_year_6
+          field: csc_f_nrlmnt_prac_year_6_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_year_6
+          entity_field: csc_f_nrlmnt_prac_year_6
           plugin_id: field
-          label: 'Field Enrollment Planned Practice 6 Implementation Year'
+          label: 'Practice 6 Implementation Year'
           exclude: false
           alter:
             alter_text: false
@@ -3852,7 +3981,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3864,7 +3993,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -3876,17 +4005,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_6_numerator:
-          id: f_enrollment_practice_extent_6_numerator
-          table: asset__f_enrollment_practice_extent_6
-          field: f_enrollment_practice_extent_6_numerator
+        csc_f_nrlmnt_prac_ext_6_numerator:
+          id: csc_f_nrlmnt_prac_ext_6_numerator
+          table: asset__csc_f_nrlmnt_prac_ext_6
+          field: csc_f_nrlmnt_prac_ext_6_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_6
+          entity_field: csc_f_nrlmnt_prac_ext_6
           plugin_id: field
-          label: 'Field Enrollment Practice 6 Extent'
+          label: 'Practice 6 Extent'
           exclude: false
           alter:
             alter_text: false
@@ -3919,7 +4048,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -3931,7 +4060,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -3943,17 +4072,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_6_value:
-          id: f_enrollment_practice_extent_unit_6_value
-          table: asset__f_enrollment_practice_extent_unit_6
-          field: f_enrollment_practice_extent_unit_6_value
+        csc_f_nrlmnt_prac_ext_unit_6_value:
+          id: csc_f_nrlmnt_prac_ext_unit_6_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_6
+          field: csc_f_nrlmnt_prac_ext_unit_6_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_6
+          entity_field: csc_f_nrlmnt_prac_ext_unit_6
           plugin_id: field
-          label: 'Field Enrollment Practice 6 Extent Unit'
+          label: 'Practice 6 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -3986,7 +4115,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -4007,17 +4136,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_other_6_value:
-          id: f_enrollment_practice_extent_unit_other_6_value
-          table: asset__f_enrollment_practice_extent_unit_other_6
-          field: f_enrollment_practice_extent_unit_other_6_value
+        csc_f_nrlmnt_prac_ext_unit_otr_6_value:
+          id: csc_f_nrlmnt_prac_ext_unit_otr_6_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_otr_6
+          field: csc_f_nrlmnt_prac_ext_unit_otr_6_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_other_6
+          entity_field: csc_f_nrlmnt_prac_ext_unit_otr_6
           plugin_id: field
-          label: 'Field Enrollment Other Practice 6 Extent Unit'
+          label: 'Other Practice 6 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -4050,7 +4179,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -4072,17 +4201,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_type_7_target_id:
-          id: f_enrollment_practice_type_7_target_id
-          table: asset__f_enrollment_practice_type_7
-          field: f_enrollment_practice_type_7_target_id
+        csc_f_nrlmnt_prac_type_7_target_id:
+          id: csc_f_nrlmnt_prac_type_7_target_id
+          table: asset__csc_f_nrlmnt_prac_type_7
+          field: csc_f_nrlmnt_prac_type_7_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_type_7
+          entity_field: csc_f_nrlmnt_prac_type_7
           plugin_id: field
-          label: 'Field Enrollment Practice 7 Type'
+          label: 'Practice 7 Type'
           exclude: false
           alter:
             alter_text: false
@@ -4115,7 +4244,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -4137,17 +4266,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_7_value:
-          id: f_enrollment_practice_standard_7_value
-          table: asset__f_enrollment_practice_standard_7
-          field: f_enrollment_practice_standard_7_value
+        csc_f_nrlmnt_prac_std_7_value:
+          id: csc_f_nrlmnt_prac_std_7_value
+          table: asset__csc_f_nrlmnt_prac_std_7
+          field: csc_f_nrlmnt_prac_std_7_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_7
+          entity_field: csc_f_nrlmnt_prac_std_7
           plugin_id: field
-          label: 'Field Enrollment Practice 7 Standard'
+          label: 'Practice 7 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -4180,7 +4309,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -4201,17 +4330,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_standard_other_7_value:
-          id: f_enrollment_practice_standard_other_7_value
-          table: asset__f_enrollment_practice_standard_other_7
-          field: f_enrollment_practice_standard_other_7_value
+        csc_f_nrlmnt_prac_std_otr_7_value:
+          id: csc_f_nrlmnt_prac_std_otr_7_value
+          table: asset__csc_f_nrlmnt_prac_std_otr_7
+          field: csc_f_nrlmnt_prac_std_otr_7_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_standard_other_7
+          entity_field: csc_f_nrlmnt_prac_std_otr_7
           plugin_id: field
-          label: 'Field Enrollment Other Practice 7 Standard'
+          label: 'Other Practice 7 Standard'
           exclude: false
           alter:
             alter_text: false
@@ -4244,7 +4373,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -4266,17 +4395,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_year_7_numerator:
-          id: f_enrollment_practice_year_7_numerator
-          table: asset__f_enrollment_practice_year_7
-          field: f_enrollment_practice_year_7_numerator
+        csc_f_nrlmnt_prac_year_7_numerator:
+          id: csc_f_nrlmnt_prac_year_7_numerator
+          table: asset__csc_f_nrlmnt_prac_year_7
+          field: csc_f_nrlmnt_prac_year_7_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_year_7
+          entity_field: csc_f_nrlmnt_prac_year_7
           plugin_id: field
-          label: 'Field Enrollment Planned Practice 7 Implementation Year'
+          label: 'Practice 7 Implementation Year'
           exclude: false
           alter:
             alter_text: false
@@ -4309,7 +4438,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -4321,7 +4450,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -4333,17 +4462,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_7_numerator:
-          id: f_enrollment_practice_extent_7_numerator
-          table: asset__f_enrollment_practice_extent_7
-          field: f_enrollment_practice_extent_7_numerator
+        csc_f_nrlmnt_prac_ext_7_numerator:
+          id: csc_f_nrlmnt_prac_ext_7_numerator
+          table: asset__csc_f_nrlmnt_prac_ext_7
+          field: csc_f_nrlmnt_prac_ext_7_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_7
+          entity_field: csc_f_nrlmnt_prac_ext_7
           plugin_id: field
-          label: 'Field Enrollment Practice 7 Extent'
+          label: 'Practice 7 Extent'
           exclude: false
           alter:
             alter_text: false
@@ -4376,7 +4505,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -4388,7 +4517,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -4400,17 +4529,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_7_value:
-          id: f_enrollment_practice_extent_unit_7_value
-          table: asset__f_enrollment_practice_extent_unit_7
-          field: f_enrollment_practice_extent_unit_7_value
+        csc_f_nrlmnt_prac_ext_unit_7_value:
+          id: csc_f_nrlmnt_prac_ext_unit_7_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_7
+          field: csc_f_nrlmnt_prac_ext_unit_7_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_7
+          entity_field: csc_f_nrlmnt_prac_ext_unit_7
           plugin_id: field
-          label: 'Field Enrollment Practice 7 Extent Unit'
+          label: 'Practice 7 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -4443,7 +4572,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -4464,17 +4593,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_enrollment_practice_extent_unit_other_7_value:
-          id: f_enrollment_practice_extent_unit_other_7_value
-          table: asset__f_enrollment_practice_extent_unit_other_7
-          field: f_enrollment_practice_extent_unit_other_7_value
+        csc_f_nrlmnt_prac_ext_unit_otr_7_value:
+          id: csc_f_nrlmnt_prac_ext_unit_otr_7_value
+          table: asset__csc_f_nrlmnt_prac_ext_unit_otr_7
+          field: csc_f_nrlmnt_prac_ext_unit_otr_7_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: f_enrollment_practice_extent_unit_other_7
+          entity_field: csc_f_nrlmnt_prac_ext_unit_otr_7
           plugin_id: field
-          label: 'Field Enrollment Other Practice 7 Extent Unit'
+          label: 'Other Practice 7 Extent Unit'
           exclude: false
           alter:
             alter_text: false
@@ -4507,7 +4636,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -4530,9 +4659,23 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: none
+        type: mini
         options:
           offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -4544,9 +4687,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
-        options:
-          perm: 'view any asset'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -4558,44 +4700,14 @@ display:
           id: type
           table: asset_field_data
           field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
           entity_type: asset
           entity_field: type
           plugin_id: bundle
-          operator: in
           value:
-            field_enrollment: field_enrollment
-          group: 1
-          exposed: false
+            csc_field_enrollment: csc_field_enrollment
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       style:
         type: table
         options:
@@ -4604,9 +4716,569 @@ display:
           default_row_class: true
           columns:
             name: name
+            csc_f_enrollment_producer_id_target_id: csc_f_enrollment_producer_id_target_id
+            csc_f_enrollment_tract_id_value: csc_f_enrollment_tract_id_value
+            csc_f_enrollment_field_id_value: csc_f_enrollment_field_id_value
+            csc_f_enrollment_state_target_id: csc_f_enrollment_state_target_id
+            csc_f_enrollment_county_target_id: csc_f_enrollment_county_target_id
+            csc_f_enrollment_prior_field_id_value: csc_f_enrollment_prior_field_id_value
+            csc_f_enrollment_start_date_value: csc_f_enrollment_start_date_value
+            csc_f_nrlmnt_total_field_area_numerator: csc_f_nrlmnt_total_field_area_numerator
+            csc_f_nrlmnt_commodity_category_target_id: csc_f_nrlmnt_commodity_category_target_id
+            csc_f_enrollment_commodity_type_target_id: csc_f_enrollment_commodity_type_target_id
+            csc_f_enrollment_baseline_yield_numerator: csc_f_enrollment_baseline_yield_numerator
+            csc_f_nrlmnt_base_yield_unit_target_id: csc_f_nrlmnt_base_yield_unit_target_id
+            csc_f_nrlmnt_base_yield_unit_otr_value: csc_f_nrlmnt_base_yield_unit_otr_value
+            csc_f_nrlmnt_base_yield_loc_value: csc_f_nrlmnt_base_yield_loc_value
+            csc_f_nrlmnt_base_yield_loc_otr_value: csc_f_nrlmnt_base_yield_loc_otr_value
+            csc_f_enrollment_field_land_use_target_id: csc_f_enrollment_field_land_use_target_id
+            csc_f_nrlmnt_field_irrigated_target_id: csc_f_nrlmnt_field_irrigated_target_id
+            csc_f_enrollment_field_tillage_target_id: csc_f_enrollment_field_tillage_target_id
+            csc_f_nrlmnt_prac_pri_util_prcnt_value: csc_f_nrlmnt_prac_pri_util_prcnt_value
+            csc_f_nrlmnt_field_any_csaf_prac_value: csc_f_nrlmnt_field_any_csaf_prac_value
+            csc_f_nrlmnt_field_prac_pri_util_value: csc_f_nrlmnt_field_prac_pri_util_value
+            csc_f_nrlmnt_prac_type_1_target_id: csc_f_nrlmnt_prac_type_1_target_id
+            csc_f_nrlmnt_prac_std_1_value: csc_f_nrlmnt_prac_std_1_value
+            csc_f_nrlmnt_prac_std_otr_1_value: csc_f_nrlmnt_prac_std_otr_1_value
+            csc_f_enrlmnt_prac_year_1_numerator: csc_f_enrlmnt_prac_year_1_numerator
+            csc_f_nrlmnt_prac_ext_1_numerator: csc_f_nrlmnt_prac_ext_1_numerator
+            csc_f_nrlmnt_prac_ext_unit_1_value: csc_f_nrlmnt_prac_ext_unit_1_value
+            csc_f_nrlmnt_prac_ext_unit_otr_1_value: csc_f_nrlmnt_prac_ext_unit_otr_1_value
+            csc_f_nrlmnt_prac_type_2_target_id: csc_f_nrlmnt_prac_type_2_target_id
+            csc_f_nrlmnt_prac_std_2_value: csc_f_nrlmnt_prac_std_2_value
+            csc_f_nrlmnt_prac_std_otr_2_value: csc_f_nrlmnt_prac_std_otr_2_value
+            csc_f_nrlmnt_prac_year_2_numerator: csc_f_nrlmnt_prac_year_2_numerator
+            csc_f_nrlmnt_prac_ext_2_numerator: csc_f_nrlmnt_prac_ext_2_numerator
+            csc_f_nrlmnt_prac_ext_unit_2_value: csc_f_nrlmnt_prac_ext_unit_2_value
+            csc_f_nrlmnt_prac_ext_unit_otr_2_value: csc_f_nrlmnt_prac_ext_unit_otr_2_value
+            csc_f_nrlmnt_prac_type_3_target_id: csc_f_nrlmnt_prac_type_3_target_id
+            csc_f_nrlmnt_prac_std_3_value: csc_f_nrlmnt_prac_std_3_value
+            csc_f_nrlmnt_prac_std_otr_3_value: csc_f_nrlmnt_prac_std_otr_3_value
+            csc_f_nrlmnt_prac_year_3_numerator: csc_f_nrlmnt_prac_year_3_numerator
+            csc_f_nrlmnt_prac_ext_3_numerator: csc_f_nrlmnt_prac_ext_3_numerator
+            csc_f_nrlmnt_prac_ext_unit_3_value: csc_f_nrlmnt_prac_ext_unit_3_value
+            csc_f_nrlmnt_prac_ext_unit_otr_3_value: csc_f_nrlmnt_prac_ext_unit_otr_3_value
+            csc_f_nrlmnt_prac_type_4_target_id: csc_f_nrlmnt_prac_type_4_target_id
+            csc_f_nrlmnt_prac_std_4_value: csc_f_nrlmnt_prac_std_4_value
+            csc_f_nrlmnt_prac_std_otr_4_value: csc_f_nrlmnt_prac_std_otr_4_value
+            csc_f_nrlmnt_prac_year_4_numerator: csc_f_nrlmnt_prac_year_4_numerator
+            csc_f_nrlmnt_prac_ext_4_numerator: csc_f_nrlmnt_prac_ext_4_numerator
+            csc_f_nrlmnt_prac_ext_unit_4_value: csc_f_nrlmnt_prac_ext_unit_4_value
+            csc_f_nrlmnt_prac_ext_unit_otr_4_value: csc_f_nrlmnt_prac_ext_unit_otr_4_value
+            csc_f_nrlmnt_prac_type_5_target_id: csc_f_nrlmnt_prac_type_5_target_id
+            csc_f_nrlmnt_prac_std_5_value: csc_f_nrlmnt_prac_std_5_value
+            csc_f_nrlmnt_prac_std_otr_5_value: csc_f_nrlmnt_prac_std_otr_5_value
+            csc_f_nrlmnt_prac_year_5_numerator: csc_f_nrlmnt_prac_year_5_numerator
+            csc_f_nrlmnt_prac_ext_5_numerator: csc_f_nrlmnt_prac_ext_5_numerator
+            csc_f_nrlmnt_prac_ext_unit_5_value: csc_f_nrlmnt_prac_ext_unit_5_value
+            csc_f_nrlmnt_prac_ext_unit_otr_5_value: csc_f_nrlmnt_prac_ext_unit_otr_5_value
+            csc_f_nrlmnt_prac_type_6_target_id: csc_f_nrlmnt_prac_type_6_target_id
+            csc_f_nrlmnt_prac_std_6_value: csc_f_nrlmnt_prac_std_6_value
+            csc_f_nrlmnt_prac_std_otr_6_value: csc_f_nrlmnt_prac_std_otr_6_value
+            csc_f_nrlmnt_prac_year_6_numerator: csc_f_nrlmnt_prac_year_6_numerator
+            csc_f_nrlmnt_prac_ext_6_numerator: csc_f_nrlmnt_prac_ext_6_numerator
+            csc_f_nrlmnt_prac_ext_unit_6_value: csc_f_nrlmnt_prac_ext_unit_6_value
+            csc_f_nrlmnt_prac_ext_unit_otr_6_value: csc_f_nrlmnt_prac_ext_unit_otr_6_value
+            csc_f_nrlmnt_prac_type_7_target_id: csc_f_nrlmnt_prac_type_7_target_id
+            csc_f_nrlmnt_prac_std_7_value: csc_f_nrlmnt_prac_std_7_value
+            csc_f_nrlmnt_prac_std_otr_7_value: csc_f_nrlmnt_prac_std_otr_7_value
+            csc_f_nrlmnt_prac_year_7_numerator: csc_f_nrlmnt_prac_year_7_numerator
+            csc_f_nrlmnt_prac_ext_7_numerator: csc_f_nrlmnt_prac_ext_7_numerator
+            csc_f_nrlmnt_prac_ext_unit_7_value: csc_f_nrlmnt_prac_ext_unit_7_value
+            csc_f_nrlmnt_prac_ext_unit_otr_7_value: csc_f_nrlmnt_prac_ext_unit_otr_7_value
           default: '-1'
           info:
             name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_producer_id_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_tract_id_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_field_id_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_state_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_county_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_prior_field_id_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_start_date_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_total_field_area_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_commodity_category_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_commodity_type_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_baseline_yield_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_base_yield_unit_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_base_yield_unit_otr_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_base_yield_loc_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_base_yield_loc_otr_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_field_land_use_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_field_irrigated_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrollment_field_tillage_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_pri_util_prcnt_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_field_any_csaf_prac_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_field_prac_pri_util_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_type_1_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_1_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_otr_1_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_enrlmnt_prac_year_1_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_1_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_1_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_otr_1_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_type_2_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_2_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_otr_2_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_year_2_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_2_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_2_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_otr_2_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_type_3_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_3_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_otr_3_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_year_3_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_3_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_3_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_otr_3_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_type_4_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_4_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_otr_4_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_year_4_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_4_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_4_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_otr_4_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_type_5_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_5_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_otr_5_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_year_5_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_5_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_5_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_otr_5_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_type_6_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_6_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_otr_6_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_year_6_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_6_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_6_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_otr_6_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_type_7_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_7_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_std_otr_7_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_year_7_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_7_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_7_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_f_nrlmnt_prac_ext_unit_otr_7_value:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -4640,26 +5312,16 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: display_link
-          label: 'Export CSV'
+          label: 'CSV Export'
           empty: false
           display_id: rest_export_1
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Displaying @start - @end of @total'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   page_1:
     id: page_1
@@ -4670,22 +5332,13 @@ display:
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: assets/field_enrollment
-      menu:
-        type: normal
-        title: 'Field Enrollment Menu'
-        description: ''
-        weight: 0
-        expanded: false
-        menu_name: account
-        parent: ''
-        context: '0'
+      path: assets/csc_field_enrollment
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   rest_export_1:
     id: rest_export_1
@@ -4694,9 +5347,23 @@ display:
     position: 2
     display_options:
       pager:
-        type: none
+        type: mini
         options:
           offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       style:
         type: serializer
         options:
@@ -4704,18 +5371,8 @@ display:
           formats:
             csv: csv
       row:
-        type: data_field
-        options:
-          field_options:
-            name:
-              alias: ''
-              raw_output: false
-            type:
-              alias: ''
-              raw_output: false
-            uid:
-              alias: ''
-              raw_output: false
+        type: data_entity
+        options: {  }
       defaults:
         style: false
         row: false
@@ -4723,13 +5380,11 @@ display:
         collapsible_filter:
           collapsible: false
       path: assets_field_enrollment.csv
-      auth:
-        - cookie
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - request_format
-        - user.permissions
+        - url.query_args
       tags: {  }

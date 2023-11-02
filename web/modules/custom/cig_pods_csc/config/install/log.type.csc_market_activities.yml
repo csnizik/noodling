@@ -1,11 +1,10 @@
-uuid: 40f931f6-8f9e-4cfe-b7e2-d1b97ea5466c
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: market_activities
+id: csc_market_activities
 label: 'Market Activities'
 description: 'Market Activities'
 name_pattern: 'Market Activities log [log:id]'

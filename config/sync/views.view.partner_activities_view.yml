@@ -1,17 +1,15 @@
-uuid: 548b54da-8184-43c2-b4d1-ca85d2c8fda2
+uuid: f89e8df6-c8d2-42c4-946a-8567d9f644f5
 langcode: en
 status: true
 dependencies:
   config:
-    - asset.type.partner_activities
-    - system.menu.account
+    - asset.type.csc_partner_activities
   module:
     - asset
     - csv_serialization
     - fraction
     - rest
     - serialization
-    - user
 id: partner_activities_view
 label: 'Partner Activities View'
 module: views
@@ -38,7 +36,7 @@ display:
           entity_type: null
           entity_field: name
           plugin_id: field
-          label: ''
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -81,7 +79,8 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings: {  }
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -92,15 +91,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_partner_ein_value:
-          id: partner_activity_partner_ein_value
-          table: asset__partner_activity_partner_ein
-          field: partner_activity_partner_ein_value
+        csc_prtnr_act_partner_ein_value:
+          id: csc_prtnr_act_partner_ein_value
+          table: asset__csc_prtnr_act_partner_ein
+          field: csc_prtnr_act_partner_ein_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_partner_ein
+          entity_field: csc_prtnr_act_partner_ein
           plugin_id: field
           label: 'Partner ID (EIN)'
           exclude: false
@@ -135,7 +134,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -157,15 +156,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_partner_type_target_id:
-          id: partner_activity_partner_type_target_id
-          table: asset__partner_activity_partner_type
-          field: partner_activity_partner_type_target_id
+        csc_prtnr_act_partner_type_target_id:
+          id: csc_prtnr_act_partner_type_target_id
+          table: asset__csc_prtnr_act_partner_type
+          field: csc_prtnr_act_partner_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_partner_type
+          entity_field: csc_prtnr_act_partner_type
           plugin_id: field
           label: 'Partner Type'
           exclude: false
@@ -200,7 +199,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -222,15 +221,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_partner_poc_value:
-          id: partner_activity_partner_poc_value
-          table: asset__partner_activity_partner_poc
-          field: partner_activity_partner_poc_value
+        csc_prtnr_act_partner_poc_value:
+          id: csc_prtnr_act_partner_poc_value
+          table: asset__csc_prtnr_act_partner_poc
+          field: csc_prtnr_act_partner_poc_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_partner_poc
+          entity_field: csc_prtnr_act_partner_poc
           plugin_id: field
           label: 'Partner POC'
           exclude: false
@@ -265,7 +264,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -287,15 +286,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_partner_poc_email_value:
-          id: partner_activity_partner_poc_email_value
-          table: asset__partner_activity_partner_poc_email
-          field: partner_activity_partner_poc_email_value
+        csc_prtnr_act_partner_poc_email_value:
+          id: csc_prtnr_act_partner_poc_email_value
+          table: asset__csc_prtnr_act_partner_poc_email
+          field: csc_prtnr_act_partner_poc_email_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_partner_poc_email
+          entity_field: csc_prtnr_act_partner_poc_email
           plugin_id: field
           label: 'Partner POC Email'
           exclude: false
@@ -330,7 +329,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -351,15 +350,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_partnership_start_value:
-          id: partner_activity_partnership_start_value
-          table: asset__partner_activity_partnership_start
-          field: partner_activity_partnership_start_value
+        csc_prtnr_act_partnership_start_value:
+          id: csc_prtnr_act_partnership_start_value
+          table: asset__csc_prtnr_act_partnership_start
+          field: csc_prtnr_act_partnership_start_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_partnership_start
+          entity_field: csc_prtnr_act_partnership_start
           plugin_id: field
           label: 'Partnership Start Date'
           exclude: false
@@ -394,7 +393,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -418,15 +417,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_partnership_end_value:
-          id: partner_activity_partnership_end_value
-          table: asset__partner_activity_partnership_end
-          field: partner_activity_partnership_end_value
+        csc_prtnr_act_partnership_end_value:
+          id: csc_prtnr_act_partnership_end_value
+          table: asset__csc_prtnr_act_partnership_end
+          field: csc_prtnr_act_partnership_end_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_partnership_end
+          entity_field: csc_prtnr_act_partnership_end
           plugin_id: field
           label: 'Partnership End Date'
           exclude: false
@@ -461,7 +460,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -485,15 +484,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_partnership_initation_value:
-          id: partner_activity_partnership_initation_value
-          table: asset__partner_activity_partnership_initation
-          field: partner_activity_partnership_initation_value
+        csc_prtnr_act_partnership_initation_value:
+          id: csc_prtnr_act_partnership_initation_value
+          table: asset__csc_prtnr_act_partnership_initation
+          field: csc_prtnr_act_partnership_initation_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_partnership_initation
+          entity_field: csc_prtnr_act_partnership_initation
           plugin_id: field
           label: 'New Partnership'
           exclude: false
@@ -528,7 +527,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -552,15 +551,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_partner_total_requested_numerator:
-          id: partner_activity_partner_total_requested_numerator
-          table: asset__partner_activity_partner_total_requested
-          field: partner_activity_partner_total_requested_numerator
+        csc_prtnr_act_partner_total_requested_numerator:
+          id: csc_prtnr_act_partner_total_requested_numerator
+          table: asset__csc_prtnr_act_partner_total_requested
+          field: csc_prtnr_act_partner_total_requested_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_partner_total_requested
+          entity_field: csc_prtnr_act_partner_total_requested
           plugin_id: field
           label: 'Partner Total Requested'
           exclude: false
@@ -595,7 +594,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -607,7 +606,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -619,15 +618,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_total_match_contribution_numerator:
-          id: partner_activity_total_match_contribution_numerator
-          table: asset__partner_activity_total_match_contribution
-          field: partner_activity_total_match_contribution_numerator
+        csc_prtnr_act_total_match_contrib_numerator:
+          id: csc_prtnr_act_total_match_contrib_numerator
+          table: asset__csc_prtnr_act_total_match_contrib
+          field: csc_prtnr_act_total_match_contrib_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_total_match_contribution
+          entity_field: csc_prtnr_act_total_match_contrib
           plugin_id: field
           label: 'Total Match Contribution'
           exclude: false
@@ -662,7 +661,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -674,7 +673,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -686,15 +685,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_total_match_incentives_numerator:
-          id: partner_activity_total_match_incentives_numerator
-          table: asset__partner_activity_total_match_incentives
-          field: partner_activity_total_match_incentives_numerator
+        csc_prtnr_act_total_match_incent_numerator:
+          id: csc_prtnr_act_total_match_incent_numerator
+          table: asset__csc_prtnr_act_total_match_incent
+          field: csc_prtnr_act_total_match_incent_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_total_match_incentives
+          entity_field: csc_prtnr_act_total_match_incent
           plugin_id: field
           label: 'Total Match Incentives'
           exclude: false
@@ -729,7 +728,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -741,7 +740,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -753,15 +752,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_match_type_1_target_id:
-          id: partner_activity_match_type_1_target_id
-          table: asset__partner_activity_match_type_1
-          field: partner_activity_match_type_1_target_id
+        csc_prtnr_act_match_type_1_target_id:
+          id: csc_prtnr_act_match_type_1_target_id
+          table: asset__csc_prtnr_act_match_type_1
+          field: csc_prtnr_act_match_type_1_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_match_type_1
+          entity_field: csc_prtnr_act_match_type_1
           plugin_id: field
           label: 'Match Type 1'
           exclude: false
@@ -796,7 +795,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -818,15 +817,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_match_amount_1_numerator:
-          id: partner_activity_match_amount_1_numerator
-          table: asset__partner_activity_match_amount_1
-          field: partner_activity_match_amount_1_numerator
+        csc_prtnr_act_match_amount_1_numerator:
+          id: csc_prtnr_act_match_amount_1_numerator
+          table: asset__csc_prtnr_act_match_amount_1
+          field: csc_prtnr_act_match_amount_1_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_match_amount_1
+          entity_field: csc_prtnr_act_match_amount_1
           plugin_id: field
           label: 'Match Amount 1'
           exclude: false
@@ -861,7 +860,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -873,7 +872,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -885,15 +884,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_match_type_2_target_id:
-          id: partner_activity_match_type_2_target_id
-          table: asset__partner_activity_match_type_2
-          field: partner_activity_match_type_2_target_id
+        csc_prtnr_act_match_type_2_target_id:
+          id: csc_prtnr_act_match_type_2_target_id
+          table: asset__csc_prtnr_act_match_type_2
+          field: csc_prtnr_act_match_type_2_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_match_type_2
+          entity_field: csc_prtnr_act_match_type_2
           plugin_id: field
           label: 'Match Type 2'
           exclude: false
@@ -928,7 +927,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -950,15 +949,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_match_amount_2_numerator:
-          id: partner_activity_match_amount_2_numerator
-          table: asset__partner_activity_match_amount_2
-          field: partner_activity_match_amount_2_numerator
+        csc_prtnr_act_match_amount_2_numerator:
+          id: csc_prtnr_act_match_amount_2_numerator
+          table: asset__csc_prtnr_act_match_amount_2
+          field: csc_prtnr_act_match_amount_2_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_match_amount_2
+          entity_field: csc_prtnr_act_match_amount_2
           plugin_id: field
           label: 'Match Amount 2'
           exclude: false
@@ -993,7 +992,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1005,7 +1004,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -1017,15 +1016,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_match_type_3_target_id:
-          id: partner_activity_match_type_3_target_id
-          table: asset__partner_activity_match_type_3
-          field: partner_activity_match_type_3_target_id
+        csc_prtnr_act_match_type_3_target_id:
+          id: csc_prtnr_act_match_type_3_target_id
+          table: asset__csc_prtnr_act_match_type_3
+          field: csc_prtnr_act_match_type_3_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_match_type_3
+          entity_field: csc_prtnr_act_match_type_3
           plugin_id: field
           label: 'Match Type 3'
           exclude: false
@@ -1060,7 +1059,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1082,15 +1081,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_match_amount_3_numerator:
-          id: partner_activity_match_amount_3_numerator
-          table: asset__partner_activity_match_amount_3
-          field: partner_activity_match_amount_3_numerator
+        csc_prtnr_act_match_amount_3_numerator:
+          id: csc_prtnr_act_match_amount_3_numerator
+          table: asset__csc_prtnr_act_match_amount_3
+          field: csc_prtnr_act_match_amount_3_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_match_amount_3
+          entity_field: csc_prtnr_act_match_amount_3
           plugin_id: field
           label: 'Match Amount 3'
           exclude: false
@@ -1125,7 +1124,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1137,7 +1136,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -1149,15 +1148,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_match_type_other_value:
-          id: partner_activity_match_type_other_value
-          table: asset__partner_activity_match_type_other
-          field: partner_activity_match_type_other_value
+        csc_prtnr_act_match_type_other_value:
+          id: csc_prtnr_act_match_type_other_value
+          table: asset__csc_prtnr_act_match_type_other
+          field: csc_prtnr_act_match_type_other_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_match_type_other
+          entity_field: csc_prtnr_act_match_type_other
           plugin_id: field
           label: 'Other Match Type'
           exclude: false
@@ -1192,7 +1191,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1214,15 +1213,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_training_provided_target_id:
-          id: partner_activity_training_provided_target_id
-          table: asset__partner_activity_training_provided
-          field: partner_activity_training_provided_target_id
+        csc_prtnr_act_training_provided_target_id:
+          id: csc_prtnr_act_training_provided_target_id
+          table: asset__csc_prtnr_act_training_provided
+          field: csc_prtnr_act_training_provided_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_training_provided
+          entity_field: csc_prtnr_act_training_provided
           plugin_id: field
           label: 'Training Type Provided'
           exclude: false
@@ -1257,7 +1256,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1279,15 +1278,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_training_other_value:
-          id: partner_activity_training_other_value
-          table: asset__partner_activity_training_other
-          field: partner_activity_training_other_value
+        csc_prtnr_act_training_other_value:
+          id: csc_prtnr_act_training_other_value
+          table: asset__csc_prtnr_act_training_other
+          field: csc_prtnr_act_training_other_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_training_other
+          entity_field: csc_prtnr_act_training_other
           plugin_id: field
           label: 'Other Training Type'
           exclude: false
@@ -1322,7 +1321,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1344,15 +1343,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_activity1_target_id:
-          id: partner_activity_activity1_target_id
-          table: asset__partner_activity_activity1
-          field: partner_activity_activity1_target_id
+        csc_partner_activity_activity1_target_id:
+          id: csc_partner_activity_activity1_target_id
+          table: asset__csc_partner_activity_activity1
+          field: csc_partner_activity_activity1_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_activity1
+          entity_field: csc_partner_activity_activity1
           plugin_id: field
           label: 'Activity 1'
           exclude: false
@@ -1387,7 +1386,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1409,15 +1408,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_activity1_cost_numerator:
-          id: partner_activity_activity1_cost_numerator
-          table: asset__partner_activity_activity1_cost
-          field: partner_activity_activity1_cost_numerator
+        csc_prtnr_act_activity1_cost_numerator:
+          id: csc_prtnr_act_activity1_cost_numerator
+          table: asset__csc_prtnr_act_activity1_cost
+          field: csc_prtnr_act_activity1_cost_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_activity1_cost
+          entity_field: csc_prtnr_act_activity1_cost
           plugin_id: field
           label: 'Activity 1 Cost'
           exclude: false
@@ -1452,7 +1451,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1464,7 +1463,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -1476,15 +1475,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_activity2_target_id:
-          id: partner_activity_activity2_target_id
-          table: asset__partner_activity_activity2
-          field: partner_activity_activity2_target_id
+        csc_partner_activity_activity2_target_id:
+          id: csc_partner_activity_activity2_target_id
+          table: asset__csc_partner_activity_activity2
+          field: csc_partner_activity_activity2_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_activity2
+          entity_field: csc_partner_activity_activity2
           plugin_id: field
           label: 'Activity 2'
           exclude: false
@@ -1519,7 +1518,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1541,15 +1540,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_activity2_cost_numerator:
-          id: partner_activity_activity2_cost_numerator
-          table: asset__partner_activity_activity2_cost
-          field: partner_activity_activity2_cost_numerator
+        csc_prtnr_act_activity2_cost_numerator:
+          id: csc_prtnr_act_activity2_cost_numerator
+          table: asset__csc_prtnr_act_activity2_cost
+          field: csc_prtnr_act_activity2_cost_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_activity2_cost
+          entity_field: csc_prtnr_act_activity2_cost
           plugin_id: field
           label: 'Activity 2 Cost'
           exclude: false
@@ -1584,7 +1583,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1596,7 +1595,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -1608,15 +1607,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_activity3_target_id:
-          id: partner_activity_activity3_target_id
-          table: asset__partner_activity_activity3
-          field: partner_activity_activity3_target_id
+        csc_partner_activity_activity3_target_id:
+          id: csc_partner_activity_activity3_target_id
+          table: asset__csc_partner_activity_activity3
+          field: csc_partner_activity_activity3_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_activity3
+          entity_field: csc_partner_activity_activity3
           plugin_id: field
           label: 'Activity 3'
           exclude: false
@@ -1651,7 +1650,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1673,15 +1672,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_activity3_cost_numerator:
-          id: partner_activity_activity3_cost_numerator
-          table: asset__partner_activity_activity3_cost
-          field: partner_activity_activity3_cost_numerator
+        csc_prtnr_act_activity3_cost_numerator:
+          id: csc_prtnr_act_activity3_cost_numerator
+          table: asset__csc_prtnr_act_activity3_cost
+          field: csc_prtnr_act_activity3_cost_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_activity3_cost
+          entity_field: csc_prtnr_act_activity3_cost
           plugin_id: field
           label: 'Activity 3 Cost'
           exclude: false
@@ -1716,7 +1715,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1728,7 +1727,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -1740,15 +1739,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_activity_other_value:
-          id: partner_activity_activity_other_value
-          table: asset__partner_activity_activity_other
-          field: partner_activity_activity_other_value
+        csc_prtnr_act_activity_other_value:
+          id: csc_prtnr_act_activity_other_value
+          table: asset__csc_prtnr_act_activity_other
+          field: csc_prtnr_act_activity_other_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_activity_other
+          entity_field: csc_prtnr_act_activity_other
           plugin_id: field
           label: 'Other Activity By Partner'
           exclude: false
@@ -1783,7 +1782,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1805,15 +1804,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_products_supplied_value:
-          id: partner_activity_products_supplied_value
-          table: asset__partner_activity_products_supplied
-          field: partner_activity_products_supplied_value
+        csc_prtnr_act_products_supplied_value:
+          id: csc_prtnr_act_products_supplied_value
+          table: asset__csc_prtnr_act_products_supplied
+          field: csc_prtnr_act_products_supplied_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_products_supplied
+          entity_field: csc_prtnr_act_products_supplied
           plugin_id: field
           label: 'Products Supplied'
           exclude: false
@@ -1848,7 +1847,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1870,17 +1869,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        partner_activity_product_source_value:
-          id: partner_activity_product_source_value
-          table: asset__partner_activity_product_source
-          field: partner_activity_product_source_value
+        csc_prtnr_act_product_source_value:
+          id: csc_prtnr_act_product_source_value
+          table: asset__csc_prtnr_act_product_source
+          field: csc_prtnr_act_product_source_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: asset
-          entity_field: partner_activity_product_source
+          entity_field: csc_prtnr_act_product_source
           plugin_id: field
-          label: 'Products Source'
+          label: 'Producs Source'
           exclude: false
           alter:
             alter_text: false
@@ -1913,7 +1912,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1936,9 +1935,23 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: none
+        type: mini
         options:
           offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -1950,9 +1963,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
-        options:
-          perm: 'view any asset'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -1964,44 +1976,14 @@ display:
           id: type
           table: asset_field_data
           field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
           entity_type: asset
           entity_field: type
           plugin_id: bundle
-          operator: in
           value:
-            partner_activities: partner_activities
-          group: 1
-          exposed: false
+            csc_partner_activities: csc_partner_activities
           expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       style:
         type: table
         options:
@@ -2010,9 +1992,231 @@ display:
           default_row_class: true
           columns:
             name: name
+            csc_prtnr_act_partner_ein_value: csc_prtnr_act_partner_ein_value
+            csc_prtnr_act_partner_type_target_id: csc_prtnr_act_partner_type_target_id
+            csc_prtnr_act_partner_poc_value: csc_prtnr_act_partner_poc_value
+            csc_prtnr_act_partner_poc_email_value: csc_prtnr_act_partner_poc_email_value
+            csc_prtnr_act_partnership_start_value: csc_prtnr_act_partnership_start_value
+            csc_prtnr_act_partnership_end_value: csc_prtnr_act_partnership_end_value
+            csc_prtnr_act_partnership_initation_value: csc_prtnr_act_partnership_initation_value
+            csc_prtnr_act_partner_total_requested_numerator: csc_prtnr_act_partner_total_requested_numerator
+            csc_prtnr_act_total_match_contrib_numerator: csc_prtnr_act_total_match_contrib_numerator
+            csc_prtnr_act_total_match_incent_numerator: csc_prtnr_act_total_match_incent_numerator
+            csc_prtnr_act_match_type_1_target_id: csc_prtnr_act_match_type_1_target_id
+            csc_prtnr_act_match_amount_1_numerator: csc_prtnr_act_match_amount_1_numerator
+            csc_prtnr_act_match_type_2_target_id: csc_prtnr_act_match_type_2_target_id
+            csc_prtnr_act_match_amount_2_numerator: csc_prtnr_act_match_amount_2_numerator
+            csc_prtnr_act_match_type_3_target_id: csc_prtnr_act_match_type_3_target_id
+            csc_prtnr_act_match_amount_3_numerator: csc_prtnr_act_match_amount_3_numerator
+            csc_prtnr_act_match_type_other_value: csc_prtnr_act_match_type_other_value
+            csc_prtnr_act_training_provided_target_id: csc_prtnr_act_training_provided_target_id
+            csc_prtnr_act_training_other_value: csc_prtnr_act_training_other_value
+            csc_partner_activity_activity1_target_id: csc_partner_activity_activity1_target_id
+            csc_prtnr_act_activity1_cost_numerator: csc_prtnr_act_activity1_cost_numerator
+            csc_partner_activity_activity2_target_id: csc_partner_activity_activity2_target_id
+            csc_prtnr_act_activity2_cost_numerator: csc_prtnr_act_activity2_cost_numerator
+            csc_partner_activity_activity3_target_id: csc_partner_activity_activity3_target_id
+            csc_prtnr_act_activity3_cost_numerator: csc_prtnr_act_activity3_cost_numerator
+            csc_prtnr_act_activity_other_value: csc_prtnr_act_activity_other_value
+            csc_prtnr_act_products_supplied_value: csc_prtnr_act_products_supplied_value
+            csc_prtnr_act_product_source_value: csc_prtnr_act_product_source_value
           default: '-1'
           info:
             name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_partner_ein_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_partner_type_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_partner_poc_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_partner_poc_email_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_partnership_start_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_partnership_end_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_partnership_initation_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_partner_total_requested_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_total_match_contrib_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_total_match_incent_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_match_type_1_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_match_amount_1_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_match_type_2_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_match_amount_2_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_match_type_3_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_match_amount_3_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_match_type_other_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_training_provided_target_id:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_training_other_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_partner_activity_activity1_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_activity1_cost_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_partner_activity_activity2_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_activity2_cost_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_partner_activity_activity3_target_id:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_activity3_cost_numerator:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_activity_other_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_products_supplied_value:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_prtnr_act_product_source_value:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -2046,26 +2250,16 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: display_link
-          label: 'Export CSV'
+          label: 'CSV Export'
           empty: false
           display_id: rest_export_1
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Displaying @start - @end of @total'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   page_1:
     id: page_1
@@ -2073,1935 +2267,16 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      fields:
-        name:
-          id: name
-          table: asset_field_data
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: null
-          entity_field: name
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_ein_value:
-          id: partner_activity_partner_ein_value
-          table: asset__partner_activity_partner_ein
-          field: partner_activity_partner_ein_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_ein
-          plugin_id: field
-          label: 'Partner ID (EIN)'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_type_target_id:
-          id: partner_activity_partner_type_target_id
-          table: asset__partner_activity_partner_type
-          field: partner_activity_partner_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_type
-          plugin_id: field
-          label: 'Partner Type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_poc_value:
-          id: partner_activity_partner_poc_value
-          table: asset__partner_activity_partner_poc
-          field: partner_activity_partner_poc_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_poc
-          plugin_id: field
-          label: 'Partner POC'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_poc_email_value:
-          id: partner_activity_partner_poc_email_value
-          table: asset__partner_activity_partner_poc_email
-          field: partner_activity_partner_poc_email_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_poc_email
-          plugin_id: field
-          label: 'Partner POC Email'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: basic_string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partnership_start_value:
-          id: partner_activity_partnership_start_value
-          table: asset__partner_activity_partnership_start
-          field: partner_activity_partnership_start_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partnership_start
-          plugin_id: field
-          label: 'Partnership Start Date'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
-          settings:
-            date_format: medium
-            custom_date_format: ''
-            timezone: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partnership_end_value:
-          id: partner_activity_partnership_end_value
-          table: asset__partner_activity_partnership_end
-          field: partner_activity_partnership_end_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partnership_end
-          plugin_id: field
-          label: 'Partnership End Date'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
-          settings:
-            date_format: medium
-            custom_date_format: ''
-            timezone: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partnership_initation_value:
-          id: partner_activity_partnership_initation_value
-          table: asset__partner_activity_partnership_initation
-          field: partner_activity_partnership_initation_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partnership_initation
-          plugin_id: field
-          label: 'New Partnership'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: default
-            format_custom_false: ''
-            format_custom_true: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_total_requested_numerator:
-          id: partner_activity_partner_total_requested_numerator
-          table: asset__partner_activity_partner_total_requested
-          field: partner_activity_partner_total_requested_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_total_requested
-          plugin_id: field
-          label: 'Partner Total Requested'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_total_match_contribution_numerator:
-          id: partner_activity_total_match_contribution_numerator
-          table: asset__partner_activity_total_match_contribution
-          field: partner_activity_total_match_contribution_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_total_match_contribution
-          plugin_id: field
-          label: 'Total Match Contribution'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_total_match_incentives_numerator:
-          id: partner_activity_total_match_incentives_numerator
-          table: asset__partner_activity_total_match_incentives
-          field: partner_activity_total_match_incentives_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_total_match_incentives
-          plugin_id: field
-          label: 'Total Match Incentives'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_type_1_target_id:
-          id: partner_activity_match_type_1_target_id
-          table: asset__partner_activity_match_type_1
-          field: partner_activity_match_type_1_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_type_1
-          plugin_id: field
-          label: 'Match Type 1'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_amount_1_numerator:
-          id: partner_activity_match_amount_1_numerator
-          table: asset__partner_activity_match_amount_1
-          field: partner_activity_match_amount_1_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_amount_1
-          plugin_id: field
-          label: 'Match Amount 1'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_type_2_target_id:
-          id: partner_activity_match_type_2_target_id
-          table: asset__partner_activity_match_type_2
-          field: partner_activity_match_type_2_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_type_2
-          plugin_id: field
-          label: 'Match Type 2'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_amount_2_numerator:
-          id: partner_activity_match_amount_2_numerator
-          table: asset__partner_activity_match_amount_2
-          field: partner_activity_match_amount_2_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_amount_2
-          plugin_id: field
-          label: 'Match Amount 2'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_type_3_target_id:
-          id: partner_activity_match_type_3_target_id
-          table: asset__partner_activity_match_type_3
-          field: partner_activity_match_type_3_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_type_3
-          plugin_id: field
-          label: 'Match Type 3'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_amount_3_numerator:
-          id: partner_activity_match_amount_3_numerator
-          table: asset__partner_activity_match_amount_3
-          field: partner_activity_match_amount_3_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_amount_3
-          plugin_id: field
-          label: 'Match Amount 3'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_type_other_value:
-          id: partner_activity_match_type_other_value
-          table: asset__partner_activity_match_type_other
-          field: partner_activity_match_type_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_type_other
-          plugin_id: field
-          label: 'Other Match Type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_training_provided_target_id:
-          id: partner_activity_training_provided_target_id
-          table: asset__partner_activity_training_provided
-          field: partner_activity_training_provided_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_training_provided
-          plugin_id: field
-          label: 'Training Type Provided'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: ul
-          separator: ', '
-          field_api_classes: false
-        partner_activity_training_other_value:
-          id: partner_activity_training_other_value
-          table: asset__partner_activity_training_other
-          field: partner_activity_training_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_training_other
-          plugin_id: field
-          label: 'Other Training Type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity1_target_id:
-          id: partner_activity_activity1_target_id
-          table: asset__partner_activity_activity1
-          field: partner_activity_activity1_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity1
-          plugin_id: field
-          label: 'Activity 1'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity1_cost_numerator:
-          id: partner_activity_activity1_cost_numerator
-          table: asset__partner_activity_activity1_cost
-          field: partner_activity_activity1_cost_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity1_cost
-          plugin_id: field
-          label: 'Activity 1 Cost'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity2_target_id:
-          id: partner_activity_activity2_target_id
-          table: asset__partner_activity_activity2
-          field: partner_activity_activity2_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity2
-          plugin_id: field
-          label: 'Activity 2'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity2_cost_numerator:
-          id: partner_activity_activity2_cost_numerator
-          table: asset__partner_activity_activity2_cost
-          field: partner_activity_activity2_cost_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity2_cost
-          plugin_id: field
-          label: 'Activity 2 Cost'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity3_target_id:
-          id: partner_activity_activity3_target_id
-          table: asset__partner_activity_activity3
-          field: partner_activity_activity3_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity3
-          plugin_id: field
-          label: 'Activity 3'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity3_cost_numerator:
-          id: partner_activity_activity3_cost_numerator
-          table: asset__partner_activity_activity3_cost
-          field: partner_activity_activity3_cost_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity3_cost
-          plugin_id: field
-          label: 'Activity 3 Cost'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity_other_value:
-          id: partner_activity_activity_other_value
-          table: asset__partner_activity_activity_other
-          field: partner_activity_activity_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity_other
-          plugin_id: field
-          label: 'Other Activity By Partner'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_products_supplied_value:
-          id: partner_activity_products_supplied_value
-          table: asset__partner_activity_products_supplied
-          field: partner_activity_products_supplied_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_products_supplied
-          plugin_id: field
-          label: 'Products Supplied'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_product_source_value:
-          id: partner_activity_product_source_value
-          table: asset__partner_activity_product_source
-          field: partner_activity_product_source_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_product_source
-          plugin_id: field
-          label: 'Products Source'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-      defaults:
-        fields: false
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: assets/partner_activities
-      menu:
-        type: normal
-        title: 'Partner Activities Menu'
-        description: ''
-        weight: 0
-        expanded: false
-        menu_name: account
-        parent: ''
-        context: '0'
+      path: assets/csc_partner_activities
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   rest_export_1:
     id: rest_export_1
@@ -4009,1945 +2284,31 @@ display:
     display_plugin: rest_export
     position: 2
     display_options:
-      fields:
-        name:
-          id: name
-          table: asset_field_data
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: null
-          entity_field: name
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_ein_value:
-          id: partner_activity_partner_ein_value
-          table: asset__partner_activity_partner_ein
-          field: partner_activity_partner_ein_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_ein
-          plugin_id: field
-          label: 'Partner ID (EIN)'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_type_target_id:
-          id: partner_activity_partner_type_target_id
-          table: asset__partner_activity_partner_type
-          field: partner_activity_partner_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_type
-          plugin_id: field
-          label: 'Partner Type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_poc_value:
-          id: partner_activity_partner_poc_value
-          table: asset__partner_activity_partner_poc
-          field: partner_activity_partner_poc_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_poc
-          plugin_id: field
-          label: 'Partner POC'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_poc_email_value:
-          id: partner_activity_partner_poc_email_value
-          table: asset__partner_activity_partner_poc_email
-          field: partner_activity_partner_poc_email_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_poc_email
-          plugin_id: field
-          label: 'Partner POC Email'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: basic_string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partnership_start_value:
-          id: partner_activity_partnership_start_value
-          table: asset__partner_activity_partnership_start
-          field: partner_activity_partnership_start_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partnership_start
-          plugin_id: field
-          label: 'Partnership Start Date'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
-          settings:
-            date_format: medium
-            custom_date_format: ''
-            timezone: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partnership_end_value:
-          id: partner_activity_partnership_end_value
-          table: asset__partner_activity_partnership_end
-          field: partner_activity_partnership_end_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partnership_end
-          plugin_id: field
-          label: 'Partnership End Date'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
-          settings:
-            date_format: medium
-            custom_date_format: ''
-            timezone: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partnership_initation_value:
-          id: partner_activity_partnership_initation_value
-          table: asset__partner_activity_partnership_initation
-          field: partner_activity_partnership_initation_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partnership_initation
-          plugin_id: field
-          label: 'New Partnership'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: boolean
-          settings:
-            format: default
-            format_custom_false: ''
-            format_custom_true: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_partner_total_requested_numerator:
-          id: partner_activity_partner_total_requested_numerator
-          table: asset__partner_activity_partner_total_requested
-          field: partner_activity_partner_total_requested_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_partner_total_requested
-          plugin_id: field
-          label: 'Partner Total Requested'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_total_match_contribution_numerator:
-          id: partner_activity_total_match_contribution_numerator
-          table: asset__partner_activity_total_match_contribution
-          field: partner_activity_total_match_contribution_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_total_match_contribution
-          plugin_id: field
-          label: 'Total Match Contribution'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_total_match_incentives_numerator:
-          id: partner_activity_total_match_incentives_numerator
-          table: asset__partner_activity_total_match_incentives
-          field: partner_activity_total_match_incentives_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_total_match_incentives
-          plugin_id: field
-          label: 'Total Match Incentives'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_type_1_target_id:
-          id: partner_activity_match_type_1_target_id
-          table: asset__partner_activity_match_type_1
-          field: partner_activity_match_type_1_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_type_1
-          plugin_id: field
-          label: 'Match Type 1'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_amount_1_numerator:
-          id: partner_activity_match_amount_1_numerator
-          table: asset__partner_activity_match_amount_1
-          field: partner_activity_match_amount_1_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_amount_1
-          plugin_id: field
-          label: 'Match Amount 1'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_type_2_target_id:
-          id: partner_activity_match_type_2_target_id
-          table: asset__partner_activity_match_type_2
-          field: partner_activity_match_type_2_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_type_2
-          plugin_id: field
-          label: 'Match Type 2'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_amount_2_numerator:
-          id: partner_activity_match_amount_2_numerator
-          table: asset__partner_activity_match_amount_2
-          field: partner_activity_match_amount_2_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_amount_2
-          plugin_id: field
-          label: 'Match Amount 2'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_type_3_target_id:
-          id: partner_activity_match_type_3_target_id
-          table: asset__partner_activity_match_type_3
-          field: partner_activity_match_type_3_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_type_3
-          plugin_id: field
-          label: 'Match Type 3'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_amount_3_numerator:
-          id: partner_activity_match_amount_3_numerator
-          table: asset__partner_activity_match_amount_3
-          field: partner_activity_match_amount_3_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_amount_3
-          plugin_id: field
-          label: 'Match Amount 3'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_match_type_other_value:
-          id: partner_activity_match_type_other_value
-          table: asset__partner_activity_match_type_other
-          field: partner_activity_match_type_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_match_type_other
-          plugin_id: field
-          label: 'Other Match Type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_training_provided_target_id:
-          id: partner_activity_training_provided_target_id
-          table: asset__partner_activity_training_provided
-          field: partner_activity_training_provided_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_training_provided
-          plugin_id: field
-          label: 'Training Type Provided'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ' | '
-          field_api_classes: false
-        partner_activity_training_other_value:
-          id: partner_activity_training_other_value
-          table: asset__partner_activity_training_other
-          field: partner_activity_training_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_training_other
-          plugin_id: field
-          label: 'Other Training Type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity1_target_id:
-          id: partner_activity_activity1_target_id
-          table: asset__partner_activity_activity1
-          field: partner_activity_activity1_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity1
-          plugin_id: field
-          label: 'Activity 1'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity1_cost_numerator:
-          id: partner_activity_activity1_cost_numerator
-          table: asset__partner_activity_activity1_cost
-          field: partner_activity_activity1_cost_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity1_cost
-          plugin_id: field
-          label: 'Activity 1 Cost'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity2_target_id:
-          id: partner_activity_activity2_target_id
-          table: asset__partner_activity_activity2
-          field: partner_activity_activity2_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity2
-          plugin_id: field
-          label: 'Activity 2'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity2_cost_numerator:
-          id: partner_activity_activity2_cost_numerator
-          table: asset__partner_activity_activity2_cost
-          field: partner_activity_activity2_cost_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity2_cost
-          plugin_id: field
-          label: 'Activity 2 Cost'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity3_target_id:
-          id: partner_activity_activity3_target_id
-          table: asset__partner_activity_activity3
-          field: partner_activity_activity3_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity3
-          plugin_id: field
-          label: 'Activity 3'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity3_cost_numerator:
-          id: partner_activity_activity3_cost_numerator
-          table: asset__partner_activity_activity3_cost
-          field: partner_activity_activity3_cost_numerator
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity3_cost
-          plugin_id: field
-          label: 'Activity 3 Cost'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: numerator
-          type: fraction_decimal
-          settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_activity_other_value:
-          id: partner_activity_activity_other_value
-          table: asset__partner_activity_activity_other
-          field: partner_activity_activity_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_activity_other
-          plugin_id: field
-          label: 'Other Activity By Partner'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_products_supplied_value:
-          id: partner_activity_products_supplied_value
-          table: asset__partner_activity_products_supplied
-          field: partner_activity_products_supplied_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_products_supplied
-          plugin_id: field
-          label: 'Products Supplied'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        partner_activity_product_source_value:
-          id: partner_activity_product_source_value
-          table: asset__partner_activity_product_source
-          field: partner_activity_product_source_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: asset
-          entity_field: partner_activity_product_source
-          plugin_id: field
-          label: 'Products Source'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
       pager:
-        type: none
+        type: some
         options:
           offset: 0
+          items_per_page: 10
       style:
         type: serializer
         options:
+          uses_fields: false
           formats:
             csv: csv
       row:
-        type: data_field
-        options:
-          field_options:
-            name:
-              alias: ''
-              raw_output: false
+        type: data_entity
+        options: {  }
       defaults:
         style: false
         row: false
-        fields: false
       display_extenders:
         collapsible_filter:
           collapsible: false
       path: assets_partner_activities.csv
-      auth:
-        - cookie
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - request_format
-        - user.permissions
       tags: {  }
