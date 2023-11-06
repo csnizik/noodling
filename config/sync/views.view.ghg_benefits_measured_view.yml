@@ -1,20 +1,17 @@
-uuid: d5ae6de0-717d-4009-aef0-888b2bf26946
+uuid: ba512652-aa49-4ef4-b82c-ccc9e586169e
 langcode: en
 status: true
 dependencies:
   config:
-    - log.type.ghg_benefits_measured
-    - system.menu.account
+    - log.type.csc_ghg_benefits_measured
   module:
-    - csv_serialization
     - fraction
     - log
     - options
     - rest
     - serialization
-    - user
-id: ghg_benefit_measured_view
-label: 'GHG Benefit Measured View'
+id: csc_ghg_benefits_measured_view
+label: 'GHG Benefits Measured View'
 module: views
 description: ''
 tag: ''
@@ -82,8 +79,7 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings:
-            link_to_entity: true
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -94,15 +90,210 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        project_id_target_id:
-          id: project_id_target_id
-          table: log__project_id
-          field: project_id_target_id
+        csc_g_bene_msrd_fiscal_year_value:
+          id: csc_g_bene_msrd_fiscal_year_value
+          table: log__csc_g_bene_msrd_fiscal_year
+          field: csc_g_bene_msrd_fiscal_year_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: project_id
+          entity_field: csc_g_bene_msrd_fiscal_year
+          plugin_id: field
+          label: 'Federal Fiscal Year of report submission'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_g_bene_msrd_fiscal_quarter_value:
+          id: csc_g_bene_msrd_fiscal_quarter_value
+          table: log__csc_g_bene_msrd_fiscal_quarter
+          field: csc_g_bene_msrd_fiscal_quarter_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_g_bene_msrd_fiscal_quarter
+          plugin_id: field
+          label: 'Federal Fiscal Quarter of report submission'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_g_bene_msrd_fld_id_target_id:
+          id: csc_g_bene_msrd_fld_id_target_id
+          table: log__csc_g_bene_msrd_fld_id
+          field: csc_g_bene_msrd_fld_id_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_g_bene_msrd_fld_id
+          plugin_id: field
+          label: 'Field ID'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_project_id_target_id:
+          id: csc_project_id_target_id
+          table: log__csc_project_id
+          field: csc_project_id_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_project_id
           plugin_id: field
           label: 'Project ID'
           exclude: false
@@ -159,210 +350,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_field_id_target_id:
-          id: g_benefits_measured_field_id_target_id
-          table: log__g_benefits_measured_field_id
-          field: g_benefits_measured_field_id_target_id
+        csc_g_bene_msrd_ghg_msrt_mt_target_id:
+          id: csc_g_bene_msrd_ghg_msrt_mt_target_id
+          table: log__csc_g_bene_msrd_ghg_msrt_mt
+          field: csc_g_bene_msrd_ghg_msrt_mt_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_field_id
-          plugin_id: field
-          label: 'Field ID'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        fiscal_quarter_value:
-          id: fiscal_quarter_value
-          table: log__fiscal_quarter
-          field: fiscal_quarter_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: fiscal_quarter
-          plugin_id: field
-          label: 'Environmental Benefits Federal Fiscal Quarter of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        fiscal_year_value:
-          id: fiscal_year_value
-          table: log__fiscal_year
-          field: fiscal_year_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: fiscal_year
-          plugin_id: field
-          label: 'Environmental Benefits Federal Fiscal Year of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        g_benefits_measured_ghg_measurement_method_target_id:
-          id: g_benefits_measured_ghg_measurement_method_target_id
-          table: log__g_benefits_measured_ghg_measurement_method
-          field: g_benefits_measured_ghg_measurement_method_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: g_benefits_measured_ghg_measurement_method
+          entity_field: csc_g_bene_msrd_ghg_msrt_mt
           plugin_id: field
           label: 'GHG measurement method'
           exclude: false
@@ -419,15 +415,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_ghg_measurement_method_other_value:
-          id: g_benefits_measured_ghg_measurement_method_other_value
-          table: log__g_benefits_measured_ghg_measurement_method_other
-          field: g_benefits_measured_ghg_measurement_method_other_value
+        csc_g_bene_msrd_ghg_msrt_mt_otr_value:
+          id: csc_g_bene_msrd_ghg_msrt_mt_otr_value
+          table: log__csc_g_bene_msrd_ghg_msrt_mt_otr
+          field: csc_g_bene_msrd_ghg_msrt_mt_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_ghg_measurement_method_other
+          entity_field: csc_g_bene_msrd_ghg_msrt_mt_otr
           plugin_id: field
           label: 'Other GHG measurement method'
           exclude: false
@@ -484,15 +480,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_lab_name_value:
-          id: g_benefits_measured_lab_name_value
-          table: log__g_benefits_measured_lab_name
-          field: g_benefits_measured_lab_name_value
+        csc_g_bene_msrd_lab_name_value:
+          id: csc_g_bene_msrd_lab_name_value
+          table: log__csc_g_bene_msrd_lab_name
+          field: csc_g_bene_msrd_lab_name_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_lab_name
+          entity_field: csc_g_bene_msrd_lab_name
           plugin_id: field
           label: 'Lab Name'
           exclude: false
@@ -549,15 +545,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_measurement_start_date_value:
-          id: g_benefits_measured_measurement_start_date_value
-          table: log__g_benefits_measured_measurement_start_date
-          field: g_benefits_measured_measurement_start_date_value
+        csc_g_bene_msrd_msrt_start_date_value:
+          id: csc_g_bene_msrd_msrt_start_date_value
+          table: log__csc_g_bene_msrd_msrt_start_date
+          field: csc_g_bene_msrd_msrt_start_date_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_measurement_start_date
+          entity_field: csc_g_bene_msrd_msrt_start_date
           plugin_id: field
           label: 'Measurement Start Date'
           exclude: false
@@ -603,7 +599,7 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: html_date
+            date_format: medium
             custom_date_format: ''
             timezone: ''
           group_column: value
@@ -616,15 +612,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_measurement_end_date_value:
-          id: g_benefits_measured_measurement_end_date_value
-          table: log__g_benefits_measured_measurement_end_date
-          field: g_benefits_measured_measurement_end_date_value
+        csc_g_bene_msrd_msrt_end_date_value:
+          id: csc_g_bene_msrd_msrt_end_date_value
+          table: log__csc_g_bene_msrd_msrt_end_date
+          field: csc_g_bene_msrd_msrt_end_date_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_measurement_end_date
+          entity_field: csc_g_bene_msrd_msrt_end_date
           plugin_id: field
           label: 'Measurement End Date'
           exclude: false
@@ -670,7 +666,7 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: html_date
+            date_format: medium
             custom_date_format: ''
             timezone: ''
           group_column: value
@@ -683,15 +679,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_total_co2_reduction_numerator:
-          id: g_benefits_measured_total_co2_reduction_numerator
-          table: log__g_benefits_measured_total_co2_reduction
-          field: g_benefits_measured_total_co2_reduction_numerator
+        csc_g_bene_msrd_total_co2_rd_numerator:
+          id: csc_g_bene_msrd_total_co2_rd_numerator
+          table: log__csc_g_bene_msrd_total_co2_rd
+          field: csc_g_bene_msrd_total_co2_rd_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_total_co2_reduction
+          entity_field: csc_g_bene_msrd_total_co2_rd
           plugin_id: field
           label: 'Total CO2 reduction'
           exclude: false
@@ -750,15 +746,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_total_field_carbon_stock_numerator:
-          id: g_benefits_measured_total_field_carbon_stock_numerator
-          table: log__g_benefits_measured_total_field_carbon_stock
-          field: g_benefits_measured_total_field_carbon_stock_numerator
+        csc_g_bene_msrd_t_fld_co2_stock_numerator:
+          id: csc_g_bene_msrd_t_fld_co2_stock_numerator
+          table: log__csc_g_bene_msrd_t_fld_co2_stock
+          field: csc_g_bene_msrd_t_fld_co2_stock_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_total_field_carbon_stock
+          entity_field: csc_g_bene_msrd_t_fld_co2_stock
           plugin_id: field
           label: 'Total Field Carbon Stock'
           exclude: false
@@ -817,15 +813,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_total_ch4_reduction_numerator:
-          id: g_benefits_measured_total_ch4_reduction_numerator
-          table: log__g_benefits_measured_total_ch4_reduction
-          field: g_benefits_measured_total_ch4_reduction_numerator
+        csc_g_bene_msrd_total_ch4_rd_numerator:
+          id: csc_g_bene_msrd_total_ch4_rd_numerator
+          table: log__csc_g_bene_msrd_total_ch4_rd
+          field: csc_g_bene_msrd_total_ch4_rd_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_total_ch4_reduction
+          entity_field: csc_g_bene_msrd_total_ch4_rd
           plugin_id: field
           label: 'Total CH4 reduction'
           exclude: false
@@ -884,15 +880,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_total_n2o_reduction_numerator:
-          id: g_benefits_measured_total_n2o_reduction_numerator
-          table: log__g_benefits_measured_total_n2o_reduction
-          field: g_benefits_measured_total_n2o_reduction_numerator
+        csc_g_bene_msrd_total_n2o_rd_numerator:
+          id: csc_g_bene_msrd_total_n2o_rd_numerator
+          table: log__csc_g_bene_msrd_total_n2o_rd
+          field: csc_g_bene_msrd_total_n2o_rd_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_total_n2o_reduction
+          entity_field: csc_g_bene_msrd_total_n2o_rd
           plugin_id: field
           label: 'Total N20 reduction'
           exclude: false
@@ -951,15 +947,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_soil_sample_result_numerator:
-          id: g_benefits_measured_soil_sample_result_numerator
-          table: log__g_benefits_measured_soil_sample_result
-          field: g_benefits_measured_soil_sample_result_numerator
+        csc_g_bene_msrd_sl_sp_rs_numerator:
+          id: csc_g_bene_msrd_sl_sp_rs_numerator
+          table: log__csc_g_bene_msrd_sl_sp_rs
+          field: csc_g_bene_msrd_sl_sp_rs_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_soil_sample_result
+          entity_field: csc_g_bene_msrd_sl_sp_rs
           plugin_id: field
           label: 'Soil Sample Result'
           exclude: false
@@ -1018,15 +1014,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_soil_sample_result_unit_value:
-          id: g_benefits_measured_soil_sample_result_unit_value
-          table: log__g_benefits_measured_soil_sample_result_unit
-          field: g_benefits_measured_soil_sample_result_unit_value
+        csc_g_bene_msrd_sl_sp_rs_ut_value:
+          id: csc_g_bene_msrd_sl_sp_rs_ut_value
+          table: log__csc_g_bene_msrd_sl_sp_rs_ut
+          field: csc_g_bene_msrd_sl_sp_rs_ut_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_soil_sample_result_unit
+          entity_field: csc_g_bene_msrd_sl_sp_rs_ut
           plugin_id: field
           label: 'Soil Sample Result Unit'
           exclude: false
@@ -1082,15 +1078,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_soil_sample_result_unit_other_value:
-          id: g_benefits_measured_soil_sample_result_unit_other_value
-          table: log__g_benefits_measured_soil_sample_result_unit_other
-          field: g_benefits_measured_soil_sample_result_unit_other_value
+        csc_g_bene_msrd_sl_sp_rs_ut_otr_value:
+          id: csc_g_bene_msrd_sl_sp_rs_ut_otr_value
+          table: log__csc_g_bene_msrd_sl_sp_rs_ut_otr
+          field: csc_g_bene_msrd_sl_sp_rs_ut_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_soil_sample_result_unit_other
+          entity_field: csc_g_bene_msrd_sl_sp_rs_ut_otr
           plugin_id: field
           label: 'Soil Sample Result Unit Other'
           exclude: false
@@ -1147,15 +1143,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_measurement_type_value:
-          id: g_benefits_measured_measurement_type_value
-          table: log__g_benefits_measured_measurement_type
-          field: g_benefits_measured_measurement_type_value
+        csc_g_bene_msrd_msrt_type_value:
+          id: csc_g_bene_msrd_msrt_type_value
+          table: log__csc_g_bene_msrd_msrt_type
+          field: csc_g_bene_msrd_msrt_type_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_measurement_type
+          entity_field: csc_g_bene_msrd_msrt_type
           plugin_id: field
           label: 'Measurement Type'
           exclude: false
@@ -1211,15 +1207,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        g_benefits_measured_measurement_type_other_value:
-          id: g_benefits_measured_measurement_type_other_value
-          table: log__g_benefits_measured_measurement_type_other
-          field: g_benefits_measured_measurement_type_other_value
+        csc_g_bene_msrd_msrt_type_otr_value:
+          id: csc_g_bene_msrd_msrt_type_otr_value
+          table: log__csc_g_bene_msrd_msrt_type_otr
+          field: csc_g_bene_msrd_msrt_type_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: g_benefits_measured_measurement_type_other
+          entity_field: csc_g_bene_msrd_msrt_type_otr
           plugin_id: field
           label: 'Measurement Type Other'
           exclude: false
@@ -1277,9 +1273,23 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: none
+        type: mini
         options:
           offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -1291,9 +1301,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
-        options:
-          perm: 'view any log'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -1309,7 +1318,7 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            ghg_benefits_measured: ghg_benefits_measured
+            csc_ghg_benefits_measured: csc_ghg_benefits_measured
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -1327,35 +1336,14 @@ display:
           query_tags: {  }
       relationships: {  }
       header: {  }
-      footer:
-        display_link:
-          id: display_link
-          table: views
-          field: display_link
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: display_link
-          label: 'Export CSV'
-          empty: false
-          display_id: rest_export_1
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Displaying @start - @end of @total'
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   page_1:
     id: page_1
@@ -1363,25 +1351,14 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders:
-        collapsible_filter:
-          collapsible: false
-      path: logs/ghg_benefits_measured
-      menu:
-        type: normal
-        title: Logs
-        description: ''
-        weight: 0
-        expanded: false
-        menu_name: account
-        parent: ''
-        context: '0'
+      display_extenders: {  }
+      path: logs/csc_ghg_benefits_measured
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   rest_export_1:
     id: rest_export_1
@@ -1390,87 +1367,24 @@ display:
     position: 2
     display_options:
       pager:
-        type: none
+        type: some
         options:
           offset: 0
+          items_per_page: 10
       style:
         type: serializer
-        options:
-          uses_fields: false
-          formats:
-            csv: csv
       row:
-        type: data_field
-        options:
-          field_options:
-            name:
-              alias: ''
-              raw_output: false
-            f_summary_field_id_target_id:
-              alias: ''
-              raw_output: false
-            fiscal_quarter_value:
-              alias: ''
-              raw_output: false
-            fiscal_year_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_ghg_measurement_method_target_id:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_ghg_measurement_method_other_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_lab_name_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_measurement_start_date_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_measurement_end_date_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_total_co2_reduction_numerator:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_total_field_carbon_stock_numerator:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_total_ch4_reduction_numerator:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_total_n2o_reduction_numerator:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_soil_sample_result_numerator:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_soil_sample_result_unit_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_soil_sample_result_unit_other_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_measurement_type_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_measurement_type_other_value:
-              alias: ''
-              raw_output: false
+        type: data_entity
+        options: {  }
       defaults:
         style: false
         row: false
-      display_extenders:
-        collapsible_filter:
-          collapsible: false
-      path: ghg_benefits_measured_log.csv
-      auth:
-        - cookie
+      display_extenders: {  }
+      path: ghg_benefits_measured_logs.csv
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - request_format
-        - user.permissions
       tags: {  }

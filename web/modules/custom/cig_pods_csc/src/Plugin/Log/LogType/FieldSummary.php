@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the Field Summary log type.
  *
  * @LogType(
- * id = "field_summary",
+ * id = "csc_field_summary",
  * label = @Translation("FieldSummary"),
  * )
  */
@@ -23,21 +23,21 @@ class FieldSummary extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'f_summary_fiscal_year' => [
+      'csc_f_summary_fiscal_year' => [
         'type' => 'string',
         'label' => 'Federal Fiscal Year of report submission',
         'description' => 'Federal Fiscal Year of report submission',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_fiscal_quarter' => [
+      'csc_f_summary_fiscal_quarter' => [
         'type' => 'string',
         'label' => 'Federal Fiscal Quarter of report submission',
         'description' => 'Federal Fiscal Quarter of report submission',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_field_id' => [
+      'csc_f_summary_field_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -46,7 +46,7 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -55,7 +55,7 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_commodity_type' => [
+      'csc_f_summary_commodity_type' => [
         'type' => 'entity_reference',
         'label' => 'Field Summary Commodity Type',
         'description' => 'Field Summary Commodity Type',
@@ -64,7 +64,7 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_practice_type' => [
+      'csc_f_summary_practice_type' => [
         'type' => 'entity_reference',
         'label' => 'Practice Type',
         'description' => 'Practice Type',
@@ -73,21 +73,21 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => TRUE,
       ],
-      'f_summary_date_practice_complete' => [
+      'csc_fi_summ_date_pract_complete' => [
         'type' => 'timestamp',
         'label' => 'Date Practice Complete',
         'description' => 'Date Practice Complete',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_contract_end_date' => [
+      'csc_f_summary_contract_end_date' => [
         'type' => 'timestamp',
         'label' => 'Contract End Date',
         'description' => 'Contract End Date',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_mmrv_assistance_provided' => [
+      'csc_fi_summ_mmrv_ast_prv' => [
         'type' => 'list_string',
         'label' => 'MMRV assistance provided',
         'description' => 'MMRV assistance provided',
@@ -99,7 +99,7 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_marketing_assistance_provided' => [
+      'csc_fi_summ_marketing_ast_prv' => [
         'type' => 'list_string',
         'label' => 'Marketing assistance provided',
         'description' => 'Marketing assistance provided',
@@ -111,7 +111,7 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_incentive_per_acre_or_head' => [
+      'csc_fi_summ_inc_per_acre_or_hd' => [
         'type' => 'list_string',
         'label' => 'Incentive per acre or head',
         'description' => 'Incentive per acre or head',
@@ -123,21 +123,21 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_field_commodity_value' => [
+      'csc_fi_summ_fld_comm_value' => [
         'type' => 'fraction',
         'label' => 'Field Commodity Value',
         'description' => 'Field Commodity Value',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_field_commodity_volume' => [
+      'csc_fi_summ_fld_comm_vol' => [
         'type' => 'fraction',
         'label' => 'Field Commodity Volume',
         'description' => 'Field Commodity Volume',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_field_commodity_volume_unit' => [
+      'csc_fi_summ_fld_comm_vol_ut' => [
         'type' => 'entity_reference',
         'label' => 'Field Commodity Volume Unit',
         'description' => 'Field Commodity Volume unit',
@@ -146,21 +146,21 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_field_commodity_volume_unit_other' => [
+      'csc_fi_summ_fld_comm_vol_ut_otr' => [
         'type' => 'string',
         'label' => 'Other Field Commodity Volume Unit',
         'description' => 'Other Field Commodity Volume Unit',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_implementation_cost' => [
+      'csc_fi_summ_impl_cost' => [
         'type' => 'fraction',
         'label' => 'Cost of Implementation',
         'description' => 'Cost of Implementation',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_implementation_cost_unit' => [
+      'csc_fi_summ_impl_cost_ut' => [
         'type' => 'entity_reference',
         'label' => 'Cost of Implementation Unit',
         'description' => 'Cost of Implementation Unit',
@@ -169,21 +169,21 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_implementation_cost_unit_other' => [
+      'csc_fi_summ_impl_cost_ut_otr' => [
         'type' => 'string',
         'label' => 'Other Cost Unit',
         'description' => 'Other Cost Unit',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_implementation_cost_coverage' => [
+      'csc_fi_summ_impl_cost_coverage' => [
         'type' => 'fraction',
         'label' => 'Cost Coverage',
         'description' => 'Cost Coverage',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_field_ghg_monitoring' => [
+      'csc_fi_summ_fld_ghg_monitor' => [
         'type' => 'entity_reference',
         'label' => 'Field GHG Monitoring',
         'description' => 'Field GHG Monitoring',
@@ -192,14 +192,14 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => TRUE,
       ],
-      'f_summary_field_ghg_monitoring_other' => [
+      'csc_fi_summ_fld_ghg_monitor_otr' => [
         'type' => 'string',
         'label' => 'Other Field GHG monitoring',
         'description' => 'Other Field GHG monitoring',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'f_summary_field_ghg_reporting' => [
+      'csc_fi_summ_fld_ghg_report' => [
         'type' => 'entity_reference',
         'label' => 'Field GHG reporting',
         'description' => 'Field GHG reporting',
@@ -208,14 +208,14 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => TRUE,
       ],
-      'f_summary_field_ghg_reporting_other' => [
+      'csc_fi_summ_fld_ghg_report_otr' => [
         'type' => 'string',
         'label' => 'Other Field GHG reporting',
         'description' => 'Other Field GHG reporting',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_ghg_verification' => [
+	    'csc_fi_summ_fld_ghg_verifi' => [
         'type' => 'entity_reference',
         'label' => 'Field GHG verification',
         'description' => 'Field GHG verification',
@@ -224,14 +224,14 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => TRUE,
       ],
-      'f_summary_field_ghg_verification_other' => [
+      'csc_fi_summ_fld_ghg_verifi_otr' => [
         'type' => 'string',
         'label' => 'Other Field GHG verification',
         'description' => 'Other Field GHG verification',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_ghg_calculation' => [
+	    'csc_fi_summ_fld_ghg_calc' => [
         'type' => 'list_string',
         'label' => 'Field GHG calculations',
         'description' => 'Field GHG calculations',
@@ -243,7 +243,7 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_official_ghg_calculations' => [
+	    'csc_fi_summ_fld_ofc_ghg_calc' => [
         'type' => 'list_string',
         'label' => 'Field Official GHG verification',
         'description' => 'Field Official GHG verification',
@@ -254,56 +254,56 @@ class FieldSummary extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_ghg_emission_reduction' => [
+	    'csc_fi_summ_fld_ghg_emission_rd' => [
         'type' => 'fraction',
         'label' => 'Field Official GHG ER',
         'description' => 'Field Official GHG ER',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_carbon_stock' => [
+	    'csc_fi_summ_fld_co2_stock' => [
         'type' => 'fraction',
         'label' => 'Field Official Carbon Stock',
         'description' => 'Field Official Carbon Stock',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_co2_emission_reduction' => [
+	    'csc_fi_summ_fld_co2_emission_rd' => [
         'type' => 'fraction',
         'label' => 'Field Official CO2 ER',
         'description' => 'Field Official CO2 ER',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_ch4_emission_reduction' => [
+	    'csc_fi_summ_fld_ch4_emission_rd' => [
         'type' => 'fraction',
         'label' => 'Field Official CH4 ER',
         'description' => 'Field Official CH4 ER',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_n2o_emission_reduction' => [
+	    'csc_fi_summ_fld_n2o_emission_rd' => [
         'type' => 'fraction',
         'label' => 'Field Official N2O ER',
         'description' => 'Field Official N2O ER',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_offsets' => [
+	    'csc_f_summary_field_offsets' => [
         'type' => 'fraction',
         'label' => 'Field Offsets produced',
         'description' => 'Field Offsets produced',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_insets' => [
+	    'csc_f_summary_field_insets' => [
         'type' => 'fraction',
         'label' => 'Field Insets produced',
         'description' => 'Field Insets produced',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'f_summary_field_measurement_other' => [
+	    'csc_fi_summ_fld_measurement_otr' => [
         'type' => 'list_string',
         'label' => 'Other Field measurement',
         'description' => 'Other Field measurement',

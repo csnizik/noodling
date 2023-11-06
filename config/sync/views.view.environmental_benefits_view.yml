@@ -1,20 +1,17 @@
-uuid: 0d277c6e-9e76-49c4-a10b-626c1caeab26
+uuid: 8081a984-f665-4fd5-8868-5de1dbfc6ad9
 langcode: en
 status: true
 dependencies:
   config:
-    - log.type.environmental_benefits
-    - system.menu.account
+    - log.type.csc_environmental_benefits
   module:
-    - csv_serialization
     - fraction
     - log
     - options
     - rest
     - serialization
-    - user
-id: environmental_benefits_view
-label: 'Additional Environmental Benefits View'
+id: csc_environmental_benefits_view
+label: 'Environmental Benefits View'
 module: views
 description: ''
 tag: ''
@@ -27,7 +24,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Additional Environmental Benefits View'
+      title: 'Environmental Benefits View'
       fields:
         name:
           id: name
@@ -82,8 +79,7 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings:
-            link_to_entity: true
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -94,145 +90,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        project_id_target_id:
-          id: project_id_target_id
-          table: log__project_id
-          field: project_id_target_id
+        csc_fiscal_year_value:
+          id: csc_fiscal_year_value
+          table: log__csc_fiscal_year
+          field: csc_fiscal_year_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: project_id
-          plugin_id: field
-          label: 'Project ID'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_id_target_id:
-          id: field_id_target_id
-          table: log__field_id
-          field: field_id_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: field_id
-          plugin_id: field
-          label: 'Field ID'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        fiscal_year_value:
-          id: fiscal_year_value
-          table: log__fiscal_year
-          field: fiscal_year_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: fiscal_year
+          entity_field: csc_fiscal_year
           plugin_id: field
           label: 'Environmental Benefits Federal Fiscal Year of report submission'
           exclude: false
@@ -289,15 +155,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        fiscal_quarter_value:
-          id: fiscal_quarter_value
-          table: log__fiscal_quarter
-          field: fiscal_quarter_value
+        csc_fiscal_quarter_value:
+          id: csc_fiscal_quarter_value
+          table: log__csc_fiscal_quarter
+          field: csc_fiscal_quarter_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: fiscal_quarter
+          entity_field: csc_fiscal_quarter
           plugin_id: field
           label: 'Environmental Benefits Federal Fiscal Quarter of report submission'
           exclude: false
@@ -354,15 +220,145 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        environmental_benefits_value:
-          id: environmental_benefits_value
-          table: log__environmental_benefits
-          field: environmental_benefits_value
+        csc_field_id_target_id:
+          id: csc_field_id_target_id
+          table: log__csc_field_id
+          field: csc_field_id_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: environmental_benefits
+          entity_field: csc_field_id
+          plugin_id: field
+          label: 'Environmental Benefits Field ID'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_project_id_target_id:
+          id: csc_project_id_target_id
+          table: log__csc_project_id
+          field: csc_project_id_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_project_id
+          plugin_id: field
+          label: 'Project ID'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        csc_environmental_benefits_value:
+          id: csc_environmental_benefits_value
+          table: log__csc_environmental_benefits
+          field: csc_environmental_benefits_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: log
+          entity_field: csc_environmental_benefits
           plugin_id: field
           label: 'Environmental benefits'
           exclude: false
@@ -418,15 +414,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nitrogen_loss_value:
-          id: nitrogen_loss_value
-          table: log__nitrogen_loss
-          field: nitrogen_loss_value
+        csc_nitrogen_loss_value:
+          id: csc_nitrogen_loss_value
+          table: log__csc_nitrogen_loss
+          field: csc_nitrogen_loss_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: nitrogen_loss
+          entity_field: csc_nitrogen_loss
           plugin_id: field
           label: 'Reduction in Nitrogen Loss'
           exclude: false
@@ -482,15 +478,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nitrogen_loss_amount_value:
-          id: nitrogen_loss_amount_value
-          table: log__nitrogen_loss_amount
-          field: nitrogen_loss_amount_value
+        csc_nitrogen_loss_amount_value:
+          id: csc_nitrogen_loss_amount_value
+          table: log__csc_nitrogen_loss_amount
+          field: csc_nitrogen_loss_amount_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: nitrogen_loss_amount
+          entity_field: csc_nitrogen_loss_amount
           plugin_id: field
           label: 'Reduction in Nitrogen Loss Amount'
           exclude: false
@@ -547,15 +543,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nitrogen_loss_amount_unit_value:
-          id: nitrogen_loss_amount_unit_value
-          table: log__nitrogen_loss_amount_unit
-          field: nitrogen_loss_amount_unit_value
+        csc_nitrogen_loss_amount_unit_value:
+          id: csc_nitrogen_loss_amount_unit_value
+          table: log__csc_nitrogen_loss_amount_unit
+          field: csc_nitrogen_loss_amount_unit_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: nitrogen_loss_amount_unit
+          entity_field: csc_nitrogen_loss_amount_unit
           plugin_id: field
           label: 'Reduction in Nitrogen Loss Amount Unit'
           exclude: false
@@ -611,15 +607,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nitrogen_loss_amount_unit_other_value:
-          id: nitrogen_loss_amount_unit_other_value
-          table: log__nitrogen_loss_amount_unit_other
-          field: nitrogen_loss_amount_unit_other_value
+        csc_nitrogen_loss_amt_ut_otr_value:
+          id: csc_nitrogen_loss_amt_ut_otr_value
+          table: log__csc_nitrogen_loss_amt_ut_otr
+          field: csc_nitrogen_loss_amt_ut_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: nitrogen_loss_amount_unit_other
+          entity_field: csc_nitrogen_loss_amt_ut_otr
           plugin_id: field
           label: 'Other Reduction in Nitrogen Loss Amount Unit'
           exclude: false
@@ -676,15 +672,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nitrogen_loss_purpose_value:
-          id: nitrogen_loss_purpose_value
-          table: log__nitrogen_loss_purpose
-          field: nitrogen_loss_purpose_value
+        csc_nitrogen_loss_purpose_value:
+          id: csc_nitrogen_loss_purpose_value
+          table: log__csc_nitrogen_loss_purpose
+          field: csc_nitrogen_loss_purpose_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: nitrogen_loss_purpose
+          entity_field: csc_nitrogen_loss_purpose
           plugin_id: field
           label: 'Reduction in Nitrogen Loss Purpose'
           exclude: false
@@ -740,15 +736,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        nitrogen_loss_purpose_other_value:
-          id: nitrogen_loss_purpose_other_value
-          table: log__nitrogen_loss_purpose_other
-          field: nitrogen_loss_purpose_other_value
+        csc_nitrogen_loss_purpose_other_value:
+          id: csc_nitrogen_loss_purpose_other_value
+          table: log__csc_nitrogen_loss_purpose_other
+          field: csc_nitrogen_loss_purpose_other_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: nitrogen_loss_purpose_other
+          entity_field: csc_nitrogen_loss_purpose_other
           plugin_id: field
           label: 'Other Reduction in Nitrogen Loss Purpose'
           exclude: false
@@ -805,15 +801,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        phosphorus_loss_value:
-          id: phosphorus_loss_value
-          table: log__phosphorus_loss
-          field: phosphorus_loss_value
+        csc_phosphorus_loss_value:
+          id: csc_phosphorus_loss_value
+          table: log__csc_phosphorus_loss
+          field: csc_phosphorus_loss_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: phosphorus_loss
+          entity_field: csc_phosphorus_loss
           plugin_id: field
           label: 'Reduction in Phosphorus Loss'
           exclude: false
@@ -869,15 +865,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        phosphorus_loss_amount_value:
-          id: phosphorus_loss_amount_value
-          table: log__phosphorus_loss_amount
-          field: phosphorus_loss_amount_value
+        csc_phosphorus_loss_amount_value:
+          id: csc_phosphorus_loss_amount_value
+          table: log__csc_phosphorus_loss_amount
+          field: csc_phosphorus_loss_amount_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: phosphorus_loss_amount
+          entity_field: csc_phosphorus_loss_amount
           plugin_id: field
           label: 'Reduction in Phosphorus Loss Amount'
           exclude: false
@@ -934,15 +930,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        phosphorus_loss_amount_unit_value:
-          id: phosphorus_loss_amount_unit_value
-          table: log__phosphorus_loss_amount_unit
-          field: phosphorus_loss_amount_unit_value
+        csc_phosphorus_loss_amount_unit_value:
+          id: csc_phosphorus_loss_amount_unit_value
+          table: log__csc_phosphorus_loss_amount_unit
+          field: csc_phosphorus_loss_amount_unit_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: phosphorus_loss_amount_unit
+          entity_field: csc_phosphorus_loss_amount_unit
           plugin_id: field
           label: 'Reduction in Phosphorus Loss Amount Unit'
           exclude: false
@@ -998,15 +994,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        phosphorus_loss_amount_unit_other_value:
-          id: phosphorus_loss_amount_unit_other_value
-          table: log__phosphorus_loss_amount_unit_other
-          field: phosphorus_loss_amount_unit_other_value
+        csc_phosphorus_loss_amt_ut_otr_value:
+          id: csc_phosphorus_loss_amt_ut_otr_value
+          table: log__csc_phosphorus_loss_amt_ut_otr
+          field: csc_phosphorus_loss_amt_ut_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: phosphorus_loss_amount_unit_other
+          entity_field: csc_phosphorus_loss_amt_ut_otr
           plugin_id: field
           label: 'Other Reduction in Phosphorus Loss Amount Unit'
           exclude: false
@@ -1063,15 +1059,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        phosphorus_loss_purpose_value:
-          id: phosphorus_loss_purpose_value
-          table: log__phosphorus_loss_purpose
-          field: phosphorus_loss_purpose_value
+        csc_phosphorus_loss_purpose_value:
+          id: csc_phosphorus_loss_purpose_value
+          table: log__csc_phosphorus_loss_purpose
+          field: csc_phosphorus_loss_purpose_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: phosphorus_loss_purpose
+          entity_field: csc_phosphorus_loss_purpose
           plugin_id: field
           label: 'Reduction in Phosphorus Loss Purpose'
           exclude: false
@@ -1127,15 +1123,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        phosphorus_loss_purpose_other_value:
-          id: phosphorus_loss_purpose_other_value
-          table: log__phosphorus_loss_purpose_other
-          field: phosphorus_loss_purpose_other_value
+        csc_phosphorus_loss_purpose_otr_value:
+          id: csc_phosphorus_loss_purpose_otr_value
+          table: log__csc_phosphorus_loss_purpose_otr
+          field: csc_phosphorus_loss_purpose_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: phosphorus_loss_purpose_other
+          entity_field: csc_phosphorus_loss_purpose_otr
           plugin_id: field
           label: 'Other Reduction in Phosphorus Loss Purpose'
           exclude: false
@@ -1192,15 +1188,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        other_water_quality_value:
-          id: other_water_quality_value
-          table: log__other_water_quality
-          field: other_water_quality_value
+        csc_other_water_quality_value:
+          id: csc_other_water_quality_value
+          table: log__csc_other_water_quality
+          field: csc_other_water_quality_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: other_water_quality
+          entity_field: csc_other_water_quality
           plugin_id: field
           label: 'Other Water Quality'
           exclude: false
@@ -1256,15 +1252,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        other_water_quality_type_value:
-          id: other_water_quality_type_value
-          table: log__other_water_quality_type
-          field: other_water_quality_type_value
+        csc_other_water_quality_type_value:
+          id: csc_other_water_quality_type_value
+          table: log__csc_other_water_quality_type
+          field: csc_other_water_quality_type_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: other_water_quality_type
+          entity_field: csc_other_water_quality_type
           plugin_id: field
           label: 'Other Water Quality Type'
           exclude: false
@@ -1320,15 +1316,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        other_water_quality_type_other_value:
-          id: other_water_quality_type_other_value
-          table: log__other_water_quality_type_other
-          field: other_water_quality_type_other_value
+        csc_otr_water_quality_type_otr_value:
+          id: csc_otr_water_quality_type_otr_value
+          table: log__csc_otr_water_quality_type_otr
+          field: csc_otr_water_quality_type_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: other_water_quality_type_other
+          entity_field: csc_otr_water_quality_type_otr
           plugin_id: field
           label: 'Other - Other Water Quality Type'
           exclude: false
@@ -1385,15 +1381,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        other_water_quality_amount_numerator:
-          id: other_water_quality_amount_numerator
-          table: log__other_water_quality_amount
-          field: other_water_quality_amount_numerator
+        csc_other_water_quality_amount_numerator:
+          id: csc_other_water_quality_amount_numerator
+          table: log__csc_other_water_quality_amount
+          field: csc_other_water_quality_amount_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: other_water_quality_amount
+          entity_field: csc_other_water_quality_amount
           plugin_id: field
           label: 'Other Water Quality Amount'
           exclude: false
@@ -1440,7 +1436,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -1452,15 +1448,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        other_water_quality_amount_unit_value:
-          id: other_water_quality_amount_unit_value
-          table: log__other_water_quality_amount_unit
-          field: other_water_quality_amount_unit_value
+        csc_otr_water_quality_amt_ut_value:
+          id: csc_otr_water_quality_amt_ut_value
+          table: log__csc_otr_water_quality_amt_ut
+          field: csc_otr_water_quality_amt_ut_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: other_water_quality_amount_unit
+          entity_field: csc_otr_water_quality_amt_ut
           plugin_id: field
           label: 'Other Water Quality Amount Unit'
           exclude: false
@@ -1516,15 +1512,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        other_water_quality_amount_unit_other_value:
-          id: other_water_quality_amount_unit_other_value
-          table: log__other_water_quality_amount_unit_other
-          field: other_water_quality_amount_unit_other_value
+        csc_otr_h2o_quality_amt_ut_otr_value:
+          id: csc_otr_h2o_quality_amt_ut_otr_value
+          table: log__csc_otr_h2o_quality_amt_ut_otr
+          field: csc_otr_h2o_quality_amt_ut_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: other_water_quality_amount_unit_other
+          entity_field: csc_otr_h2o_quality_amt_ut_otr
           plugin_id: field
           label: 'Other - Other Water Quality Amount Unit'
           exclude: false
@@ -1581,15 +1577,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        other_water_quality_purpose_value:
-          id: other_water_quality_purpose_value
-          table: log__other_water_quality_purpose
-          field: other_water_quality_purpose_value
+        csc_other_water_quality_purpose_value:
+          id: csc_other_water_quality_purpose_value
+          table: log__csc_other_water_quality_purpose
+          field: csc_other_water_quality_purpose_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: other_water_quality_purpose
+          entity_field: csc_other_water_quality_purpose
           plugin_id: field
           label: 'Other Water Quality Purpose'
           exclude: false
@@ -1645,15 +1641,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        other_water_quality_purpose_other_value:
-          id: other_water_quality_purpose_other_value
-          table: log__other_water_quality_purpose_other
-          field: other_water_quality_purpose_other_value
+        csc_otr_h2o_quality_purpose_otr_value:
+          id: csc_otr_h2o_quality_purpose_otr_value
+          table: log__csc_otr_h2o_quality_purpose_otr
+          field: csc_otr_h2o_quality_purpose_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: other_water_quality_purpose_other
+          entity_field: csc_otr_h2o_quality_purpose_otr
           plugin_id: field
           label: 'Other - other Water Quality Purpose'
           exclude: false
@@ -1710,15 +1706,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quantity_value:
-          id: water_quantity_value
-          table: log__water_quantity
-          field: water_quantity_value
+        csc_water_quantity_value:
+          id: csc_water_quantity_value
+          table: log__csc_water_quantity
+          field: csc_water_quantity_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quantity
+          entity_field: csc_water_quantity
           plugin_id: field
           label: 'Water Quantity'
           exclude: false
@@ -1774,15 +1770,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quantity_amount_numerator:
-          id: water_quantity_amount_numerator
-          table: log__water_quantity_amount
-          field: water_quantity_amount_numerator
+        csc_water_quantity_amount_numerator:
+          id: csc_water_quantity_amount_numerator
+          table: log__csc_water_quantity_amount
+          field: csc_water_quantity_amount_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quantity_amount
+          entity_field: csc_water_quantity_amount
           plugin_id: field
           label: 'Water Quantity Amount'
           exclude: false
@@ -1826,9 +1822,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: numerator
-          type: fraction
+          type: fraction_decimal
           settings:
-            separator: /
+            precision: 2
+            auto_precision: false
+            prefix_suffix: false
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -1839,15 +1837,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quantity_amount_unit_value:
-          id: water_quantity_amount_unit_value
-          table: log__water_quantity_amount_unit
-          field: water_quantity_amount_unit_value
+        csc_water_quantity_amount_unit_value:
+          id: csc_water_quantity_amount_unit_value
+          table: log__csc_water_quantity_amount_unit
+          field: csc_water_quantity_amount_unit_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quantity_amount_unit
+          entity_field: csc_water_quantity_amount_unit
           plugin_id: field
           label: 'Water Quantity Amount Unit'
           exclude: false
@@ -1903,15 +1901,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quantity_amount_unit_other_value:
-          id: water_quantity_amount_unit_other_value
-          table: log__water_quantity_amount_unit_other
-          field: water_quantity_amount_unit_other_value
+        csc_water_quantity_amt_ut_otr_value:
+          id: csc_water_quantity_amt_ut_otr_value
+          table: log__csc_water_quantity_amt_ut_otr
+          field: csc_water_quantity_amt_ut_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quantity_amount_unit_other
+          entity_field: csc_water_quantity_amt_ut_otr
           plugin_id: field
           label: 'Other Water Quantity Amount Unit'
           exclude: false
@@ -1968,15 +1966,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quantity_purpose_value:
-          id: water_quantity_purpose_value
-          table: log__water_quantity_purpose
-          field: water_quantity_purpose_value
+        csc_water_quantity_purpose_value:
+          id: csc_water_quantity_purpose_value
+          table: log__csc_water_quantity_purpose
+          field: csc_water_quantity_purpose_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quantity_purpose
+          entity_field: csc_water_quantity_purpose
           plugin_id: field
           label: 'Water Quantity Purpose'
           exclude: false
@@ -2032,15 +2030,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        water_quantity_purpose_other_value:
-          id: water_quantity_purpose_other_value
-          table: log__water_quantity_purpose_other
-          field: water_quantity_purpose_other_value
+        csc_water_quantity_purpose_otr_value:
+          id: csc_water_quantity_purpose_otr_value
+          table: log__csc_water_quantity_purpose_otr
+          field: csc_water_quantity_purpose_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: water_quantity_purpose_other
+          entity_field: csc_water_quantity_purpose_otr
           plugin_id: field
           label: 'Other Water Quantity Purpose'
           exclude: false
@@ -2097,15 +2095,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_erosion_value:
-          id: reduced_erosion_value
-          table: log__reduced_erosion
-          field: reduced_erosion_value
+        csc_reduced_erosion_value:
+          id: csc_reduced_erosion_value
+          table: log__csc_reduced_erosion
+          field: csc_reduced_erosion_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_erosion
+          entity_field: csc_reduced_erosion
           plugin_id: field
           label: 'Reduced Erosion'
           exclude: false
@@ -2161,15 +2159,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_erosion_amount_numerator:
-          id: reduced_erosion_amount_numerator
-          table: log__reduced_erosion_amount
-          field: reduced_erosion_amount_numerator
+        csc_reduced_erosion_amount_numerator:
+          id: csc_reduced_erosion_amount_numerator
+          table: log__csc_reduced_erosion_amount
+          field: csc_reduced_erosion_amount_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_erosion_amount
+          entity_field: csc_reduced_erosion_amount
           plugin_id: field
           label: 'Reduced Erosion Amount'
           exclude: false
@@ -2216,7 +2214,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -2228,15 +2226,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_erosion_amount_unit_value:
-          id: reduced_erosion_amount_unit_value
-          table: log__reduced_erosion_amount_unit
-          field: reduced_erosion_amount_unit_value
+        csc_reduced_erosion_amount_unit_value:
+          id: csc_reduced_erosion_amount_unit_value
+          table: log__csc_reduced_erosion_amount_unit
+          field: csc_reduced_erosion_amount_unit_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_erosion_amount_unit
+          entity_field: csc_reduced_erosion_amount_unit
           plugin_id: field
           label: 'Reduced Erosion Amount Unit'
           exclude: false
@@ -2292,15 +2290,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_erosion_amount_unit_other_value:
-          id: reduced_erosion_amount_unit_other_value
-          table: log__reduced_erosion_amount_unit_other
-          field: reduced_erosion_amount_unit_other_value
+        csc_reduced_erosion_amt_ut_otr_value:
+          id: csc_reduced_erosion_amt_ut_otr_value
+          table: log__csc_reduced_erosion_amt_ut_otr
+          field: csc_reduced_erosion_amt_ut_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_erosion_amount_unit_other
+          entity_field: csc_reduced_erosion_amt_ut_otr
           plugin_id: field
           label: 'Other Reduced Erosion Amount Unit'
           exclude: false
@@ -2357,15 +2355,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_erosion_purpose_value:
-          id: reduced_erosion_purpose_value
-          table: log__reduced_erosion_purpose
-          field: reduced_erosion_purpose_value
+        csc_reduced_erosion_purpose_value:
+          id: csc_reduced_erosion_purpose_value
+          table: log__csc_reduced_erosion_purpose
+          field: csc_reduced_erosion_purpose_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_erosion_purpose
+          entity_field: csc_reduced_erosion_purpose
           plugin_id: field
           label: 'Reduced Erosion Purpose'
           exclude: false
@@ -2421,15 +2419,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_erosion_purpose_other_value:
-          id: reduced_erosion_purpose_other_value
-          table: log__reduced_erosion_purpose_other
-          field: reduced_erosion_purpose_other_value
+        csc_reduced_erosion_purpose_otr_value:
+          id: csc_reduced_erosion_purpose_otr_value
+          table: log__csc_reduced_erosion_purpose_otr
+          field: csc_reduced_erosion_purpose_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_erosion_purpose_other
+          entity_field: csc_reduced_erosion_purpose_otr
           plugin_id: field
           label: 'Other Reduced Erosion Purpose'
           exclude: false
@@ -2486,15 +2484,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_energy_use_numerator:
-          id: reduced_energy_use_numerator
-          table: log__reduced_energy_use
-          field: reduced_energy_use_numerator
+        csc_reduced_energy_use_numerator:
+          id: csc_reduced_energy_use_numerator
+          table: log__csc_reduced_energy_use
+          field: csc_reduced_energy_use_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_energy_use
+          entity_field: csc_reduced_energy_use
           plugin_id: field
           label: 'Reduced Energy Use'
           exclude: false
@@ -2541,7 +2539,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -2553,15 +2551,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_energy_use_amount_numerator:
-          id: reduced_energy_use_amount_numerator
-          table: log__reduced_energy_use_amount
-          field: reduced_energy_use_amount_numerator
+        csc_reduced_energy_use_amount_numerator:
+          id: csc_reduced_energy_use_amount_numerator
+          table: log__csc_reduced_energy_use_amount
+          field: csc_reduced_energy_use_amount_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_energy_use_amount
+          entity_field: csc_reduced_energy_use_amount
           plugin_id: field
           label: 'Reduced Energy Use Amount'
           exclude: false
@@ -2608,7 +2606,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -2620,15 +2618,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_energy_use_amount_unit_value:
-          id: reduced_energy_use_amount_unit_value
-          table: log__reduced_energy_use_amount_unit
-          field: reduced_energy_use_amount_unit_value
+        csc_reduced_energy_use_amt_ut_value:
+          id: csc_reduced_energy_use_amt_ut_value
+          table: log__csc_reduced_energy_use_amt_ut
+          field: csc_reduced_energy_use_amt_ut_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_energy_use_amount_unit
+          entity_field: csc_reduced_energy_use_amt_ut
           plugin_id: field
           label: 'Reduced Energy Use Amount Unit'
           exclude: false
@@ -2684,15 +2682,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_energy_use_amount_unit_other_value:
-          id: reduced_energy_use_amount_unit_other_value
-          table: log__reduced_energy_use_amount_unit_other
-          field: reduced_energy_use_amount_unit_other_value
+        csc_red_energy_use_amt_ut_otr_value:
+          id: csc_red_energy_use_amt_ut_otr_value
+          table: log__csc_red_energy_use_amt_ut_otr
+          field: csc_red_energy_use_amt_ut_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_energy_use_amount_unit_other
+          entity_field: csc_red_energy_use_amt_ut_otr
           plugin_id: field
           label: 'Other Reduced Energy Use Amount Unit'
           exclude: false
@@ -2749,15 +2747,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_energy_use_purpose_value:
-          id: reduced_energy_use_purpose_value
-          table: log__reduced_energy_use_purpose
-          field: reduced_energy_use_purpose_value
+        csc_reduced_energy_use_purpose_value:
+          id: csc_reduced_energy_use_purpose_value
+          table: log__csc_reduced_energy_use_purpose
+          field: csc_reduced_energy_use_purpose_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_energy_use_purpose
+          entity_field: csc_reduced_energy_use_purpose
           plugin_id: field
           label: 'Reduced Energy Use Purpose'
           exclude: false
@@ -2813,15 +2811,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        reduced_energy_use_purpose_other_value:
-          id: reduced_energy_use_purpose_other_value
-          table: log__reduced_energy_use_purpose_other
-          field: reduced_energy_use_purpose_other_value
+        csc_red_energy_use_purpose_otr_value:
+          id: csc_red_energy_use_purpose_otr_value
+          table: log__csc_red_energy_use_purpose_otr
+          field: csc_red_energy_use_purpose_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: reduced_energy_use_purpose_other
+          entity_field: csc_red_energy_use_purpose_otr
           plugin_id: field
           label: 'Other Reduced Energy Use Purpose'
           exclude: false
@@ -2878,15 +2876,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        avoided_land_conversion_value:
-          id: avoided_land_conversion_value
-          table: log__avoided_land_conversion
-          field: avoided_land_conversion_value
+        csc_avoided_land_conversion_value:
+          id: csc_avoided_land_conversion_value
+          table: log__csc_avoided_land_conversion
+          field: csc_avoided_land_conversion_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: avoided_land_conversion
+          entity_field: csc_avoided_land_conversion
           plugin_id: field
           label: 'Avoided Land Conversion'
           exclude: false
@@ -2942,15 +2940,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        avoided_land_conversion_amount_numerator:
-          id: avoided_land_conversion_amount_numerator
-          table: log__avoided_land_conversion_amount
-          field: avoided_land_conversion_amount_numerator
+        csc_avoided_land_conversion_amt_numerator:
+          id: csc_avoided_land_conversion_amt_numerator
+          table: log__csc_avoided_land_conversion_amt
+          field: csc_avoided_land_conversion_amt_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: avoided_land_conversion_amount
+          entity_field: csc_avoided_land_conversion_amt
           plugin_id: field
           label: 'Avoided Land Conversion Amount'
           exclude: false
@@ -2997,7 +2995,7 @@ display:
           type: fraction_decimal
           settings:
             precision: 2
-            auto_precision: true
+            auto_precision: false
             prefix_suffix: false
           group_column: ''
           group_columns: {  }
@@ -3009,15 +3007,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        avoided_land_conversion_unit_value:
-          id: avoided_land_conversion_unit_value
-          table: log__avoided_land_conversion_unit
-          field: avoided_land_conversion_unit_value
+        csc_avoided_land_conversion_ut_value:
+          id: csc_avoided_land_conversion_ut_value
+          table: log__csc_avoided_land_conversion_ut
+          field: csc_avoided_land_conversion_ut_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: avoided_land_conversion_unit
+          entity_field: csc_avoided_land_conversion_ut
           plugin_id: field
           label: 'Avoided Land Conversion Unit'
           exclude: false
@@ -3073,15 +3071,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        avoided_land_conversion_unit_other_value:
-          id: avoided_land_conversion_unit_other_value
-          table: log__avoided_land_conversion_unit_other
-          field: avoided_land_conversion_unit_other_value
+        csc_avo_land_conversion_ut_otr_value:
+          id: csc_avo_land_conversion_ut_otr_value
+          table: log__csc_avo_land_conversion_ut_otr
+          field: csc_avo_land_conversion_ut_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: avoided_land_conversion_unit_other
+          entity_field: csc_avo_land_conversion_ut_otr
           plugin_id: field
           label: 'Other Avoided Land Conversion Unit'
           exclude: false
@@ -3138,15 +3136,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        avoided_land_conversion_purpose_value:
-          id: avoided_land_conversion_purpose_value
-          table: log__avoided_land_conversion_purpose
-          field: avoided_land_conversion_purpose_value
+        csc_avo_land_conversion_purpose_value:
+          id: csc_avo_land_conversion_purpose_value
+          table: log__csc_avo_land_conversion_purpose
+          field: csc_avo_land_conversion_purpose_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: avoided_land_conversion_purpose
+          entity_field: csc_avo_land_conversion_purpose
           plugin_id: field
           label: 'Avoided Land Conversion Purpose'
           exclude: false
@@ -3202,15 +3200,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        avoided_land_conversion_purpose_other_value:
-          id: avoided_land_conversion_purpose_other_value
-          table: log__avoided_land_conversion_purpose_other
-          field: avoided_land_conversion_purpose_other_value
+        csc_avo_land_conv_purpose_otr_value:
+          id: csc_avo_land_conv_purpose_otr_value
+          table: log__csc_avo_land_conv_purpose_otr
+          field: csc_avo_land_conv_purpose_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: avoided_land_conversion_purpose_other
+          entity_field: csc_avo_land_conv_purpose_otr
           plugin_id: field
           label: 'Other Avoided Land Conversion Purpose'
           exclude: false
@@ -3267,15 +3265,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        improved_wildlife_habitat_value:
-          id: improved_wildlife_habitat_value
-          table: log__improved_wildlife_habitat
-          field: improved_wildlife_habitat_value
+        csc_improved_wildlife_habitat_value:
+          id: csc_improved_wildlife_habitat_value
+          table: log__csc_improved_wildlife_habitat
+          field: csc_improved_wildlife_habitat_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: improved_wildlife_habitat
+          entity_field: csc_improved_wildlife_habitat
           plugin_id: field
           label: 'Improved Wildlife Habitat'
           exclude: false
@@ -3331,15 +3329,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        improved_wildlife_habitat_amount_numerator:
-          id: improved_wildlife_habitat_amount_numerator
-          table: log__improved_wildlife_habitat_amount
-          field: improved_wildlife_habitat_amount_numerator
+        csc_imp_wildlife_habitat_amt_numerator:
+          id: csc_imp_wildlife_habitat_amt_numerator
+          table: log__csc_imp_wildlife_habitat_amt
+          field: csc_imp_wildlife_habitat_amt_numerator
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: improved_wildlife_habitat_amount
+          entity_field: csc_imp_wildlife_habitat_amt
           plugin_id: field
           label: 'Improved Wildlife Habitat Amount'
           exclude: false
@@ -3383,11 +3381,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: numerator
-          type: fraction_decimal
+          type: fraction
           settings:
-            precision: 2
-            auto_precision: true
-            prefix_suffix: false
+            separator: /
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -3398,15 +3394,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        improved_wildlife_habitat_unit_value:
-          id: improved_wildlife_habitat_unit_value
-          table: log__improved_wildlife_habitat_unit
-          field: improved_wildlife_habitat_unit_value
+        csc_imp_wildlife_habitat_ut_value:
+          id: csc_imp_wildlife_habitat_ut_value
+          table: log__csc_imp_wildlife_habitat_ut
+          field: csc_imp_wildlife_habitat_ut_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: improved_wildlife_habitat_unit
+          entity_field: csc_imp_wildlife_habitat_ut
           plugin_id: field
           label: 'Improved Wildlife Habitat Unit'
           exclude: false
@@ -3462,15 +3458,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        improved_wildlife_habitat_amount_unit_other_value:
-          id: improved_wildlife_habitat_amount_unit_other_value
-          table: log__improved_wildlife_habitat_amount_unit_other
-          field: improved_wildlife_habitat_amount_unit_other_value
+        csc_imp_wld_habitat_amt_ut_otr_value:
+          id: csc_imp_wld_habitat_amt_ut_otr_value
+          table: log__csc_imp_wld_habitat_amt_ut_otr
+          field: csc_imp_wld_habitat_amt_ut_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: improved_wildlife_habitat_amount_unit_other
+          entity_field: csc_imp_wld_habitat_amt_ut_otr
           plugin_id: field
           label: 'Other Improved Wildlife Habitat Unit'
           exclude: false
@@ -3527,15 +3523,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        improved_wildlife_habitat_purpose_value:
-          id: improved_wildlife_habitat_purpose_value
-          table: log__improved_wildlife_habitat_purpose
-          field: improved_wildlife_habitat_purpose_value
+        csc_imp_wld_habitat_purpose_value:
+          id: csc_imp_wld_habitat_purpose_value
+          table: log__csc_imp_wld_habitat_purpose
+          field: csc_imp_wld_habitat_purpose_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: improved_wildlife_habitat_purpose
+          entity_field: csc_imp_wld_habitat_purpose
           plugin_id: field
           label: 'Improved Wildlife Habitat Purpose'
           exclude: false
@@ -3591,15 +3587,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        improved_wildlife_habitat_purpose_other_value:
-          id: improved_wildlife_habitat_purpose_other_value
-          table: log__improved_wildlife_habitat_purpose_other
-          field: improved_wildlife_habitat_purpose_other_value
+        csc_imp_wld_habitat_purpose_otr_value:
+          id: csc_imp_wld_habitat_purpose_otr_value
+          table: log__csc_imp_wld_habitat_purpose_otr
+          field: csc_imp_wld_habitat_purpose_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: improved_wildlife_habitat_purpose_other
+          entity_field: csc_imp_wld_habitat_purpose_otr
           plugin_id: field
           label: 'Other Improved Wildlife Habitat Purpose'
           exclude: false
@@ -3657,9 +3653,23 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: none
+        type: mini
         options:
           offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -3671,9 +3681,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
-        options:
-          perm: 'view any log'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -3689,7 +3698,7 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            environmental_benefits: environmental_benefits
+            csc_environmental_benefits: csc_environmental_benefits
           expose:
             operator_limit_selection: false
             operator_list: {  }
@@ -3707,35 +3716,14 @@ display:
           query_tags: {  }
       relationships: {  }
       header: {  }
-      footer:
-        display_link:
-          id: display_link
-          table: views
-          field: display_link
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: display_link
-          label: 'Export CSV'
-          empty: false
-          display_id: rest_export_1
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Displaying @start - @end of @total'
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   page_1:
     id: page_1
@@ -3746,22 +3734,13 @@ display:
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: logs/environmental_benefits
-      menu:
-        type: normal
-        title: 'Additional Environmental Benefits Menu'
-        description: ''
-        weight: 0
-        expanded: false
-        menu_name: account
-        parent: ''
-        context: '0'
+      path: logs/csc_environmental_benefits
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   rest_export_1:
     id: rest_export_1
@@ -3770,35 +3749,24 @@ display:
     position: 2
     display_options:
       pager:
-        type: none
+        type: some
         options:
           offset: 0
+          items_per_page: 10
       style:
         type: serializer
-        options:
-          formats:
-            csv: csv
       row:
-        type: data_field
-        options:
-          field_options:
-            name:
-              alias: ''
-              raw_output: false
+        type: data_entity
+        options: {  }
       defaults:
         style: false
         row: false
-      display_extenders:
-        collapsible_filter:
-          collapsible: false
-      path: additional_environmental_benefits_logs.csv
-      auth:
-        - cookie
+      display_extenders: {  }
+      path: environmental_benefits_logs.csv
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - request_format
-        - user.permissions
       tags: {  }

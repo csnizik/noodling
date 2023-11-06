@@ -2,16 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - log.type.farm_summary
-    - system.menu.account
+    - log.type.csc_farm_summary
   module:
-    - csv_serialization
     - log
     - options
     - rest
     - serialization
-    - user
-id: farm_summary_view
+id: csc_farm_summary_view
 label: 'Farm Summary View'
 module: views
 description: ''
@@ -37,7 +34,7 @@ display:
           entity_type: null
           entity_field: name
           plugin_id: field
-          label: Name
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -91,15 +88,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_fiscal_year_value:
-          id: farm_summary_fiscal_year_value
-          table: log__farm_summary_fiscal_year
-          field: farm_summary_fiscal_year_value
+        csc_farm_summary_fiscal_year_value:
+          id: csc_farm_summary_fiscal_year_value
+          table: log__csc_farm_summary_fiscal_year
+          field: csc_farm_summary_fiscal_year_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_fiscal_year
+          entity_field: csc_farm_summary_fiscal_year
           plugin_id: field
           label: 'Federal Fiscal Year of report submission'
           exclude: false
@@ -156,210 +153,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_summary_fiscal_year_value:
-          id: f_summary_fiscal_year_value
-          table: log__f_summary_fiscal_year
-          field: f_summary_fiscal_year_value
+        csc_farm_summary_fiscal_quarter_value:
+          id: csc_farm_summary_fiscal_quarter_value
+          table: log__csc_farm_summary_fiscal_quarter
+          field: csc_farm_summary_fiscal_quarter_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: f_summary_fiscal_year
-          plugin_id: field
-          label: 'Federal Fiscal Year of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        g_benefits_alternate_modeled_fiscal_year_value:
-          id: g_benefits_alternate_modeled_fiscal_year_value
-          table: log__g_benefits_alternate_modeled_fiscal_year
-          field: g_benefits_alternate_modeled_fiscal_year_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: g_benefits_alternate_modeled_fiscal_year
-          plugin_id: field
-          label: 'Federal Fiscal Year of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        g_benefits_measured_fiscal_year_value:
-          id: g_benefits_measured_fiscal_year_value
-          table: log__g_benefits_measured_fiscal_year
-          field: g_benefits_measured_fiscal_year_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: g_benefits_measured_fiscal_year
-          plugin_id: field
-          label: 'Federal Fiscal Year of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_fiscal_quarter_value:
-          id: farm_summary_fiscal_quarter_value
-          table: log__farm_summary_fiscal_quarter
-          field: farm_summary_fiscal_quarter_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_fiscal_quarter
+          entity_field: csc_farm_summary_fiscal_quarter
           plugin_id: field
           label: 'Federal Fiscal Quarter of report submission'
           exclude: false
@@ -416,210 +218,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        f_summary_fiscal_quarter_value:
-          id: f_summary_fiscal_quarter_value
-          table: log__f_summary_fiscal_quarter
-          field: f_summary_fiscal_quarter_value
+        csc_farm_summary_state_target_id:
+          id: csc_farm_summary_state_target_id
+          table: log__csc_farm_summary_state
+          field: csc_farm_summary_state_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: f_summary_fiscal_quarter
-          plugin_id: field
-          label: 'Federal Fiscal Quarter of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        g_benefits_alternate_modeled_fiscal_quarter_value:
-          id: g_benefits_alternate_modeled_fiscal_quarter_value
-          table: log__g_benefits_alternate_modeled_fiscal_quarter
-          field: g_benefits_alternate_modeled_fiscal_quarter_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: g_benefits_alternate_modeled_fiscal_quarter
-          plugin_id: field
-          label: 'Federal Fiscal Quarter of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        g_benefits_measured_fiscal_quarter_value:
-          id: g_benefits_measured_fiscal_quarter_value
-          table: log__g_benefits_measured_fiscal_quarter
-          field: g_benefits_measured_fiscal_quarter_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: g_benefits_measured_fiscal_quarter
-          plugin_id: field
-          label: 'Federal Fiscal Quarter of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_state_target_id:
-          id: farm_summary_state_target_id
-          table: log__farm_summary_state
-          field: farm_summary_state_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_state
+          entity_field: csc_farm_summary_state
           plugin_id: field
           label: 'State or territory'
           exclude: false
@@ -676,15 +283,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_county_target_id:
-          id: farm_summary_county_target_id
-          table: log__farm_summary_county
-          field: farm_summary_county_target_id
+        csc_farm_summary_county_target_id:
+          id: csc_farm_summary_county_target_id
+          table: log__csc_farm_summary_county
+          field: csc_farm_summary_county_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_county
+          entity_field: csc_farm_summary_county
           plugin_id: field
           label: County
           exclude: false
@@ -741,15 +348,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_producer_ta_received_target_id:
-          id: farm_summary_producer_ta_received_target_id
-          table: log__farm_summary_producer_ta_received
-          field: farm_summary_producer_ta_received_target_id
+        csc_fa_summ_prdcr_ta_rcvd_target_id:
+          id: csc_fa_summ_prdcr_ta_rcvd_target_id
+          table: log__csc_fa_summ_prdcr_ta_rcvd
+          field: csc_fa_summ_prdcr_ta_rcvd_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_producer_ta_received
+          entity_field: csc_fa_summ_prdcr_ta_rcvd
           plugin_id: field
           label: 'Producer TA received'
           exclude: false
@@ -804,17 +411,17 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ' | '
+          separator: ', '
           field_api_classes: false
-        farm_summary_producer_ta_received_other_value:
-          id: farm_summary_producer_ta_received_other_value
-          table: log__farm_summary_producer_ta_received_other
-          field: farm_summary_producer_ta_received_other_value
+        csc_fa_summ_prdcr_ta_rcvd_otr_value:
+          id: csc_fa_summ_prdcr_ta_rcvd_otr_value
+          table: log__csc_fa_summ_prdcr_ta_rcvd_otr
+          field: csc_fa_summ_prdcr_ta_rcvd_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_producer_ta_received_other
+          entity_field: csc_fa_summ_prdcr_ta_rcvd_otr
           plugin_id: field
           label: 'Other producer TA received'
           exclude: false
@@ -871,15 +478,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_producer_incentive_amount_value:
-          id: farm_summary_producer_incentive_amount_value
-          table: log__farm_summary_producer_incentive_amount
-          field: farm_summary_producer_incentive_amount_value
+        csc_fa_summ_prdcr_inc_amt_value:
+          id: csc_fa_summ_prdcr_inc_amt_value
+          table: log__csc_fa_summ_prdcr_inc_amt
+          field: csc_fa_summ_prdcr_inc_amt_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_producer_incentive_amount
+          entity_field: csc_fa_summ_prdcr_inc_amt
           plugin_id: field
           label: 'Producer incentive amount'
           exclude: false
@@ -939,15 +546,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_incentive_reason_target_id:
-          id: farm_summary_incentive_reason_target_id
-          table: log__farm_summary_incentive_reason
-          field: farm_summary_incentive_reason_target_id
+        csc_fa_summ_inc_reason_target_id:
+          id: csc_fa_summ_inc_reason_target_id
+          table: log__csc_fa_summ_inc_reason
+          field: csc_fa_summ_inc_reason_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_incentive_reason
+          entity_field: csc_fa_summ_inc_reason
           plugin_id: field
           label: 'Incentive reason'
           exclude: false
@@ -1002,17 +609,17 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ' | '
+          separator: ', '
           field_api_classes: false
-        farm_summary_incentive_reason_other_value:
-          id: farm_summary_incentive_reason_other_value
-          table: log__farm_summary_incentive_reason_other
-          field: farm_summary_incentive_reason_other_value
+        csc_fa_summ_inc_reason_otr_value:
+          id: csc_fa_summ_inc_reason_otr_value
+          table: log__csc_fa_summ_inc_reason_otr
+          field: csc_fa_summ_inc_reason_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_incentive_reason_other
+          entity_field: csc_fa_summ_inc_reason_otr
           plugin_id: field
           label: 'Other incentive reason'
           exclude: false
@@ -1069,15 +676,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_incentive_structure_target_id:
-          id: farm_summary_incentive_structure_target_id
-          table: log__farm_summary_incentive_structure
-          field: farm_summary_incentive_structure_target_id
+        csc_fa_summ_inc_structure_target_id:
+          id: csc_fa_summ_inc_structure_target_id
+          table: log__csc_fa_summ_inc_structure
+          field: csc_fa_summ_inc_structure_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_incentive_structure
+          entity_field: csc_fa_summ_inc_structure
           plugin_id: field
           label: 'Incentive structure'
           exclude: false
@@ -1132,17 +739,17 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ' | '
+          separator: ', '
           field_api_classes: false
-        farm_summary_incentive_structure_other_value:
-          id: farm_summary_incentive_structure_other_value
-          table: log__farm_summary_incentive_structure_other
-          field: farm_summary_incentive_structure_other_value
+        csc_fa_summ_inc_structure_otr_value:
+          id: csc_fa_summ_inc_structure_otr_value
+          table: log__csc_fa_summ_inc_structure_otr
+          field: csc_fa_summ_inc_structure_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_incentive_structure_other
+          entity_field: csc_fa_summ_inc_structure_otr
           plugin_id: field
           label: 'Other incentive structure'
           exclude: false
@@ -1199,15 +806,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_incentive_type_target_id:
-          id: farm_summary_incentive_type_target_id
-          table: log__farm_summary_incentive_type
-          field: farm_summary_incentive_type_target_id
+        csc_farm_summary_incentive_type_target_id:
+          id: csc_farm_summary_incentive_type_target_id
+          table: log__csc_farm_summary_incentive_type
+          field: csc_farm_summary_incentive_type_target_id
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_incentive_type
+          entity_field: csc_farm_summary_incentive_type
           plugin_id: field
           label: 'Incentive type'
           exclude: false
@@ -1262,17 +869,17 @@ display:
           delta_reversed: false
           delta_first_last: false
           multi_type: separator
-          separator: ' | '
+          separator: ', '
           field_api_classes: false
-        farm_summary_incentive_type_other_value:
-          id: farm_summary_incentive_type_other_value
-          table: log__farm_summary_incentive_type_other
-          field: farm_summary_incentive_type_other_value
+        csc_fa_summ_inc_type_otr_value:
+          id: csc_fa_summ_inc_type_otr_value
+          table: log__csc_fa_summ_inc_type_otr
+          field: csc_fa_summ_inc_type_otr_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_incentive_type_other
+          entity_field: csc_fa_summ_inc_type_otr
           plugin_id: field
           label: 'Other incentive type'
           exclude: false
@@ -1329,15 +936,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_payment_on_enrollment_value:
-          id: farm_summary_payment_on_enrollment_value
-          table: log__farm_summary_payment_on_enrollment
-          field: farm_summary_payment_on_enrollment_value
+        csc_fa_summ_pay_on_enrollment_value:
+          id: csc_fa_summ_pay_on_enrollment_value
+          table: log__csc_fa_summ_pay_on_enrollment
+          field: csc_fa_summ_pay_on_enrollment_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_payment_on_enrollment
+          entity_field: csc_fa_summ_pay_on_enrollment
           plugin_id: field
           label: 'Payment on enrollment'
           exclude: false
@@ -1393,15 +1000,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_payment_on_implementation_value:
-          id: farm_summary_payment_on_implementation_value
-          table: log__farm_summary_payment_on_implementation
-          field: farm_summary_payment_on_implementation_value
+        csc_fa_summ_pay_on_impl_value:
+          id: csc_fa_summ_pay_on_impl_value
+          table: log__csc_fa_summ_pay_on_impl
+          field: csc_fa_summ_pay_on_impl_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_payment_on_implementation
+          entity_field: csc_fa_summ_pay_on_impl
           plugin_id: field
           label: 'Payment on implementation'
           exclude: false
@@ -1457,15 +1064,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_payment_on_harvest_value:
-          id: farm_summary_payment_on_harvest_value
-          table: log__farm_summary_payment_on_harvest
-          field: farm_summary_payment_on_harvest_value
+        csc_fa_summ_pay_on_harvest_value:
+          id: csc_fa_summ_pay_on_harvest_value
+          table: log__csc_fa_summ_pay_on_harvest
+          field: csc_fa_summ_pay_on_harvest_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_payment_on_harvest
+          entity_field: csc_fa_summ_pay_on_harvest
           plugin_id: field
           label: 'Payment on harvest'
           exclude: false
@@ -1521,15 +1128,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_payment_on_mmrv_value:
-          id: farm_summary_payment_on_mmrv_value
-          table: log__farm_summary_payment_on_mmrv
-          field: farm_summary_payment_on_mmrv_value
+        csc_fa_summ_pay_on_mmrv_value:
+          id: csc_fa_summ_pay_on_mmrv_value
+          table: log__csc_fa_summ_pay_on_mmrv
+          field: csc_fa_summ_pay_on_mmrv_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_payment_on_mmrv
+          entity_field: csc_fa_summ_pay_on_mmrv
           plugin_id: field
           label: 'Payment on MMRV'
           exclude: false
@@ -1585,15 +1192,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        farm_summary_payment_on_sale_value:
-          id: farm_summary_payment_on_sale_value
-          table: log__farm_summary_payment_on_sale
-          field: farm_summary_payment_on_sale_value
+        csc_fa_summ_pay_on_sale_value:
+          id: csc_fa_summ_pay_on_sale_value
+          table: log__csc_fa_summ_pay_on_sale
+          field: csc_fa_summ_pay_on_sale_value
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: log
-          entity_field: farm_summary_payment_on_sale
+          entity_field: csc_fa_summ_pay_on_sale
           plugin_id: field
           label: 'Payment on sale'
           exclude: false
@@ -1650,9 +1257,23 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: none
+        type: mini
         options:
           offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -1664,9 +1285,8 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
-        options:
-          perm: 'view any log'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
@@ -1682,12 +1302,33 @@ display:
           entity_field: type
           plugin_id: bundle
           value:
-            farm_summary: farm_summary
+            csc_farm_summary: csc_farm_summary
           expose:
             operator_limit_selection: false
             operator_list: {  }
       style:
         type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            name: name
+          default: '-1'
+          info:
+            name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
       query:
@@ -1700,35 +1341,14 @@ display:
           query_tags: {  }
       relationships: {  }
       header: {  }
-      footer:
-        display_link:
-          id: display_link
-          table: views
-          field: display_link
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: display_link
-          label: 'Export CSV'
-          empty: false
-          display_id: rest_export_1
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: 'Displaying @start - @end of @total'
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   page_1:
     id: page_1
@@ -1736,1260 +1356,16 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      fields:
-        name:
-          id: name
-          table: log_field_data
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: null
-          entity_field: name
-          plugin_id: field
-          label: Name
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_fiscal_year_value:
-          id: farm_summary_fiscal_year_value
-          table: log__farm_summary_fiscal_year
-          field: farm_summary_fiscal_year_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_fiscal_year
-          plugin_id: field
-          label: 'Federal Fiscal Year of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_fiscal_quarter_value:
-          id: farm_summary_fiscal_quarter_value
-          table: log__farm_summary_fiscal_quarter
-          field: farm_summary_fiscal_quarter_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_fiscal_quarter
-          plugin_id: field
-          label: 'Federal Fiscal Quarter of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_state_target_id:
-          id: farm_summary_state_target_id
-          table: log__farm_summary_state
-          field: farm_summary_state_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_state
-          plugin_id: field
-          label: 'State or territory'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_county_target_id:
-          id: farm_summary_county_target_id
-          table: log__farm_summary_county
-          field: farm_summary_county_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_county
-          plugin_id: field
-          label: County
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_producer_ta_received_target_id:
-          id: farm_summary_producer_ta_received_target_id
-          table: log__farm_summary_producer_ta_received
-          field: farm_summary_producer_ta_received_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_producer_ta_received
-          plugin_id: field
-          label: 'Producer TA received'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: ul
-          separator: ', '
-          field_api_classes: false
-        farm_summary_producer_ta_received_other_value:
-          id: farm_summary_producer_ta_received_other_value
-          table: log__farm_summary_producer_ta_received_other
-          field: farm_summary_producer_ta_received_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_producer_ta_received_other
-          plugin_id: field
-          label: 'Other producer TA received'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_producer_incentive_amount_value:
-          id: farm_summary_producer_incentive_amount_value
-          table: log__farm_summary_producer_incentive_amount
-          field: farm_summary_producer_incentive_amount_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_producer_incentive_amount
-          plugin_id: field
-          label: 'Producer incentive amount'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_decimal
-          settings:
-            thousand_separator: ''
-            decimal_separator: .
-            scale: 2
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_incentive_reason_target_id:
-          id: farm_summary_incentive_reason_target_id
-          table: log__farm_summary_incentive_reason
-          field: farm_summary_incentive_reason_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_reason
-          plugin_id: field
-          label: 'Incentive reason'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: ul
-          separator: ', '
-          field_api_classes: false
-        farm_summary_incentive_reason_other_value:
-          id: farm_summary_incentive_reason_other_value
-          table: log__farm_summary_incentive_reason_other
-          field: farm_summary_incentive_reason_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_reason_other
-          plugin_id: field
-          label: 'Other incentive reason'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_incentive_structure_target_id:
-          id: farm_summary_incentive_structure_target_id
-          table: log__farm_summary_incentive_structure
-          field: farm_summary_incentive_structure_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_structure
-          plugin_id: field
-          label: 'Incentive structure'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: ul
-          separator: ', '
-          field_api_classes: false
-        farm_summary_incentive_structure_other_value:
-          id: farm_summary_incentive_structure_other_value
-          table: log__farm_summary_incentive_structure_other
-          field: farm_summary_incentive_structure_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_structure_other
-          plugin_id: field
-          label: 'Other incentive structure'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_incentive_type_target_id:
-          id: farm_summary_incentive_type_target_id
-          table: log__farm_summary_incentive_type
-          field: farm_summary_incentive_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_type
-          plugin_id: field
-          label: 'Incentive type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: ul
-          separator: ', '
-          field_api_classes: false
-        farm_summary_incentive_type_other_value:
-          id: farm_summary_incentive_type_other_value
-          table: log__farm_summary_incentive_type_other
-          field: farm_summary_incentive_type_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_type_other
-          plugin_id: field
-          label: 'Other incentive type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_enrollment_value:
-          id: farm_summary_payment_on_enrollment_value
-          table: log__farm_summary_payment_on_enrollment
-          field: farm_summary_payment_on_enrollment_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_enrollment
-          plugin_id: field
-          label: 'Payment on enrollment'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_implementation_value:
-          id: farm_summary_payment_on_implementation_value
-          table: log__farm_summary_payment_on_implementation
-          field: farm_summary_payment_on_implementation_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_implementation
-          plugin_id: field
-          label: 'Payment on implementation'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_harvest_value:
-          id: farm_summary_payment_on_harvest_value
-          table: log__farm_summary_payment_on_harvest
-          field: farm_summary_payment_on_harvest_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_harvest
-          plugin_id: field
-          label: 'Payment on harvest'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_mmrv_value:
-          id: farm_summary_payment_on_mmrv_value
-          table: log__farm_summary_payment_on_mmrv
-          field: farm_summary_payment_on_mmrv_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_mmrv
-          plugin_id: field
-          label: 'Payment on MMRV'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_sale_value:
-          id: farm_summary_payment_on_sale_value
-          table: log__farm_summary_payment_on_sale
-          field: farm_summary_payment_on_sale_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_sale
-          plugin_id: field
-          label: 'Payment on sale'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-      defaults:
-        fields: false
       display_extenders:
         collapsible_filter:
           collapsible: false
-      path: logs/farm_summary
-      menu:
-        type: normal
-        title: 'Farm Summary Menu'
-        description: ''
-        weight: 0
-        expanded: false
-        menu_name: account
-        parent: ''
-        context: '0'
+      path: logs/csc_farm_summary
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - user.permissions
+        - url.query_args
       tags: {  }
   rest_export_1:
     id: rest_export_1
@@ -2997,1343 +1373,25 @@ display:
     display_plugin: rest_export
     position: 2
     display_options:
-      fields:
-        name:
-          id: name
-          table: log_field_data
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: null
-          entity_field: name
-          plugin_id: field
-          label: Name
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_fiscal_year_value:
-          id: farm_summary_fiscal_year_value
-          table: log__farm_summary_fiscal_year
-          field: farm_summary_fiscal_year_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_fiscal_year
-          plugin_id: field
-          label: 'Federal Fiscal Year of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_fiscal_quarter_value:
-          id: farm_summary_fiscal_quarter_value
-          table: log__farm_summary_fiscal_quarter
-          field: farm_summary_fiscal_quarter_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_fiscal_quarter
-          plugin_id: field
-          label: 'Federal Fiscal Quarter of report submission'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_state_target_id:
-          id: farm_summary_state_target_id
-          table: log__farm_summary_state
-          field: farm_summary_state_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_state
-          plugin_id: field
-          label: 'State or territory'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_county_target_id:
-          id: farm_summary_county_target_id
-          table: log__farm_summary_county
-          field: farm_summary_county_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_county
-          plugin_id: field
-          label: County
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_producer_ta_received_target_id:
-          id: farm_summary_producer_ta_received_target_id
-          table: log__farm_summary_producer_ta_received
-          field: farm_summary_producer_ta_received_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_producer_ta_received
-          plugin_id: field
-          label: 'Producer TA received'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ' | '
-          field_api_classes: false
-        farm_summary_producer_ta_received_other_value:
-          id: farm_summary_producer_ta_received_other_value
-          table: log__farm_summary_producer_ta_received_other
-          field: farm_summary_producer_ta_received_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_producer_ta_received_other
-          plugin_id: field
-          label: 'Other producer TA received'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_producer_incentive_amount_value:
-          id: farm_summary_producer_incentive_amount_value
-          table: log__farm_summary_producer_incentive_amount
-          field: farm_summary_producer_incentive_amount_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_producer_incentive_amount
-          plugin_id: field
-          label: 'Producer incentive amount'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_decimal
-          settings:
-            thousand_separator: ''
-            decimal_separator: .
-            scale: 2
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_incentive_reason_target_id:
-          id: farm_summary_incentive_reason_target_id
-          table: log__farm_summary_incentive_reason
-          field: farm_summary_incentive_reason_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_reason
-          plugin_id: field
-          label: 'Incentive reason'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ' | '
-          field_api_classes: false
-        farm_summary_incentive_reason_other_value:
-          id: farm_summary_incentive_reason_other_value
-          table: log__farm_summary_incentive_reason_other
-          field: farm_summary_incentive_reason_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_reason_other
-          plugin_id: field
-          label: 'Other incentive reason'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_incentive_structure_target_id:
-          id: farm_summary_incentive_structure_target_id
-          table: log__farm_summary_incentive_structure
-          field: farm_summary_incentive_structure_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_structure
-          plugin_id: field
-          label: 'Incentive structure'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ' | '
-          field_api_classes: false
-        farm_summary_incentive_structure_other_value:
-          id: farm_summary_incentive_structure_other_value
-          table: log__farm_summary_incentive_structure_other
-          field: farm_summary_incentive_structure_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_structure_other
-          plugin_id: field
-          label: 'Other incentive structure'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_incentive_type_target_id:
-          id: farm_summary_incentive_type_target_id
-          table: log__farm_summary_incentive_type
-          field: farm_summary_incentive_type_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_type
-          plugin_id: field
-          label: 'Incentive type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ' | '
-          field_api_classes: false
-        farm_summary_incentive_type_other_value:
-          id: farm_summary_incentive_type_other_value
-          table: log__farm_summary_incentive_type_other
-          field: farm_summary_incentive_type_other_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_incentive_type_other
-          plugin_id: field
-          label: 'Other incentive type'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_enrollment_value:
-          id: farm_summary_payment_on_enrollment_value
-          table: log__farm_summary_payment_on_enrollment
-          field: farm_summary_payment_on_enrollment_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_enrollment
-          plugin_id: field
-          label: 'Payment on enrollment'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_implementation_value:
-          id: farm_summary_payment_on_implementation_value
-          table: log__farm_summary_payment_on_implementation
-          field: farm_summary_payment_on_implementation_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_implementation
-          plugin_id: field
-          label: 'Payment on implementation'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_harvest_value:
-          id: farm_summary_payment_on_harvest_value
-          table: log__farm_summary_payment_on_harvest
-          field: farm_summary_payment_on_harvest_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_harvest
-          plugin_id: field
-          label: 'Payment on harvest'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_mmrv_value:
-          id: farm_summary_payment_on_mmrv_value
-          table: log__farm_summary_payment_on_mmrv
-          field: farm_summary_payment_on_mmrv_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_mmrv
-          plugin_id: field
-          label: 'Payment on MMRV'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        farm_summary_payment_on_sale_value:
-          id: farm_summary_payment_on_sale_value
-          table: log__farm_summary_payment_on_sale
-          field: farm_summary_payment_on_sale_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: log
-          entity_field: farm_summary_payment_on_sale
-          plugin_id: field
-          label: 'Payment on sale'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
       pager:
-        type: none
+        type: some
         options:
           offset: 0
+          items_per_page: 10
       style:
         type: serializer
-        options:
-          uses_fields: false
-          formats:
-            csv: csv
       row:
-        type: data_field
-        options:
-          field_options:
-            name:
-              alias: ''
-              raw_output: false
-            farm_summary_fiscal_year_value:
-              alias: ''
-              raw_output: false
-            f_summary_fiscal_year_value:
-              alias: ''
-              raw_output: false
-            g_benefits_alternate_modeled_fiscal_year_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_fiscal_year_value:
-              alias: ''
-              raw_output: false
-            farm_summary_fiscal_quarter_value:
-              alias: ''
-              raw_output: false
-            f_summary_fiscal_quarter_value:
-              alias: ''
-              raw_output: false
-            g_benefits_alternate_modeled_fiscal_quarter_value:
-              alias: ''
-              raw_output: false
-            g_benefits_measured_fiscal_quarter_value:
-              alias: ''
-              raw_output: false
-            farm_summary_state_target_id:
-              alias: ''
-              raw_output: false
-            farm_summary_county_target_id:
-              alias: ''
-              raw_output: false
-            farm_summary_producer_ta_received_target_id:
-              alias: ''
-              raw_output: false
-            farm_summary_producer_ta_received_other_value:
-              alias: ''
-              raw_output: false
-            farm_summary_producer_incentive_amount_value:
-              alias: ''
-              raw_output: false
-            farm_summary_incentive_reason_target_id:
-              alias: ''
-              raw_output: false
-            farm_summary_incentive_reason_other_value:
-              alias: ''
-              raw_output: false
-            farm_summary_incentive_structure_target_id:
-              alias: ''
-              raw_output: false
-            farm_summary_incentive_structure_other_value:
-              alias: ''
-              raw_output: false
-            farm_summary_incentive_type_target_id:
-              alias: ''
-              raw_output: false
-            farm_summary_incentive_type_other_value:
-              alias: ''
-              raw_output: false
-            farm_summary_payment_on_enrollment_value:
-              alias: ''
-              raw_output: false
-            farm_summary_payment_on_implementation_value:
-              alias: ''
-              raw_output: false
-            farm_summary_payment_on_harvest_value:
-              alias: ''
-              raw_output: false
-            farm_summary_payment_on_mmrv_value:
-              alias: ''
-              raw_output: false
-            farm_summary_payment_on_sale_value:
-              alias: ''
-              raw_output: false
+        type: data_entity
+        options: {  }
       defaults:
         style: false
         row: false
-        fields: false
-      display_extenders:
-        collapsible_filter:
-          collapsible: false
+      display_extenders: {  }
       path: farm_summary_logs.csv
-      auth:
-        - cookie
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - request_format
-        - user.permissions
       tags: {  }

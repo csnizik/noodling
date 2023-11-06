@@ -4,7 +4,7 @@ dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: field_summary
+id: csc_field_summary
 label: 'Field Summary'
 description: 'Field Summary'
 name_pattern: 'Field Summary log [log:id]'

@@ -1053,62 +1053,62 @@ class CsvImportController extends ControllerBase {
 
     foreach($csv as $csv_line) {
       $environmental_benefits_submission = [];
-      $environmental_benefits_submission['type'] = 'environmental_benefits';
+      $environmental_benefits_submission['type'] = 'csc_environmental_benefits';
       $environmental_benefits_submission['name'] = $csv_line[0];
-      $environmental_benefits_submission['fiscal_year'] = $csv_line[1];
-      $environmental_benefits_submission['fiscal_quarter'] = $csv_line[2];
-      $environmental_benefits_submission['field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $csv_line[3]]));
-      $environmental_benefits_submission['environmental_benefits'] = $csv_line[4];
-      $environmental_benefits_submission['nitrogen_loss'] = $csv_line[5];
-      $environmental_benefits_submission['nitrogen_loss_amount'] = $csv_line[6];
-      $environmental_benefits_submission['nitrogen_loss_amount_unit'] = $csv_line[7];
-      $environmental_benefits_submission['nitrogen_loss_amount_unit_other'] = $csv_line[8];
-      $environmental_benefits_submission['nitrogen_loss_purpose'] = $csv_line[9];
-      $environmental_benefits_submission['nitrogen_loss_purpose_other'] = $csv_line[10];
-      $environmental_benefits_submission['phosphorus_loss'] = $csv_line[11];
-      $environmental_benefits_submission['phosphorus_loss_amount'] = $csv_line[12];
-      $environmental_benefits_submission['phosphorus_loss_amount_unit'] = $csv_line[13];
-      $environmental_benefits_submission['phosphorus_loss_amount_unit_other'] = $csv_line[14];
-      $environmental_benefits_submission['phosphorus_loss_purpose'] = $csv_line[15];
-      $environmental_benefits_submission['phosphorus_loss_purpose_other'] = $csv_line[16];
-      $environmental_benefits_submission['other_water_quality'] = $csv_line[17];
-      $environmental_benefits_submission['other_water_quality_type'] = $csv_line[18];
-      $environmental_benefits_submission['other_water_quality_type_other'] = $csv_line[19];
-      $environmental_benefits_submission['other_water_quality_amount'] = $csv_line[20];
-      $environmental_benefits_submission['other_water_quality_amount_unit'] = $csv_line[21];
-      $environmental_benefits_submission['other_water_quality_amount_unit_other'] = $csv_line[22];
-      $environmental_benefits_submission['other_water_quality_purpose'] = $csv_line[23];
-      $environmental_benefits_submission['other_water_quality_purpose_other'] = $csv_line[24];
-      $environmental_benefits_submission['water_quality'] = $csv_line[25];
-      $environmental_benefits_submission['water_quality_amount'] = $csv_line[26];
-      $environmental_benefits_submission['water_quality_amount_unit'] = $csv_line[27];
-      $environmental_benefits_submission['water_quality_amount_unit_other'] = $csv_line[28];
-      $environmental_benefits_submission['water_quality_purpose'] = $csv_line[29];
-      $environmental_benefits_submission['water_quality_purpose_other'] = $csv_line[30];
-      $environmental_benefits_submission['reduced_erosion'] = $csv_line[31];
-      $environmental_benefits_submission['reduced_erosion_amount'] = $csv_line[32];
-      $environmental_benefits_submission['reduced_erosion_amount_unit'] = $csv_line[33];
-      $environmental_benefits_submission['reduced_erosion_amount_unit_other'] = $csv_line[34];
-      $environmental_benefits_submission['reduced_erosion_purpose'] = $csv_line[35];
-      $environmental_benefits_submission['reduced_erosion_purpose_other'] = $csv_line[36];
-      $environmental_benefits_submission['reduced_energy_use'] = $csv_line[37];
-      $environmental_benefits_submission['reduced_energy_use_amount'] = $csv_line[38];
-      $environmental_benefits_submission['reduced_energy_use_amount_unit'] = $csv_line[39];
-      $environmental_benefits_submission['reduced_energy_use_amount_unit_other'] = $csv_line[40];
-      $environmental_benefits_submission['reduced_energy_use_purpose'] = $csv_line[41];
-      $environmental_benefits_submission['reduced_energy_use_purpose_other'] = $csv_line[42];
-      $environmental_benefits_submission['avoided_land_conversion'] = $csv_line[43];
-      $environmental_benefits_submission['avoided_land_conversion_amount'] = $csv_line[44];
-      $environmental_benefits_submission['avoided_land_conversion_unit'] = $csv_line[45];
-      $environmental_benefits_submission['avoided_land_conversion_unit_other'] = $csv_line[46];
-      $environmental_benefits_submission['avoided_land_conversion_purpose'] = $csv_line[47];
-      $environmental_benefits_submission['avoided_land_conversion_purpose_other'] = $csv_line[48];
-      $environmental_benefits_submission['improved_wildlife_habitat'] = $csv_line[49];
-      $environmental_benefits_submission['improved_wildlife_habitat_amount'] = $csv_line[50];
-      $environmental_benefits_submission['improved_wildlife_habitat_unit'] = $csv_line[51];
-      $environmental_benefits_submission['improved_wildlife_habitat_amount_unit_other'] = $csv_line[52];
-      $environmental_benefits_submission['improved_wildlife_habitat_purpose'] = $csv_line[53];
-      $environmental_benefits_submission['improved_wildlife_habitat_purpose_other'] = $csv_line[54];
+      $environmental_benefits_submission['csc_fiscal_year'] = $csv_line[1];
+      $environmental_benefits_submission['csc_fiscal_quarter'] = $csv_line[2];
+      $environmental_benefits_submission['csc_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[3]]));
+      $environmental_benefits_submission['csc_environmental_benefits'] = $csv_line[4];
+      $environmental_benefits_submission['csc_nitrogen_loss'] = $csv_line[5];
+      $environmental_benefits_submission['csc_nitrogen_loss_amount'] = $csv_line[6];
+      $environmental_benefits_submission['csc_nitrogen_loss_amount_unit'] = $csv_line[7];
+      $environmental_benefits_submission['csc_nitrogen_loss_amt_ut_otr'] = $csv_line[8];
+      $environmental_benefits_submission['csc_nitrogen_loss_purpose'] = $csv_line[9];
+      $environmental_benefits_submission['csc_nitrogen_loss_purpose_other'] = $csv_line[10];
+      $environmental_benefits_submission['csc_phosphorus_loss'] = $csv_line[11];
+      $environmental_benefits_submission['csc_phosphorus_loss_amount'] = $csv_line[12];
+      $environmental_benefits_submission['csc_phosphorus_loss_amount_unit'] = $csv_line[13];
+      $environmental_benefits_submission['csc_phosphorus_loss_amt_ut_otr'] = $csv_line[14];
+      $environmental_benefits_submission['csc_phosphorus_loss_purpose'] = $csv_line[15];
+      $environmental_benefits_submission['csc_phosphorus_loss_purpose_otr'] = $csv_line[16];
+      $environmental_benefits_submission['csc_other_water_quality'] = $csv_line[17];
+      $environmental_benefits_submission['csc_other_water_quality_type'] = $csv_line[18];
+      $environmental_benefits_submission['csc_otr_water_quality_type_otr'] = $csv_line[19];
+      $environmental_benefits_submission['csc_other_water_quality_amount'] = $csv_line[20];
+      $environmental_benefits_submission['csc_otr_water_quality_amt_ut'] = $csv_line[21];
+      $environmental_benefits_submission['csc_otr_h2o_quality_amt_ut_otr'] = $csv_line[22];
+      $environmental_benefits_submission['csc_other_water_quality_purpose'] = $csv_line[23];
+      $environmental_benefits_submission['csc_otr_h2o_quality_purpose_otr'] = $csv_line[24];
+      $environmental_benefits_submission['csc_water_quantity'] = $csv_line[25];
+      $environmental_benefits_submission['csc_water_quantity_amount'] = $csv_line[26];
+      $environmental_benefits_submission['csc_water_quantity_amount_unit'] = $csv_line[27];
+      $environmental_benefits_submission['csc_water_quantity_amt_ut_otr'] = $csv_line[28];
+      $environmental_benefits_submission['csc_water_quantity_purpose'] = $csv_line[29];
+      $environmental_benefits_submission['csc_water_quantity_purpose_otr'] = $csv_line[30];
+      $environmental_benefits_submission['csc_reduced_erosion'] = $csv_line[31];
+      $environmental_benefits_submission['csc_reduced_erosion_amount'] = $csv_line[32];
+      $environmental_benefits_submission['csc_reduced_erosion_amount_unit'] = $csv_line[33];
+      $environmental_benefits_submission['csc_reduced_erosion_amt_ut_otr'] = $csv_line[34];
+      $environmental_benefits_submission['csc_reduced_erosion_purpose'] = $csv_line[35];
+      $environmental_benefits_submission['csc_reduced_erosion_purpose_otr'] = $csv_line[36];
+      $environmental_benefits_submission['csc_reduced_energy_use'] = $csv_line[37];
+      $environmental_benefits_submission['csc_reduced_energy_use_amount'] = $csv_line[38];
+      $environmental_benefits_submission['csc_reduced_energy_use_amt_ut'] = $csv_line[39];
+      $environmental_benefits_submission['csc_red_energy_use_amt_ut_otr'] = $csv_line[40];
+      $environmental_benefits_submission['csc_reduced_energy_use_purpose'] = $csv_line[41];
+      $environmental_benefits_submission['csc_red_energy_use_purpose_otr'] = $csv_line[42];
+      $environmental_benefits_submission['csc_avoided_land_conversion'] = $csv_line[43];
+      $environmental_benefits_submission['csc_avoided_land_conversion_amt'] = $csv_line[44];
+      $environmental_benefits_submission['csc_avoided_land_conversion_ut'] = $csv_line[45];
+      $environmental_benefits_submission['csc_avo_land_conversion_ut_otr'] = $csv_line[46];
+      $environmental_benefits_submission['csc_avo_land_conversion_purpose'] = $csv_line[47];
+      $environmental_benefits_submission['csc_avo_land_conv_purpose_otr'] = $csv_line[48];
+      $environmental_benefits_submission['csc_improved_wildlife_habitat'] = $csv_line[49];
+      $environmental_benefits_submission['csc_imp_wildlife_habitat_amt'] = $csv_line[50];
+      $environmental_benefits_submission['csc_imp_wildlife_habitat_ut'] = $csv_line[51];
+      $environmental_benefits_submission['csc_imp_wld_habitat_amt_ut_otr'] = $csv_line[52];
+      $environmental_benefits_submission['csc_imp_wld_habitat_purpose'] = $csv_line[53];
+      $environmental_benefits_submission['csc_imp_wld_habitat_purpose_otr'] = $csv_line[54];
       
       $ps_to_save = Log::create($environmental_benefits_submission);
 
@@ -1133,46 +1133,46 @@ class CsvImportController extends ControllerBase {
 
     foreach($csv as $csv_line) {
       $farm_summary_submission = [];
-      $farm_summary_submission['type'] = 'farm_summary';
+      $farm_summary_submission['type'] = 'csc_farm_summary';
       $farm_summary_submission['name'] = $csv_line[0];
-      $farm_summary_submission['farm_summary_fiscal_year'] = $csv_line[1];
-      $farm_summary_submission['farm_summary_fiscal_quarter'] = $csv_line[2];
-      $farm_summary_submission['farm_summary_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $csv_line[3]]));
-      $farm_summary_submission['farm_summary_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' => $csv_line[4]]));
+      $farm_summary_submission['csc_farm_summary_fiscal_year'] = $csv_line[1];
+      $farm_summary_submission['csc_farm_summary_fiscal_quarter'] = $csv_line[2];
+      $farm_summary_submission['csc_farm_summary_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $csv_line[3]]));
+      $farm_summary_submission['csc_farm_summary_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' => $csv_line[4]]));
       $producer_ta_received_array = array_map('trim', explode('|', $csv_line[5]));
       $producer_ta_received_results = [];
       foreach ($producer_ta_received_array as $value) {
         $producer_ta_received_results = array_merge($producer_ta_received_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'producer_ta_received', 'name' => $value]));
       }
-      $farm_summary_submission['farm_summary_producer_ta_received'] = $producer_ta_received_results;
-      $farm_summary_submission['farm_summary_producer_ta_received_other'] = $csv_line[6];
-      $farm_summary_submission['farm_summary_producer_incentive_amount'] = $csv_line[7];
+      $farm_summary_submission['csc_fa_summ_prdcr_ta_rcvd'] = $producer_ta_received_results;
+      $farm_summary_submission['csc_fa_summ_prdcr_ta_rcvd_otr'] = $csv_line[6];
+      $farm_summary_submission['csc_fa_summ_prdcr_inc_amt'] = $csv_line[7];
       $incentive_reason_array = array_map('trim', explode('|', $csv_line[8]));
       $incentive_reason_results = [];
       foreach ($incentive_reason_array as $value) {
         $incentive_reason_results = array_merge($incentive_reason_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'incentive_reason', 'name' => $value]));
       }
-      $farm_summary_submission['farm_summary_incentive_reason'] = $incentive_reason_results;
-      $farm_summary_submission['farm_summary_incentive_reason_other'] = $csv_line[9];
+      $farm_summary_submission['csc_fa_summ_inc_reason'] = $incentive_reason_results;
+      $farm_summary_submission['csc_fa_summ_inc_reason_otr'] = $csv_line[9];
       $incentive_structure_array = array_map('trim', explode('|', $csv_line[10]));
       $incentive_structure_results = [];
       foreach ($incentive_structure_array as $value) {
         $incentive_structure_results = array_merge($incentive_structure_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'incentive_structure', 'name' => $value]));
       }
-      $farm_summary_submission['farm_summary_incentive_structure'] = $incentive_structure_results;
-      $farm_summary_submission['farm_summary_incentive_structure_other'] = $csv_line[11];
+      $farm_summary_submission['csc_fa_summ_inc_structure'] = $incentive_structure_results;
+      $farm_summary_submission['csc_fa_summ_inc_structure_otr'] = $csv_line[11];
       $incentive_type_array = array_map('trim', explode('|', $csv_line[12]));
       $incentive_type_results = [];
       foreach ($incentive_type_array as $value) {
         $incentive_type_results = array_merge($incentive_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'incentive_type', 'name' => $value]));
       }
-      $farm_summary_submission['farm_summary_incentive_type'] = $incentive_type_results;
-      $farm_summary_submission['farm_summary_incentive_type_other'] = $csv_line[13];
-      $farm_summary_submission['farm_summary_payment_on_enrollment'] = $csv_line[14];
-      $farm_summary_submission['farm_summary_payment_on_implementation'] = $csv_line[15];
-      $farm_summary_submission['farm_summary_payment_on_harvest'] = $csv_line[16];
-      $farm_summary_submission['farm_summary_payment_on_mmrv'] = $csv_line[17];
-      $farm_summary_submission['farm_summary_payment_on_sale'] = $csv_line[18];
+      $farm_summary_submission['csc_farm_summary_incentive_type'] = $incentive_type_results;
+      $farm_summary_submission['csc_fa_summ_inc_type_otr'] = $csv_line[13];
+      $farm_summary_submission['csc_fa_summ_pay_on_enrollment'] = $csv_line[14];
+      $farm_summary_submission['csc_fa_summ_pay_on_impl'] = $csv_line[15];
+      $farm_summary_submission['csc_fa_summ_pay_on_harvest'] = $csv_line[16];
+      $farm_summary_submission['csc_fa_summ_pay_on_mmrv'] = $csv_line[17];
+      $farm_summary_submission['csc_fa_summ_pay_on_sale'] = $csv_line[18];
       
       $ps_to_save = Log::create($farm_summary_submission);
 
@@ -1450,25 +1450,25 @@ class CsvImportController extends ControllerBase {
 
     foreach($csv as $csv_line) {
       $ghg_benefits_measured_submission = [];
-      $ghg_benefits_measured_submission['type'] = 'ghg_benefits_measured';
+      $ghg_benefits_measured_submission['type'] = 'csc_ghg_benefits_measured';
       $ghg_benefits_measured_submission['name'] = $csv_line[0];
-      $ghg_benefits_measured_submission['g_benefits_measured_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $csv_line[1]]));
-      $ghg_benefits_measured_submission['g_benefits_measured_fiscal_quarter'] = $csv_line[2];
-      $ghg_benefits_measured_submission['g_benefits_measured_fiscal_year'] = $csv_line[3];
-      $ghg_benefits_measured_submission['g_benefits_measured_ghg_measurement_method'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_measurement_method', 'name' => $csv_line[4]]));
-      $ghg_benefits_measured_submission['g_benefits_measured_ghg_measurement_method_other'] = $csv_line[5];
-      $ghg_benefits_measured_submission['g_benefits_measured_lab_name'] = $csv_line[6];
-      $ghg_benefits_measured_submission['g_benefits_measured_measurement_start_date'] = \DateTime::createFromFormat("Y-m-d", $csv_line[7])->getTimestamp();
-      $ghg_benefits_measured_submission['g_benefits_measured_measurement_end_date'] = \DateTime::createFromFormat("Y-m-d", $csv_line[8])->getTimestamp();
-      $ghg_benefits_measured_submission['g_benefits_measured_total_co2_reduction'] = $csv_line[9];
-      $ghg_benefits_measured_submission['g_benefits_measured_total_field_carbon_stock'] = $csv_line[10];
-      $ghg_benefits_measured_submission['g_benefits_measured_total_ch4_reduction'] = $csv_line[11];
-      $ghg_benefits_measured_submission['g_benefits_measured_total_n2o_reduction'] = $csv_line[12];
-      $ghg_benefits_measured_submission['g_benefits_measured_soil_sample_result'] = $csv_line[13];
-      $ghg_benefits_measured_submission['g_benefits_measured_soil_sample_result_unit'] = $csv_line[14];
-      $ghg_benefits_measured_submission['g_benefits_measured_soil_sample_result_unit_other'] = $csv_line[15];
-      $ghg_benefits_measured_submission['g_benefits_measured_measurement_type'] = $csv_line[16];
-      $ghg_benefits_measured_submission['g_benefits_measured_measurement_type_other'] = $csv_line[17];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_fld_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[1]]));
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_fiscal_quarter'] = $csv_line[2];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_fiscal_year'] = $csv_line[3];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_ghg_msrt_mt'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_measurement_method', 'name' => $csv_line[4]]));
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_ghg_msrt_mt_otr'] = $csv_line[5];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_lab_name'] = $csv_line[6];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_start_date'] = \DateTime::createFromFormat("Y-m-d", $csv_line[7])->getTimestamp();
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_end_date'] = \DateTime::createFromFormat("Y-m-d", $csv_line[8])->getTimestamp();
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_total_co2_rd'] = $csv_line[9];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_t_fld_co2_stock'] = $csv_line[10];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_total_ch4_rd'] = $csv_line[11];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_total_n2o_rd'] = $csv_line[12];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_sl_sp_rs'] = $csv_line[13];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_sl_sp_rs_ut'] = $csv_line[14];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_sl_sp_rs_ut_otr'] = $csv_line[15];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_type'] = $csv_line[16];
+      $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_type_otr'] = $csv_line[17];
       
       $ps_to_save = Log::create($ghg_benefits_measured_submission);
 
@@ -1496,22 +1496,22 @@ class CsvImportController extends ControllerBase {
     foreach($csv as $csv_line) {
 
       $field_summary_submission = [];
-      $field_summary_submission['type'] = 'field_summary';
+      $field_summary_submission['type'] = 'csc_field_summary';
       $field_summary_submission['name'] = $csv_line[0];
       $field_summary_submission['status'] = $csv_line[38];
       $field_summary_submission['flag'] = $csv_line[36];
       $field_summary_submission['notes'] = $csv_line[37];
-      $field_summary_submission['f_summary_contract_end_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[1])->getTimestamp();
-      $field_summary_submission['f_summary_implementation_cost_coverage'] = $csv_line[2];
-      $field_summary_submission['f_summary_implementation_cost'] = $csv_line[3];
-      $field_summary_submission['f_summary_implementation_cost_unit'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'cost_unit', 'name' => $csv_line[4]]));
-      $field_summary_submission['f_summary_date_practice_complete'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[5])->getTimestamp();
-      $field_summary_submission['f_summary_fiscal_quarter'] = $csv_line[6];
-      $field_summary_submission['f_summary_fiscal_year'] = $csv_line[7];
-      $field_summary_submission['f_summary_field_commodity_value'] = $csv_line[8];
-      $field_summary_submission['f_summary_field_commodity_volume'] = $csv_line[9];
-      $field_summary_submission['f_summary_field_commodity_volume_unit'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_commodity_volume_unit', 'name' => $csv_line[10]]));
-      $field_summary_submission['f_summary_field_ghg_calculation'] = $csv_line[11];
+      $field_summary_submission['csc_f_summary_contract_end_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[1])->getTimestamp();
+      $field_summary_submission['csc_fi_summ_impl_cost_coverage'] = $csv_line[2];
+      $field_summary_submission['csc_fi_summ_impl_cost'] = $csv_line[3];
+      $field_summary_submission['csc_fi_summ_impl_cost_ut'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'cost_unit', 'name' => $csv_line[4]]));
+      $field_summary_submission['csc_fi_summ_date_pract_complete'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[5])->getTimestamp();
+      $field_summary_submission['csc_f_summary_fiscal_quarter'] = $csv_line[6];
+      $field_summary_submission['csc_f_summary_fiscal_year'] = $csv_line[7];
+      $field_summary_submission['csc_fi_summ_fld_comm_value'] = $csv_line[8];
+      $field_summary_submission['csc_fi_summ_fld_comm_vol'] = $csv_line[9];
+      $field_summary_submission['csc_fi_summ_fld_comm_vol_ut'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_commodity_volume_unit', 'name' => $csv_line[10]]));
+      $field_summary_submission['csc_fi_summ_fld_ghg_calc'] = $csv_line[11];
 
       $summary_field_ghg_monitoring_array = array_map('trim', explode('|', $csv_line[12]));
       $summary_field_ghg_monitoring_results = [];
@@ -1520,7 +1520,7 @@ class CsvImportController extends ControllerBase {
         $summary_field_ghg_monitoring_results = array_merge($summary_field_ghg_monitoring_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_monitoring', 'name' => $value]));
       }
 
-      $field_summary_submission['f_summary_field_ghg_monitoring'] = $summary_field_ghg_monitoring_results;
+      $field_summary_submission['csc_fi_summ_fld_ghg_monitor'] = $summary_field_ghg_monitoring_results;
       $summary_field_ghg_reporting_array = array_map('trim', explode('|', $csv_line[13]));
       $summary_field_ghg_reporting_results = [];
 
@@ -1528,7 +1528,7 @@ class CsvImportController extends ControllerBase {
         $summary_field_ghg_reporting_results = array_merge($summary_field_ghg_reporting_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_reporting', 'name' => $value]));
       }
 
-      $field_summary_submission['f_summary_field_ghg_reporting'] = $summary_field_ghg_reporting_results;
+      $field_summary_submission['csc_fi_summ_fld_ghg_report'] = $summary_field_ghg_reporting_results;
       $summary_field_ghg_verification_array = array_map('trim', explode('|', $csv_line[14]));
       $summary_field_ghg_verification_results = [];
 
@@ -1536,25 +1536,25 @@ class CsvImportController extends ControllerBase {
         $summary_field_ghg_verification_results = array_merge($summary_field_ghg_verification_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_verification', 'name' => $value]));
       }
 
-      $field_summary_submission['f_summary_field_ghg_verification'] = $summary_field_ghg_verification_results;
-      $field_summary_submission['f_summary_field_insets'] = $csv_line[15];
-      $field_summary_submission['f_summary_field_carbon_stock'] = $csv_line[16];
-      $field_summary_submission['f_summary_field_ch4_emission_reduction'] = $csv_line[17];
-      $field_summary_submission['f_summary_field_co2_emission_reduction'] = $csv_line[18];
-      $field_summary_submission['f_summary_field_ghg_emission_reduction'] = $csv_line[19];
-      $field_summary_submission['f_summary_field_official_ghg_calculations'] = $csv_line[20];
-      $field_summary_submission['f_summary_field_n2o_emission_reduction'] = $csv_line[21];
-      $field_summary_submission['f_summary_field_offsets'] = $csv_line[22];
-      $field_summary_submission['f_summary_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $csv_line[23]]));
-      $field_summary_submission['f_summary_incentive_per_acre_or_head'] = $csv_line[24];
-      $field_summary_submission['f_summary_marketing_assistance_provided'] = $csv_line[25];
-      $field_summary_submission['f_summary_mmrv_assistance_provided'] = $csv_line[26];
-      $field_summary_submission['f_summary_implementation_cost_unit_other'] = $csv_line[27];
-      $field_summary_submission['f_summary_field_commodity_volume_unit_other'] = $csv_line[28];
-      $field_summary_submission['f_summary_field_ghg_monitoring_other'] = $csv_line[29];
-      $field_summary_submission['f_summary_field_ghg_reporting_other'] = $csv_line[30];
-      $field_summary_submission['f_summary_field_ghg_verification_other'] = $csv_line[31];
-      $field_summary_submission['f_summary_field_measurement_other'] = $csv_line[32];
+      $field_summary_submission['csc_fi_summ_fld_ghg_verifi'] = $summary_field_ghg_verification_results;
+      $field_summary_submission['csc_f_summary_field_insets'] = $csv_line[15];
+      $field_summary_submission['csc_fi_summ_fld_co2_stock'] = $csv_line[16];
+      $field_summary_submission['csc_fi_summ_fld_ch4_emission_rd'] = $csv_line[17];
+      $field_summary_submission['csc_fi_summ_fld_co2_emission_rd'] = $csv_line[18];
+      $field_summary_submission['csc_fi_summ_fld_ghg_emission_rd'] = $csv_line[19];
+      $field_summary_submission['csc_fi_summ_fld_ofc_ghg_calc'] = $csv_line[20];
+      $field_summary_submission['csc_fi_summ_fld_n2o_emission_rd'] = $csv_line[21];
+      $field_summary_submission['csc_f_summary_field_offsets'] = $csv_line[22];
+      $field_summary_submission['csc_f_summary_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $csv_line[23]]));
+      $field_summary_submission['csc_fi_summ_inc_per_acre_or_hd'] = $csv_line[24];
+      $field_summary_submission['csc_fi_summ_marketing_ast_prv'] = $csv_line[25];
+      $field_summary_submission['csc_fi_summ_mmrv_ast_prv'] = $csv_line[26];
+      $field_summary_submission['csc_fi_summ_impl_cost_ut_otr'] = $csv_line[27];
+      $field_summary_submission['csc_fi_summ_fld_comm_vol_ut_otr'] = $csv_line[28];
+      $field_summary_submission['csc_fi_summ_fld_ghg_monitor_otr'] = $csv_line[29];
+      $field_summary_submission['csc_fi_summ_fld_ghg_report_otr'] = $csv_line[30];
+      $field_summary_submission['csc_fi_summ_fld_ghg_verifi_otr'] = $csv_line[31];
+      $field_summary_submission['csc_fi_summ_fld_measurement_otr'] = $csv_line[32];
 
       $summary_practice_type_array = array_map('trim', explode('|', $csv_line[33]));
       $summary_practice_type_results = [];
@@ -1563,8 +1563,8 @@ class CsvImportController extends ControllerBase {
         $summary_practice_type_results = array_merge($summary_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
       }
 
-      $field_summary_submission['f_summary_practice_type'] = $summary_practice_type_results;
-      $field_summary_submission['f_summary_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $csv_line[34]]));
+      $field_summary_submission['csc_f_summary_practice_type'] = $summary_practice_type_results;
+      $field_summary_submission['csc_f_summary_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[34]]));
       
       $ps_to_save = Log::create($field_summary_submission);
 
@@ -1591,11 +1591,11 @@ class CsvImportController extends ControllerBase {
     foreach($csv as $csv_line) {
       $g_benefits_alternate_modeledsubmission = [];
       $g_benefits_alternate_modeledsubmission['name'] = $csv_line[0];
-      $g_benefits_alternate_modeledsubmission['type'] = 'ghg_benefits_alternate_modeled';
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_fiscal_year'] = $csv_line[1];
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_fiscal_quarter'] = $csv_line[2];
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $csv_line[4]]));
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $csv_line[5]]));
+      $g_benefits_alternate_modeledsubmission['type'] = 'csc_ghg_benefits_alt_modeled';
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fiscal_year'] = $csv_line[1];
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fiscal_quart'] = $csv_line[2];
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fld_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'field_enrollment', 'name' => $csv_line[4]]));
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_comm_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $csv_line[5]]));
 
       $g_benefits_alternate_modeled_practice_type_array = array_map('trim', explode('|', $csv_line[6]));
       $g_benefits_alternate_modeled_practice_type_results = [];
@@ -1603,16 +1603,16 @@ class CsvImportController extends ControllerBase {
         $g_benefits_alternate_modeled_practice_type_results = array_merge($g_benefits_alternate_modeled_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
       }
 
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_practice_type'] = $g_benefits_alternate_modeled_practice_type_results;
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_model'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_model', 'name' => $csv_line[7]]));
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_model_other'] = $csv_line[8];
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_model_start_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[9])->getTimestamp();
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_model_end_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[10])->getTimestamp();
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_benefits_estimated'] = $csv_line[11];
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_carbon_stock_estimated'] = $csv_line[12];
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_co2_estimated'] = $csv_line[13];
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ch4_estimated'] = $csv_line[14];
-      $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_n2o_estimated'] = $csv_line[15];
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_pract_type'] = $g_benefits_alternate_modeled_practice_type_results;
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ghg_md'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_model', 'name' => $csv_line[7]]));
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ghg_md_otr'] = $csv_line[8];
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_md_start_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[9])->getTimestamp();
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_md_end_date'] = \DateTime::createFromFormat("D, m/d/Y - G:i", $csv_line[10])->getTimestamp();
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ghg_bene_est'] = $csv_line[11];
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_co2_stock_est'] = $csv_line[12];
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_co2_est'] = $csv_line[13];
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ch4_est'] = $csv_line[14];
+      $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_n2o_est'] = $csv_line[15];
 
       $gbam_to_save = log::create($g_benefits_alternate_modeledsubmission);
 

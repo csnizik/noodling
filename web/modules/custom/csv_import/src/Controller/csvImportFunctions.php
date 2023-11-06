@@ -406,12 +406,12 @@ function import_farm_summary($in_data_array, $cur_count){
     $in_data_array = array_map('trim', $in_data_array);
 
     $farm_summary_submission = [];
-    $farm_summary_submission['type'] = 'farm_summary';
+    $farm_summary_submission['type'] = 'csc_farm_summary';
     $farm_summary_submission['name'] = $entry_name;
-    $farm_summary_submission['farm_summary_fiscal_year'] = '';
-    $farm_summary_submission['farm_summary_fiscal_quarter'] = '';
-    $farm_summary_submission['farm_summary_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $in_data_array[1]]));
-    $farm_summary_submission['farm_summary_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' => $in_data_array[2]]));
+    $farm_summary_submission['csc_farm_summary_fiscal_year'] = '';
+    $farm_summary_submission['csc_farm_summary_fiscal_quarter'] = '';
+    $farm_summary_submission['csc_farm_summary_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $in_data_array[1]]));
+    $farm_summary_submission['csc_farm_summary_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' => $in_data_array[2]]));
     
     $producer_ta_received_v = '';
     for($i=3; $i<6; $i++){
@@ -429,9 +429,9 @@ function import_farm_summary($in_data_array, $cur_count){
     foreach ($producer_ta_received_array as $value) {
       $producer_ta_received_results = array_merge($producer_ta_received_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'producer_ta_received', 'name' => $value]));
     }
-    $farm_summary_submission['farm_summary_producer_ta_received'] = $producer_ta_received_results;
-    $farm_summary_submission['farm_summary_producer_ta_received_other'] = $in_data_array[6];
-    $farm_summary_submission['farm_summary_producer_incentive_amount'] = $in_data_array[7];
+    $farm_summary_submission['csc_fa_summ_prdcr_ta_rcvd'] = $producer_ta_received_results;
+    $farm_summary_submission['csc_fa_summ_prdcr_ta_rcvd_otr'] = $in_data_array[6];
+    $farm_summary_submission['csc_fa_summ_prdcr_inc_amt'] = $in_data_array[7];
 
     $incentive_reason_v = '';
     for($i=8; $i<12; $i++){
@@ -449,8 +449,8 @@ function import_farm_summary($in_data_array, $cur_count){
     foreach ($incentive_reason_array as $value) {
       $incentive_reason_results = array_merge($incentive_reason_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'incentive_reason', 'name' => $value]));
     }
-    $farm_summary_submission['farm_summary_incentive_reason'] = $incentive_reason_results;
-    $farm_summary_submission['farm_summary_incentive_reason_other'] = $in_data_array[12];
+    $farm_summary_submission['csc_fa_summ_inc_reason'] = $incentive_reason_results;
+    $farm_summary_submission['csc_fa_summ_inc_reason_otr'] = $in_data_array[12];
  
     $incentive_structure_v = '';
     for($i=13; $i<17; $i++){
@@ -468,8 +468,8 @@ function import_farm_summary($in_data_array, $cur_count){
     foreach ($incentive_structure_array as $value) {
       $incentive_structure_results = array_merge($incentive_structure_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'incentive_structure', 'name' => $value]));
     }
-    $farm_summary_submission['farm_summary_incentive_structure'] = $incentive_structure_results;
-    $farm_summary_submission['farm_summary_incentive_structure_other'] = $in_data_array[17];
+    $farm_summary_submission['csc_fa_summ_inc_structure'] = $incentive_structure_results;
+    $farm_summary_submission['csc_fa_summ_inc_structure_otr'] = $in_data_array[17];
 
     $incentive_type_v = '';
     for($i=18; $i<22; $i++){
@@ -487,13 +487,13 @@ function import_farm_summary($in_data_array, $cur_count){
     foreach ($incentive_type_array as $value) {
       $incentive_type_results = array_merge($incentive_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'incentive_type', 'name' => $value]));
     }
-    $farm_summary_submission['farm_summary_incentive_type'] = $incentive_type_results;
-    $farm_summary_submission['farm_summary_incentive_type_other'] = $in_data_array[22];
-    $farm_summary_submission['farm_summary_payment_on_enrollment'] = $in_data_array[23];
-    $farm_summary_submission['farm_summary_payment_on_implementation'] = $in_data_array[24];
-    $farm_summary_submission['farm_summary_payment_on_harvest'] = $in_data_array[25];
-    $farm_summary_submission['farm_summary_payment_on_mmrv'] = $in_data_array[26];
-    $farm_summary_submission['farm_summary_payment_on_sale'] = $in_data_array[27];
+    $farm_summary_submission['csc_farm_summary_incentive_type'] = $incentive_type_results;
+    $farm_summary_submission['csc_fa_summ_inc_type_otr'] = $in_data_array[22];
+    $farm_summary_submission['csc_fa_summ_pay_on_enrollment'] = $in_data_array[23];
+    $farm_summary_submission['csc_fa_summ_pay_on_impl'] = $in_data_array[24];
+    $farm_summary_submission['csc_fa_summ_pay_on_harvest'] = $in_data_array[25];
+    $farm_summary_submission['csc_fa_summ_pay_on_mmrv'] = $in_data_array[26];
+    $farm_summary_submission['csc_fa_summ_pay_on_sale'] = $in_data_array[27];
     
     $ps_to_save = Log::create($farm_summary_submission);
 
@@ -507,26 +507,26 @@ function import_field_summary($in_data_array, $cur_count){
     $in_data_array = array_map('trim', $in_data_array);
 
     $field_summary_submission = [];
-    $field_summary_submission['type'] = 'field_summary';
+    $field_summary_submission['type'] = 'csc_field_summary';
     $field_summary_submission['name'] = $entry_name;
     $field_summary_submission['status'] = '';
     $field_summary_submission['flag'] = '';
     $field_summary_submission['notes'] = '';
 
     $ndate = convertExcelDate($in_data_array[14]);
-    $field_summary_submission['f_summary_contract_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
-    $field_summary_submission['f_summary_implementation_cost_coverage'] = $in_data_array[25];
-    $field_summary_submission['f_summary_implementation_cost'] = $in_data_array[22];
-    $field_summary_submission['f_summary_implementation_cost_unit'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'cost_unit', 'name' => $in_data_array[23]]));
+    $field_summary_submission['csc_f_summary_contract_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $field_summary_submission['csc_fi_summ_impl_cost_coverage'] = $in_data_array[25];
+    $field_summary_submission['csc_fi_summ_impl_cost'] = $in_data_array[22];
+    $field_summary_submission['csc_fi_summ_impl_cost_ut'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'cost_unit', 'name' => $in_data_array[23]]));
     
     $ndate = convertExcelDate($in_data_array[13]);
-    $field_summary_submission['f_summary_date_practice_complete'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
-    $field_summary_submission['f_summary_fiscal_quarter'] = '';
-    $field_summary_submission['f_summary_fiscal_year'] = '';
-    $field_summary_submission['f_summary_field_commodity_value'] = $in_data_array[18];
-    $field_summary_submission['f_summary_field_commodity_volume'] = $in_data_array[19];
-    $field_summary_submission['f_summary_field_commodity_volume_unit'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_commodity_volume_unit', 'name' => $in_data_array[20]]));
-    $field_summary_submission['f_summary_field_ghg_calculation'] = $in_data_array[38];
+    $field_summary_submission['csc_fi_summ_date_pract_complete'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $field_summary_submission['csc_f_summary_fiscal_quarter'] = '';
+    $field_summary_submission['csc_f_summary_fiscal_year'] = '';
+    $field_summary_submission['csc_fi_summ_fld_comm_value'] = $in_data_array[18];
+    $field_summary_submission['csc_fi_summ_fld_comm_vol'] = $in_data_array[19];
+    $field_summary_submission['csc_fi_summ_fld_comm_vol_ut'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_commodity_volume_unit', 'name' => $in_data_array[20]]));
+    $field_summary_submission['csc_fi_summ_fld_ghg_calc'] = $in_data_array[38];
 
     $summary_field_ghg_monitoring = '';
     for($i=26; $i<29; $i++){
@@ -546,7 +546,7 @@ function import_field_summary($in_data_array, $cur_count){
         $summary_field_ghg_monitoring_results = array_merge($summary_field_ghg_monitoring_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_monitoring', 'name' => $value]));
     }
 
-    $field_summary_submission['f_summary_field_ghg_monitoring'] = $summary_field_ghg_monitoring_results;
+    $field_summary_submission['csc_fi_summ_fld_ghg_monitor'] = $summary_field_ghg_monitoring_results;
 
     $summary_field_ghg_reporting = '';
     for($i=30; $i<33; $i++){
@@ -566,7 +566,7 @@ function import_field_summary($in_data_array, $cur_count){
         $summary_field_ghg_reporting_results = array_merge($summary_field_ghg_reporting_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_reporting', 'name' => $value]));
     }
 
-    $field_summary_submission['f_summary_field_ghg_reporting'] = $summary_field_ghg_reporting_results;
+    $field_summary_submission['csc_fi_summ_fld_ghg_report'] = $summary_field_ghg_reporting_results;
 
     $summary_field_ghg_verification = '';
     for($i=34; $i<37; $i++){
@@ -586,25 +586,25 @@ function import_field_summary($in_data_array, $cur_count){
         $summary_field_ghg_verification_results = array_merge($summary_field_ghg_verification_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_ghg_verification', 'name' => $value]));
     }
 
-    $field_summary_submission['f_summary_field_ghg_verification'] = $summary_field_ghg_verification_results;
-    $field_summary_submission['f_summary_field_insets'] = $in_data_array[46];
-    $field_summary_submission['f_summary_field_carbon_stock'] = $in_data_array[41];
-    $field_summary_submission['f_summary_field_ch4_emission_reduction'] = $in_data_array[43];
-    $field_summary_submission['f_summary_field_co2_emission_reduction'] = $in_data_array[42];
-    $field_summary_submission['f_summary_field_ghg_emission_reduction'] = $in_data_array[40];
-    $field_summary_submission['f_summary_field_official_ghg_calculations'] = $in_data_array[39];
-    $field_summary_submission['f_summary_field_n2o_emission_reduction'] = $in_data_array[44];
-    $field_summary_submission['f_summary_field_offsets'] = $in_data_array[45];
-    $field_summary_submission['f_summary_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $in_data_array[5]]));
-    $field_summary_submission['f_summary_incentive_per_acre_or_head'] = $in_data_array[17];
-    $field_summary_submission['f_summary_marketing_assistance_provided'] = $in_data_array[16];
-    $field_summary_submission['f_summary_mmrv_assistance_provided'] = $in_data_array[15];
-    $field_summary_submission['f_summary_implementation_cost_unit_other'] = $in_data_array[24];
-    $field_summary_submission['f_summary_field_commodity_volume_unit_other'] = $in_data_array[21];
-    $field_summary_submission['f_summary_field_ghg_monitoring_other'] = $in_data_array[29];
-    $field_summary_submission['f_summary_field_ghg_reporting_other'] = $in_data_array[33];
-    $field_summary_submission['f_summary_field_ghg_verification_other'] = $in_data_array[37];
-    $field_summary_submission['f_summary_field_measurement_other'] = $in_data_array[47];
+    $field_summary_submission['csc_fi_summ_fld_ghg_verifi'] = $summary_field_ghg_verification_results;
+    $field_summary_submission['csc_f_summary_field_insets'] = $in_data_array[46];
+    $field_summary_submission['csc_fi_summ_fld_co2_stock'] = $in_data_array[41];
+    $field_summary_submission['csc_fi_summ_fld_ch4_emission_rd'] = $in_data_array[43];
+    $field_summary_submission['csc_fi_summ_fld_co2_emission_rd'] = $in_data_array[42];
+    $field_summary_submission['csc_fi_summ_fld_ghg_emission_rd'] = $in_data_array[40];
+    $field_summary_submission['csc_fi_summ_fld_ofc_ghg_calc'] = $in_data_array[39];
+    $field_summary_submission['csc_fi_summ_fld_n2o_emission_rd'] = $in_data_array[44];
+    $field_summary_submission['csc_f_summary_field_offsets'] = $in_data_array[45];
+    $field_summary_submission['csc_f_summary_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $in_data_array[5]]));
+    $field_summary_submission['csc_fi_summ_inc_per_acre_or_hd'] = $in_data_array[17];
+    $field_summary_submission['csc_fi_summ_marketing_ast_prv'] = $in_data_array[16];
+    $field_summary_submission['csc_fi_summ_mmrv_ast_prv'] = $in_data_array[15];
+    $field_summary_submission['csc_fi_summ_impl_cost_ut_otr'] = $in_data_array[24];
+    $field_summary_submission['csc_fi_summ_fld_comm_vol_ut_otr'] = $in_data_array[21];
+    $field_summary_submission['csc_fi_summ_fld_ghg_monitor_otr'] = $in_data_array[29];
+    $field_summary_submission['csc_fi_summ_fld_ghg_report_otr'] = $in_data_array[33];
+    $field_summary_submission['csc_fi_summ_fld_ghg_verifi_otr'] = $in_data_array[37];
+    $field_summary_submission['csc_fi_summ_fld_measurement_otr'] = $in_data_array[47];
 
     $summary_practice_type = '';
     for($i=6; $i<13; $i++){
@@ -624,9 +624,9 @@ function import_field_summary($in_data_array, $cur_count){
         $summary_practice_type_results = array_merge($summary_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
     }
    
-    $field_summary_submission['f_summary_practice_type'] = $summary_practice_type_results;
+    $field_summary_submission['csc_f_summary_practice_type'] = $summary_practice_type_results;
 
-    $field_summary_submission['f_summary_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
+    $field_summary_submission['csc_f_summary_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
     
     $ps_to_save = Log::create($field_summary_submission);
 
@@ -640,10 +640,10 @@ function import_ghg_benefits_alt_models($in_data_array, $cur_count){
 
     $g_benefits_alternate_modeledsubmission = [];
     $g_benefits_alternate_modeledsubmission['name'] = $entry_name;
-    $g_benefits_alternate_modeledsubmission['type'] = 'ghg_benefits_alternate_modeled';
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_fiscal_year'] = '';
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_fiscal_quarter'] = '';
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
+    $g_benefits_alternate_modeledsubmission['type'] = 'csc_ghg_benefits_alt_modeled';
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fiscal_year'] = '';
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fiscal_quart'] = '';
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fld_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
 
     $g_benefits_alternate_modeled_commodity_type = '';
     for($i=5; $i<11; $i++){
@@ -663,7 +663,7 @@ function import_ghg_benefits_alt_models($in_data_array, $cur_count){
       $g_benefits_alternate_modeled_commodity_type_results = array_merge($g_benefits_alternate_modeled_commodity_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $value]));
     }
     
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_commodity_type'] = $g_benefits_alternate_modeled_commodity_type_results;
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_comm_type'] = $g_benefits_alternate_modeled_commodity_type_results;
 
     $g_benefits_alternate_modeled_practice_type = '';
     for($i=11; $i<18; $i++){
@@ -682,18 +682,18 @@ function import_ghg_benefits_alt_models($in_data_array, $cur_count){
       $g_benefits_alternate_modeled_practice_type_results = array_merge($g_benefits_alternate_modeled_practice_type_results, \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $value]));
     }
 
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_practice_type'] = $g_benefits_alternate_modeled_practice_type_results;
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_model'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_model', 'name' => $in_data_array[18]]));
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_model_other'] = $in_data_array[19];
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_pract_type'] = $g_benefits_alternate_modeled_practice_type_results;
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ghg_md'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_model', 'name' => $in_data_array[18]]));
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ghg_md_otr'] = $in_data_array[19];
     $ndate = convertExcelDate($in_data_array[20]);
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_model_start_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_md_start_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
     $ndate = convertExcelDate($in_data_array[21]);
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_model_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ghg_benefits_estimated'] = $in_data_array[22];
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_carbon_stock_estimated'] = $in_data_array[23];
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_co2_estimated'] = $in_data_array[24];
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_ch4_estimated'] = $in_data_array[25];
-    $g_benefits_alternate_modeledsubmission['g_benefits_alternate_modeled_n2o_estimated'] = $in_data_array[26];
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_md_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ghg_bene_est'] = $in_data_array[22];
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_co2_stock_est'] = $in_data_array[23];
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_co2_est'] = $in_data_array[24];
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ch4_est'] = $in_data_array[25];
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_n2o_est'] = $in_data_array[26];
 
     $gbam_to_save = log::create($g_benefits_alternate_modeledsubmission);
 
@@ -706,27 +706,27 @@ function import_ghg_benefits_measured($in_data_array, $cur_count){
     $in_data_array = array_map('trim', $in_data_array);
 
     $ghg_benefits_measured_submission = [];
-    $ghg_benefits_measured_submission['type'] = 'ghg_benefits_measured';
+    $ghg_benefits_measured_submission['type'] = 'csc_ghg_benefits_measured';
     $ghg_benefits_measured_submission['name'] = $entry_name;
-    $ghg_benefits_measured_submission['g_benefits_measured_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
-    $ghg_benefits_measured_submission['g_benefits_measured_fiscal_quarter'] = '';
-    $ghg_benefits_measured_submission['g_benefits_measured_fiscal_year'] = '';
-    $ghg_benefits_measured_submission['g_benefits_measured_ghg_measurement_method'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_measurement_method', 'name' => $in_data_array[5]]));
-    $ghg_benefits_measured_submission['g_benefits_measured_ghg_measurement_method_other'] = $in_data_array[6];
-    $ghg_benefits_measured_submission['g_benefits_measured_lab_name'] = $in_data_array[7];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_fld_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_fiscal_quarter'] = '';
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_fiscal_year'] = '';
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_ghg_msrt_mt'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_measurement_method', 'name' => $in_data_array[5]]));
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_ghg_msrt_mt_otr'] = $in_data_array[6];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_lab_name'] = $in_data_array[7];
     $ndate = convertExcelDate($in_data_array[8]);
-    $ghg_benefits_measured_submission['g_benefits_measured_measurement_start_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_start_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
     $ndate = convertExcelDate($in_data_array[9]);
-    $ghg_benefits_measured_submission['g_benefits_measured_measurement_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
-    $ghg_benefits_measured_submission['g_benefits_measured_total_co2_reduction'] = $in_data_array[10];
-    $ghg_benefits_measured_submission['g_benefits_measured_total_field_carbon_stock'] = $in_data_array[11];
-    $ghg_benefits_measured_submission['g_benefits_measured_total_ch4_reduction'] = $in_data_array[12];
-    $ghg_benefits_measured_submission['g_benefits_measured_total_n2o_reduction'] = $in_data_array[13];
-    $ghg_benefits_measured_submission['g_benefits_measured_soil_sample_result'] = $in_data_array[14];
-    $ghg_benefits_measured_submission['g_benefits_measured_soil_sample_result_unit'] = $in_data_array[15];
-    $ghg_benefits_measured_submission['g_benefits_measured_soil_sample_result_unit_other'] = $in_data_array[16];
-    $ghg_benefits_measured_submission['g_benefits_measured_measurement_type'] = $in_data_array[17];
-    $ghg_benefits_measured_submission['g_benefits_measured_measurement_type_other'] =$in_data_array[18];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_total_co2_rd'] = $in_data_array[10];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_t_fld_co2_stock'] = $in_data_array[11];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_total_ch4_rd'] = $in_data_array[12];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_total_n2o_rd'] = $in_data_array[13];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_sl_sp_rs'] = $in_data_array[14];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_sl_sp_rs_ut'] = $in_data_array[15];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_sl_sp_rs_ut_otr'] = $in_data_array[16];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_type'] = $in_data_array[17];
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_type_otr'] =$in_data_array[18];
     
     $ps_to_save = Log::create($ghg_benefits_measured_submission);
 
@@ -739,62 +739,62 @@ function import_addl_envl_benefits($in_data_array, $cur_count){
     $in_data_array = array_map('trim', $in_data_array);
 
     $environmental_benefits_submission = [];
-    $environmental_benefits_submission['type'] = 'environmental_benefits';
+    $environmental_benefits_submission['type'] = 'csc_environmental_benefits';
     $environmental_benefits_submission['name'] = $entry_name;
-    $environmental_benefits_submission['fiscal_year'] = '';
-    $environmental_benefits_submission['fiscal_quarter'] = '';
-    $environmental_benefits_submission['field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
-    $environmental_benefits_submission['environmental_benefits'] = $in_data_array[5];
-    $environmental_benefits_submission['nitrogen_loss'] = $in_data_array[6];
-    $environmental_benefits_submission['nitrogen_loss_amount'] = $in_data_array[7];
-    $environmental_benefits_submission['nitrogen_loss_amount_unit'] = $in_data_array[8];
-    $environmental_benefits_submission['nitrogen_loss_amount_unit_other'] = $in_data_array[9];
-    $environmental_benefits_submission['nitrogen_loss_purpose'] = $in_data_array[10];
-    $environmental_benefits_submission['nitrogen_loss_purpose_other'] = $in_data_array[11];
-    $environmental_benefits_submission['phosphorus_loss'] = $in_data_array[12];
-    $environmental_benefits_submission['phosphorus_loss_amount'] = $in_data_array[13];
-    $environmental_benefits_submission['phosphorus_loss_amount_unit'] = $in_data_array[14];
-    $environmental_benefits_submission['phosphorus_loss_amount_unit_other'] = $in_data_array[15];
-    $environmental_benefits_submission['phosphorus_loss_purpose'] = $in_data_array[16];
-    $environmental_benefits_submission['phosphorus_loss_purpose_other'] = $in_data_array[17];
-    $environmental_benefits_submission['other_water_quality'] = $in_data_array[18];
-    $environmental_benefits_submission['other_water_quality_type'] = $in_data_array[19];
-    $environmental_benefits_submission['other_water_quality_type_other'] = $in_data_array[20];
-    $environmental_benefits_submission['other_water_quality_amount'] = $in_data_array[21];
-    $environmental_benefits_submission['other_water_quality_amount_unit'] = $in_data_array[22];
-    $environmental_benefits_submission['other_water_quality_amount_unit_other'] = $in_data_array[23];
-    $environmental_benefits_submission['other_water_quality_purpose'] = $in_data_array[24];
-    $environmental_benefits_submission['other_water_quality_purpose_other'] = $in_data_array[25];
-    $environmental_benefits_submission['water_quality'] = $in_data_array[26];
-    $environmental_benefits_submission['water_quality_amount'] = $in_data_array[27];
-    $environmental_benefits_submission['water_quality_amount_unit'] = $in_data_array[28];
-    $environmental_benefits_submission['water_quality_amount_unit_other'] = $in_data_array[29];
-    $environmental_benefits_submission['water_quality_purpose'] = $in_data_array[30];
-    $environmental_benefits_submission['water_quality_purpose_other'] = $in_data_array[31];
-    $environmental_benefits_submission['reduced_erosion'] = $in_data_array[32];
-    $environmental_benefits_submission['reduced_erosion_amount'] = $in_data_array[33];
-    $environmental_benefits_submission['reduced_erosion_amount_unit'] = $in_data_array[34];
-    $environmental_benefits_submission['reduced_erosion_amount_unit_other'] = $in_data_array[35];
-    $environmental_benefits_submission['reduced_erosion_purpose'] = $in_data_array[36];
-    $environmental_benefits_submission['reduced_erosion_purpose_other'] = $in_data_array[37];
-    $environmental_benefits_submission['reduced_energy_use'] = $in_data_array[38];
-    $environmental_benefits_submission['reduced_energy_use_amount'] = $in_data_array[39];
-    $environmental_benefits_submission['reduced_energy_use_amount_unit'] = $in_data_array[40];
-    $environmental_benefits_submission['reduced_energy_use_amount_unit_other'] = $in_data_array[41];
-    $environmental_benefits_submission['reduced_energy_use_purpose'] = $in_data_array[42];
-    $environmental_benefits_submission['reduced_energy_use_purpose_other'] = $in_data_array[43];
-    $environmental_benefits_submission['avoided_land_conversion'] = $in_data_array[44];
-    $environmental_benefits_submission['avoided_land_conversion_amount'] = $in_data_array[45];
-    $environmental_benefits_submission['avoided_land_conversion_unit'] = $in_data_array[46];
-    $environmental_benefits_submission['avoided_land_conversion_unit_other'] = $in_data_array[47];
-    $environmental_benefits_submission['avoided_land_conversion_purpose'] = $in_data_array[48];
-    $environmental_benefits_submission['avoided_land_conversion_purpose_other'] = $in_data_array[49];
-    $environmental_benefits_submission['improved_wildlife_habitat'] = $in_data_array[50];
-    $environmental_benefits_submission['improved_wildlife_habitat_amount'] = $in_data_array[51];
-    $environmental_benefits_submission['improved_wildlife_habitat_unit'] = $in_data_array[52];
-    $environmental_benefits_submission['improved_wildlife_habitat_amount_unit_other'] = $in_data_array[53];
-    $environmental_benefits_submission['improved_wildlife_habitat_purpose'] = $in_data_array[54];
-    $environmental_benefits_submission['improved_wildlife_habitat_purpose_other'] = $in_data_array[55];
+    $environmental_benefits_submission['csc_fiscal_year'] = '';
+    $environmental_benefits_submission['csc_fiscal_quarter'] = '';
+    $environmental_benefits_submission['csc_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
+    $environmental_benefits_submission['csc_environmental_benefits'] = $in_data_array[5];
+    $environmental_benefits_submission['csc_nitrogen_loss'] = $in_data_array[6];
+    $environmental_benefits_submission['csc_nitrogen_loss_amount'] = $in_data_array[7];
+    $environmental_benefits_submission['csc_nitrogen_loss_amount_unit'] = $in_data_array[8];
+    $environmental_benefits_submission['csc_nitrogen_loss_amt_ut_otr'] = $in_data_array[9];
+    $environmental_benefits_submission['csc_nitrogen_loss_purpose'] = $in_data_array[10];
+    $environmental_benefits_submission['csc_nitrogen_loss_purpose_other'] = $in_data_array[11];
+    $environmental_benefits_submission['csc_phosphorus_loss'] = $in_data_array[12];
+    $environmental_benefits_submission['csc_phosphorus_loss_amount'] = $in_data_array[13];
+    $environmental_benefits_submission['csc_phosphorus_loss_amount_unit'] = $in_data_array[14];
+    $environmental_benefits_submission['csc_phosphorus_loss_amt_ut_otr'] = $in_data_array[15];
+    $environmental_benefits_submission['csc_phosphorus_loss_purpose'] = $in_data_array[16];
+    $environmental_benefits_submission['csc_phosphorus_loss_purpose_otr'] = $in_data_array[17];
+    $environmental_benefits_submission['csc_other_water_quality'] = $in_data_array[18];
+    $environmental_benefits_submission['csc_other_water_quality_type'] = $in_data_array[19];
+    $environmental_benefits_submission['csc_otr_water_quality_type_otr'] = $in_data_array[20];
+    $environmental_benefits_submission['csc_other_water_quality_amount'] = $in_data_array[21];
+    $environmental_benefits_submission['csc_otr_water_quality_amt_ut'] = $in_data_array[22];
+    $environmental_benefits_submission['csc_otr_h2o_quality_amt_ut_otr'] = $in_data_array[23];
+    $environmental_benefits_submission['csc_other_water_quality_purpose'] = $in_data_array[24];
+    $environmental_benefits_submission['csc_otr_h2o_quality_purpose_otr'] = $in_data_array[25];
+    $environmental_benefits_submission['csc_water_quantity'] = $in_data_array[26];
+    $environmental_benefits_submission['csc_water_quantity_amount'] = $in_data_array[27];
+    $environmental_benefits_submission['csc_water_quantity_amount_unit'] = $in_data_array[28];
+    $environmental_benefits_submission['csc_water_quantity_amt_ut_otr'] = $in_data_array[29];
+    $environmental_benefits_submission['csc_water_quantity_purpose'] = $in_data_array[30];
+    $environmental_benefits_submission['csc_water_quantity_purpose_otr'] = $in_data_array[31];
+    $environmental_benefits_submission['csc_reduced_erosion'] = $in_data_array[32];
+    $environmental_benefits_submission['csc_reduced_erosion_amount'] = $in_data_array[33];
+    $environmental_benefits_submission['csc_reduced_erosion_amount_unit'] = $in_data_array[34];
+    $environmental_benefits_submission['csc_reduced_erosion_amt_ut_otr'] = $in_data_array[35];
+    $environmental_benefits_submission['csc_reduced_erosion_purpose'] = $in_data_array[36];
+    $environmental_benefits_submission['csc_reduced_erosion_purpose_otr'] = $in_data_array[37];
+    $environmental_benefits_submission['csc_reduced_energy_use'] = $in_data_array[38];
+    $environmental_benefits_submission['csc_reduced_energy_use_amount'] = $in_data_array[39];
+    $environmental_benefits_submission['csc_reduced_energy_use_amt_ut'] = $in_data_array[40];
+    $environmental_benefits_submission['csc_red_energy_use_amt_ut_otr'] = $in_data_array[41];
+    $environmental_benefits_submission['csc_reduced_energy_use_purpose'] = $in_data_array[42];
+    $environmental_benefits_submission['csc_red_energy_use_purpose_otr'] = $in_data_array[43];
+    $environmental_benefits_submission['csc_avoided_land_conversion'] = $in_data_array[44];
+    $environmental_benefits_submission['csc_avoided_land_conversion_amt'] = $in_data_array[45];
+    $environmental_benefits_submission['csc_avoided_land_conversion_ut'] = $in_data_array[46];
+    $environmental_benefits_submission['csc_avo_land_conversion_ut_otr'] = $in_data_array[47];
+    $environmental_benefits_submission['csc_avo_land_conversion_purpose'] = $in_data_array[48];
+    $environmental_benefits_submission['csc_avo_land_conv_purpose_otr'] = $in_data_array[49];
+    $environmental_benefits_submission['csc_improved_wildlife_habitat'] = $in_data_array[50];
+    $environmental_benefits_submission['csc_imp_wildlife_habitat_amt'] = $in_data_array[51];
+    $environmental_benefits_submission['csc_imp_wildlife_habitat_ut'] = $in_data_array[52];
+    $environmental_benefits_submission['csc_imp_wld_habitat_amt_ut_otr'] = $in_data_array[53];
+    $environmental_benefits_submission['csc_imp_wld_habitat_purpose'] = $in_data_array[54];
+    $environmental_benefits_submission['csc_imp_wld_habitat_purpose_otr'] = $in_data_array[55];
     
     $ps_to_save = Log::create($environmental_benefits_submission);
 

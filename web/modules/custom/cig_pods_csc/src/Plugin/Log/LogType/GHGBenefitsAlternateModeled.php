@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the GHG Benefits Alternate Modeled log type.
  *
  * @LogType(
- * id = "ghg_benefits_alternate_modeled",
+ * id = "csc_ghg_benefits_alt_modeled",
  * label = @Translation("GHGBenefitsAlternateModeled"),
  * )
  */
@@ -23,21 +23,21 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'g_benefits_alternate_modeled_fiscal_year' => [
+      'csc_g_bene_alt_md_fiscal_year' => [
         'type' => 'string',
         'label' => 'Federal Fiscal Year of report submission',
         'description' => 'Federal Fiscal Year of report submission',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_alternate_modeled_fiscal_quarter' => [
+      'csc_g_bene_alt_md_fiscal_quart' => [
         'type' => 'string',
         'label' => 'Federal Fiscal Quarter of report submission',
         'description' => 'Federal Fiscal Quarter of report submission',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_alternate_modeled_field_id' => [
+      'csc_g_bene_alt_md_fld_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -46,7 +46,7 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -55,7 +55,7 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_alternate_modeled_commodity_type' => [
+      'csc_g_bene_alt_md_comm_type' => [
         'type' => 'entity_reference',
         'label' => 'Field Summary Commodity Type',
         'description' => 'Field Summary Commodity Type',
@@ -64,7 +64,7 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_alternate_modeled_practice_type' => [
+      'csc_g_bene_alt_md_pract_type' => [
         'type' => 'entity_reference',
         'label' => 'Practice Type',
         'description' => 'Practice Type',
@@ -73,7 +73,7 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'required' => TRUE,
         'multiple' => TRUE,
       ],
-      'g_benefits_alternate_modeled_ghg_model' => [
+      'csc_g_bene_alt_md_ghg_md' => [
         'type' => 'entity_reference',
         'label' => 'Result GHG Model',
         'description' => 'Result GHG Model',
@@ -82,56 +82,56 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_alternate_modeled_ghg_model_other' => [
+      'csc_g_bene_alt_md_ghg_md_otr' => [
         'type' => 'string',
         'label' => 'Other GHG Model',
         'description' => 'Other GHG Model',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_alternate_modeled_model_start_date' => [
+      'csc_g_bene_alt_md_md_start_date' => [
         'type' => 'timestamp',
         'label' => 'Model Start Date',
         'description' => 'Model Start Date',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_alternate_modeled_model_end_date' => [
+      'csc_g_bene_alt_md_md_end_date' => [
         'type' => 'timestamp',
         'label' => 'Model End Date',
         'description' => 'Model End Date',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'g_benefits_alternate_modeled_ghg_benefits_estimated' => [
+	    'csc_g_bene_alt_md_ghg_bene_est' => [
         'type' => 'fraction',
         'label' => 'Total GHG Benefits Estimated',
         'description' => 'Total GHG Benefits Estimated',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'g_benefits_alternate_modeled_carbon_stock_estimated' => [
+	    'csc_g_bene_alt_md_co2_stock_est' => [
         'type' => 'fraction',
         'label' => 'Total Carbon Stock Estimated',
         'description' => 'Total Carbon Stock Estimated',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'g_benefits_alternate_modeled_co2_estimated' => [
+	    'csc_g_bene_alt_md_co2_est' => [
         'type' => 'fraction',
         'label' => 'Total CO2 Estimated',
         'description' => 'Total CO2 Estimated',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'g_benefits_alternate_modeled_ch4_estimated' => [
+	    'csc_g_bene_alt_md_ch4_est' => [
         'type' => 'fraction',
         'label' => 'Total CH4 Estimated',
         'description' => 'Total CH4 Estimated',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'g_benefits_alternate_modeled_n2o_estimated' => [
+	    'csc_g_bene_alt_md_n2o_est' => [
         'type' => 'fraction',
         'label' => 'Total N2O Estimated',
         'description' => 'Total N2O Estimated',

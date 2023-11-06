@@ -9,7 +9,7 @@ use Drupal\farm_field\FarmFieldFactory;
  * Provides the GHG Benefits Measured log type.
  *
  * @LogType(
- * id = "ghg_benefits_measured",
+ * id = "csc_ghg_benefits_measured",
  * label = @Translation("GHGBenefitsMeasured"),
  * )
  */
@@ -23,21 +23,21 @@ class GHGBenefitsMeasured extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
-      'g_benefits_measured_fiscal_year' => [
+      'csc_g_bene_msrd_fiscal_year' => [
         'type' => 'string',
         'label' => 'Federal Fiscal Year of report submission',
         'description' => 'Federal Fiscal Year of report submission',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_fiscal_quarter' => [
+      'csc_g_bene_msrd_fiscal_quarter' => [
         'type' => 'string',
         'label' => 'Federal Fiscal Quarter of report submission',
         'description' => 'Federal Fiscal Quarter of report submission',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_field_id' => [
+      'csc_g_bene_msrd_fld_id' => [
         'type' => 'entity_reference',
         'label' => 'Field ID',
         'description' => 'Field ID',
@@ -46,7 +46,7 @@ class GHGBenefitsMeasured extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'project_id' => [
+      'csc_project_id' => [
         'type' => 'entity_reference',
         'label' => 'Project ID',
         'description' => 'Project ID',
@@ -55,7 +55,7 @@ class GHGBenefitsMeasured extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_ghg_measurement_method' => [
+      'csc_g_bene_msrd_ghg_msrt_mt' => [
         'type' => 'entity_reference',
         'label' => 'GHG measurement method',
         'description' => 'GHG measurement method',
@@ -64,70 +64,70 @@ class GHGBenefitsMeasured extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_ghg_measurement_method_other' => [
+      'csc_g_bene_msrd_ghg_msrt_mt_otr' => [
         'type' => 'string',
         'label' => 'Other GHG measurement method',
         'description' => 'Other GHG measurement method',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_lab_name' => [
+      'csc_g_bene_msrd_lab_name' => [
         'type' => 'string',
         'label' => 'Lab Name',
         'description' => 'Lab Name',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_measurement_start_date' => [
+      'csc_g_bene_msrd_msrt_start_date' => [
         'type' => 'timestamp',
         'label' => 'Measurement Start Date',
         'description' => 'Measurement Start Date',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_measurement_end_date' => [
+      'csc_g_bene_msrd_msrt_end_date' => [
         'type' => 'timestamp',
         'label' => 'Measurement End Date',
         'description' => 'Measurement End Date',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'g_benefits_measured_total_co2_reduction' => [
+	    'csc_g_bene_msrd_total_co2_rd' => [
         'type' => 'fraction',
         'label' => 'Total CO2 reduction',
         'description' => 'Total CO2 reduction',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'g_benefits_measured_total_field_carbon_stock' => [
+	    'csc_g_bene_msrd_t_fld_co2_stock' => [
         'type' => 'fraction',
         'label' => 'Total Field Carbon Stock',
         'description' => 'Total Field Carbon Stock',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'g_benefits_measured_total_ch4_reduction' => [
+	    'csc_g_bene_msrd_total_ch4_rd' => [
         'type' => 'fraction',
         'label' => 'Total CH4 reduction',
         'description' => 'Total CH4 reduction',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_total_n2o_reduction' => [
+      'csc_g_bene_msrd_total_n2o_rd' => [
         'type' => 'fraction',
         'label' => 'Total N20 reduction',
         'description' => 'Total N20 reduction',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-	    'g_benefits_measured_soil_sample_result' => [
+	    'csc_g_bene_msrd_sl_sp_rs' => [
         'type' => 'fraction',
         'label' => 'Soil Sample Result',
         'description' => 'Soil Sample Result',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_soil_sample_result_unit' => [
+      'csc_g_bene_msrd_sl_sp_rs_ut' => [
         'type' => 'list_string',
         'label' => 'Soil Sample Result Unit',
         'description' => 'Soil Sample Result Unit',
@@ -141,14 +141,14 @@ class GHGBenefitsMeasured extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_soil_sample_result_unit_other' => [
+      'csc_g_bene_msrd_sl_sp_rs_ut_otr' => [
         'type' => 'string',
         'label' => 'Soil Sample Result Unit Other',
         'description' => 'Soil Sample Result Unit Other',
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_measurement_type' => [
+      'csc_g_bene_msrd_msrt_type' => [
         'type' => 'list_string',
         'label' => 'Measurement Type',
         'description' => 'Measurement Type',
@@ -161,7 +161,7 @@ class GHGBenefitsMeasured extends FarmLogType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
-      'g_benefits_measured_measurement_type_other' => [
+      'csc_g_bene_msrd_msrt_type_otr' => [
         'type' => 'string',
         'label' => 'Measurement Type Other',
         'description' => 'Measurement Type Other',

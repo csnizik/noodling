@@ -1,10 +1,11 @@
+uuid: 109cdd62-cbe8-48f4-aaa5-cfbd0e3b88f1
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: ghg_benefits_alternate_modeled
+id: csc_ghg_benefits_alt_modeled
 label: 'GHG Benefits - Alternate Modeled'
 description: 'GHG Benefits - Alternate Modeled'
 name_pattern: 'GHG Benefits Alternate Modeled log [log:id]'

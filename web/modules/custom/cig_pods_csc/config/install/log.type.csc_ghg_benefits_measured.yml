@@ -4,7 +4,7 @@ dependencies:
   enforced:
     module:
       - cig_pods_csc
-id: ghg_benefits_measured
+id: csc_ghg_benefits_measured
 label: 'GHG Benefits - Measured'
 description: 'GHG Benefits - Measured'
 name_pattern: 'GHG Benefits Measured log [log:id]'
