@@ -1,0 +1,168 @@
+div#block-gin-content {
+
+    box-shadow: var(--gin-shadow-l1);
+    background: var(--gin-bg-layer);
+    border: 1px solid var(--gin-border-color-layer);
+    border-radius: 10px;
+}
+#block-gin-content form .fieldgroup .js-form-item {
+    margin-bottom: 0.5em;
+}
+#block-gin-content form .form-element {
+    width: 648px !important;
+    border: 1px solid #1b1b1b;
+    border-radius: 0;
+}
+#block-gin-content form .subtitle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#block-gin-content form h1 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 38px;
+    margin-top: 20px;
+}
+#block-gin-content form h2 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+}
+#block-gin-content form h4 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+/*Scrollbar CSS Start*/
+/*===================*/
+::-webkit-scrollbar {
+    width: 7px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dcdee0;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #71767a;
+}
+/*Scrollbar CSS End*/
+/*===================*/
+#block-gin-content form .subform-title-container.subform-title-container-top {
+    margin-top: 24px;
+    margin-bottom: 33px;
+}
+#block-gin-content form .form-title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+}
+#block-gin-content form .subform-title-container {
+    display: flex;
+    align-items: center;
+    clear: both;
+}
+#block-gin-content form .subform-title-container h2 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+    flex: 50%;
+}
+#block-gin-content form .subform-title-container h4 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+#block-gin-content form .remove-button-container {
+    display: inline-block;
+}
+#block-gin-content form .remove-button-container input {
+    margin-bottom: 0px;
+    color: white;
+    background-color: #d83933;
+    border-color: #d83933 !important;
+}
+#block-gin-content form .remove-button-container input:hover {
+    background-color: #b51d09;
+    border-color: #b51d09 !important;
+}
+.fieldset__label, .fieldset__label--group, .form-item__label {
+    font-weight: normal !important;
+}
+.form-item {
+    margin-top: 0px !important;
+    margin-bottom: 40px !important;
+}
+input#edit-cancel.button, input#edit-actions-cancel.button {
+    background-color: #fff;
+    border-radius: 4px;
+    border-color: #005ea2 !important;
+    padding: 12 20 12 20;
+    color: #005ea2;
+    font-weight: 600;
+    font-size: 16px;
+}
+input#edit-actions-send.button, input#edit-actions-save.button, input#edit-save.button {
+    background-color: #005ea2 !important;
+    color: white !important;
+    border-color: #005ea2 !important;
+    border-radius: 4px;
+    padding: 12 20 12 20;
+    font-weight: 600;
+    font-size: 16px;
+}
+input#edit-actions-cancel:hover, input#edit-cancel:hover {
+    background-color: #005ea2 !important;
+    color: white !important;
+    border-color: #005ea2 !important;
+}
+input#edit-delete.button, input#edit-actions-delete.button {
+    background-color: #da3737;
+    border-radius: 4px;
+    border-color: #da3737 !important;
+    padding: 12 20 12 20;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+span.operation-description h4 {
+    margin-bottom: 0px;
+}
+span.operation h4 {
+    margin-top: 5px;
+    margin-bottom: 46px;
+}
+form {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    width: 688px !important;
+    border: none !important;
+    box-shadow: none !important;
+
+}
+.usa-banner__inner {
+    max-width: 42rem;
+}
+.usa-navbar {
+    max-width: 42rem !important;
+}
+.usa-banner__content {
+    padding: 0.25rem 1rem 1rem 0.5rem;
+}
+.grid-row.grid-gap-lg {
+    width: 42rem;
+}
+.usa-banner__guidance.tablet\:grid-col-6 {
+    width: 21rem;
+}
+ul#select2-edit-field-shmu-initial-crops-planted-container, ul#select2-edit-field-shmu-practices-addressed-container, ul#select2-edit-field-shmu-resource-concern-container, ul#select2-edit-field-resource-concerns-container {
+    margin: 0;
+}
+.select2-container--default .select2-selection--multiple {
+    border-radius: 0px !important;
+    border: 1px solid #000 !important;
+}
+ol.gin-breadcrumb__list {
+    display: none;
+}

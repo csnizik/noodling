@@ -1,0 +1,201 @@
+@import "variables";
+.a{
+    --colorGinAppBackgroundRGB:0,0,0;
+}
+
+h1.page-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 700;
+    display: block;
+    padding-left: 50px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    display: block;
+    /*height: 26px;*/
+    transition: none;
+    width: 100%;
+}
+
+.awardee-lab-results-display table th, td {
+    background-color: white;
+}
+
+.view-content {
+    background-color: white;
+    margin-top: -25px;
+    padding-left: 40px;
+}
+
+.layout-container::after {
+    display: none;
+}
+.layout-container.region-sticky__items {
+    height: 90px;
+}
+
+div#block-gin-page-title {
+    height: 75px;
+}
+
+table  {
+    --colorGinTableBorder:rgba(0,0,0,0); /* working*/
+}
+
+table.views-table.views-view-table.cols-4 {
+    padding-left: 40px;
+    width:100%;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.sticky-shadow{
+    display: none;
+}
+.content-header {
+    display: none;
+}
+.page-content {
+    margin-top: -40px;
+}
+
+
+div#block-farm-powered {
+    display: none;
+}
+
+.page-content clearfix::after {
+    display: none;
+}
+
+th.views-field.views-field-name {
+    width: max-content;
+    max-width: 260px;
+    min-width: 25px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 36px;
+    --colorGinPrimaryActive: #000000;
+}
+
+table.views-table.views-view-table.cols-4 {
+    --colorGinPrimaryActive: #000000;
+     width: auto;
+}
+
+td.views-field.views-field-name {
+    width: max-content;
+    max-width: 250px;
+    min-width: 25px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 36px;
+    --colorGinPrimary:$main-blue;
+    --colorGinPrimaryHover: $main-blue;
+}
+
+td{
+    width: max-content;
+    max-width: 250px;
+    min-width: 25px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 36px;
+    --colorGinPrimary:$main-blue;
+    --colorGinPrimaryHover: $main-blue;
+}
+
+td.views-field.views-field-status {
+    width: 46px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 36px;
+}
+
+td.views-field.views-field-id {
+    width: 46px;
+    height: 36px;
+    padding-right: 60px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.region-sticky__items {
+    display: block;
+}
+
+.region-sticky__items__inner {
+    display: block;
+    width: 94% !important;
+    align-items: unset;
+    margin-top: 60px;
+}
+
+.dropbutton-widget, .dropbutton {
+	background-color: white !important;
+	border-color: #005EA2 !important;
+    border-radius: 2px !important;
+}
+
+.dropbutton > .dropbutton__item > a {
+	color: #005EA2 !important;
+    border-radius: 0;
+}
+
+.dropbutton > .dropbutton__item > a:hover,
+.dropbutton > .dropbutton__item:first-of-type > a:focus,
+.dropbutton > .dropbutton__item:first-of-type > a:active {
+    background-color: transparent !important;
+}
+
+.region-sticky__items .block-page-title-block {
+    display:    block;
+}
+
+/* prevent view-content from being shifted down when width is changed */
+div#block-gin-local-actions {
+    /*height: 0px;*/
+}
+.region-sticky-watcher {
+    height: 0px;
+}
+
+.sticky-shadow {
+    height: 0px;
+}
+.content-header.clearfix {
+    height: 0px;
+}
+
+.form-item--csc-grantee-poc-name {
+    float: left;
+    width: 49% !important;
+    margin-right: 2% !important;
+}
+
+.form-item--csc-grantee-poc-eauth {
+    float: left;
+    width: 49% !important;
+}
+
+.form-item--csc-grantee-poc-email {
+    float: left;
+    width: 49% !important;
+}
+
+.form-item--csc-lead-npo {
+    float: left;
+    width: 49% !important;
+    margin-right: 2% !important;
+}
+
+.form-item--csc-backup-npo {
+    float: left;
+    width: 49% !important;
+}
+
+.grantee-project-descriotion {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,8 @@
+grantee_project_setup_form:
+  css:
+    theme:
+      css/grantee_project.css: {}
+css_form:
+  css:
+    theme:
+      css/form.css: {}
