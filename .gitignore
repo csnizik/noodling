@@ -17,6 +17,5 @@ web/sites/*
 web/sites/default/*
 !web/sites/default/settings.php
 INSTALLED
-scripts/pods_1.1.0.6.tar.gz
-scripts/pods.tar.gz
+*.tar.gz
 auth.json

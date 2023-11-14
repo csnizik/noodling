@@ -29,7 +29,7 @@ class ConfirmDeleteModalForm extends FormBase {
       '#attributes' => ['id' => ['edit-cancel'], 'class'=> ['button popup-close-button']],
     ];
 
-    $form['actions']['yes'] = [
+    $form['actions']['confirmDeletePopup'] = [
       '#type' => 'submit',
       '#value' => $this->t('Yes, delete'),
       '#attributes' => ['id' => ['edit-delete'], 'class'=> ['button dc-popup']],

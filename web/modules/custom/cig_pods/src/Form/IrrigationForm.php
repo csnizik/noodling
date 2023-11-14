@@ -195,13 +195,15 @@ class IrrigationForm extends PodsFormBase {
       '#required' => FALSE,
     ];
 
-    $asset_id = $is_edit ? $asset->id() : NULL;
 
-    $form['asset_id'] = [
-      '#type' => 'hidden',
-      '#value' => $asset_id,
-      '#attributes' => ['id' => ['asset_id'],],
-    ];
+
+	$asset_id = $is_edit ? $asset->id() : NULL;
+
+	$form['asset_id'] = [
+	  '#type' => 'hidden',
+	  '#value' => $asset_id,
+	  '#attributes' => ['id' => ['asset_id'],],
+	];
 
     $form['actions']['save'] = [
       '#type' => 'submit',
@@ -275,6 +277,7 @@ class IrrigationForm extends PodsFormBase {
       'actions',
       'delete',
       'cancel',
+      'asset_id',
     ];
     $date_fields = ['field_shmu_irrigation_sample_date'];
     $form_values = $form_state->getValues();

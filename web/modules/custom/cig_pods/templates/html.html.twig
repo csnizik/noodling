@@ -138,21 +138,21 @@
       const button = document.getElementById('gov-banner');
       function showInfo() {
         if (button.hasAttribute("hidden")) {
-          const element = document.getElementById("gov-banner").removeAttribute("hidden");
+          button.removeAttribute("hidden");
         } else {
-          const element = document.getElementById("gov-banner").setAttribute("hidden", "");
+          button.setAttribute("hidden", "");
         } 
       }
     </script>
 
      <script>
       document.getElementById("grape").onclick = function() {showInfo2()};
-      const button2 = document.getElementById('collapse');
+      const text2 = document.getElementById("text2");
       function showInfo2() {
-        if (button2.hasAttribute("hidden")) {
-          const element = document.getElementById("collapse").removeAttribute("hidden");
+        if (text2.hasAttribute("hidden")) {
+          text2.removeAttribute("hidden");
         } else {
-          const element = document.getElementById("collapse").setAttribute("hidden", "");
+          text2.setAttribute("hidden", "");
         } 
       }
     </script>

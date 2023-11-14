@@ -145,4 +145,32 @@ select.form-select.form-element.form-element--type-select {
 
 span#grape {
   cursor: pointer;
+  display: inline-block;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  padding-left: 2.75rem !important;
+  padding-right: 2.75rem !important;
+}
+
+div#grape_row {
+  padding-bottom: 1.25rem;
+}
+
+.collapse_header {
+  margin-top: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  // background-color: gray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e7e7e7;
+  
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: #888;
 }

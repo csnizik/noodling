@@ -6,6 +6,7 @@ use Drupal\asset\Entity\AssetInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\asset\Entity\Asset;
 use Drupal\Core\Render\Element\Checkboxes;
+use Drupal\cig_pods\ProjectAccessControlHandler;
 
 /**
  * Project form.
@@ -37,13 +38,24 @@ class ProjectForm extends PodsFormBase {
    * Get award options.
    */
   public function getAwardOptions() {
-    $awards = $this->entityOptions('asset', 'award');
+    $awards = [];
     $options = [];
-    foreach($awards as $key => $award){
-      $award_entity = \Drupal::entityTypeManager()->getStorage('asset')->load($key);
-      $options[$key] = $award_entity->get('field_award_agreement_number')->value;
-      
+    if(ProjectAccessControlHandler::isProjectManager()){
+      $awards = ProjectAccessControlHandler::getProjectManagerAwardEntities();
+      foreach($awards as $award){
+        $award_entity = \Drupal::entityTypeManager()->getStorage('asset')->load($award);
+        $options[$award] = $award_entity->get('field_award_agreement_number')->value;
+      }
+        
+    }else{
+      $awards = $this->entityOptions('asset', 'award');
+      foreach($awards as $key => $award){
+        $award_entity = \Drupal::entityTypeManager()->getStorage('asset')->load($key);
+        $options[$key] = $award_entity->get('field_award_agreement_number')->value;
+      }
     }
+
+    
 
     return ['' => '- Select -'] + $options;
   }
@@ -192,13 +204,14 @@ class ProjectForm extends PodsFormBase {
       '#default_value' => $summary_default,
     ];
 
-    $asset_id = $is_edit ? $asset->id() : NULL;
 
-    $form['asset_id'] = [
-      '#type' => 'hidden',
-      '#value' => $asset_id,
-      '#attributes' => ['id' => ['asset_id'],],
-    ];
+	$asset_id = $is_edit ? $asset->id() : NULL;
+
+	$form['asset_id'] = [
+	  '#type' => 'hidden',
+	  '#value' => $asset_id,
+	  '#attributes' => ['id' => ['asset_id'],],
+	];
 
     $form['actions']['save'] = [
       '#type' => 'submit',
@@ -331,7 +344,7 @@ class ProjectForm extends PodsFormBase {
       $field_grant_type = $form_state->getValue('field_grant_type');
 
       $project->set('name', $project_name);
-      $project->set('award_default', $award_agreement_number);
+      $project->set('award', $award_agreement_number);
       $project->set('field_resource_concerns', $field_resource_concerns);
       $project->set('field_funding_amount', $field_funding_amount);
       $project->set('field_summary', $summary);

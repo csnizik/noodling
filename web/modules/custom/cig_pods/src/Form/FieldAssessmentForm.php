@@ -267,13 +267,13 @@ class FieldAssessmentForm extends PodsFormBase {
       ];
     }
 
-    $asset_id = $is_edit ? $asset->id() : NULL;
+	$asset_id = $is_edit ? $asset->id() : NULL;
 
-    $form['asset_id'] = [
-      '#type' => 'hidden',
-      '#value' => $asset_id,
-      '#attributes' => ['id' => ['asset_id'],],
-    ];
+	$form['asset_id'] = [
+	  '#type' => 'hidden',
+	  '#value' => $asset_id,
+	  '#attributes' => ['id' => ['asset_id'],],
+	];
 
     $form['actions']['save'] = [
       '#type' => 'submit',
@@ -349,6 +349,7 @@ class FieldAssessmentForm extends PodsFormBase {
       'cancel',
       'identify-resource-concerns',
       'delete',
+      'asset_id',
     ];
 
     $calculated_fields = [

@@ -146,7 +146,7 @@ class LabTestMethodForm extends PodsFormBase {
 
     $lab_default = $is_edit ? $labTestMethod->get('field_lab_soil_test_laboratory')->target_id : NULL;
     $form['field_lab_soil_test_laboratory'] = [
-      '#type' => 'select',
+      '#type' => 'select2',
       '#title' => 'Soil Health Test Laboratory',
       '#options' => $s_he_test_laboratory,
       '#default_value' => $lab_default,
@@ -354,13 +354,14 @@ class LabTestMethodForm extends PodsFormBase {
       '#required' => TRUE,
     ];
 
-    $asset_id = $is_edit ? $asset->id() : NULL;
 
-    $form['asset_id'] = [
-      '#type' => 'hidden',
-      '#value' => $asset_id,
-      '#attributes' => ['id' => ['asset_id'],],
-    ];
+	$asset_id = $is_edit ? $asset->id() : NULL;
+
+	$form['asset_id'] = [
+	  '#type' => 'hidden',
+	  '#value' => $asset_id,
+	  '#attributes' => ['id' => ['asset_id'],],
+	];
 
     $form['actions']['save'] = [
       '#type' => 'submit',

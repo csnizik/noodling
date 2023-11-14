@@ -779,16 +779,15 @@ class SoilHealthManagementUnitForm extends PodsFormBase {
         '#name' => 'irrigation_radios',
       ],
     ];
-    
+	
+	$asset_id = $is_edit ? $asset->id() : NULL;
 
-    $asset_id = $is_edit ? $asset->id() : NULL;
-
-    $form['asset_id'] = [
-      '#type' => 'hidden',
-      '#value' => $asset_id,
-      '#attributes' => ['id' => ['asset_id'],],
-    ];
-
+	$form['asset_id'] = [
+	  '#type' => 'hidden',
+	  '#value' => $asset_id,
+	  '#attributes' => ['id' => ['asset_id'],],
+	];
+	
     $form['actions']['send'] = [
       '#type' => 'submit',
       '#value' => 'Save',
@@ -911,7 +910,8 @@ class SoilHealthManagementUnitForm extends PodsFormBase {
       'mymap',
       'ssurgo_lookup',
       'ssurgo_data_wrapper',
-      'addCrop'
+      'addCrop',
+      'asset_id'
     ];
 
     $form_values = $form_state->getValues();
@@ -1034,8 +1034,6 @@ class SoilHealthManagementUnitForm extends PodsFormBase {
     // Cleanup done.
     $producer = \Drupal::entityTypeManager()->getStorage('asset')->load($form_state->getValue('field_shmu_involved_producer'));
     $this->setAwardReference($shmu, $producer->get('award')->target_id);
-
-    // dpm($form_state->get('irrigation_redirect'));
 
     if ($form_state->get('irrigation_redirect')) {
       $form_state->setRedirect('cig_pods.irrigation_shmu_form', ['shmu' => $shmu->get('id')->value]);

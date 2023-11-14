@@ -1,0 +1,7 @@
+build
+.vscode
+db
+keys
+web/update.php
+.*
+**/.git/*

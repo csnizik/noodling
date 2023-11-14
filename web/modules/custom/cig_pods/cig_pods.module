@@ -60,6 +60,8 @@ function cig_pods_views_pre_render(ViewExecutable $view) {
       case 'awardee':
       case 'producer':
       case 'soil_health_management_unit':
+      case 'project_manager_award':
+      case 'project_manager_project':
         $library = 'admin_details_display';
         break;
 

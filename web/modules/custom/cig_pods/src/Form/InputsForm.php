@@ -373,14 +373,14 @@ class InputsForm extends PodsFormBase {
       '#value' => 'Add Another Cost',
     ];
 
-    $asset_id = $is_edit ? $asset->id() : NULL;
+	$asset_id = $is_edit ? $asset->id() : NULL;
 
-    $form['asset_id'] = [
-      '#type' => 'hidden',
-      '#value' => $asset_id,
-      '#attributes' => ['id' => ['asset_id'],],
-    ];
-
+	$form['asset_id'] = [
+	  '#type' => 'hidden',
+	  '#value' => $asset_id,
+	  '#attributes' => ['id' => ['asset_id'],],
+	];
+	
     $form['actions'] = [
       '#type' => 'actions',
     ];

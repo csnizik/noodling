@@ -280,7 +280,7 @@ class ShmuCopyConfirmationForm extends PodsFormBase {
       'field_shmu_resource_concern' => $this->getDefaultValuesArrayFromMultivaluedShmuField($shmu_to_copy, 'field_shmu_resource_concern'),  
       'field_shmu_practices_addressed' => $this->getDefaultValuesArrayFromMultivaluedShmuField($shmu_to_copy, 'field_shmu_practices_addressed'),  
       'field_shmu_initial_crops_planted' => $this->getDefaultValuesArrayFromMultivaluedShmuField($shmu_to_copy, 'field_shmu_initial_crops_planted'),  
-      'project' => $shmu_to_copy->get('project')->target_id,
+      'award' => $shmu_to_copy->get('award')->target_id,
       'field_shmu_prev_land_use' => $form_state->getValue('field_shmu_prev_land_use'),
       'field_shmu_prev_land_use_modifiers' => $form_state->getValue('field_shmu_prev_land_use_modifiers'),
       'field_shmu_date_land_use_changed' =>  $form_state->getValue('field_shmu_date_land_use_changed'), 

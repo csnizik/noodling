@@ -64,6 +64,12 @@ cig_pods.add_project:
   appears_on:
     - view.pods_asset_lists.project
 
+cig_pods.add_project_manager:
+  route_name: cig_pods.project_form
+  title: 'Add Project'
+  appears_on:
+    - view.pods_asset_lists.project_manager_project
+
 cig_pods.add_range_assessment:
   route_name: cig_pods.range_assessment_form
   title: 'Add Rangeland Assessment'

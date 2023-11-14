@@ -5,6 +5,7 @@ namespace Drupal\cig_pods\Form;
 use Drupal\asset\Entity\AssetInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\asset\Entity\Asset;
+use Drupal\cig_pods\ProjectAccessControlHandler;
 
 /**
  * Awardee organization form.
@@ -29,23 +30,6 @@ class AwardForm extends PodsFormBase {
     $form_state->set('contacts', $contacts);
   }
 
-  /**
-   * Get awardee contact name options.
-   */
-  public function getAwardeeContactNameOptions(array &$form, FormStateInterface $form_state) {
-    $contact_options_email = [];
-
-    $contact_name_options = [];
-    $contact_name_options[''] = ' - Select -';
-    $this->addContactsToArray('CIG_NSHDS', $contact_name_options, $contact_options_email);
-    $this->addContactsToArray('CIG_APT', $contact_name_options, $contact_options_email);
-    $this->addContactsToArray('CIG_App_Admin', $contact_name_options, $contact_options_email);
-    $this->addContactsToArray('CIG_APA', $contact_name_options, $contact_options_email);
-
-    $form_state->set('contact_emails', $contact_options_email);
-
-    return $contact_name_options;
-  }
 
   /**
    * Add contacts to array.
@@ -114,6 +98,7 @@ class AwardForm extends PodsFormBase {
   public function buildForm(array $form, FormStateInterface $form_state, AssetInterface $asset = NULL) {
     $award = $asset;
     $is_edit = $award <> NULL;
+    $is_admin = ProjectAccessControlHandler::isAdmin();
     
     if ($is_edit) {
       $form_state->set('operation', 'edit');
@@ -191,15 +176,16 @@ class AwardForm extends PodsFormBase {
       '#options' => $awardee_options,
       '#required' => TRUE,
       '#default_value' => $awardee_default_name,
+      '#access' => $is_admin,
     ];
 
     $agreement_number_default = $is_edit ? $award->get('field_award_agreement_number')->getValue()[0]['value'] : '';
     $form['field_award_agreement_number'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Agreement Number'),
-      '#description' => $this->t('Agreement Number'),
       '#default_value' => $agreement_number_default,
       '#required' => TRUE,
+      '#disabled' => !$is_admin,
     ];
     
     $contact_type_options = $this->getAwardeeContactTypeOptions();
@@ -226,6 +212,7 @@ class AwardForm extends PodsFormBase {
         '#type' => 'textfield',
         '#title' => $this
           ->t("Contact Name"),
+        '#required' => TRUE,
         '#default_value' => $default_name,
         'attributes' => [
           'class' => 'something',
@@ -242,12 +229,14 @@ class AwardForm extends PodsFormBase {
         '#default_value' => $default_type,
         '#prefix' => '<div class="inline-components"',
         '#suffix' => '</div>',
+        '#required' => TRUE,
       ];
 
       $form['names_fieldset'][$i]['contact_eauth_id'] = [
         '#type' => 'textfield',
         '#title' => $this
           ->t("Contact's Eauth ID"),
+        '#required' => TRUE,
         '#default_value' => $default_euath_id,
         'attributes' => [
           'class' => 'something',
@@ -260,6 +249,7 @@ class AwardForm extends PodsFormBase {
         '#type' => 'textfield',
         '#title' => $this
           ->t("Contact's Email"),
+        '#required' => TRUE,
         '#default_value' => $default_email,
         'attributes' => [
           'class' => 'something',
@@ -317,13 +307,14 @@ class AwardForm extends PodsFormBase {
     '#suffix' => '</div>',
   ];
 
-  $asset_id = $is_edit ? $asset->id() : NULL;
 
-  $form['asset_id'] = [
-    '#type' => 'hidden',
-    '#value' => $asset_id,
-    '#attributes' => ['id' => ['asset_id'],],
-  ];
+	$asset_id = $is_edit ? $asset->id() : NULL;
+
+	$form['asset_id'] = [
+	  '#type' => 'hidden',
+	  '#value' => $asset_id,
+	  '#attributes' => ['id' => ['asset_id'],],
+	];
 
 
   $form_state->setCached(FALSE);
@@ -340,7 +331,7 @@ class AwardForm extends PodsFormBase {
       '#submit' => ['::dashboardRedirect'],
     ];
 
-    if ($is_edit) {
+    if ($is_edit && ProjectAccessControlHandler::isAdmin()) {
       $form['actions']['delete'] = [
         '#type' => 'submit',
         '#value' => $this->t('Delete'),
@@ -387,9 +378,7 @@ class AwardForm extends PodsFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
-    // Minus 1 because there is an entry with key 'actions' for the "Add Another
-    // Minus 1 as above.
-    $num_contacts = count($form['names_fieldset']) - 1;
+    $num_contacts = $form_state->get('num_contact_lines');
 
     $contact_names = [];
     for ($i = 0; $i < $num_contacts; $i++) {
