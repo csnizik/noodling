@@ -7,6 +7,7 @@ use Drupal\asset\Entity\Asset;
 use Drupal\log\Entity\Log;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+use Drupal\asset\Entity\AssetInterface;
 
 /**
  * Provides route responses for the Example module.
@@ -58,7 +59,213 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
+
+        awardee org + project:
+        <form action="/csv_import/upload_awardee_org_project" enctype="multipart/form-data" method="post">
+          <input type="file" id="file" name="file">
+          <input type="submit">
+        </form>
     ',
+    ];
+  }
+
+  public function process_awardee_org_project() {
+    $awardee_org_count = 0;
+    $project_count = 0;
+    $out = [];      //output messages: imported sheets;
+    $output = 'start<br />';     //output messages: skipped sheets;
+
+    $allowedFileType = [
+        'application/vnd.ms-excel',
+        'text/xls',
+        'text/xlsx',
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+    ];
+
+
+    //temporarily save imported file
+    $folderPath = realpath($_FILES['file']['tmp_name']);
+    $targetPath = $folderPath . $_FILES['file']['name'];
+
+    move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
+
+    //get file extension
+    $extension = ucfirst(strtolower(pathinfo($targetPath, PATHINFO_EXTENSION)));
+    
+    //read the workbook but only get the sheets that is relevent
+    $sheetnames = ['Awardee Organizations', 'Projects'];
+    $reader = IOFactory::createReader($extension);
+    $reader->setReadDataOnly(TRUE);
+    $reader->setLoadSheetsOnly($sheetnames);
+    $spreadSheet = $reader->load($targetPath);
+    $sheetCount = $spreadSheet->getSheetCount();
+    
+
+    // Process each sheet in the workbook.
+    for ($i = 0; $i < $sheetCount; $i++) {
+      $sheet = $spreadSheet->getSheet($i);
+      $sheet_name = $sheet->getTitle();
+
+      switch($sheet_name) {
+        case "Awardee Organizations":
+          $offset = 0;
+          $done = false;
+
+          while(!$done) {
+            $name = $sheet->getCellByColumnAndRow(3, 5 + $offset)->getValue();
+            
+            if($name == "") {
+              $done = true;
+              break;
+            }
+
+            $ao_name = $name;
+            $ao_sn = $sheet->getCellByColumnAndRow(4, 5 + $offset)->getValue();
+            $ao_ac = $sheet->getCellByColumnAndRow(5, 5 + $offset)->getValue();
+            $ao_st = $sheet->getCellByColumnAndRow(6, 5 + $offset)->getValue();
+
+            $awardee_submission = [];
+            $awardee_submission['name'] = $ao_name;
+            $awardee_submission['organization_acronym'] = $ao_ac;
+            $awardee_submission['organization_short_name'] = $ao_sn;
+            $awardee_submission['organization_state_territory'] = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'd_state_territory', 'name' => $ao_st]);
+            $awardee_submission['type'] = 'awardee';
+
+            $awardee = Asset::create($awardee_submission);
+            $awardee->save();
+            $awardee_org_count++;
+
+            $offset++;
+            
+          }
+
+          break; 
+
+        case 'Projects':
+          $offset = 0;
+          $done = false;
+
+          while(!$done) {
+            $name = $sheet->getCellByColumnAndRow(3, 5 + $offset)->getValue();
+            
+            if($name == "") {
+              $done = true;
+              break;
+            }
+
+            $project_name = $name;
+            $project_agreement_no = $sheet->getCellByColumnAndRow(4, 5 + $offset)->getValue();
+            $project_grant_type = $sheet->getCellByColumnAndRow(5, 5 + $offset)->getValue();
+            $project_funding_amount = $sheet->getCellByColumnAndRow(6, 5 + $offset)->getValue();
+            $project_prc = $sheet->getCellByColumnAndRow(7, 5 + $offset)->getValue();
+            $project_summary = $sheet->getCellByColumnAndRow(8, 5 + $offset)->getValue();
+            $project_contact_name = $sheet->getCellByColumnAndRow(9, 5 + $offset)->getValue();
+            $project_contact_type = $sheet->getCellByColumnAndRow(10, 5 + $offset)->getValue();
+            $project_contact_nametype = $sheet->getCellByColumnAndRow(11, 5 + $offset)->getValue();
+            
+
+            $project_submission = [];
+            $project_submission['type'] = 'project';
+            $project_submission['name'] = $project_name;
+            $project_submission['award'] = \Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'award', 'field_award_agreement_number' => $project_agreement_no]);
+            $project_submission['field_funding_amount'] = $project_funding_amount;
+            $project_submission['field_summary'] = $project_summary;
+            $project_submission['field_grant_type'] = $project_contact_type;
+            $project_submission['field_resource_concerns'] = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'd_resource_concern', 'name' => $project_prc]);
+            
+            $project = Asset::create($project_submission);
+            $project->save();
+            
+            $project_count++;
+
+            $offset++;
+          }
+
+          break;
+        
+        }
+    }
+
+    return [
+      '#children' => "$awardee_org_count awardee orgs and $project_count projects added.",
+    ];
+
+
+  }
+
+
+
+  public function process_awardee_org_project_iterator() {
+    $out = [];      //output messages: imported sheets;
+    $output = 'start<br />';     //output messages: skipped sheets;
+
+   // if (isset($_POST["import"])) {
+      $allowedFileType = [
+          'application/vnd.ms-excel',
+          'text/xls',
+          'text/xlsx',
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+      ];
+
+     // if (in_array($_FILES["file"]["type"], $allowedFileType)) {
+
+          //temporarily save imported file
+          $folderPath = realpath($_FILES['file']['tmp_name']);
+          $targetPath = $folderPath . $_FILES['file']['name'];
+
+          move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
+
+          //get file extension
+          $extension = ucfirst(strtolower(pathinfo($targetPath, PATHINFO_EXTENSION)));
+          
+          //read the workbook but only get the sheets that is relevent
+          $sheetnames = ['Awardee Organizations', 'Projects'];
+          $reader = IOFactory::createReader($extension);
+          $reader->setReadDataOnly(TRUE);
+          $reader->setLoadSheetsOnly($sheetnames);
+          $spreadSheet = $reader->load($targetPath);
+          $sheetCount = $spreadSheet->getSheetCount();
+          
+
+          // Process each sheet in the workbook.
+          for ($i = 0; $i < $sheetCount; $i++) {
+            $sheet = $spreadSheet->getSheet($i);
+            $sheet_name = $sheet->getTitle();
+
+            switch($sheet_name) {
+              case "Awardee Organizations":
+                $first = 1;
+                $skip = 2;
+                $row_iter = $sheet->getRowIterator();
+                foreach($row_iter as $row) {
+                  if($first) { $first = 0; do {$row_iter->next();} while($skip--); continue;}
+                  $ci = $row->getCellIterator();
+                  foreach($ci as $cell) {
+                    $cv = $cell->getValue();
+                    if ($cv == "") continue;
+                    $output .= "-- " . $cell->getValue(); $ci->next();
+                    $output .= " : " . $cell->getValue(); $ci->next();
+                    $output .= " : " . $cell->getValue(); $ci->next();
+                    $output .= $cell->getValue() . "  --";
+
+                  }
+                  $output .= "<br />";
+                }
+                $output .= '';
+                break;
+              case 'Projects':
+                $output .= "ppp";
+                break;
+            }
+
+            $output = $output . $sheet_name . " <br />";
+          }
+       // }
+     // }
+
+
+    return [
+      '#children' => $output,
     ];
   }
 

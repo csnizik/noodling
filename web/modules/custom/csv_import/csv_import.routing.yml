@@ -14,6 +14,14 @@ csv_import.process_workbook:
   requirements:
     _permission: 'access content'
     
+csv_import.process_awardee_org_project:
+  path: '/csv_import/upload_awardee_org_project'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_awardee_org_project'
+    _title: 'csv import awardee org project'
+  requirements:
+    _permission: 'access content'
+
 csv_import.process_inputs:
   path: '/csv_import/upload_inputs'
   defaults:

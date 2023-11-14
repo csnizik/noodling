@@ -1,4 +1,4 @@
-name: CSC CSV import
+name: SH CSV import
 description: csv import module
 type: module
 core_version_requirement: ^9
