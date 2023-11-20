@@ -1,4 +1,4 @@
-workbook_date_form:
+excel_import_form:
   css:
     theme:
       css/form.css: {}

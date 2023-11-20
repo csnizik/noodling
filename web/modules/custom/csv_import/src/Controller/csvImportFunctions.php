@@ -2,8 +2,31 @@
 
 use Drupal\asset\Entity\Asset;
 use Drupal\log\Entity\Log;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\taxonomy\TermInterface;
 
-function import_coversheet($in_data_array){
+function save_or_update($type, $new_entity, $identifying_fields) {
+    $fields_subset = array_intersect_key($new_entity, array_flip($identifying_fields));
+    foreach($fields_subset as $field_name => &$field_value) {
+        if ($field_value instanceof EntityInterface or $field_value instanceof TermInterface) {
+            $field_value = $field_value->id();    
+        }
+    }
+
+    $duplicate = array_pop(\Drupal::entityTypeManager()->getStorage($type)->loadByProperties($fields_subset));
+
+    if (is_null($duplicate)) {
+        $entity_to_save = ($type == 'asset') ? Asset::Create($new_entity) : Log::Create($new_entity);
+        $entity_to_save->save();
+    } else {
+        foreach ($new_entity as $field_name => $field_value) {
+            $duplicate->set($field_name, $field_value);
+        }
+        $duplicate->save();
+    }
+}
+
+function import_coversheet($year, $quarter, $in_data_array){
     $in_data_array = array_map('trim', $in_data_array);
 
     $coversheet_submission = [];
@@ -13,6 +36,8 @@ function import_coversheet($in_data_array){
     $coversheet_submission['csc_project_grantee_org'] = $in_data_array[2];
     $coversheet_submission['csc_project_grantee_cont_name'] = $in_data_array[3];
     $coversheet_submission['csc_project_grantee_cont_email'] = $in_data_array[4];
+    $coversheet_submission['csc_project_year_reporting'] = $year;
+    $coversheet_submission['csc_project_month_reporting'] = $quarter;
 
     $ndate = convertExcelDate($in_data_array[7]);
     $coversheet_submission['csc_project_start'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
@@ -21,13 +46,13 @@ function import_coversheet($in_data_array){
     $coversheet_submission['csc_project_end'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
 
     $coversheet_submission['csc_project_budget'] = $in_data_array[9];
+    $coversheet_submission['csc_project_comet_version'] = $in_data_array[12];
 
-    $cs_to_save = Asset::create($coversheet_submission);
-            
-    $cs_to_save->save();
+    $identifying_fields = ['csc_project_id_field'];
+    save_or_update('asset', $coversheet_submission, $identifying_fields);
 }
 
-function import_project_summary($in_data_array, $cur_count){
+function import_project_summary($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'ps'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -35,6 +60,8 @@ function import_project_summary($in_data_array, $cur_count){
     $project_summary_submission = [];
     $project_summary_submission['type'] = 'csc_project_summary';
     $project_summary_submission['name'] = $entry_name;
+    $project_summary_submission['csc_p_summary_fiscal_year'] = $year;
+    $project_summary_submission['csc_p_summary_fiscal_quarter'] = $quarter;
     $project_summary_submission['csc_p_summary_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $in_data_array[0]]));
     $project_summary_submission['csc_p_summary_commodity_sales'] = filter_var($in_data_array[1], FILTER_VALIDATE_BOOLEAN);
     $project_summary_submission['csc_p_summary_farms_enrolled'] = filter_var($in_data_array[2], FILTER_VALIDATE_BOOLEAN);
@@ -56,11 +83,10 @@ function import_project_summary($in_data_array, $cur_count){
     $project_summary_submission['csc_p_summ_ghg_verification_mthd'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_verification_method', 'name' => $in_data_array[28]]));
 
     $ps_to_save = Asset::create($project_summary_submission);
-            
     $ps_to_save->save();
 }
 
-function import_partner_activities($in_data_array, $cur_count){
+function import_partner_activities($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'pa'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -79,8 +105,8 @@ function import_partner_activities($in_data_array, $cur_count){
     $ndate = convertExcelDate($in_data_array[6]);
     $partner_activities_submission['csc_prtnr_act_partnership_end'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
 
-    $partner_activities_submission['csc_prtnr_act_partnership_init'] = filter_var($in_data_array[7], FILTER_VALIDATE_BOOLEAN);
-    $partner_activities_submission['csc_prtnr_act_partner_total_req'] = $in_data_array[8];
+    $partner_activities_submission['csc_prtnr_act_partnership_initation'] = filter_var($in_data_array[7], FILTER_VALIDATE_BOOLEAN);
+    $partner_activities_submission['csc_prtnr_act_partner_total_requested'] = $in_data_array[8];
     $partner_activities_submission['csc_prtnr_act_total_match_contrib'] = $in_data_array[9];
     $partner_activities_submission['csc_prtnr_act_total_match_incent'] = $in_data_array[10];
     $partner_activities_submission['csc_prtnr_act_match_type_1'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'match_type', 'name' => $in_data_array[11]]));
@@ -119,12 +145,11 @@ function import_partner_activities($in_data_array, $cur_count){
     $partner_activities_submission['csc_prtnr_act_products_supplied'] = $in_data_array[29];
     $partner_activities_submission['csc_prtnr_act_product_source'] = $in_data_array[30];
     
-    $ps_to_save = Asset::create($partner_activities_submission);
-
-    $ps_to_save->save();
+    $identifying_fields = ['csc_prtnr_act_partner_ein'];
+    save_or_update('asset', $partner_activities_submission, $identifying_fields);
 }
 
-function import_market_activities($in_data_array, $cur_count){
+function import_market_activities($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'ma'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -239,7 +264,7 @@ function import_market_activities($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_producer_enrollment($in_data_array, $cur_count, $project_id_field){
+function import_producer_enrollment($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'pe'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -295,13 +320,12 @@ function import_producer_enrollment($in_data_array, $cur_count, $project_id_fiel
     $producer_enrollment_submission['csc_p_enrlmnt_csaf_nonprofit_fds'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'csaf_nonprofit_funds', 'name' => $in_data_array[28]]));
     $producer_enrollment_submission['csc_p_enrlmnt_csaf_market_incent'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'csaf_market_incentives', 'name' => $in_data_array[29]]));
     
-    $ps_to_save = Asset::create($producer_enrollment_submission);
-
-    $ps_to_save->save();
+    $identifying_fields = ['csc_project_id', 'csc_p_enrollment_farm_id', 'csc_p_enrollment_state'];
+    save_or_update('asset', $producer_enrollment_submission, $identifying_fields);
 
 }
 
-function import_field_enrollment($in_data_array, $cur_count, $project_id_field){
+function import_field_enrollment($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'fe'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -347,7 +371,7 @@ function import_field_enrollment($in_data_array, $cur_count, $project_id_field){
     $field_enrollment_submission['csc_f_nrlmnt_prac_type_1'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'practice_type', 'name' => $in_data_array[22]]));
     $field_enrollment_submission['csc_f_nrlmnt_prac_std_1'] = $in_data_array[23];
     $field_enrollment_submission['csc_f_nrlmnt_prac_std_otr_1'] = $in_data_array[24];
-    $field_enrollment_submission['csc_f_nrlmnt_prac_year_1'] = $in_data_array[25];
+    $field_enrollment_submission['csc_f_enrlmnt_prac_year_1'] = $in_data_array[25];
     $field_enrollment_submission['csc_f_nrlmnt_prac_ext_1'] = $in_data_array[26];
     $field_enrollment_submission['csc_f_nrlmnt_prac_ext_unit_1'] = $in_data_array[27];
     $field_enrollment_submission['csc_f_nrlmnt_prac_ext_unit_otr_1'] = $in_data_array[28];
@@ -394,13 +418,13 @@ function import_field_enrollment($in_data_array, $cur_count, $project_id_field){
     $field_enrollment_submission['csc_f_nrlmnt_prac_ext_unit_7'] = $in_data_array[69];
     $field_enrollment_submission['csc_f_nrlmnt_prac_ext_unit_otr_7'] = $in_data_array[70];
     
-    $ps_to_save = Asset::create($field_enrollment_submission);
 
-    $ps_to_save->save();
+    $identifying_fields = ['csc_f_enrollment_producer_id', 'csc_f_enrollment_tract_id', 'csc_f_enrollment_field_id', 'csc_f_enrollment_state'];
+    save_or_update('asset', $field_enrollment_submission, $identifying_fields);
 
 }
 
-function import_farm_summary($in_data_array, $cur_count){
+function import_farm_summary($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'fa'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -408,8 +432,8 @@ function import_farm_summary($in_data_array, $cur_count){
     $farm_summary_submission = [];
     $farm_summary_submission['type'] = 'csc_farm_summary';
     $farm_summary_submission['name'] = $entry_name;
-    $farm_summary_submission['csc_farm_summary_fiscal_year'] = '';
-    $farm_summary_submission['csc_farm_summary_fiscal_quarter'] = '';
+    $farm_summary_submission['csc_farm_summary_fiscal_year'] = $year;
+    $farm_summary_submission['csc_farm_summary_fiscal_quarter'] = $quarter;
     $farm_summary_submission['csc_farm_summary_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' => $in_data_array[1]]));
     $farm_summary_submission['csc_farm_summary_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' => $in_data_array[2]]));
     
@@ -501,7 +525,7 @@ function import_farm_summary($in_data_array, $cur_count){
 
 }
 
-function import_field_summary($in_data_array, $cur_count){
+function import_field_summary($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'fs'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -513,6 +537,10 @@ function import_field_summary($in_data_array, $cur_count){
     $field_summary_submission['flag'] = '';
     $field_summary_submission['notes'] = '';
 
+    $field_summary_submission['csc_project_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_project', 'csc_project_id_field' => $project_id_field]));
+    $field_summary_submission['csc_f_summary_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
+    $field_summary_submission['csc_f_summary_fiscal_year'] = $year;
+    $field_summary_submission['csc_f_summary_fiscal_quarter'] = $quarter;
     $ndate = convertExcelDate($in_data_array[14]);
     $field_summary_submission['csc_f_summary_contract_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
     $field_summary_submission['csc_fi_summ_impl_cost_coverage'] = $in_data_array[25];
@@ -521,8 +549,6 @@ function import_field_summary($in_data_array, $cur_count){
     
     $ndate = convertExcelDate($in_data_array[13]);
     $field_summary_submission['csc_fi_summ_date_pract_complete'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
-    $field_summary_submission['csc_f_summary_fiscal_quarter'] = '';
-    $field_summary_submission['csc_f_summary_fiscal_year'] = '';
     $field_summary_submission['csc_fi_summ_fld_comm_value'] = $in_data_array[18];
     $field_summary_submission['csc_fi_summ_fld_comm_vol'] = $in_data_array[19];
     $field_summary_submission['csc_fi_summ_fld_comm_vol_ut'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_commodity_volume_unit', 'name' => $in_data_array[20]]));
@@ -626,14 +652,11 @@ function import_field_summary($in_data_array, $cur_count){
    
     $field_summary_submission['csc_f_summary_practice_type'] = $summary_practice_type_results;
 
-    $field_summary_submission['csc_f_summary_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
-    
-    $ps_to_save = Log::create($field_summary_submission);
-
-    $ps_to_save->save();
+    $identifying_fields = ['csc_f_summary_field_id', 'csc_project_id'];
+    save_or_update('log', $field_summary_submission, $identifying_fields);
 }
 
-function import_ghg_benefits_alt_models($in_data_array, $cur_count){
+function import_ghg_benefits_alt_models($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'gbam'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -641,9 +664,10 @@ function import_ghg_benefits_alt_models($in_data_array, $cur_count){
     $g_benefits_alternate_modeledsubmission = [];
     $g_benefits_alternate_modeledsubmission['name'] = $entry_name;
     $g_benefits_alternate_modeledsubmission['type'] = 'csc_ghg_benefits_alt_modeled';
-    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fiscal_year'] = '';
-    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fiscal_quart'] = '';
-    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fld_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fiscal_year'] = $year;
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fiscal_quart'] = $quarter;
+    $g_benefits_alternate_modeledsubmission['csc_project_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_project', 'csc_project_id_field' => $project_id_field]));
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_fld_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
 
     $g_benefits_alternate_modeled_commodity_type = '';
     for($i=5; $i<11; $i++){
@@ -695,12 +719,11 @@ function import_ghg_benefits_alt_models($in_data_array, $cur_count){
     $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ch4_est'] = $in_data_array[25];
     $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_n2o_est'] = $in_data_array[26];
 
-    $gbam_to_save = log::create($g_benefits_alternate_modeledsubmission);
-
-    $gbam_to_save->save();
+    $identifying_fields = ['csc_project_id', 'csc_g_bene_alt_md_fld_id'];
+    save_or_update('log', $g_benefits_alternate_modeledsubmission, $identifying_fields);
 }
 
-function import_ghg_benefits_measured($in_data_array, $cur_count){
+function import_ghg_benefits_measured($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'gbm'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -708,9 +731,10 @@ function import_ghg_benefits_measured($in_data_array, $cur_count){
     $ghg_benefits_measured_submission = [];
     $ghg_benefits_measured_submission['type'] = 'csc_ghg_benefits_measured';
     $ghg_benefits_measured_submission['name'] = $entry_name;
-    $ghg_benefits_measured_submission['csc_g_bene_msrd_fld_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
-    $ghg_benefits_measured_submission['csc_g_bene_msrd_fiscal_quarter'] = '';
-    $ghg_benefits_measured_submission['csc_g_bene_msrd_fiscal_year'] = '';
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_fld_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_fiscal_quarter'] = $quarter;
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_fiscal_year'] = $year;
+    $ghg_benefits_measured_submission['csc_project_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_project', 'csc_project_id_field' => $project_id_field]));
     $ghg_benefits_measured_submission['csc_g_bene_msrd_ghg_msrt_mt'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_measurement_method', 'name' => $in_data_array[5]]));
     $ghg_benefits_measured_submission['csc_g_bene_msrd_ghg_msrt_mt_otr'] = $in_data_array[6];
     $ghg_benefits_measured_submission['csc_g_bene_msrd_lab_name'] = $in_data_array[7];
@@ -728,12 +752,11 @@ function import_ghg_benefits_measured($in_data_array, $cur_count){
     $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_type'] = $in_data_array[17];
     $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_type_otr'] =$in_data_array[18];
     
-    $ps_to_save = Log::create($ghg_benefits_measured_submission);
-
-    $ps_to_save->save();
+    $identifying_fields = ['csc_project_id', 'csc_g_bene_msrd_fld_id'];
+    save_or_update('log', $ghg_benefits_measured_submission, $identifying_fields);
 }
 
-function import_addl_envl_benefits($in_data_array, $cur_count){
+function import_addl_envl_benefits($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'aeb'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -741,9 +764,10 @@ function import_addl_envl_benefits($in_data_array, $cur_count){
     $environmental_benefits_submission = [];
     $environmental_benefits_submission['type'] = 'csc_environmental_benefits';
     $environmental_benefits_submission['name'] = $entry_name;
-    $environmental_benefits_submission['csc_fiscal_year'] = '';
-    $environmental_benefits_submission['csc_fiscal_quarter'] = '';
-    $environmental_benefits_submission['csc_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'name' => $in_data_array[2]]));
+    $environmental_benefits_submission['csc_fiscal_year'] = $year;
+    $environmental_benefits_submission['csc_fiscal_quarter'] = $quarter;
+    $environmental_benefits_submission['csc_project_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_project', 'csc_project_id_field' => $project_id_field]));
+    $environmental_benefits_submission['csc_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $environmental_benefits_submission['csc_environmental_benefits'] = $in_data_array[5];
     $environmental_benefits_submission['csc_nitrogen_loss'] = $in_data_array[6];
     $environmental_benefits_submission['csc_nitrogen_loss_amount'] = $in_data_array[7];
@@ -796,12 +820,11 @@ function import_addl_envl_benefits($in_data_array, $cur_count){
     $environmental_benefits_submission['csc_imp_wld_habitat_purpose'] = $in_data_array[54];
     $environmental_benefits_submission['csc_imp_wld_habitat_purpose_otr'] = $in_data_array[55];
     
-    $ps_to_save = Log::create($environmental_benefits_submission);
-
-    $ps_to_save->save();
+    $identifying_fields = ['csc_project_id', 'csc_field_id'];
+    save_or_update('log', $environmental_benefits_submission, $identifying_fields);
 }
 
-function import_alley_cropping($in_data_array, $cur_count){
+function import_alley_cropping($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'ac'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -823,7 +846,7 @@ function import_alley_cropping($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_combustion_system_improvement($in_data_array, $cur_count){
+function import_combustion_system_improvement($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'csi'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -853,7 +876,7 @@ function import_combustion_system_improvement($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_conservation_cover($in_data_array, $cur_count){
+function import_conservation_cover($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'cc'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -874,7 +897,7 @@ function import_conservation_cover($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_conservation_crop_rotation($in_data_array, $cur_count){
+function import_conservation_crop_rotation($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'ccr'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -899,7 +922,7 @@ function import_conservation_crop_rotation($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_contour_buffer_strips($in_data_array, $cur_count){
+function import_contour_buffer_strips($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'cbs'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -921,7 +944,7 @@ function import_contour_buffer_strips($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_cover_crop($in_data_array, $cur_count){
+function import_cover_crop($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'cocr'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -944,7 +967,7 @@ function import_cover_crop($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_critical_area_planting($in_data_array, $cur_count){
+function import_critical_area_planting($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'cap'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -965,7 +988,7 @@ function import_critical_area_planting($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_feed_management($in_data_array, $cur_count){
+function import_feed_management($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'fm'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -989,7 +1012,7 @@ function import_feed_management($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_field_border($in_data_array, $cur_count){
+function import_field_border($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'fb'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1010,7 +1033,7 @@ function import_field_border($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_filter_strip($in_data_array, $cur_count){
+function import_filter_strip($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'fs'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1032,7 +1055,7 @@ function import_filter_strip($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_forest_farming($in_data_array, $cur_count){
+function import_forest_farming($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'ff'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1053,7 +1076,7 @@ function import_forest_farming($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_forest_stand_improvement($in_data_array, $cur_count){
+function import_forest_stand_improvement($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'fsi'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1074,7 +1097,7 @@ function import_forest_stand_improvement($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_grassed_waterway($in_data_array, $cur_count){
+function import_grassed_waterway($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'gw'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1095,7 +1118,7 @@ function import_grassed_waterway($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_hedgerow_planting($in_data_array, $cur_count){
+function import_hedgerow_planting($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'hp'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1117,7 +1140,7 @@ function import_hedgerow_planting($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_herbaceous_wind_barriers($in_data_array, $cur_count){
+function import_herbaceous_wind_barriers($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'hwb'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1140,7 +1163,7 @@ function import_herbaceous_wind_barriers($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_mulching($in_data_array, $cur_count){
+function import_mulching($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'm'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1162,7 +1185,7 @@ function import_mulching($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_nutrient_management($in_data_array, $cur_count){
+function import_nutrient_management($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'nm'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1190,7 +1213,7 @@ function import_nutrient_management($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_pasture_and_hay_planting($in_data_array, $cur_count){
+function import_pasture_and_hay_planting($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'pahp'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1213,7 +1236,7 @@ function import_pasture_and_hay_planting($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_prescribed_grazing($in_data_array, $cur_count){
+function import_prescribed_grazing($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'pg'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1234,7 +1257,7 @@ function import_prescribed_grazing($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_range_planting($in_data_array, $cur_count){
+function import_range_planting($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'rp'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1255,7 +1278,7 @@ function import_range_planting($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_residue_and_tillage_management_notill($in_data_array, $cur_count){
+function import_residue_and_tillage_management_notill($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'rtmnt'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1276,7 +1299,7 @@ function import_residue_and_tillage_management_notill($in_data_array, $cur_count
     $ps_to_save->save();
 }
 
-function import_residue_and_tillage_management_redtill($in_data_array, $cur_count){
+function import_residue_and_tillage_management_redtill($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'rtmrt'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1297,7 +1320,7 @@ function import_residue_and_tillage_management_redtill($in_data_array, $cur_coun
     $ps_to_save->save();
 }
 
-function import_riparian_forest_buffer($in_data_array, $cur_count){
+function import_riparian_forest_buffer($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'rfb'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1320,7 +1343,7 @@ function import_riparian_forest_buffer($in_data_array, $cur_count){
 }
 
 
-function import_riparian_herbaceous_cover($in_data_array, $cur_count){
+function import_riparian_herbaceous_cover($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'rhc'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1342,7 +1365,7 @@ function import_riparian_herbaceous_cover($in_data_array, $cur_count){
 }
 
 
-function import_roofs_and_covers($in_data_array, $cur_count){
+function import_roofs_and_covers($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'rac'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1364,7 +1387,7 @@ function import_roofs_and_covers($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_silvopasture($in_data_array, $cur_count){
+function import_silvopasture($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'silvop'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1387,7 +1410,7 @@ function import_silvopasture($in_data_array, $cur_count){
 }
 
 
-function import_stripcropping($in_data_array, $cur_count){
+function import_stripcropping($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'strip'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1411,7 +1434,7 @@ function import_stripcropping($in_data_array, $cur_count){
 }
 
 
-function import_tree_shrub_establishment($in_data_array, $cur_count){
+function import_tree_shrub_establishment($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'tse'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1433,7 +1456,7 @@ function import_tree_shrub_establishment($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_vegetative_barrier($in_data_array, $cur_count){
+function import_vegetative_barrier($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'vb'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1455,7 +1478,7 @@ function import_vegetative_barrier($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_waste_separation_facility($in_data_array, $cur_count){
+function import_waste_separation_facility($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'wsepf'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1479,7 +1502,7 @@ function import_waste_separation_facility($in_data_array, $cur_count){
 }
 
 
-function import_waste_storage_facility($in_data_array, $cur_count){
+function import_waste_storage_facility($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'wstof'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1500,7 +1523,7 @@ function import_waste_storage_facility($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_waste_treatment($in_data_array, $cur_count){
+function import_waste_treatment($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'wt'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1521,7 +1544,7 @@ function import_waste_treatment($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_waste_treatment_lagoon($in_data_array, $cur_count){
+function import_waste_treatment_lagoon($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'wtl'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1544,7 +1567,7 @@ function import_waste_treatment_lagoon($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_windshelter_est_reno($in_data_array, $cur_count){
+function import_windshelter_est_reno($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'wreno'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);
@@ -1566,7 +1589,7 @@ function import_windshelter_est_reno($in_data_array, $cur_count){
     $ps_to_save->save();
 }
 
-function import_anaerobic_digester($in_data_array, $cur_count){
+function import_anaerobic_digester($year, $quarter, $in_data_array, $cur_count, $project_id_field){
     $dateConst = date('mdYhis', time());
     $entry_name = 'ad'. $dateConst . $cur_count;
     $in_data_array = array_map('trim', $in_data_array);

@@ -1,19 +1,81 @@
-
-
-.js-form-item.form-item.js-form-type-select.form-type--select.js-form-item-choose-month-of-reporting.form-item--choose-month-of-reporting {
-  float: left;
-  padding-right: 20px;
+.excel-import-form {
+  padding-top: 1.75rem !important;
+  padding-left: 2.5rem !important;
 }
 
-.js-form-item.form-item.js-form-type-select.form-type--select.js-form-item-choose-year-of-reporting.form-item--choose-year-of-reporting {
-  float: left;
-  padding-right: 20px;
-  margin-top: 0;
+.form-element {
+  border-radius: 0rem !important;
+  min-height: 2.5rem !important;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
 }
 
-.js-form-item.form-item.js-form-type-file.form-type--file.js-form-item-files-file-upload.form-item--files-file-upload {
-  float: left;
-  padding-right: 20px;
-  margin-top: 0;
+.instruction-text {
+  margin-bottom: 2rem !important;
 }
 
+.form-item--quarter {
+  float: left;
+  margin-top: 0 !important;
+  padding-right: 2.5rem;
+}
+
+.form-item--year {
+  float: left;
+  margin-top: 0 !important;
+  padding-right: 2.5rem;
+}
+
+.form-item--files-file {
+  float: left;
+  margin-top: 0 !important;
+  padding-right: 2.5rem;
+}
+
+.form-element--type-file {
+  padding-top: 0.25rem !important;
+  padding-left: 0.25rem !important;
+}
+
+#edit-save {
+  margin-top: 1.45em !important;
+  padding: 0.75rem 2rem !important;
+  border-radius: 0.3rem !important;
+  font-weight: bold !important;
+  background-color: #205493 !important;
+  border: 2px solid #205493 !important;
+  border-color: #205493 !important;
+  color: #ffffff !important;
+}
+
+#edit-year {
+  width: 12rem !important;
+}
+
+#edit-quarter {
+  width: 19rem !important;
+}
+
+#edit-file {
+  width: 25rem !important;
+}
+
+hr {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.downloads {
+  text-decoration: underline !important;
+  color: #0068ad  !important;
+}
+
+svg {
+  vertical-align: middle;
+  fill: #0068ad !important;
+}
+
+#link-header {
+  display: block;
+  margin-bottom: 1rem;
+}

@@ -28,7 +28,7 @@ class ImportHistory extends FarmAssetType {
         'label' => 'Project ID',
         'description' => 'Project ID',
         'target_type' => 'asset',
-        'target_bundle' => 'project_summary',
+        'target_bundle' => 'csc_project_summary',
         'required' => TRUE,
         'multiple' => FALSE,
       ],

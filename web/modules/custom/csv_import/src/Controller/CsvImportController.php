@@ -3,10 +3,12 @@ namespace Drupal\csv_import\Controller;
 include 'csvImportFunctions.php';
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Link;
 use Drupal\asset\Entity\Asset;
 use Drupal\log\Entity\Log;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Provides route responses for the Example module.
@@ -253,191 +255,32 @@ class CsvImportController extends ControllerBase {
           <input type="file" id="file" name="file">
           <input type="submit">
         </form>
-        supplemental log - alley cropping:
-        <form action="/csv_import/upload_alley_cropping" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - anaerobic digester:
-        <form action="/csv_import/upload_anaerobic_digester" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - combustion system improvement:
-        <form action="/csv_import/upload_combustion_system_improvement" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - conservation cover:
-        <form action="/csv_import/upload_conservation_cover" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - conservation crop rotation:
-        <form action="/csv_import/upload_conservation_crop_rotation" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - contour buffer strips:
-        <form action="/csv_import/upload_contour_buffer_strips" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - cover crop:
-        <form action="/csv_import/upload_cover_crop" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - critical area planting:
-        <form action="/csv_import/upload_critical_area_planting" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - feed management:
-        <form action="/csv_import/upload_feed_management" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - field_border:
-        <form action="/csv_import/upload_field_border" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - filter strip:
-        <form action="/csv_import/upload_filter_strip" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - forest_farming:
-        <form action="/csv_import/upload_forest_farming" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - forest stand improvement:
-        <form action="/csv_import/upload_forest_stand_improvement" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - grassed waterway:
-        <form action="/csv_import/upload_grassed_waterway" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - hedgerow planting:
-        <form action="/csv_import/upload_hedgerow_planting" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - herbaceous wind barriers:
-        <form action="/csv_import/upload_herbaceous_wind_barriers" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - mulching:
-        <form action="/csv_import/upload_mulching" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - nutrient management:
-        <form action="/csv_import/upload_nutrient_management" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - pasture and hay planting:
-        <form action="/csv_import/upload_pasture_and_hay_planting" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - prescribed grazing:
-        <form action="/csv_import/upload_prescribed_grazing" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - range planting:
-        <form action="/csv_import/upload_range_planting" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - residue and tillage management no till:
-        <form action="/csv_import/upload_residue_and_tillage_management_notill" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - residue and tillage management reduced till:
-        <form action="/csv_import/upload_residue_and_tillage_management_redtill" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - riparian forest buffer:
-        <form action="/csv_import/upload_riparian_forest_buffer" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - riparian herbaceous cover:
-        <form action="/csv_import/upload_riparian_herbaceous_cover" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - roofs and covers:
-        <form action="/csv_import/upload_roofs_and_covers" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - silvopasture:
-        <form action="/csv_import/upload_silvopasture" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - stripcropping:
-        <form action="/csv_import/upload_stripcropping" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - tree shrub establishment:
-        <form action="/csv_import/upload_tree_shrub_establishment" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - vegetative barrier:
-        <form action="/csv_import/upload_vegetative_barrier" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - waste separation facility:
-        <form action="/csv_import/upload_waste_separation_facility" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - waste storage facility:
-        <form action="/csv_import/upload_waste_storage_facility" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - waste treatment:
-        <form action="/csv_import/upload_waste_treatment" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - waste treatment lagoon:
-        <form action="/csv_import/upload_waste_treatment_lagoon" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-        supplemental log - windbreak/shelterbelt establishment and renovation:
-        <form action="/csv_import/upload_windshelter_est_reno" enctype="multipart/form-data" method="post">
-          <input type="file" id="file" name="file">
-          <input type="submit">
-        </form>
-    ',
+      ',
     ];
   }
 
-
-  public function process_workbook() {
+  public function process_workbook(Request $request) {
     $out = [];      //output messages: imported sheets;
     $output = '';     //output messages: skipped sheets;
 
-    if (isset($_POST["import"])) {
+    $quarter_options = [
+      'Jan 1 - March 31', 
+      'April 1 - June 30',
+      'July 1 - September 30',
+      'October 1 - December 31',
+    ];
+
+    $year_options = [
+      '2022', 
+      '2023',
+    ];
+    
+    $year = $year_options[$request->request->get('year')];
+    $quarter = $quarter_options[$request->request->get('quarter')];
+    $file = $request->files->get('files')['file'];
+
+    if ($file) {
+
       $allowedFileType = [
           'application/vnd.ms-excel',
           'text/xls',
@@ -445,15 +288,9 @@ class CsvImportController extends ControllerBase {
           'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
       ];
 
-      if (in_array($_FILES["file"]["type"], $allowedFileType)) {
-
-          //temporarily save imported file
-          $folderPath = realpath($_FILES['file']['tmp_name']);
-          $targetPath = $folderPath . $_FILES['file']['name'];
-          move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
-
+      if (in_array($file->getClientMimeType(), $allowedFileType)) {
           //get file extension
-          $extension = ucfirst(strtolower(pathinfo($targetPath, PATHINFO_EXTENSION)));
+          $extension = ucfirst(strtolower($file->getClientOriginalExtension()));
           
           //read the workbook but only get the sheets that is relevent
           $sheetnames = ['Coversheet', 'Project Summary', 'Partner Activities', 'Marketing Activities', 'Producer Enrollment', 'Field Enrollment', 
@@ -468,7 +305,7 @@ class CsvImportController extends ControllerBase {
           $reader = IOFactory::createReader($extension);
           $reader->setReadDataOnly(TRUE);
           $reader->setLoadSheetsOnly($sheetnames);
-          $spreadSheet = $reader->load($targetPath);
+          $spreadSheet = $reader->load($file);
           $sheetCount = $spreadSheet->getSheetCount();
           
           // Temp variable for project ID
@@ -490,7 +327,7 @@ class CsvImportController extends ControllerBase {
             switch ($sheet_name) {
               //import coversheet
               case $sheetnames[0]:
-                $dataArray = $this->processCoversheet($sheet, 'import_coversheet');
+                $dataArray = $this->processCoversheet($sheet, 'import_coversheet', $year, $quarter);
                 $project_id_field = strval($dataArray[1]);
 
                 break;
@@ -498,7 +335,7 @@ class CsvImportController extends ControllerBase {
               //import project summary
               case $sheetnames[1]:
                 $end_column = 35;
-                $records = $this->processImport($sheet, 'import_project_summary', $end_column);
+                $records = $this->processImport($sheet, 'import_project_summary', $end_column, $year, $quarter, '', $project_id_field);
 
                 //output message
                 $out[] = array('name' =>'Project Summary', 'records' => $records);
@@ -508,7 +345,7 @@ class CsvImportController extends ControllerBase {
               //import partner activities
               case $sheetnames[2]:
                 $end_column = 32;
-                $records = $this->processImport($sheet, 'import_partner_activities', $end_column);
+                $records = $this->processImport($sheet, 'import_partner_activities', $end_column, $year, $quarter, '', $project_id_field);
 
                 //output message
                 $out[] = array('name' =>'Partner Activities', 'records' => $records);
@@ -518,7 +355,7 @@ class CsvImportController extends ControllerBase {
               //import market actitivies
               case $sheetnames[3]:
                 $end_column = 31;
-                $records = $this->processImport($sheet, 'import_market_activities', $end_column);
+                $records = $this->processImport($sheet, 'import_market_activities', $end_column, $year, $quarter, '', $project_id_field);
 
                 //output message
                 $out[] = array('name' =>'Market Actitivies', 'records' => $records);
@@ -528,7 +365,7 @@ class CsvImportController extends ControllerBase {
               //import producer enrollment
               case $sheetnames[4]:
                 $end_column = 31;
-                $records = $this->processImport($sheet, 'import_producer_enrollment', $end_column, '', $project_id_field);
+                $records = $this->processImport($sheet, 'import_producer_enrollment', $end_column, $year, $quarter, '', $project_id_field);
 
                 //output message
                 $out[] = array('name' =>'Producer Enrollment', 'records' => $records);
@@ -538,7 +375,7 @@ class CsvImportController extends ControllerBase {
               //import field enrollment
               case $sheetnames[5]:
                 $end_column = 72;
-                $records = $this->processImport($sheet, 'import_field_enrollment', $end_column, '', $project_id_field);
+                $records = $this->processImport($sheet, 'import_field_enrollment', $end_column, $year, $quarter, '', $project_id_field);
 
                 //output message
                 $out[] = array('name' =>'Field Enrollment', 'records' => $records);
@@ -548,7 +385,7 @@ class CsvImportController extends ControllerBase {
               //import farm summary
               case $sheetnames[6]:
                 $end_column = 29;
-                $records = $this->processImport($sheet, 'import_farm_summary', $end_column);
+                $records = $this->processImport($sheet, 'import_farm_summary', $end_column, $year, $quarter, '', $project_id_field);
 
                 //output message
                 $out[] = array('name' =>'Farm Summary', 'records' => $records);
@@ -558,7 +395,7 @@ class CsvImportController extends ControllerBase {
               //import field summary
               case $sheetnames[7]:
                 $end_column = 49;
-                $records = $this->processImport($sheet, 'import_field_summary', $end_column);
+                $records = $this->processImport($sheet, 'import_field_summary', $end_column, $year, $quarter, '', $project_id_field);
 
                 //output message
                 $out[] = array('name' =>'Field Summary', 'records' => $records);
@@ -568,7 +405,7 @@ class CsvImportController extends ControllerBase {
               //import ghg benefits alt models
               case $sheetnames[8]:
                 $end_column = 28;
-                $records = $this->processImport($sheet, 'import_ghg_benefits_alt_models', $end_column);
+                $records = $this->processImport($sheet, 'import_ghg_benefits_alt_models', $end_column, $year, $quarter, '', $project_id_field);
 
                 //output message
                 $out[] = array('name' =>'GHG Benefits Alt Models', 'records' => $records);
@@ -578,7 +415,7 @@ class CsvImportController extends ControllerBase {
               //import ghg benefits measured
               case $sheetnames[9]:
                 $end_column = 20;
-                $records = $this->processImport($sheet, 'import_ghg_benefits_measured', $end_column);
+                $records = $this->processImport($sheet, 'import_ghg_benefits_measured', $end_column, $year, $quarter, '', $project_id_field);
 
                 //output message
                 $out[] = array('name' =>'GHG_Benefits_Measured', 'records' => $records);
@@ -588,7 +425,7 @@ class CsvImportController extends ControllerBase {
               //import addl envl benefits
               case $sheetnames[10]:
                 $end_column = 57;
-                $records = $this->processImport($sheet, 'import_addl_envl_benefits', $end_column);
+                $records = $this->processImport($sheet, 'import_addl_envl_benefits', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Addl Envl Benefits', 'records' => $records);
@@ -598,7 +435,7 @@ class CsvImportController extends ControllerBase {
               //import alley cropping
               case $sheetnames[11]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_alley_cropping', $end_column);
+                $records = $this->processImport($sheet, 'import_alley_cropping', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Alley Cropping', 'records' => $records);
@@ -608,7 +445,7 @@ class CsvImportController extends ControllerBase {
               //import combustion system improvement
               case $sheetnames[12]:
                 $end_column = 16;
-                $records = $this->processImport($sheet, 'import_combustion_system_improvement', $end_column);
+                $records = $this->processImport($sheet, 'import_combustion_system_improvement', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Combustion System Improvement', 'records' => $records);
@@ -618,7 +455,7 @@ class CsvImportController extends ControllerBase {
               //import conservation cover
               case $sheetnames[13]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_conservation_cover', $end_column);
+                $records = $this->processImport($sheet, 'import_conservation_cover', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Conservation Cover', 'records' => $records);
@@ -628,7 +465,7 @@ class CsvImportController extends ControllerBase {
               //import conservation crop rotation
               case $sheetnames[14]:
                 $end_column = 11;
-                $records = $this->processImport($sheet, 'import_conservation_crop_rotation', $end_column);
+                $records = $this->processImport($sheet, 'import_conservation_crop_rotation', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Conservation Crop Rotation', 'records' => $records);
@@ -638,7 +475,7 @@ class CsvImportController extends ControllerBase {
               //import contour buffer strips
               case $sheetnames[15]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_contour_buffer_strips', $end_column);
+                $records = $this->processImport($sheet, 'import_contour_buffer_strips', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Contour Buffer Strips', 'records' => $records);
@@ -648,7 +485,7 @@ class CsvImportController extends ControllerBase {
               //import cover crop
               case $sheetnames[16]:
                 $end_column = 9;
-                $records = $this->processImport($sheet, 'import_cover_crop', $end_column);
+                $records = $this->processImport($sheet, 'import_cover_crop', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Cover Crop', 'records' => $records);
@@ -658,7 +495,7 @@ class CsvImportController extends ControllerBase {
               //import critical area planting
               case $sheetnames[17]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_critical_area_planting', $end_column);
+                $records = $this->processImport($sheet, 'import_critical_area_planting', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Critical Area Planting', 'records' => $records);
@@ -668,7 +505,7 @@ class CsvImportController extends ControllerBase {
               //import feed management
               case $sheetnames[18]:
                 $end_column = 10;
-                $records = $this->processImport($sheet, 'import_feed_management', $end_column);
+                $records = $this->processImport($sheet, 'import_feed_management', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Feed Management', 'records' => $records);
@@ -678,7 +515,7 @@ class CsvImportController extends ControllerBase {
               //import field border
               case $sheetnames[19]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_field_border', $end_column);
+                $records = $this->processImport($sheet, 'import_field_border', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Field Border', 'records' => $records);
@@ -688,7 +525,7 @@ class CsvImportController extends ControllerBase {
               //import filter strip
               case $sheetnames[20]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_filter_strip', $end_column);
+                $records = $this->processImport($sheet, 'import_filter_strip', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Filter Strip', 'records' => $records);
@@ -698,7 +535,7 @@ class CsvImportController extends ControllerBase {
               //import forest farming
               case $sheetnames[21]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_forest_farming', $end_column);
+                $records = $this->processImport($sheet, 'import_forest_farming', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Forest Farming', 'records' => $records);
@@ -708,7 +545,7 @@ class CsvImportController extends ControllerBase {
               //import forest stand improvement
               case $sheetnames[22]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_forest_stand_improvement', $end_column);
+                $records = $this->processImport($sheet, 'import_forest_stand_improvement', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Forest Stand Improvement', 'records' => $records);
@@ -718,7 +555,7 @@ class CsvImportController extends ControllerBase {
               //import grassed waterway
               case $sheetnames[23]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_grassed_waterway', $end_column);
+                $records = $this->processImport($sheet, 'import_grassed_waterway', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Grassed Waterway', 'records' => $records);
@@ -728,7 +565,7 @@ class CsvImportController extends ControllerBase {
               //import hedgerow planting
               case $sheetnames[24]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_hedgerow_planting', $end_column);
+                $records = $this->processImport($sheet, 'import_hedgerow_planting', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Hedgerow Planting', 'records' => $records);
@@ -738,7 +575,7 @@ class CsvImportController extends ControllerBase {
               //import herbaceous wind barriers
               case $sheetnames[25]:
                 $end_column = 9;
-                $records = $this->processImport($sheet, 'import_herbaceous_wind_barriers', $end_column);
+                $records = $this->processImport($sheet, 'import_herbaceous_wind_barriers', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Herbaceous Wind Barriers', 'records' => $records);
@@ -748,7 +585,7 @@ class CsvImportController extends ControllerBase {
               //import mulching
               case $sheetnames[26]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_mulching', $end_column);
+                $records = $this->processImport($sheet, 'import_mulching', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Mulching', 'records' => $records);
@@ -758,7 +595,7 @@ class CsvImportController extends ControllerBase {
               //import nutrient management
               case $sheetnames[27]:
                 $end_column = 14;
-                $records = $this->processImport($sheet, 'import_nutrient_management', $end_column);
+                $records = $this->processImport($sheet, 'import_nutrient_management', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Nutrient Management', 'records' => $records);
@@ -768,7 +605,7 @@ class CsvImportController extends ControllerBase {
               //import pasture and hay planting
               case $sheetnames[28]:
                 $end_column = 9;
-                $records = $this->processImport($sheet, 'import_pasture_and_hay_planting', $end_column);
+                $records = $this->processImport($sheet, 'import_pasture_and_hay_planting', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Pasture and Hay Planting', 'records' => $records);
@@ -778,7 +615,7 @@ class CsvImportController extends ControllerBase {
               //import Perscribed Grazing
               case $sheetnames[29]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_prescribed_grazing', $end_column);
+                $records = $this->processImport($sheet, 'import_prescribed_grazing', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Prescribed Grazing', 'records' => $records);
@@ -788,7 +625,7 @@ class CsvImportController extends ControllerBase {
               //import Range Planting
               case $sheetnames[30]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_range_planting', $end_column);
+                $records = $this->processImport($sheet, 'import_range_planting', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Range Planting', 'records' => $records);
@@ -798,7 +635,7 @@ class CsvImportController extends ControllerBase {
               //import Residue and Tillage Management - No-till
               case $sheetnames[31]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_residue_and_tillage_management_notill', $end_column);
+                $records = $this->processImport($sheet, 'import_residue_and_tillage_management_notill', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Residue & Tillage Management - No-till', 'records' => $records);
@@ -808,7 +645,7 @@ class CsvImportController extends ControllerBase {
               //import Residue and Tillage Management - Reduced-till
               case $sheetnames[32]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_residue_and_tillage_management_redtill', $end_column);
+                $records = $this->processImport($sheet, 'import_residue_and_tillage_management_redtill', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Residue & Tillage Management - Reduced-till', 'records' => $records);
@@ -818,7 +655,7 @@ class CsvImportController extends ControllerBase {
               //import Riparian Forest Buffer
               case $sheetnames[33]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_riparian_forest_buffer', $end_column);
+                $records = $this->processImport($sheet, 'import_riparian_forest_buffer', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Riparian Forest Buffer', 'records' => $records);
@@ -828,7 +665,7 @@ class CsvImportController extends ControllerBase {
               //import Riparian Herbaceous Cover
               case $sheetnames[34]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_riparian_herbaceous_cover', $end_column);
+                $records = $this->processImport($sheet, 'import_riparian_herbaceous_cover', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Riparian Herbaceous Cover', 'records' => $records);
@@ -838,7 +675,7 @@ class CsvImportController extends ControllerBase {
               //import Roofs & Covers
               case $sheetnames[35]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_roofs_and_covers', $end_column);
+                $records = $this->processImport($sheet, 'import_roofs_and_covers', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Roofs & Covers', 'records' => $records);
@@ -848,7 +685,7 @@ class CsvImportController extends ControllerBase {
               //import Silvopasture
               case $sheetnames[36]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_silvopasture', $end_column);
+                $records = $this->processImport($sheet, 'import_silvopasture', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Silvopasture', 'records' => $records);
@@ -858,7 +695,7 @@ class CsvImportController extends ControllerBase {
               //import Stripcropping
               case $sheetnames[37]:
                 $end_column = 9;
-                $records = $this->processImport($sheet, 'import_stripcropping', $end_column);
+                $records = $this->processImport($sheet, 'import_stripcropping', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Stripcropping', 'records' => $records);
@@ -868,7 +705,7 @@ class CsvImportController extends ControllerBase {
               //import Tree Shrub Establishment
               case $sheetnames[38]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_tree_shrub_establishment', $end_column);
+                $records = $this->processImport($sheet, 'import_tree_shrub_establishment', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Tree Shrub Establishment', 'records' => $records);
@@ -879,7 +716,7 @@ class CsvImportController extends ControllerBase {
               //import Vegetative Barrier
               case $sheetnames[39]:
                 $end_column = 8;
-                $records = $this->processImport($sheet, 'import_vegetative_barrier', $end_column);
+                $records = $this->processImport($sheet, 'import_vegetative_barrier', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Vegetative Barrier', 'records' => $records);
@@ -889,7 +726,7 @@ class CsvImportController extends ControllerBase {
               //import Waste Separation Facility
               case $sheetnames[40]:
                 $end_column = 9;
-                $records = $this->processImport($sheet, 'import_waste_separation_facility', $end_column);
+                $records = $this->processImport($sheet, 'import_waste_separation_facility', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Waste Separation Facility', 'records' => $records);
@@ -899,7 +736,7 @@ class CsvImportController extends ControllerBase {
               //import Waste Storage Facility
               case $sheetnames[41]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_waste_storage_facility', $end_column);
+                $records = $this->processImport($sheet, 'import_waste_storage_facility', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Waste Storage Facility', 'records' => $records);
@@ -909,7 +746,7 @@ class CsvImportController extends ControllerBase {
               //import Waste Treatment
               case $sheetnames[42]:
                 $end_column = 7;
-                $records = $this->processImport($sheet, 'import_waste_treatment', $end_column);
+                $records = $this->processImport($sheet, 'import_waste_treatment', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Waste Treatment', 'records' => $records);
@@ -919,7 +756,7 @@ class CsvImportController extends ControllerBase {
               //import Waste Treatment Lagoon
               case $sheetnames[43]:
                 $end_column = 9;
-                $records = $this->processImport($sheet, 'import_waste_treatment_lagoon', $end_column);
+                $records = $this->processImport($sheet, 'import_waste_treatment_lagoon', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Waste Treatment Lagoon', 'records' => $records);
@@ -929,7 +766,7 @@ class CsvImportController extends ControllerBase {
               //import Windbreak/Shelterbelt Establishment and Renovation
               case $sheetnames[44]:
                 $end_column = 9;
-                $records = $this->processImport($sheet, 'import_windshelter_est_reno', $end_column);
+                $records = $this->processImport($sheet, 'import_windshelter_est_reno', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Windbreak/Shelterbelt Establishment and Renovation', 'records' => $records);
@@ -939,7 +776,7 @@ class CsvImportController extends ControllerBase {
                 //import Anaerobic Digester
               case $sheetnames[45]:
                 $end_column = 11;
-                $records = $this->processImport($sheet, 'import_anaerobic_digester', $end_column);
+                $records = $this->processImport($sheet, 'import_anaerobic_digester', $end_column, $year, $quarter, '', $project_id_field);
   
                 //output message
                 $out[] = array('name' =>'Import Anaerobic Digester', 'records' => $records);
@@ -955,8 +792,14 @@ class CsvImportController extends ControllerBase {
 
           }
 
+
+          // Create import history entity after successful upload
+          $first_sheet = $spreadSheet->getSheet(0)->getTitle();
+          $this->process_import_history($year, $quarter, $file, $first_sheet);
+
           //Purge the uploaded file after import is completed.
           unlink($targetPath);
+
           
       } else {    
           $output = "Invalid File Type. Upload Excel File.";
@@ -2839,7 +2682,24 @@ class CsvImportController extends ControllerBase {
     ];
   }
 
-  public function processCoversheet($coversheet, $importFunction){
+  public function process_import_history($year, $quarter, $file, $first_sheet){
+    $import_history_submission = [];
+    $import_history_submission['type'] = 'csc_import_history';
+
+    $import_history_submission['csc_year_of_reporting'] = $year;
+    $import_history_submission['csc_month_of_reporting'] = $quarter;
+    $import_history_submission['csc_file_uploaded'] = $file->getClientOriginalName();
+    $import_history_submission['csc_attempt_status'] = "Success";
+    $import_history_submission['csc_time_submitted'] = (new \DateTime())->getTimestamp();
+    $import_history_submission['csc_by_user'] = \Drupal::currentUser()->getAccountName();
+    $import_history_submission['csc_workbook_type'] = ($first_sheet == "Coversheet") ? "Main" : "Supplemental";
+
+    $import_history = Asset::create($import_history_submission);
+
+    $import_history->save();
+  }
+
+  public function processCoversheet($coversheet, $importFunction, $year, $quarter){
     $dataArray = [];
     $column = 2;
     $row = 6;
@@ -2852,13 +2712,13 @@ class CsvImportController extends ControllerBase {
     }
   
     //import new coversheet
-    $importFunction($dataArray);
+    $importFunction($year, $quarter, $dataArray);
 
     return $dataArray;
 
   }
 
-  public function processImport($in_sheet, $importFunction, $end_column, $log_name="", $fields=""){
+  public function processImport($in_sheet, $importFunction, $end_column, $year, $quarter, $log_name="", $fields=""){
     $record_count = 0;
                 
     $start_column = 2;
@@ -2889,7 +2749,7 @@ class CsvImportController extends ControllerBase {
       $record_count = $record_count + 1;
 
       //import new project summary record
-      $importFunction($dataArray[0], $record_count, $fields);
+      $importFunction($year, $quarter, $dataArray[0], $record_count, $fields);
       
     }
 
