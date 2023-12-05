@@ -80,8 +80,8 @@ class WorkbookDateForm extends FormBase {
     $supp_path = "/modules/custom/cig_pods_csc/static/PCSC_Supplemental_Reporting_Workbook.xlsx";
     $svg = '<svg class="fsa-icon fsa-icon--size-4" aria-hidden="true" focusable="false" role="img" fill="#494440" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path></svg>';
     $link_markup = '<span id="link-header"><b>Download Workbook Templates</b></span>';
-    $link_markup .= $svg . '<a href="' . $main_path . '" download>Partnerships for Climate-Smart Commodities Project Reporting Workbook</a><br>';
-    $link_markup .= $svg . '<a href="' . $supp_path . '" download>Partnerships for Climate-Smart Commodities Supplemental Reporting Workbook</a>';
+    $link_markup .= $svg . '<a class="downloads" href="' . $main_path . '" download>Partnerships for Climate-Smart Commodities Project Reporting Workbook</a><br>';
+    $link_markup .= $svg . '<a class="downloads" href="' . $supp_path . '" download>Partnerships for Climate-Smart Commodities Supplemental Reporting Workbook</a>';
     $link_markup = Markup::create($link_markup);
 
     $form['links'] = [

@@ -46,7 +46,6 @@ function import_coversheet($year, $quarter, $in_data_array){
     $coversheet_submission['csc_project_end'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
 
     $coversheet_submission['csc_project_budget'] = $in_data_array[9];
-    $coversheet_submission['csc_project_comet_version'] = $in_data_array[12];
 
     $identifying_fields = ['csc_project_id_field'];
     save_or_update('asset', $coversheet_submission, $identifying_fields);

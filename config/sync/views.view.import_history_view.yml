@@ -727,6 +727,99 @@ display:
             operator_list: {  }
       style:
         type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          columns:
+            name: name
+            csc_project_id_target_id: csc_project_id_target_id
+            csc_attempt_status_value: csc_attempt_status_value
+            csc_workbook_type_value: csc_workbook_type_value
+            csc_year_of_reporting_numerator: csc_year_of_reporting_numerator
+            csc_month_of_reporting_value: csc_month_of_reporting_value
+            csc_file_uploaded_value: csc_file_uploaded_value
+            csc_time_submitted_value: csc_time_submitted_value
+            csc_by_user_value: csc_by_user_value
+            csc_submission_details_value: csc_submission_details_value
+          default: csc_time_submitted_value
+          info:
+            name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_project_id_target_id:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_attempt_status_value:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_workbook_type_value:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_year_of_reporting_numerator:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_month_of_reporting_value:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_file_uploaded_value:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_time_submitted_value:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_by_user_value:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            csc_submission_details_value:
+              sortable: true
+              default_sort_order: desc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          override: true
+          sticky: false
+          summary: ''
+          empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
       query:

@@ -373,3 +373,11 @@ csv_import.excel_import_form:
     _form: '\Drupal\csv_import\Form\WorkbookDateForm'
   requirements:
     _permission: 'access content'
+
+csv_import.submit_workbooks:
+  path: "/csv_import/submit_workbooks"
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::submit_workbooks'
+    _title: 'Submit Reporting Workbooks'
+  requirements:
+    _permission: 'access content'

@@ -1,3 +1,84 @@
 <?php
 
 // intentionally left blank, ready to receive module code
+
+/**
+ * Implements hook_theme()
+ */
+function csv_import_theme($existing, $type, $theme, $path) {
+    return [
+        'views_view_table__import_history_embedded_view' => [
+            'template' => 'views-view-table--import-history-embedded-view',
+            'base hook' => 'views_view_table',
+        ],
+    ];
+ }
+
+function csv_import_theme_suggestions_views_view_table(array $variables) {
+    $suggestions = [];
+    if ($variables['view'] == 'import_history_embedded_view') {
+        $suggestions = ['views_view_table__import_history_embedded_view'];
+    }
+    return $suggestions;
+ }
+
+function csv_import_preprocess_views_view_table(array &$variables) {
+    $view = $variables['view'];
+    $args = $view->args;
+
+    if (!empty($args)) {
+        $args = $args[0];
+        $variables['view_link'] = $args['view_link'];
+        $variables['header_title'] = $args['header_title'];
+    }
+ }
+
+function csv_import_views_post_execute($view) {
+    if ($view->id() == 'import_history_embedded_view') {
+
+        $entries = $view->result;
+        $filtered_entries = [];
+
+        $quarters = [
+            'Jan 1 - March 31' => 1,
+            'April 1 - June 30' => 2,
+            'July 1 - September 30' => 3,
+            'October 1 - December 31' => 4,
+        ];
+        
+        $newest_quarter = 0;
+        $second_quarter = 0;
+
+        foreach ($entries as $row) {
+            $year = $row->_entity->get('csc_year_of_reporting')->getValue()[0]['numerator'];
+            $quarter = $row->_entity->get('csc_month_of_reporting')->getValue()[0]['value'];
+            $value = 10*$year + $quarters[$quarter];
+            
+            if ($value > $newest_quarter) {
+                $second_quarter = $newest_quarter;
+                $newest_quarter = $value;
+            }
+            elseif ($value > $second_quarter and $value != $newest_quarter) {
+                $second_quarter = $value;
+            }
+        }
+
+        foreach ($entries as $key => $row) {
+            $year = $row->_entity->get('csc_year_of_reporting')->getValue()[0]['numerator'];
+            $quarter = $row->_entity->get('csc_month_of_reporting')->getValue()[0]['value'];
+            $value = 10*$year + $quarters[$quarter];
+            
+            if ($value != $newest_quarter and $value != $second_quarter) {
+                unset ($view->result[$key]);
+            }
+        }
+
+        $count = 0;
+        foreach ($view->result as $key => $value) {
+            if ($count >= 10) {
+                unset ($view->result[$key]);
+            }
+            $count++;
+        }
+    }
+}

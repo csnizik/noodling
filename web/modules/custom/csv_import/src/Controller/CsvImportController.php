@@ -9,6 +9,8 @@ use Drupal\log\Entity\Log;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use Symfony\Component\HttpFoundation\Request;
+use Drupal\views\Views;
+use Drupal\Core\Url;
 
 /**
  * Provides route responses for the Example module.
@@ -257,6 +259,23 @@ class CsvImportController extends ControllerBase {
         </form>
       ',
     ];
+  }
+
+  public function submit_workbooks() {
+    $view_args = [
+      "view_link" => Url::fromUri('internal:/assets/csc_import_history'),
+      "header_title" => "Import History",
+    ];
+    
+    $view = views_embed_view('import_history_embedded_view', 'page_1', $view_args);
+
+    $form = \Drupal::FormBuilder()->getForm('\Drupal\csv_import\Form\WorkbookDateForm');
+
+    return [
+      "form" => $form,
+      "view" => $view,
+    ];
+
   }
 
   public function process_workbook(Request $request) {
@@ -2707,7 +2726,6 @@ class CsvImportController extends ControllerBase {
     for($row; $row <= 16; $row++){
       $cellValue = $coversheet->getCellByColumnAndRow($column, $row)->getValue();
   
-      //read the cell
       array_push($dataArray, $cellValue);
     }
   

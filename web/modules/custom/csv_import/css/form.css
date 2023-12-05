@@ -1,6 +1,7 @@
 .excel-import-form {
   padding-top: 1.75rem !important;
   padding-left: 2.5rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .form-element {
@@ -37,6 +38,22 @@
   padding-left: 0.25rem !important;
 }
 
+input#edit-file {
+  padding-top: 0.3rem !important;
+
+}
+input#edit-file::file-selector-button {
+    border-radius: 0.3rem !important;
+    color: #205493;
+    background-color: white;
+    border-color: #205493;
+    border-width: 1px;
+    font-weight: bold;
+    margin-right: 0.7rem;
+    margin-top: -0.125rem;
+    padding-bottom: 0.3rem;
+}
+
 #edit-save {
   margin-top: 1.45em !important;
   padding: 0.75rem 2rem !important;
@@ -65,9 +82,24 @@ hr {
   margin-bottom: 1.5rem;
 }
 
-.downloads {
+.downloads, .view-link {
   text-decoration: underline !important;
   color: #0068ad  !important;
+}
+
+.view-link-col {
+  line-height: 0;
+  margin-top: 1rem;
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem !important;
+}
+
+.view-title {
+  margin: 0;
 }
 
 svg {
@@ -78,4 +110,19 @@ svg {
 #link-header {
   display: block;
   margin-bottom: 1rem;
+}
+
+.sortable-heading.is-active > a, .sortable-heading.is-active > a:hover, .sortable-heading.is-active > a:active {
+  color: #205493 !important;
+}
+
+
+[data-gin-accent] {
+  --gin-color-primary-hover: #205493 !important;
+  --gin-color-primary-active: #205493 !important;
+  --gin-color-primary-rgb: rgb(0, 104, 173) !important;
+  --gin-color-primary-light-hover: rgba(0, 104, 173, 0.2) !important;
+  --gin-color-primary-light-active: rgba(0, 104, 173, 0.3) !important;
+  --gin-shadow-primary-light: rgba(0, 104, 173, 0.45) !important;
+  --gin-bg-item-hover: rgba(0, 104, 173, 0.1) !important;
 }
