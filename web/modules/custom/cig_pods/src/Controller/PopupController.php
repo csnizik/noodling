@@ -5,6 +5,7 @@ namespace Drupal\cig_pods\Controller;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\OpenModalDialogCommand;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\asset\Entity\Asset;
 
 class PopupController extends ControllerBase {
 

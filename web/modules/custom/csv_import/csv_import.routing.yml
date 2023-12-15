@@ -53,3 +53,11 @@ csv_import.process_soil_test_results:
     _title: 'csv import operations'
   requirements:
     _permission: 'access content'
+
+csv_import.process_all_assets:
+  path: '/csv_import/upload_all_assets'
+  defaults:
+    _controller: '\Drupal\csv_import\Controller\CsvImportController::process_all_assets'
+    _title: 'csv import operations'
+  requirements:
+    _permission: 'access content'
