@@ -2,7 +2,7 @@ uuid: 3a2eadc4-6d28-47e3-b23e-4a9635548986
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Practice extent unit'

@@ -2,7 +2,7 @@ uuid: 27e9e921-b225-432c-8cbf-822f7241bd50
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Water quantity purpose'

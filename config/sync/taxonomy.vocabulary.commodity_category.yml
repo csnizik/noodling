@@ -2,7 +2,7 @@ uuid: 7b1fcde3-2a7f-4251-bb17-d4ff68c5a9ec
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Commodity category'

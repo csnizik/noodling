@@ -2,7 +2,7 @@ uuid: a8752fb3-bd39-432c-9851-b2e81595843c
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Field any CSAF practice'

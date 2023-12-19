@@ -2,7 +2,7 @@ uuid: c9e25609-2f55-4ae0-9fa7-4ad7aadd6a69
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Reduced phosphorus loss amount unit'

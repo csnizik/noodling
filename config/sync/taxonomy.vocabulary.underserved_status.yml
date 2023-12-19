@@ -2,7 +2,7 @@ uuid: e96fb133-6a81-45fe-a7bb-ea99d48e3167
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Underserved status'

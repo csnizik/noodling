@@ -2,7 +2,7 @@ uuid: b6710e76-a420-4918-84f7-5447d6ef1714
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Activity by partner'

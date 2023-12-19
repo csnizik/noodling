@@ -2,7 +2,7 @@ uuid: 6f08401d-c810-479c-9163-1fd05d55458c
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Avoided land conversion'

@@ -2,7 +2,7 @@ uuid: 9f105927-6811-4aba-9336-02d643f87e44
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Field GHG calculations'

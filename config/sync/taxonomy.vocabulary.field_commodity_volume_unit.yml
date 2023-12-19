@@ -2,7 +2,7 @@ uuid: a1c4c39b-44f5-4a03-b6b5-57da27f7c2ac
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Field commodity volume unit'

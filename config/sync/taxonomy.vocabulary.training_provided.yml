@@ -2,7 +2,7 @@ uuid: 4df39d19-c4f9-4226-bf33-838304851228
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Training provided'

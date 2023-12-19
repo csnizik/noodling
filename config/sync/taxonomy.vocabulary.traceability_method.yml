@@ -2,7 +2,7 @@ uuid: a8987ef9-fe33-40f5-85d8-74c7c37d7d07
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Traceability method'

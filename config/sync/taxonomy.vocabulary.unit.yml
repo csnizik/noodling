@@ -5,10 +5,9 @@ dependencies:
   enforced:
     module:
       - farm_unit
-      - cig_pods_csc
 _core:
   default_config_hash: uVfX66yS310ReWB9XGlDTOwBmSKVMxcKi51yWOnT3p8
-name: Units
+name: Unit
 vid: unit
 description: 'A list of units for measurement purposes.'
 weight: 0

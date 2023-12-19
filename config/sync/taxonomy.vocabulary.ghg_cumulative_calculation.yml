@@ -2,7 +2,7 @@ uuid: c260e921-beca-4550-a5e9-8557419ad1fa
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'GHG cumulative calculation'

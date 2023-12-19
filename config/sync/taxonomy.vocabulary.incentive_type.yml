@@ -2,7 +2,7 @@ uuid: 12737ade-4c14-49a3-b69c-41d3bb3960cb
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Incentive type'

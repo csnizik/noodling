@@ -2,7 +2,7 @@ uuid: ece105a0-9c89-4931-a2a1-080c4f128642
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Payment on enrollment'

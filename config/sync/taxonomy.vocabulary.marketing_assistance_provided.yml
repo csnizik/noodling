@@ -2,7 +2,7 @@ uuid: 036b255c-7031-4d94-9006-ec90ac573d75
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Marketing assistance provided'

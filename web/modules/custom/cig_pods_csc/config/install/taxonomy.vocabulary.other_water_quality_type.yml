@@ -3,7 +3,7 @@ status: true
 dependencies:
  enforced:
     module:
-      - cig_pods_cscs
+      - cig_pods_csc
 name: 'Other water quality type'
 vid: other_water_quality_type
 description: 'Type of other water quality metric (besides nitrogen loss and phosphorus loss reductions) that is measured in the field.'

@@ -2,7 +2,7 @@ uuid: 9bd27b03-a1bf-4e36-aa41-ea1fd38b9b6b
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'CSAF nonprofit funds'

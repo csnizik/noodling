@@ -2,7 +2,7 @@ uuid: 37a23fb3-e6a6-4a18-b17d-cbde1d589354
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Partner type'

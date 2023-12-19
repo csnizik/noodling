@@ -2,7 +2,7 @@ uuid: c65f2d4d-22e5-4e74-af86-8bc8a1010cee
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Organic fields'

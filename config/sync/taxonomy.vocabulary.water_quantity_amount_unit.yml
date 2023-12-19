@@ -2,7 +2,7 @@ uuid: b21f0f1e-9755-4f24-be65-4d84517ceb42
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Water quantity amount unit'

@@ -2,7 +2,7 @@ uuid: 13ad5307-f019-4dfa-86a6-22ad03895bed
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Livestock type'

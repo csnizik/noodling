@@ -2,7 +2,7 @@ uuid: 68feba1b-be16-4d63-b1dc-23bda1569961
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Price premium unit'

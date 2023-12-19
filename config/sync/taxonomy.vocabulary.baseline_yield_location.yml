@@ -2,7 +2,7 @@ uuid: 36b51203-ccf3-43d4-85be-9b42ca762c0f
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Baseline yield location'

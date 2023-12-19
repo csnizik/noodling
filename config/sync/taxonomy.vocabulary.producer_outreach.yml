@@ -2,7 +2,7 @@ uuid: b71b8b6b-4a56-4d8b-9504-a5d84ef1554e
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Producer outreach'

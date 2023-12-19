@@ -2,7 +2,7 @@ uuid: cf3939dc-1e11-4f97-83cb-9016e85a4d82
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Payment on harvest'

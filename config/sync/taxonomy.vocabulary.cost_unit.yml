@@ -2,7 +2,7 @@ uuid: 32a51057-8bad-4c2c-aa19-b844b2e25a23
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Cost unit'

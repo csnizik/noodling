@@ -2,7 +2,7 @@ uuid: f1211b2e-e5ed-431d-9fed-8600cedc0306
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Other water quality purpose'

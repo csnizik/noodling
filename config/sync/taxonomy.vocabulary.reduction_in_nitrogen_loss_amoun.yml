@@ -2,7 +2,7 @@ uuid: 9c5684f0-61ac-494e-89e8-05618cf67835
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Reduction in nitrogen loss amount unit'

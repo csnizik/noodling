@@ -2,7 +2,7 @@ uuid: fb37ccea-eacf-4a86-8434-b573af867e33
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Practice Type'

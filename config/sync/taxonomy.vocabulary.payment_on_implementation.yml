@@ -2,7 +2,7 @@ uuid: 771b7675-a5b1-4f9b-9736-2006c6fcf49d
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Payment on implementation'

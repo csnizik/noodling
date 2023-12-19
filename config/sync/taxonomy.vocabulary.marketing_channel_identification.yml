@@ -2,7 +2,7 @@ uuid: c9f22f27-ebba-47da-a6e9-0e411f92bd91
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Marketing channel identification method'

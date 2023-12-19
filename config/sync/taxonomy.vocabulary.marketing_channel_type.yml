@@ -2,7 +2,7 @@ uuid: 9d776ef1-53b8-4af3-a21a-ec26ea07efb2
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Marketing channel type'

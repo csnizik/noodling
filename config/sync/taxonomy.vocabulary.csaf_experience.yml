@@ -2,7 +2,7 @@ uuid: 3b6cfbc0-bc71-4446-b902-921db14c739c
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'CSAF experience'

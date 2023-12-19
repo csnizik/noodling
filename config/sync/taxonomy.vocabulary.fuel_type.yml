@@ -2,7 +2,7 @@ uuid: 8260a421-08ae-413d-a69f-8e04f0b0ed45
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Fuel Type'

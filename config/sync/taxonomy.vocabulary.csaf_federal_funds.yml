@@ -2,7 +2,7 @@ uuid: 6b92a5fc-5263-48cb-9e6e-779734925307
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'CSAF federal funds'

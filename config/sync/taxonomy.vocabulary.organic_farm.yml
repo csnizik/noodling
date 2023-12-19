@@ -2,7 +2,7 @@ uuid: 7ab8fb46-c5b1-4bbe-9612-e8c46303e667
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Organic farm'

@@ -2,7 +2,7 @@ uuid: 6e70c17b-9676-4e26-b5c1-0f51bf343924
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Incentive reason'

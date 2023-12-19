@@ -47,7 +47,7 @@ class PartnerActivities extends FarmAssetType {
             'multiple' => FALSE,
         ],
         'csc_prtnr_act_partner_poc_email' => [
-            'type' => 'email',
+            'type' => 'string',
             'label' => 'Partner POC Email',
             'description' => 'Email of the point of contact for the lead grantee or partner organization.',
             '#pattern' => '*@example.com',

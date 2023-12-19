@@ -2,7 +2,7 @@ uuid: c5235479-0343-4b3a-b1c9-0ac81c17da90
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'GHG measurement method'

@@ -2,7 +2,7 @@ uuid: b62efb10-32d0-4d13-adab-7129f1bacff0
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Reduced energy use'

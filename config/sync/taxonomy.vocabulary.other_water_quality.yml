@@ -2,7 +2,7 @@ uuid: 3c71d1c5-fac6-43f9-bcc5-db40d51c2951
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Other water quality'

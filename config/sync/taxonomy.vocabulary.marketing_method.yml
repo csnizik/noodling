@@ -2,7 +2,7 @@ uuid: a55ee0ee-685a-4ee7-898a-7d791822c9e0
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Marketing method'

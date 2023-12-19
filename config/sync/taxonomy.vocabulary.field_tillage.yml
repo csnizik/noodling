@@ -2,7 +2,7 @@ uuid: 8626d5d0-0b26-48f6-b49c-b57263253ba1
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Field tillage'

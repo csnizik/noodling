@@ -2,7 +2,7 @@ uuid: 310a6afa-6f66-43f7-8ac5-4120b875d384
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'GHG verification method'

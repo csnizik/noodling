@@ -2,7 +2,7 @@ uuid: 396d932f-a074-46c1-8acf-a7601bd2d20a
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Waste Storage System'

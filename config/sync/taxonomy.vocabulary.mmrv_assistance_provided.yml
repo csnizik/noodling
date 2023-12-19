@@ -2,7 +2,7 @@ uuid: e7d1d5fc-0056-4bcf-ab5e-be32a7510d32
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'MMRV assistance provided'

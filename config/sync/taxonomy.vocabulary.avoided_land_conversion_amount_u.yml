@@ -2,7 +2,7 @@ uuid: 5cad3ac8-42f0-4b22-9489-ab1fd468ab18
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Avoided land conversion amount unit'

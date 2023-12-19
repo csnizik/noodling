@@ -2,7 +2,7 @@ uuid: 19518119-9c53-4ee4-b055-695f04d52802
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Practice standard'

@@ -25,12 +25,12 @@ widget_selector: single
 widget_selector_configuration: {  }
 widgets:
   ceea0626-02bb-4cea-92f4-adca2561835d:
+    id: view
+    uuid: ceea0626-02bb-4cea-92f4-adca2561835d
+    label: View
+    weight: 1
     settings:
       submit_text: 'Select assets'
       auto_select: false
       view: farm_asset
       view_display: entity_browser
-    uuid: ceea0626-02bb-4cea-92f4-adca2561835d
-    weight: 1
-    label: View
-    id: view

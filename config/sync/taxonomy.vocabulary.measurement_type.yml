@@ -2,7 +2,7 @@ uuid: d8b7259e-40cd-4f84-afc8-0817be623411
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Measurement type'

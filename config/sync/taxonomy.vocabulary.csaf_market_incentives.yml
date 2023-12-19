@@ -2,7 +2,7 @@ uuid: 11b172b9-6871-4001-9271-347e1e7f2de0
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'CSAF market incentives'

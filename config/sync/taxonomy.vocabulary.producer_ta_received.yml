@@ -2,7 +2,7 @@ uuid: 45881e46-73b7-4386-b68e-6e496440129f
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Producer TA received'

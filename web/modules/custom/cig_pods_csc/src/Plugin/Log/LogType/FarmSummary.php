@@ -79,7 +79,7 @@ class FarmSummary extends FarmLogType {
             'multiple' => FALSE,
           ],
           'csc_fa_summ_prdcr_inc_amt' => [
-            'type' => 'decimal',
+            'type' => 'fraction',
             'label' => 'Producer incentive amount',
             'description' => 'Total incentive payment received by the producer from USDA project funds for the year (non‐ cumulative). Do not include incentive payments made with partner match funds.',
             'required' => TRUE,

@@ -2,7 +2,7 @@ uuid: 59070b98-a3aa-496d-bbf6-bb5429a91ba5
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Reduction in phosphorus loss purpose'

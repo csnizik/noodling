@@ -5,7 +5,7 @@ dependencies:
     module:
       - cig_pods_csc
 id: csc_partner_activities
-label: Partner Activities
-description: Partner Activities
+label: 'Partner Activities'
+description: 'Partner Activities'
 workflow: asset_default
 new_revision: true

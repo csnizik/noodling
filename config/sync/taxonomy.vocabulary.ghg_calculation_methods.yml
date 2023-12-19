@@ -2,7 +2,7 @@ uuid: 899ea3cb-d4ea-4496-b07d-fb4bb8975a0a
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'GHG calculation methods'

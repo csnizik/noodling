@@ -2,7 +2,7 @@ uuid: bfa4abc6-4867-497d-86fd-e530e5b90381
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Field land use'

@@ -2,7 +2,7 @@ uuid: d8820acd-9bfd-4c19-bf5b-1a071ba0400d
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Reduced erosion purpose'

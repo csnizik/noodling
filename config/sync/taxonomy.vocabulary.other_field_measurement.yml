@@ -2,7 +2,7 @@ uuid: 8cb68c35-ae21-485b-a759-95a2d1c0656e
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Other field measurement'

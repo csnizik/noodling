@@ -2,7 +2,7 @@ uuid: e4b78017-7127-4695-8cec-bf7561095a9b
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Match type'

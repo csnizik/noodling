@@ -2,7 +2,7 @@ uuid: 40fb2f15-0c36-428b-a672-73a5fdc10df7
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Reduced energy use amount unit'

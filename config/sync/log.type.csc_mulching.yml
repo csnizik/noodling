@@ -6,8 +6,8 @@ dependencies:
     module:
       - cig_pods_csc
 id: csc_mulching
-label: 'Mulching'
-description: 'Mulching'
+label: Mulching
+description: Mulching
 name_pattern: 'Mulching log [log:id]'
 workflow: log_default
 new_revision: true

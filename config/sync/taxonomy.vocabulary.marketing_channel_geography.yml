@@ -2,7 +2,7 @@ uuid: 53b4849a-d39c-4a40-a2b5-6799f16fa063
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Marketing channel geography'

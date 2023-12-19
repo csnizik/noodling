@@ -2,7 +2,7 @@ uuid: 0ff2a40f-5e94-4729-a3ca-3fe657307154
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Environmental benefits'

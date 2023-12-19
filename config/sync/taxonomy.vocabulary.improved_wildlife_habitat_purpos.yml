@@ -2,7 +2,7 @@ uuid: 0f5bee22-042f-4bc7-b649-2c36c972221a
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Improved wildlife habitat purpose'

@@ -2,7 +2,7 @@ uuid: 4673314c-9ca8-4e77-91a2-cc4d399209b3
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Reduced erosion amount unit'

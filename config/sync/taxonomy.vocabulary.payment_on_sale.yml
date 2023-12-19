@@ -2,7 +2,7 @@ uuid: 29341f05-266d-441c-b10f-5e1c3e618017
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Payment on sale'

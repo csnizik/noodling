@@ -2,7 +2,7 @@ uuid: c6dd1fed-dd43-4b44-90f1-3ca91ce92044
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Practice past extent'

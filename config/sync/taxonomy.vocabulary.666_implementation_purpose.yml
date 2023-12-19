@@ -2,9 +2,10 @@ uuid: 13eb33dd-4150-450f-aa23-1c610774abb2
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: '666 Implementation Purpose'
 vid: 666_implementation_purpose
 description: ''
+weight: 0

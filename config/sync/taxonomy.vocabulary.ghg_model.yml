@@ -2,7 +2,7 @@ uuid: 60219418-26bc-4bfa-b251-a64589f32307
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'GHG model'

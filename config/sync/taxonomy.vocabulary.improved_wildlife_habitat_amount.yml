@@ -2,7 +2,7 @@ uuid: d319eae2-0c4c-40ba-b140-fffba9b1ad9a
 langcode: en
 status: true
 dependencies:
- enforced:
+  enforced:
     module:
       - cig_pods_csc
 name: 'Improved wildlife habitat amount unit'
