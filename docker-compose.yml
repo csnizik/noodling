@@ -48,8 +48,18 @@ services:
           # Import taxonomy terms via Drush.
           drush -y import:taxonomies --choice=full
           
-          # Add a test user.
+          # Add a test, npo, awardee, awardee1, and analyst users.
           drush user:create test --mail="test@example.com" --password="test"
+          drush user:create npo --mail="npo@example.com" --password="npo"
+          drush user:create awardee --mail="awardee@example.com" --password="awardee"
+          drush user:create awardee1 --mail="awardee1@example.com" --password="awardee1"
+          drush user:create analyst --mail="analyst@example.com" --password="analyst"
+
+          # Assign drupal Roles to relevant user accounts.
+          drush user:role:add 'nrcs_pods_csc_adminuser' npo
+          drush user:role:add 'nrcs_pods_csc_user_awardee' awardee
+          drush user:role:add 'nrcs_pods_csc_user_awardee' awardee1
+          drush user:role:add 'nrcs_pods_csc_user_analyst' analyst
 
           # Create INSTALLED file
           touch /opt/drupal/INSTALLED

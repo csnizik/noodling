@@ -1,0 +1,9 @@
+uuid: 1394a58a-a9eb-4a71-87c5-0022e1b2660e
+langcode: en
+status: true
+dependencies: {  }
+id: nrcs_pods_csc_user_awardee
+label: NRCS_PODS_CSC-User-Awardee
+weight: 3
+is_admin: FALSE
+permissions: {  }

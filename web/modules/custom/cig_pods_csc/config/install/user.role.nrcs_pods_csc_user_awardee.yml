@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nrcs_pods_csc_user_awardee
+label: NRCS_PODS_CSC-User-Awardee
+weight: 3
+is_admin: FALSE
+permissions: {  }

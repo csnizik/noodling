@@ -1,0 +1,9 @@
+uuid: 8b89551d-2b10-4ebb-a575-0ff69df2dedf
+langcode: en
+status: true
+dependencies: {  }
+id: nrcs_pods_csc_adminuser
+label: NRCS_PODS_CSC-AdminUser
+weight: 2
+is_admin: FALSE
+permissions: {  }
