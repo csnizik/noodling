@@ -39,11 +39,11 @@ function import_coversheet($year, $quarter, $in_data_array){
     $coversheet_submission['csc_project_year_reporting'] = $year;
     $coversheet_submission['csc_project_month_reporting'] = $quarter;
 
-    $ndate = convertExcelDate($in_data_array[7]);
-    $coversheet_submission['csc_project_start'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[7]);
+    $coversheet_submission['csc_project_start'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
 
-    $ndate = convertExcelDate($in_data_array[8]);
-    $coversheet_submission['csc_project_end'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[8]);
+    $coversheet_submission['csc_project_end'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
 
     $coversheet_submission['csc_project_budget'] = $in_data_array[9];
 
@@ -98,11 +98,11 @@ function import_partner_activities($year, $quarter, $in_data_array, $cur_count, 
     $partner_activities_submission['csc_prtnr_act_partner_poc'] = $in_data_array[3];
     $partner_activities_submission['csc_prtnr_act_partner_poc_email'] = $in_data_array[4];
 
-    $ndate = convertExcelDate($in_data_array[5]);
-    $partner_activities_submission['csc_prtnr_act_partnership_start'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[5]);
+    $partner_activities_submission['csc_prtnr_act_partnership_start'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
     
-    $ndate = convertExcelDate($in_data_array[6]);
-    $partner_activities_submission['csc_prtnr_act_partnership_end'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[6]);
+    $partner_activities_submission['csc_prtnr_act_partnership_end'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
 
     $partner_activities_submission['csc_prtnr_act_partnership_initation'] = filter_var($in_data_array[7], FILTER_VALIDATE_BOOLEAN);
     $partner_activities_submission['csc_prtnr_act_partner_total_requested'] = $in_data_array[8];
@@ -276,8 +276,8 @@ function import_producer_enrollment($year, $quarter, $in_data_array, $cur_count,
     $producer_enrollment_submission['csc_p_enrollment_state'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'state', 'name' =>  $in_data_array[1]]));
     $producer_enrollment_submission['csc_p_enrollment_county'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'county', 'name' =>  $in_data_array[2]]));
 
-    $ndate = convertExcelDate($in_data_array[4]);
-    $producer_enrollment_submission['csc_p_enrollment_start_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[4]);
+    $producer_enrollment_submission['csc_p_enrollment_start_date'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
     $producer_enrollment_submission['csc_p_enrlmnt_underserved_status'] = $in_data_array[6];
     $producer_enrollment_submission['csc_p_enrollment_total_area'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'total_area', 'name' => $in_data_array[7]]));
     $producer_enrollment_submission['csc_p_enrlmnt_total_crop_area'] = $in_data_array[8];
@@ -351,8 +351,8 @@ function import_field_enrollment($year, $quarter, $in_data_array, $cur_count, $p
     $field_enrollment_submission['csc_f_enrollment_producer_id'] = $producer_id;
     */
 
-    $ndate = convertExcelDate($in_data_array[7]);
-    $field_enrollment_submission['csc_f_enrollment_start_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[7]);
+    $field_enrollment_submission['csc_f_enrollment_start_date'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
     $field_enrollment_submission['csc_f_nrlmnt_total_field_area'] = $in_data_array[8];
     $field_enrollment_submission['csc_f_nrlmnt_commodity_category'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_category', 'name' => $in_data_array[9]]));
     $field_enrollment_submission['csc_f_enrollment_commodity_type'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'commodity_term', 'name' => $in_data_array[10]]));
@@ -540,14 +540,14 @@ function import_field_summary($year, $quarter, $in_data_array, $cur_count, $proj
     $field_summary_submission['csc_f_summary_field_id'] = array_pop(\Drupal::entityTypeManager()->getStorage('asset')->loadByProperties(['type' => 'csc_field_enrollment', 'csc_f_enrollment_field_id' => $in_data_array[2]]));
     $field_summary_submission['csc_f_summary_fiscal_year'] = $year;
     $field_summary_submission['csc_f_summary_fiscal_quarter'] = $quarter;
-    $ndate = convertExcelDate($in_data_array[14]);
-    $field_summary_submission['csc_f_summary_contract_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[14]);
+    $field_summary_submission['csc_f_summary_contract_end_date'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
     $field_summary_submission['csc_fi_summ_impl_cost_coverage'] = $in_data_array[25];
     $field_summary_submission['csc_fi_summ_impl_cost'] = $in_data_array[22];
     $field_summary_submission['csc_fi_summ_impl_cost_ut'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'cost_unit', 'name' => $in_data_array[23]]));
     
-    $ndate = convertExcelDate($in_data_array[13]);
-    $field_summary_submission['csc_fi_summ_date_pract_complete'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[13]);
+    $field_summary_submission['csc_fi_summ_date_pract_complete'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
     $field_summary_submission['csc_fi_summ_fld_comm_value'] = $in_data_array[18];
     $field_summary_submission['csc_fi_summ_fld_comm_vol'] = $in_data_array[19];
     $field_summary_submission['csc_fi_summ_fld_comm_vol_ut'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'field_commodity_volume_unit', 'name' => $in_data_array[20]]));
@@ -708,10 +708,10 @@ function import_ghg_benefits_alt_models($year, $quarter, $in_data_array, $cur_co
     $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_pract_type'] = $g_benefits_alternate_modeled_practice_type_results;
     $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ghg_md'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_model', 'name' => $in_data_array[18]]));
     $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ghg_md_otr'] = $in_data_array[19];
-    $ndate = convertExcelDate($in_data_array[20]);
-    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_md_start_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
-    $ndate = convertExcelDate($in_data_array[21]);
-    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_md_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[20]);
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_md_start_date'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[21]);
+    $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_md_end_date'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
     $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_ghg_bene_est'] = $in_data_array[22];
     $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_co2_stock_est'] = $in_data_array[23];
     $g_benefits_alternate_modeledsubmission['csc_g_bene_alt_md_co2_est'] = $in_data_array[24];
@@ -737,10 +737,10 @@ function import_ghg_benefits_measured($year, $quarter, $in_data_array, $cur_coun
     $ghg_benefits_measured_submission['csc_g_bene_msrd_ghg_msrt_mt'] = array_pop(\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'ghg_measurement_method', 'name' => $in_data_array[5]]));
     $ghg_benefits_measured_submission['csc_g_bene_msrd_ghg_msrt_mt_otr'] = $in_data_array[6];
     $ghg_benefits_measured_submission['csc_g_bene_msrd_lab_name'] = $in_data_array[7];
-    $ndate = convertExcelDate($in_data_array[8]);
-    $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_start_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
-    $ndate = convertExcelDate($in_data_array[9]);
-    $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_end_date'] = \DateTime::createFromFormat(getExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[8]);
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_start_date'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
+    $ndate = cscConvertExcelDate($in_data_array[9]);
+    $ghg_benefits_measured_submission['csc_g_bene_msrd_msrt_end_date'] = \DateTime::createFromFormat(cscGetExcelDateFormat(), $ndate)->getTimestamp();
     $ghg_benefits_measured_submission['csc_g_bene_msrd_total_co2_rd'] = $in_data_array[10];
     $ghg_benefits_measured_submission['csc_g_bene_msrd_t_fld_co2_stock'] = $in_data_array[11];
     $ghg_benefits_measured_submission['csc_g_bene_msrd_total_ch4_rd'] = $in_data_array[12];
@@ -1614,13 +1614,13 @@ function import_anaerobic_digester($year, $quarter, $in_data_array, $cur_count, 
 }
 
 
-function convertExcelDate($inDate){
+function cscConvertExcelDate($inDate){
     $unixTimestamp = ($inDate - 25569) * 86400;
-    $date = date(getExcelDateFormat(), $unixTimestamp);
+    $date = date(cscGetExcelDateFormat(), $unixTimestamp);
 
     return $date;
   }
 
-function getExcelDateFormat(){
+function cscGetExcelDateFormat(){
     return "Y-m-d";
 }

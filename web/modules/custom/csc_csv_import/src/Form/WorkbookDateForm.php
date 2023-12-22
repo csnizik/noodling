@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\csv_import\Form;
+namespace Drupal\csc_csv_import\Form;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\FormBase;
@@ -19,7 +19,7 @@ class WorkbookDateForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state, AssetInterface $asset = NULL) {
     
-    $form['#attached']['library'][] = 'csv_import/excel_import_form';
+    $form['#attached']['library'][] = 'csc_csv_import/excel_import_form';
     $form['#attributes']['enctype'][] = 'multipart/form-data';
 
     $quarter_options = [
