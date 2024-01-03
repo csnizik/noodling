@@ -98,6 +98,8 @@ class GHGBenefitsMeasured extends FarmLogType {
         'description' => 'Total CO2 reduction',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_g_bene_msrd_t_fld_co2_stock' => [
         'type' => 'fraction',
@@ -105,6 +107,8 @@ class GHGBenefitsMeasured extends FarmLogType {
         'description' => 'Total Field Carbon Stock',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_g_bene_msrd_total_ch4_rd' => [
         'type' => 'fraction',
@@ -112,6 +116,8 @@ class GHGBenefitsMeasured extends FarmLogType {
         'description' => 'Total CH4 reduction',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_g_bene_msrd_total_n2o_rd' => [
         'type' => 'fraction',
@@ -119,6 +125,8 @@ class GHGBenefitsMeasured extends FarmLogType {
         'description' => 'Total N20 reduction',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_g_bene_msrd_sl_sp_rs' => [
         'type' => 'fraction',
@@ -126,6 +134,8 @@ class GHGBenefitsMeasured extends FarmLogType {
         'description' => 'Soil Sample Result',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_g_bene_msrd_sl_sp_rs_ut' => [
         'type' => 'list_string',
@@ -176,6 +186,13 @@ class GHGBenefitsMeasured extends FarmLogType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
+
+      if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+        $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+      }
+      if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+        $fields[$name]->addConstraint('Required');
+      }
     }
 
     return $fields;

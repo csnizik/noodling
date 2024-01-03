@@ -109,6 +109,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Baseline Yield',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0.01,
+        'max' => 100000,
       ],
       'csc_f_nrlmnt_base_yield_unit' => [
         'type' => 'entity_reference',
@@ -245,6 +247,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Planned Practice 1 Implementation Year',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
       'csc_f_nrlmnt_prac_ext_1' => [
         'type' => 'fraction',
@@ -252,6 +256,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Practice 1 Extent',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
 	    'csc_f_nrlmnt_prac_ext_unit_1' => [
         'type' => 'list_string',
@@ -307,6 +313,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Planned Practice 2 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
       'csc_f_nrlmnt_prac_ext_2' => [
         'type' => 'fraction',
@@ -314,6 +322,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Practice 2 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
 	    'csc_f_nrlmnt_prac_ext_unit_2' => [
         'type' => 'list_string',
@@ -369,6 +379,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Planned Practice 3 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
       'csc_f_nrlmnt_prac_ext_3' => [
         'type' => 'fraction',
@@ -376,6 +388,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Practice 3 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
 	    'csc_f_nrlmnt_prac_ext_unit_3' => [
         'type' => 'list_string',
@@ -431,6 +445,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Planned Practice 4 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
       'csc_f_nrlmnt_prac_ext_4' => [
         'type' => 'fraction',
@@ -438,6 +454,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Practice 4 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
 	    'csc_f_nrlmnt_prac_ext_unit_4' => [
         'type' => 'list_string',
@@ -490,6 +508,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Planned Practice 5 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
       'csc_f_nrlmnt_prac_ext_5' => [
         'type' => 'fraction',
@@ -497,6 +517,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Practice 5 Extent',
 		    'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
 	    'csc_f_nrlmnt_prac_ext_unit_5' => [
         'type' => 'list_string',
@@ -552,6 +574,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Planned Practice 6 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
       'csc_f_nrlmnt_prac_ext_6' => [
         'type' => 'fraction',
@@ -559,6 +583,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Practice 6 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
 	    'csc_f_nrlmnt_prac_ext_unit_6' => [
         'type' => 'list_string',
@@ -614,6 +640,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Planned Practice 7 Implementation Year',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
       'csc_f_nrlmnt_prac_ext_7' => [
         'type' => 'fraction',
@@ -621,6 +649,8 @@ class FieldEnrollment extends FarmAssetType {
         'description' => 'Field Enrollment Practice 7 Extent',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 2022,
+        'max' => 2030,
       ],
 	    'csc_f_nrlmnt_prac_ext_unit_7' => [
         'type' => 'list_string',
@@ -651,6 +681,13 @@ class FieldEnrollment extends FarmAssetType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
+
+      if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+        $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+      }
+      if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+        $fields[$name]->addConstraint('Required');
+      }
     }
 
     return $fields;

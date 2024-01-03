@@ -54,6 +54,8 @@ class MarketActivities extends FarmLogType {
         'description' => 'Market Activities Number of buyers',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 1,
+        'max' => 500,
       ],
       'csc_m_activities_buyer_names' => [
         'type' => 'string',
@@ -77,6 +79,8 @@ class MarketActivities extends FarmLogType {
         'description' => 'Market Activities Value sold',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 100000000,
       ],
       'csc_m_activities_volume_sold' => [
         'type' => 'fraction',
@@ -84,6 +88,8 @@ class MarketActivities extends FarmLogType {
         'description' => 'Market Activities Volume sold',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 100000000,
       ],
       'csc_m_act_volume_sold_unit' => [
         'type' => 'entity_reference',
@@ -107,6 +113,8 @@ class MarketActivities extends FarmLogType {
         'description' => 'Market Activities Price premium',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0.01,
+        'max' => 10000,
       ],
       'csc_m_act_price_premium_unit' => [
         'type' => 'entity_reference',
@@ -130,6 +138,8 @@ class MarketActivities extends FarmLogType {
         'description' => 'Market Activities Price premium to producer',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 100,
       ],
       'csc_m_act_product_diff_mthd' => [
         'type' => 'entity_reference',
@@ -203,6 +213,13 @@ class MarketActivities extends FarmLogType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
+
+      if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+        $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+      }
+      if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+        $fields[$name]->addConstraint('Required');
+      }
     }
 
     return $fields;

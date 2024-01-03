@@ -84,6 +84,8 @@ class FarmSummary extends FarmLogType {
             'description' => 'Total incentive payment received by the producer from USDA project funds for the year (non‐ cumulative). Do not include incentive payments made with partner match funds.',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 5000000,
           ],
           'csc_fa_summ_inc_reason' => [
             'type' => 'entity_reference',
@@ -201,7 +203,15 @@ class FarmSummary extends FarmLogType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
+
+      if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+        $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+      }
+      if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+        $fields[$name]->addConstraint('Required');
+      }
     }
+
 
     return $fields;
 

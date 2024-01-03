@@ -80,11 +80,13 @@ class EnvironmentalBenefits extends FarmLogType {
         'multiple' => FALSE,
       ],
       'csc_nitrogen_loss_amount' => [
-        'type' => 'string',
+        'type' => 'fraction',
         'label' => 'Reduction in Nitrogen Loss Amount',
         'description' => 'Reduction in Nitrogen Loss Amount',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 1000000,
       ],
       'csc_nitrogen_loss_amount_unit' => [
         'type' => 'list_string',
@@ -140,11 +142,13 @@ class EnvironmentalBenefits extends FarmLogType {
         'multiple' => FALSE,
       ],
       'csc_phosphorus_loss_amount' => [
-        'type' => 'string',
+        'type' => 'fraction',
         'label' => 'Reduction in Phosphorus Loss Amount',
         'description' => 'Reduction in Phosphorus Loss Amount',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 1000000,
       ],
       'csc_phosphorus_loss_amount_unit' => [
         'type' => 'list_string',
@@ -224,7 +228,9 @@ class EnvironmentalBenefits extends FarmLogType {
         'description' => 'Other Water Quality Amount',
         'required' => TRUE,
         'multiple' => FALSE,
-      ],
+        'min' => 0,
+        'max' => 1000000,
+     ],
       'csc_otr_water_quality_amt_ut' => [
         'type' => 'list_string',
         'label' => 'Other Water Quality Amount Unit',
@@ -345,6 +351,8 @@ class EnvironmentalBenefits extends FarmLogType {
         'description' => 'Reduced Erosion Amount',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 1000000,
       ],
       'csc_reduced_erosion_amount_unit' => [
         'type' => 'list_string',
@@ -391,6 +399,8 @@ class EnvironmentalBenefits extends FarmLogType {
         'description' => 'Reduced Energy Use',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 1000000,
       ],
       'csc_reduced_energy_use_amount' => [
         'type' => 'fraction',
@@ -398,6 +408,8 @@ class EnvironmentalBenefits extends FarmLogType {
         'description' => 'Reduced Energy Use Amount',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 1000000,
       ],
       'csc_reduced_energy_use_amt_ut' => [
         'type' => 'list_string',
@@ -456,6 +468,8 @@ class EnvironmentalBenefits extends FarmLogType {
         'description' => 'Avoided Land Conversion Amount',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 1000000,
       ],
       'csc_avoided_land_conversion_ut' => [
         'type' => 'list_string',
@@ -514,6 +528,8 @@ class EnvironmentalBenefits extends FarmLogType {
         'description' => 'Improved Wildlife Habitat Amount',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 1000000,
       ],
       'csc_imp_wildlife_habitat_ut' => [
         'type' => 'list_string',
@@ -563,6 +579,13 @@ class EnvironmentalBenefits extends FarmLogType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
+
+      if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+        $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+      }
+      if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+        $fields[$name]->addConstraint('Required');
+      }
     }
 
     return $fields;

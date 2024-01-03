@@ -84,6 +84,11 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Cumulative GHG Benefits',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
+        'fields' => ['csc_p_summ_cum_carbon_stack', 'csc_p_summ_cum_co2_benefit', 'csc_p_summ_cum_ch4_benefit', 'csc_p_summ_cum_n2o_benefit'],
+        'comp' => "==",
+        'bound' => "csc_p_summary_ghg_benefits",
       ],
       'csc_p_summ_cum_carbon_stack' => [
         'type' => 'fraction',
@@ -91,6 +96,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Cumulative Carbon Stack',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_p_summ_cum_co2_benefit' => [
         'type' => 'fraction',
@@ -98,6 +105,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Cumulative CO2 Benefit',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_p_summ_cum_ch4_benefit' => [
         'type' => 'fraction',
@@ -105,6 +114,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Cumulative CH4 Benefit',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_p_summ_cum_n2o_benefit' => [
         'type' => 'fraction',
@@ -112,6 +123,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Cumulative N2O Benefit',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_p_summary_offsets_produced' => [
         'type' => 'fraction',
@@ -119,6 +132,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Offsets Produced',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_p_summary_offsets_produced' => [
         'type' => 'fraction',
@@ -126,6 +141,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Offsets Produced',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_p_summary_offsets_sale' => [
         'type' => 'string',
@@ -133,6 +150,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Offsets Sale',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_p_summary_offsets_price' => [
         'type' => 'fraction',
@@ -140,6 +159,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Offsets Price',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 500,
       ],
       'csc_p_summary_insets_produced' => [
         'type' => 'fraction',
@@ -147,6 +168,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Insets Produced',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
       'csc_p_summary_cost_on_farm' => [
         'type' => 'fraction',
@@ -154,6 +177,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary Cost Of On-Farm TA',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 5000000,
       ],
       'csc_p_summary_mmrv_cost' => [
         'type' => 'fraction',
@@ -161,6 +186,8 @@ class ProjectSummary extends FarmAssetType {
         'description' => 'Project Summary MMRV Cost',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 50000000,
       ],
       'csc_p_summ_ghg_monitoring_mthd' => [
         'type' => 'entity_reference',
@@ -197,10 +224,20 @@ class ProjectSummary extends FarmAssetType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
+
+      if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+        $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+      }
+      if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+        $fields[$name]->addConstraint('Required');
+      }
+      if (array_key_exists('bound', $info) and array_key_exists('comp', $info) and array_key_exists('fields', $info)) {
+        $fields[$name]->addConstraint('Sum', ['fields'=>$info['fields'], 'comp'=>$info['comp'], 'bound'=>$info['bound']]);
     }
 
+    }
+
+
     return $fields;
-
   }
-
 }

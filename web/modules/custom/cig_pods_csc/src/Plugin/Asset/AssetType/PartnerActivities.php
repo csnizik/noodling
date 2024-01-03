@@ -81,6 +81,8 @@ class PartnerActivities extends FarmAssetType {
             'description' => 'Cumulative (total) amount of funds that the partner has requested reimbursement for from the lead grantee from the start of the partnership to the end of the reporting quarter. For each quarter’s data entry, the value must be the sum of all previous entries plus the amount of funds requested in the reporting quarter. If there are no changes, report the value from the previous quarter',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 10000000,
         ],
         'csc_prtnr_act_total_match_contrib' => [
             'type' => 'fraction',
@@ -88,6 +90,8 @@ class PartnerActivities extends FarmAssetType {
             'description' => 'Cumulative (total) value of funds and in‐kind contributions (e.g., staff time, inputs, equipment rental, marketing support) that the partner has provided as a project match contribution from the start of the partnership to the end of the reporting quarter. For each quarter’s data entry, the value must be the sum of all previous entries plus match contributions in the reporting quarter. If there are no changes, report the value from the previous quarter.',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 10000000,
         ],
         'csc_prtnr_act_total_match_incent' => [
             'type' => 'fraction',
@@ -95,6 +99,8 @@ class PartnerActivities extends FarmAssetType {
             'description' => 'Cumulative (total) value of funds for incentive payments directly to producers that the partner has provided as a project match contribution from the start of the partnership to the end of the reporting quarter. For each quarter’s data entry, the value must be the sum of all previous entries plus match incentives in the reporting quarter. If there are no changes, report the value from the previous quarter.',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 10000000,
         ],
         'csc_prtnr_act_match_type_1' => [
             'type' => 'entity_reference',
@@ -111,6 +117,8 @@ class PartnerActivities extends FarmAssetType {
             'description' => 'Cumulative (total) value of funds for each match type that the organization has provided as a project match contribution from the start of the partnership to the end of the reporting quarter. Enter amounts for up to the top three (in dollar value) match types. The worksheet provides three columns for this data element. Enter one value for each column. If fewer than 3 match types are used, leave unnecessary columns blank.',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 10000000,
         ],
         'csc_prtnr_act_match_type_2' => [
             'type' => 'entity_reference',
@@ -127,6 +135,8 @@ class PartnerActivities extends FarmAssetType {
             'description' => '',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 10000000,
         ],
         'csc_prtnr_act_match_type_3' => [
             'type' => 'entity_reference',
@@ -143,6 +153,8 @@ class PartnerActivities extends FarmAssetType {
             'description' => '',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 10000000,
         ],
         'csc_prtnr_act_match_type_other' => [
             'type' => 'string',
@@ -182,6 +194,8 @@ class PartnerActivities extends FarmAssetType {
             'description' => 'Cumulative (total) cost of each activity type that the organization has undertaken or offered from the start of the partnership to the end of the reporting quarter. Enter amounts for up to the top three (in dollar value) activity types. The worksheet provides three columns for this data element. Enter one value for each column. If fewer than 3 activity types are provided, leave unnecessary columns blank.',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 10000000,
         ],
         'csc_partner_activity_activity2' => [
             'type' => 'entity_reference',
@@ -198,6 +212,8 @@ class PartnerActivities extends FarmAssetType {
             'description' => '',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 10000000,
         ],
         'csc_partner_activity_activity3' => [
             'type' => 'entity_reference',
@@ -214,6 +230,8 @@ class PartnerActivities extends FarmAssetType {
             'description' => '',
             'required' => TRUE,
             'multiple' => FALSE,
+            'min' => 0,
+            'max' => 10000000,
         ],
         'csc_prtnr_act_activity_other' => [
             'type' => 'string',
@@ -244,6 +262,13 @@ class PartnerActivities extends FarmAssetType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
+
+      if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+        $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+      }
+      if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+        $fields[$name]->addConstraint('Required');
+      }
     }
 
     return $fields;

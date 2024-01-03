@@ -3,7 +3,7 @@
 /**
  * Implements hook_install().
  */
-function csv_import_install() {
+function csc_csv_import_install() {
   /*
 
   Location for potentially neccesary install code.
@@ -14,7 +14,7 @@ function csv_import_install() {
 /**
  * Implements hook_uninstall().
  */
-function csv_import_uninstall() {
+function csc_csv_import_uninstall() {
   /*
 
   Location for potentially neccesary uninstall code.

@@ -129,6 +129,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Field Commodity Value',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 1,
+        'max' => 10000000,
       ],
       'csc_fi_summ_fld_comm_vol' => [
         'type' => 'fraction',
@@ -136,6 +138,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Field Commodity Volume',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 1,
+        'max' => 10000000,
       ],
       'csc_fi_summ_fld_comm_vol_ut' => [
         'type' => 'entity_reference',
@@ -159,6 +163,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Cost of Implementation',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 1,
+        'max' => 10000000,
       ],
       'csc_fi_summ_impl_cost_ut' => [
         'type' => 'entity_reference',
@@ -182,6 +188,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Cost Coverage',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 100,
       ],
       'csc_fi_summ_fld_ghg_monitor' => [
         'type' => 'entity_reference',
@@ -260,6 +268,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Field Official GHG ER',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_fi_summ_fld_co2_stock' => [
         'type' => 'fraction',
@@ -267,6 +277,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Field Official Carbon Stock',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_fi_summ_fld_co2_emission_rd' => [
         'type' => 'fraction',
@@ -274,6 +286,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Field Official CO2 ER',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_fi_summ_fld_ch4_emission_rd' => [
         'type' => 'fraction',
@@ -281,6 +295,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Field Official CH4 ER',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_fi_summ_fld_n2o_emission_rd' => [
         'type' => 'fraction',
@@ -288,6 +304,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Field Official N2O ER',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_f_summary_field_offsets' => [
         'type' => 'fraction',
@@ -295,6 +313,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Field Offsets produced',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_f_summary_field_insets' => [
         'type' => 'fraction',
@@ -302,6 +322,8 @@ class FieldSummary extends FarmLogType {
         'description' => 'Field Insets produced',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_fi_summ_fld_measurement_otr' => [
         'type' => 'list_string',
@@ -323,6 +345,14 @@ class FieldSummary extends FarmLogType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
+
+      if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+        $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+      }
+      if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+        $fields[$name]->addConstraint('Required');
+      }
+
     }
 
     return $fields;

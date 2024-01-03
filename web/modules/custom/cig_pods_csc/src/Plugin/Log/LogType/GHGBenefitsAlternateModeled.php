@@ -109,6 +109,8 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'description' => 'Total GHG Benefits Estimated',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_g_bene_alt_md_co2_stock_est' => [
         'type' => 'fraction',
@@ -116,6 +118,8 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'description' => 'Total Carbon Stock Estimated',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_g_bene_alt_md_co2_est' => [
         'type' => 'fraction',
@@ -123,6 +127,8 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'description' => 'Total CO2 Estimated',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_g_bene_alt_md_ch4_est' => [
         'type' => 'fraction',
@@ -130,6 +136,8 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'description' => 'Total CH4 Estimated',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
 	    'csc_g_bene_alt_md_n2o_est' => [
         'type' => 'fraction',
@@ -137,6 +145,8 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'description' => 'Total N2O Estimated',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 10000000,
       ],
     ];
 
@@ -146,6 +156,13 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
+
+      if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+        $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+      }
+      if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+        $fields[$name]->addConstraint('Required');
+      }
     }
 
     return $fields;

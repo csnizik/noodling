@@ -94,6 +94,8 @@ class ProducerEnrollment extends FarmAssetType {
         'description' => 'Total Crop Area',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 100000,
       ],
       'csc_p_enrlmnt_total_livstk_area' => [
         'type' => 'fraction',
@@ -101,6 +103,8 @@ class ProducerEnrollment extends FarmAssetType {
         'description' => 'Total Livestock Area',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 100000,
       ],
       'csc_p_enrlmnt_total_forest_area' => [
         'type' => 'fraction',
@@ -108,6 +112,8 @@ class ProducerEnrollment extends FarmAssetType {
         'description' => 'Total Forest Area',
         'required' => TRUE ,
         'multiple' => FALSE,
+        'min' => 0,
+        'max' => 100000,
       ],
       'csc_p_enrlmnt_livstk_type_1' => [
         'type' => 'entity_reference',
@@ -124,6 +130,8 @@ class ProducerEnrollment extends FarmAssetType {
         'description' => 'Livestock head (type 1 avg annual)',
         'required' => TRUE,
         'multiple' => FALSE,
+        'min' => 1,
+        'max' => 10000000,
       ],
       'csc_p_enrlmnt_livstk_type_2' => [
         'type' => 'entity_reference',
@@ -140,6 +148,8 @@ class ProducerEnrollment extends FarmAssetType {
         'description' => 'Livestock head (type 2 avg annual)',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 1,
+        'max' => 10000000,
       ],
       'csc_p_enrlmnt_livstk_type_3' => [
         'type' => 'entity_reference',
@@ -156,6 +166,8 @@ class ProducerEnrollment extends FarmAssetType {
         'description' => 'Livestock head (type 3 avg annual)',
         'required' => FALSE,
         'multiple' => FALSE,
+        'min' => 1,
+        'max' => 10000000,
       ],
 	    'csc_p_enrlmnt_livstk_type_otr' => [
         'type' => 'string',
@@ -265,7 +277,14 @@ class ProducerEnrollment extends FarmAssetType {
       $fields[$name] = $farmFieldFactory->bundleFieldDefinition($info)
         ->setDisplayConfigurable('form', TRUE)
         ->setDisplayConfigurable('view', TRUE);
-    }
+
+        if (array_key_exists('min', $info) and array_key_exists('max', $info)) {
+          $fields[$name]->addConstraint('MinMax',  ['min' => $info['min'],  'max' => $info['max']]);
+        }
+        if (array_key_exists('required', $info) and $fields[$name]['required'] == TRUE) {
+          $fields[$name]->addConstraint('Required');
+        }
+      }
 
     return $fields;
 

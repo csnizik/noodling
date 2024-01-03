@@ -5,7 +5,7 @@
 /**
  * Implements hook_theme()
  */
-function csv_import_theme($existing, $type, $theme, $path) {
+function csc_csv_import_theme($existing, $type, $theme, $path) {
     return [
         'views_view_table__import_history_embedded_view' => [
             'template' => 'views-view-table--import-history-embedded-view',
@@ -14,7 +14,7 @@ function csv_import_theme($existing, $type, $theme, $path) {
     ];
  }
 
-function csv_import_theme_suggestions_views_view_table(array $variables) {
+function csc_csv_import_theme_suggestions_views_view_table(array $variables) {
     $suggestions = [];
     if ($variables['view'] == 'import_history_embedded_view') {
         $suggestions = ['views_view_table__import_history_embedded_view'];
@@ -22,7 +22,7 @@ function csv_import_theme_suggestions_views_view_table(array $variables) {
     return $suggestions;
  }
 
-function csv_import_preprocess_views_view_table(array &$variables) {
+function csc_csv_import_preprocess_views_view_table(array &$variables) {
     $view = $variables['view'];
     $args = $view->args;
 
@@ -33,7 +33,7 @@ function csv_import_preprocess_views_view_table(array &$variables) {
     }
  }
 
-function csv_import_views_post_execute($view) {
+function csc_csv_import_views_post_execute($view) {
     if ($view->id() == 'import_history_embedded_view') {
 
         $entries = $view->result;

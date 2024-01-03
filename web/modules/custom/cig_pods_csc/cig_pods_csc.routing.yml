@@ -1,7 +1,7 @@
 cig_pods_csc.workbook_date_form:
   path: "/create/workbookdate"
   defaults:
-    _form: '\Drupal\cig_pods_csc\csv_import\src\Form\WorkbookDateForm'
+    _form: '\Drupal\cig_pods_csc\csc_csv_import\src\Form\WorkbookDateForm'
   requirements:
     _permission: "access content"
 
