@@ -11,3 +11,30 @@ cig_pods_csc.grantee_project_setup_form:
     _form: '\Drupal\cig_pods_csc\Form\GranteeProjectSetupForm'
   requirements:
     _permission: "access content"
+
+cig_pods_csc.project_form:
+  path: "/create/project"
+  defaults:
+    _form: '\Drupal\cig_pods_csc\Form\ProjectForm'
+  requirements:
+    _permission: "access content"
+
+cig_pods_csc.favorites:
+  path: '/npo-favorites'
+  defaults:
+    _controller: '\Drupal\cig_pods_csc\Controller\FavoritesController::getfavorites'
+    _title: 'Favourite Projects'
+  requirements:
+    _permission: 'access content'
+
+cig_pods_csc.edit_project_form:
+  path: "/edit/project/{asset}"
+  defaults:
+    _form: '\Drupal\cig_pods_csc\Form\ProjectForm'
+  requirements:
+    _entity_access: asset.edit
+    asset: \d+
+  options:
+    parameters:
+      asset:
+        type: entity:asset
