@@ -1,128 +1,125 @@
+$color_1: #205493;
+$color_2: #ffffff;
+$color_3: #0068ad;
+$background-color_1: white;
+$background-color_2: #205493;
+$border-color_1: #205493;
+
 .excel-import-form {
-  padding-top: 1.75rem !important;
-  padding-left: 2.5rem !important;
-  margin-bottom: 2rem !important;
+	padding-top: 1.75rem !important;
+	padding-left: 2.5rem !important;
+	margin-bottom: 2rem !important;
 }
-
 .form-element {
-  border-radius: 0rem !important;
-  min-height: 2.5rem !important;
-  padding-top: 0rem !important;
-  padding-bottom: 0rem !important;
+	border-radius: 0rem !important;
+	min-height: 2.5rem !important;
+	padding-top: 0rem !important;
+	padding-bottom: 0rem !important;
 }
-
 .instruction-text {
-  margin-bottom: 2rem !important;
+	margin-bottom: 2rem !important;
 }
-
 .form-item--quarter {
-  float: left;
-  margin-top: 0 !important;
-  padding-right: 2.5rem;
+	float: left;
+	margin-top: 0 !important;
+	padding-right: 2.5rem;
 }
-
 .form-item--year {
-  float: left;
-  margin-top: 0 !important;
-  padding-right: 2.5rem;
+	float: left;
+	margin-top: 0 !important;
+	padding-right: 2.5rem;
 }
-
 .form-item--files-file {
-  float: left;
-  margin-top: 0 !important;
-  padding-right: 2.5rem;
+	float: left;
+	margin-top: 0 !important;
+	padding-right: 2.5rem;
 }
-
 .form-element--type-file {
-  padding-top: 0.25rem !important;
-  padding-left: 0.25rem !important;
+	padding-top: 0.25rem !important;
+	padding-left: 0.25rem !important;
 }
-
 input#edit-file {
-  padding-top: 0.3rem !important;
-
+	padding-top: 0.3rem !important;
+	&::file-selector-button {
+		border-radius: 0.3rem !important;
+		color: $color_1;
+		background-color: $background-color_1;
+		border-color: $border-color_1;
+		border-width: 1px;
+		font-weight: bold;
+		margin-right: 0.7rem;
+		margin-top: -0.125rem;
+		padding-bottom: 0.3rem;
+	}
 }
-input#edit-file::file-selector-button {
-    border-radius: 0.3rem !important;
-    color: #205493;
-    background-color: white;
-    border-color: #205493;
-    border-width: 1px;
-    font-weight: bold;
-    margin-right: 0.7rem;
-    margin-top: -0.125rem;
-    padding-bottom: 0.3rem;
-}
-
 #edit-save {
-  margin-top: 1.45em !important;
-  padding: 0.75rem 2rem !important;
-  border-radius: 0.3rem !important;
-  font-weight: bold !important;
-  background-color: #205493 !important;
-  border: 2px solid #205493 !important;
-  border-color: #205493 !important;
-  color: #ffffff !important;
+	margin-top: 1.45em !important;
+	padding: 0.75rem 2rem !important;
+	border-radius: 0.3rem !important;
+	font-weight: bold !important;
+	background-color: $background-color_2 !important;
+	border: 2px solid #205493 !important;
+	border-color: $border-color_1 !important;
+	color: $color_2 !important;
 }
-
 #edit-year {
-  width: 12rem !important;
+	width: 12rem !important;
 }
-
 #edit-quarter {
-  width: 19rem !important;
+	width: 19rem !important;
 }
-
 #edit-file {
-  width: 25rem !important;
+	width: 25rem !important;
 }
-
 hr {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
 }
-
-.downloads, .view-link {
-  text-decoration: underline !important;
-  color: #0068ad  !important;
+.downloads {
+	text-decoration: underline !important;
+	color: $color_3 !important;
 }
-
+.view-link {
+	text-decoration: underline !important;
+	color: $color_3 !important;
+}
 .view-link-col {
-  line-height: 0;
-  margin-top: 1rem;
+	line-height: 0;
+	margin-top: 1rem;
 }
-
 .view-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.75rem !important;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.75rem !important;
 }
-
 .view-title {
-  margin: 0;
+	margin: 0;
 }
-
 svg {
-  vertical-align: middle;
-  fill: #0068ad !important;
+	vertical-align: middle;
+	fill: #0068ad !important;
 }
-
 #link-header {
-  display: block;
-  margin-bottom: 1rem;
+	display: block;
+	margin-bottom: 1rem;
 }
-
-.sortable-heading.is-active > a, .sortable-heading.is-active > a:hover, .sortable-heading.is-active > a:active {
-  color: #205493 !important;
+.sortable-heading.is-active {
+	>a {
+		color: $color_1 !important;
+		&:hover {
+			color: $color_1 !important;
+		}
+		&:active {
+			color: $color_1 !important;
+		}
+	}
 }
-
-
 [data-gin-accent] {
-  --gin-color-primary-hover: #205493 !important;
-  --gin-color-primary-active: #205493 !important;
-  --gin-color-primary-rgb: rgb(0, 104, 173) !important;
-  --gin-color-primary-light-hover: rgba(0, 104, 173, 0.2) !important;
-  --gin-color-primary-light-active: rgba(0, 104, 173, 0.3) !important;
-  --gin-shadow-primary-light: rgba(0, 104, 173, 0.45) !important;
-  --gin-bg-item-hover: rgba(0, 104, 173, 0.1) !important;
+	--gin-color-primary-hover: #205493 !important;
+	--gin-color-primary-active: #205493 !important;
+	--gin-color-primary-rgb: rgb(0, 104, 173) !important;
+	--gin-color-primary-light-hover: rgba(0, 104, 173, 0.2) !important;
+	--gin-color-primary-light-active: rgba(0, 104, 173, 0.3) !important;
+	--gin-shadow-primary-light: rgba(0, 104, 173, 0.45) !important;
+	--gin-bg-item-hover: rgba(0, 104, 173, 0.1) !important;
 }

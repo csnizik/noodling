@@ -38,3 +38,11 @@ cig_pods_csc.edit_project_form:
     parameters:
       asset:
         type: entity:asset
+
+cig_pods_csc.awardee_landing_page:
+  path: "/awardee_landing_page"
+  defaults:
+    _title: 'Grantee Dashboard - Partnerships for Climate-Smart Commodities'
+    _form: '\Drupal\cig_pods_csc\Form\AwardeeLandingPage'
+  requirements:
+    _permission: "access content"

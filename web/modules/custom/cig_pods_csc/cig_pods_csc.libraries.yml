@@ -6,3 +6,7 @@ css_form:
   css:
     theme:
       css/form.css: {}
+awardee_landing_page:
+  css:
+    theme:
+      css/awardee_landing_page.css: {}

@@ -1,0 +1,78 @@
+.bottom-form {
+    background-color: #fff;
+    border: 1px solid #dcdee0;
+    border-radius: 4px;
+    padding-top: 1.75rem !important;
+    padding-left: 2.5rem !important;
+    margin-bottom: 2rem !important;
+    margin-top: 30px;
+    padding-right: 66px;
+    padding-bottom: 24px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    border-radius: .75rem !important;
+}
+#block-gin-content form h2 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+}
+#block-gin-content form .subform-title-container h2 {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+    flex: 50%;
+}
+.awardee-landing-page{
+    padding: 0 !important;
+    background: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+.interactive-form.button.js-form-submit:hover {
+    background-color: #ffffff;
+    color: #005ea2;
+    font-size: 16px;
+    font-weight: 600;
+}
+.interactive-form .button.js-form-submit:focus {
+    background-color: #ffffff;
+    box-shadow: none;
+    color: #005ea2;
+    font-size: 16px;
+    font-weight: 600;
+}
+.interactive-form {
+    background-color: #fff;
+    border: 1px solid #dcdee0;
+    border-radius: 4px;
+    padding-top: 1.75rem !important;
+    padding-left: 2.5rem !important;
+    margin-bottom: 2rem !important;
+    margin-top: 30px;
+    padding-left: 15px;
+    padding-right: 66px;
+    padding-bottom: 24px;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: .75rem !important;
+}
+.interactive-form #edit-submit-workbook {
+    color: #ffffff;
+    background-color: #005ea2;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #005ea2 !important;
+}
+.interactive-form #edit-view-import-history {
+    background-color: #ffffff;
+    box-shadow: none;
+    color: #005ea2;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #005ea2 !important;
+}
+#welcome_text p {
+    font-size: 12px !important;
+    margin: 0 !important;
+}
