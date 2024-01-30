@@ -17,12 +17,15 @@ class SumConstraintValidator extends ConstraintValidator {
 
     $sum = 0;
     foreach ($constraint->fields as $field) {
-      $sum += $entity->get($field)->getValue()[0]["numerator"];
+      $val = $entity->get($field)->getValue()[0];
+      $val = $val['numerator'] / $val['denominator'];
+      $sum += $val;
     }
     
     $bound = $constraint->bound;
     if (is_string($bound)) {
-      $bound = $entity->get($bound)->getValue()[0]["numerator"];
+      $val = $entity->get($bound)->getValue()[0];
+      $bound = $val['numerator'] / $val['denominator'];
     }
 
     switch ($constraint->comp){
@@ -45,7 +48,10 @@ class SumConstraintValidator extends ConstraintValidator {
 
     foreach ($items as $delta => $item) {
       if (!$valid) {
+
         $this->context->buildViolation($constraint->errorMessage)
+          ->setParameter('%fields', '[' . implode(', ', $constraint->fields) . ']')
+          ->setParameter('%bound', $constraint->bound)
           ->atPath($delta)
           ->addViolation();
       }

@@ -1,0 +1,13 @@
+uuid: 7417ff33-28b3-466e-aead-7a463c75901b
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - cig_pods_csc
+id: csc_import_details
+label: 'Import Details'
+description: 'Import Details Log'
+name_pattern: 'Import Details log [log:id]'
+workflow: log_default
+new_revision: true

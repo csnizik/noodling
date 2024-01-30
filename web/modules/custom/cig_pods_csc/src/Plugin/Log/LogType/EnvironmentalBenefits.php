@@ -394,9 +394,14 @@ class EnvironmentalBenefits extends FarmLogType {
         'multiple' => FALSE,
       ],
       'csc_reduced_energy_use' => [
-        'type' => 'fraction',
+        'type' => 'list_string',
         'label' => 'Reduced Energy Use',
         'description' => 'Reduced Energy Use',
+        'allowed_values' => [
+          'Yes' => t(string: 'Yes'),
+          'No' => t(string: 'No'),
+          "I don't know" => t(string: "I don't Know"),
+        ],
         'required' => TRUE,
         'multiple' => FALSE,
         'min' => 0,
@@ -570,6 +575,14 @@ class EnvironmentalBenefits extends FarmLogType {
         'description' => 'Other Improved Wildlife Habitat Purpose',
         'required' => TRUE,
         'multiple' => FALSE,
+      ],
+      'csc_import_history_reference' => [
+          'type' => 'entity_reference',
+          'label' => 'Import History Reference',
+          'description' => 'Relate this entity to its respective import',
+          'target_type' => 'asset',
+          'multiple' => TRUE,
+          'cardinality' => -1,
       ],
     ];
 

@@ -32,6 +32,11 @@ class ImportHistory extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+
+      /*
+       * NOTE: use of allowed_values is being phased out in favor of taxonomies
+       * This change will be considered for this field as well.
+       */
       'csc_attempt_status' => [
         'type' => 'list_string',
         'label' => 'Attempt Status',
@@ -43,6 +48,11 @@ class ImportHistory extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+
+      /*
+       * NOTE: use of allowed_values is being phased out in favor of taxonomies
+       * This change will be considered for this field as well.
+       */
       'csc_workbook_type' => [
         'type' => 'list_string',
         'label' => 'Workbook Type',
@@ -61,15 +71,20 @@ class ImportHistory extends FarmAssetType {
         'required' => TRUE,
         'multiple' => FALSE,
       ],
+
+      /*
+       * NOTE: use of allowed_values is being phased out in favor of taxonomies
+       * This change will be considered for this field as well.
+       */
       'csc_month_of_reporting' => [
         'type' => 'list_string',
         'label' => 'Month of Reporting',
         'description' => 'Month of Reporting',
         'allowed_values' => [
-          'Jan-Mar' => t(string: 'Jan-Mar'),
-          'Apr-Jun' => t(string: 'Apr-Jun'),
-          'Jul-Sep' => t(string: 'Jul-Sep'),
-          'Oct-Dec' => t(string: 'Oct-Dec'),
+          'Jan-Mar' => t(string: 'January 1 - March 31'),
+          'Apr-Jun' => t(string: 'April 1 - June 30'),
+          'Jul-Sep' => t(string: 'July 1 - September 30'),
+          'Oct-Dec' => t(string: 'October 1 - December 31'),
         ],
         'required' => TRUE,
         'multiple' => FALSE,
@@ -101,7 +116,14 @@ class ImportHistory extends FarmAssetType {
         'description' => 'Submission Details',
         'required' => FALSE,
         'multiple' => FALSE,
-      ]
+      ],
+      'csc_import_summary_worksheets' => [
+        'type' => 'string',
+        'label' => 'Import Details for all worksheets',
+        'description' => 'Import Details for all worksheets',
+        'required' => FALSE,
+        'cardinality' => -1,
+      ],
     ];
 
     $farmFieldFactory = new FarmFieldFactory();

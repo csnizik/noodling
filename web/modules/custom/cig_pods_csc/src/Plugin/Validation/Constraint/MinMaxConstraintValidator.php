@@ -16,14 +16,18 @@ class MinMaxConstraintValidator extends ConstraintValidator {
 
     foreach ($items as $delta => $item) {
       // @DCG Validate the item here.
-      $val = $item->getValue()['numerator'];
-      if ($val < $constraint->min or $val > $constraint->max) {
-        $this->context->buildViolation($constraint->errorMessage)
-          ->setParameter('%field_name', $item->getFieldDefinition()->getLabel())
-          ->setParameter('%min', $constraint->min)
-          ->setParameter('%max', $constraint->max)
-          ->atPath($delta)
-          ->addViolation();
+      $val = $item->getValue();
+      if ($val['value'] === NULL and $val['denominator']) {
+        $val = $val['numerator'] / $val['denominator'];
+        if ($val < $constraint->min or $val > $constraint->max) {
+          $this->context->buildViolation($constraint->errorMessage)
+            ->setParameter('%field_name', $item->getFieldDefinition()->getLabel())
+            ->setParameter('%min', $constraint->min)
+            ->setParameter('%max', $constraint->max)
+            ->atPath($delta)
+            ->addViolation();
+      }
+
       }
     }
 

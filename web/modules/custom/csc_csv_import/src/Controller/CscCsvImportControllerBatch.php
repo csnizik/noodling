@@ -10,6 +10,7 @@ use Drupal\log\Entity\Log;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\views\Views;
 use Drupal\Core\Url;
 
@@ -23,23 +24,6 @@ class CscCsvImportControllerBatch extends ControllerBase {
   #  'finished'   => 'importFinished',
   #  //'file'       => 'modules/custom/csc_csv_import/src/Controller/csvImportFunction.php'
   #];
-
-  public function submit_workbooks() {
-    $view_args = [
-      "view_link" => Url::fromUri('internal:/assets/csc_import_history'),
-      "header_title" => "Import History",
-    ];
-    
-    $view = views_embed_view('import_history_embedded_view', 'page_1', $view_args);
-
-    $form = \Drupal::FormBuilder()->getForm('\Drupal\csc_csv_import\Form\WorkbookDateForm');
-
-    return [
-      "form" => $form,
-      "view" => $view,
-    ];
-
-  }
 
   public function process_workbook(Request $request) {
     set_time_limit(500);
@@ -67,7 +51,7 @@ class CscCsvImportControllerBatch extends ControllerBase {
           'application/vnd.ms-excel',
           'text/xls',
           'text/xlsx',
-          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       ];
 
       if (in_array($file->getClientMimeType(), $allowedFileType)) {
@@ -105,7 +89,7 @@ class CscCsvImportControllerBatch extends ControllerBase {
             'Mulching'                       => ['callback' => 'import_mulching',                               'end_col' =>  8], 
             'Nutrient Mgmt'                  => ['callback' => 'import_nutrient_management',                    'end_col' => 14], 
             'Pasture & Hay Planting'         => ['callback' => 'import_pasture_and_hay_planting',               'end_col' =>  9], 
-            'Prescribed Grazing'             => ['callback' => 'import_prescribedBgrazing',                     'end_col' =>  7], 
+            'Prescribed Grazing'             => ['callback' => 'import_prescribed_grazing',                     'end_col' =>  7], 
             'Range Planting'                 => ['callback' => 'import_range_planting',                         'end_col' =>  7],
             'Residue & Tillage Mgmt_NoTill'  => ['callback' => 'import_residue_and_tillage_management_notill',  'end_col' =>  7], 
             'Residue & Tillage Mgmt_RedTill' => ['callback' => 'import_residue_and_tillage_management_redtill', 'end_col' =>  7], 
@@ -116,7 +100,7 @@ class CscCsvImportControllerBatch extends ControllerBase {
             'Stripcropping'                  => ['callback' => 'import_stripcropping',                          'end_col' =>  9], 
             'Tree Shrub Establishment'       => ['callback' => 'import_tree_shrub_establishment',               'end_col' =>  8], 
             'Vegetative Barrier'             => ['callback' => 'import_vegetative_barrier',                     'end_col' =>  8], 
-            'Waste Separation Facility'      => ['callback' => 'import_waste_separation',                       'end_col' =>  9],
+            'Waste Separation Facility'      => ['callback' => 'import_waste_separation_facility',              'end_col' =>  9],
             'Waste Storage Facility'         => ['callback' => 'import_waste_storage_facility',                 'end_col' =>  7], 
             'Waste Treatment'                => ['callback' => 'import_waste_treatment',                        'end_col' =>  7], 
             'Waste Treatment Lagoon'         => ['callback' => 'import_waste_treatment_lagoon',                 'end_col' =>  9], 
@@ -126,19 +110,39 @@ class CscCsvImportControllerBatch extends ControllerBase {
 
           $reader = IOFactory::createReader($extension);
           $reader->setReadDataOnly(TRUE);
+          $reader->setReadEmptyCells(FALSE);
           $reader->setLoadSheetsOnly(array_keys($sheets));
           $spreadSheet = $reader->load($file);
           $sheetCount = $spreadSheet->getSheetCount();
+
+          #foreach ($spreadSheet->getWorksheetIterator() as $ws) {
+          #  print('<br>' . $ws->getTitle() . "<br>");
+          #  foreach ($ws->getRowIterator() as $row) {
+          #    $cellIterator = $row->getCellIterator();
+          #    $cellIterator->setIterateOnlyExistingCells(FALSE);
+
+          #    print('=============================================<br>');
+          #    foreach ($cellIterator as $cell) {
+          #      $col = $cell->getColumn();
+          #      $val = $cell->getValue();
+          #      print("Cell " . $col . ": " . $val . "<br>");
+          #      var_dump($val);
+          #      print('<br>');
+          #    }
+          #  }
+          #}
           
           // Temp variable for project ID
           $project_id_field = '';
           $new_entities = [];
           $new_violations = [];
+          $new_details = [];
 
           // Process each sheet in the workbook.
           for ($i = 0; $i < $sheetCount; $i++) {
             $sheet = $spreadSheet->getSheet($i);
             $sheet_name = $sheet->getTitle();
+            $updated = 0;
 
             $callback = $sheets[$sheet_name]['callback'];
             $end_column = $sheets[$sheet_name]['end_col'];
@@ -146,28 +150,44 @@ class CscCsvImportControllerBatch extends ControllerBase {
             $records = $this->processImport($sheet, $callback, $end_column, $year, $quarter, $project_id_field, $new_entities);
             foreach ($records as $e) {
               array_push($new_entities, $e);
+
+              if ($e['updated'] == TRUE) {
+                $updated += 1;
+              }
+
+              foreach ($e['violations'] as $v) {
+                $new_violations[] = '<br><b>' . $e['sheetname'] . ', Row ' . $e['row_num'] . ' - ' . $v->getPropertyPath() . ': </b><br>' . $v->getMessage() . '<br>';
+              }
             }
-            $out[] = array('name' =>$sheet_name, 'records' => count($records));
+
+            $details = $this->process_import_details($sheet_name, $records, $updated);
+            array_push($new_details, $details);
+            //$out[] = serialize(array($sheet_name, count($records), $updated, $entity_type, $machine_name, $total_before));
 
             if ($sheet_name == 'Coversheet') {
               $project_id_field = $records[0]['entity']->csc_project_id_field->value;
             }
+          }
 
+          $first_sheet = $spreadSheet->getSheet(0)->getTitle();
+          $import_history = $this->process_import_history($year, $quarter, $file, $first_sheet);
 
-            foreach ($new_entities as $new_entity) {
-              foreach ($new_entity['violations'] as $v) {
-                $new_violations[] = $v->getPropertyPath() . ': ' . $v->getMessage() . '<br>';
-              }
-              $new_entity['entity']->save();
-            }
+          $import_history->save();
+          $import_history_id = $import_history->id();
+
+          foreach ($new_entities as $new_entity) {
+            $new_entity['entity']->csc_import_history_reference[] = $import_history;
+            $new_entity['entity']->save();
+          }
+
+          foreach ($new_details as $new_detail) {
+            $new_detail->csc_import_history_reference = $import_history;
+            $new_detail->save();
           }
 
           #batch_set($this->batch);
           #batch_process('/');
 
-          // Create import history entity after successful upload
-          $first_sheet = $spreadSheet->getSheet(0)->getTitle();
-          $this->process_import_history($year, $quarter, $file, $first_sheet);
 
           //Purge the uploaded file after import is completed.
           #unlink($targetPath);
@@ -176,18 +196,9 @@ class CscCsvImportControllerBatch extends ControllerBase {
       }
     }
 
-    $out_msg = "";
-    foreach ($out as $it){
-      $out_msg .= $it['name'] . ': ' . $it['records'] . ' records.' . '<br>';
-    } 
-    $out_msg .= '<br>';
-    foreach ($new_violations as $v){
-      $out_msg .= $v;
-    } 
-
-    return [
-      '#children' => 'Workbook has been imported:' . '<br><br>' . $out_msg . '<br>' . $output,
-    ];
+    $url = Url::fromRoute('csc_csv_import.import_results', ['id' => $import_history_id]);
+    $response = new RedirectResponse($url->toString());
+    return $response;
   }
 
   public function process_import_history($year, $quarter, $file, $first_sheet){
@@ -201,10 +212,31 @@ class CscCsvImportControllerBatch extends ControllerBase {
     $import_history_submission['csc_time_submitted'] = (new \DateTime())->getTimestamp();
     $import_history_submission['csc_by_user'] = \Drupal::currentUser()->getAccountName();
     $import_history_submission['csc_workbook_type'] = ($first_sheet == "Coversheet") ? "Main" : "Supplemental";
+    $import_history_submission['csc_submission_details'] = 'link_placeholder';
 
     $import_history = Asset::create($import_history_submission);
+    return $import_history;
 
-    $import_history->save();
+  }
+
+  public function process_import_details($sheet_name, $records, $updated){
+    $entity_type = $records[0]['type'][0];
+    $machine_name = $records[0]['type'][1];
+    $query = \Drupal::entityQuery($entity_type)->condition('type', $machine_name);
+    $total_before = $query->count()->execute();
+
+    $submission = [];
+    $submission['type'] = 'csc_import_details';
+
+    $submission['csc_import_sheetname'] = $sheet_name;
+    $submission['csc_import_record_cnt'] = count($records);
+    $submission['csc_import_updated_cnt'] = $updated;
+    $submission['csc_import_entity_type'] = $entity_type;
+    $submission['csc_import_machine_name'] = $machine_name;
+    $submission['csc_import_records_before'] = $total_before;
+
+    $import_details = Log::create($submission);
+    return $import_details;
   }
 
   public function processImport($in_sheet, $importFunction, $end_column, $year, $quarter, $project_id_field, $new_entities){
@@ -235,6 +267,7 @@ class CscCsvImportControllerBatch extends ControllerBase {
         'count' => $record_count,
         'project_id' => $project_id_field,
         'new_entities' => $new_entities,
+        'sheetname' => $in_sheet->getTitle(),
       ];
 
       //import new coversheet
@@ -271,6 +304,7 @@ class CscCsvImportControllerBatch extends ControllerBase {
           'count' => $record_count,
           'project_id' => $project_id_field,
           'new_entities' => $new_entities,
+          'sheetname' => $in_sheet->getTitle(),
         ];
 
         #$this->batch['operations'][] = [$importFunction, [$params]];

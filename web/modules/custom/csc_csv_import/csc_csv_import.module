@@ -1,40 +1,8 @@
 <?php
 
 // intentionally left blank, ready to receive module code
-
-/**
- * Implements hook_theme()
- */
-function csc_csv_import_theme($existing, $type, $theme, $path) {
-    return [
-        'views_view_table__import_history_embedded_view' => [
-            'template' => 'views-view-table--import-history-embedded-view',
-            'base hook' => 'views_view_table',
-        ],
-    ];
- }
-
-function csc_csv_import_theme_suggestions_views_view_table(array $variables) {
-    $suggestions = [];
-    if ($variables['view'] == 'import_history_embedded_view') {
-        $suggestions = ['views_view_table__import_history_embedded_view'];
-    }
-    return $suggestions;
- }
-
-function csc_csv_import_preprocess_views_view_table(array &$variables) {
-    $view = $variables['view'];
-    $args = $view->args;
-
-    if (!empty($args)) {
-        $args = $args[0];
-        $variables['view_link'] = $args['view_link'];
-        $variables['header_title'] = $args['header_title'];
-    }
- }
-
 function csc_csv_import_views_post_execute($view) {
-    if ($view->id() == 'import_history_embedded_view') {
+    if ($view->id() == 'csc_import_history_embedded_view') {
 
         $entries = $view->result;
         $filtered_entries = [];

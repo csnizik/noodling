@@ -21,6 +21,6 @@ class SumConstraint extends Constraint {
   public $comp;
   public $bound;
 
-  public $errorMessage = 'Sum of fields does not match';
+  public $errorMessage = 'Sum of fields %fields does not match %bound';
 
 }

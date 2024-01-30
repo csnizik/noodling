@@ -2,22 +2,40 @@ csc_csv_import.process_workbook:
   path: '/csc_csv_import/upload_workbook'
   defaults:
     _controller: '\Drupal\csc_csv_import\Controller\CscCsvImportControllerBatch::process_workbook'
-    _title: 'csv import workbook'
-  requirements:
-    _permission: 'access content'
-
-csc_csv_import.excel_import_form:
-  path: "/csc_csv_import/excel_workbook"
-  defaults:
-    _title: 'Submit Reporting Workbooks'
-    _form: '\Drupal\csc_csv_import\Form\WorkbookDateForm'
+    _title: 'Import Results'
   requirements:
     _permission: 'access content'
 
 csc_csv_import.submit_workbooks:
   path: "/csc_csv_import/submit_workbooks"
   defaults:
-    _controller: '\Drupal\csc_csv_import\Controller\CscCsvImportControllerBatch::submit_workbooks'
     _title: 'Submit Reporting Workbooks'
+    _form: '\Drupal\csc_csv_import\Form\WorkbookDateForm'
   requirements:
     _permission: 'access content'
+
+csc_csv_import.import_results:
+  path: "/csc_csv_import/import_results/{id}"
+  defaults:
+    _form: '\Drupal\csc_csv_import\Form\ImportResultsForm'
+    _title_callback: '\Drupal\csc_csv_import\Form\ImportResultsForm::getTitle'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      id:
+        type: 'entity:csc_import_history'
+
+csc_csv_import.filtered_import:
+  path: "/csc_csv_import/import_results/{type}/{id}"
+  defaults:
+    _form: '\Drupal\csc_csv_import\Form\FilteredImportForm'
+    _title_callback: '\Drupal\csc_csv_import\Form\FilteredImportForm::getTitle'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      type:
+        type: 'string'
+      id:
+        type: 'entity:csc_import_history'

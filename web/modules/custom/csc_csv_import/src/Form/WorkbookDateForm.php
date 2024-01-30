@@ -8,6 +8,7 @@ use Drupal\Core\Render\Markup;
 use Drupal\Core\Http\MultipartFormDataRequest;
 use Symfony\Component\HttpFoundtion\Request;
 use Symfony\Component\HttpFoundtion\Response;
+use Drupal\Core\Url;
 
 /**
  * Excel Import Form.
@@ -23,7 +24,7 @@ class WorkbookDateForm extends FormBase {
     $form['#attributes']['enctype'][] = 'multipart/form-data';
 
     $quarter_options = [
-      'Jan 1 - March 31', 
+      'January 1 - March 31', 
       'April 1 - June 30',
       'July 1 - September 30',
       'October 1 - December 31',
@@ -86,8 +87,38 @@ class WorkbookDateForm extends FormBase {
 
     $form['links'] = [
       '#prefix' => '<hr><p class="workbook-links">',
-      '#suffix' => '<p>',
+      '#suffix' => '<p></div>',
       '#markup' => $link_markup,
+    ];
+
+    $form['import_history_section'] = [
+      '#type' => 'container',
+      '#prefix' => '<div>',
+      '#suffix' => '</div>',
+      '#attributes' => ['class' => ['bottom-form']],
+    ];
+
+    $view = render(views_embed_view('csc_import_history_embedded_view', 'page_1'));
+
+    $view_link = Url::fromRoute('csc_csv_import.filtered_import', ['type' => 'csc_import_history', 'id' => 1])->toString();
+
+    $view_header = '<div class="col-sm">
+                      <h2 class="view-title">Import History</h2>
+                    </div>
+                    <div class="col-sm view-link-col">
+                      <a class="view-link" href=' . $view_link . '>View All Import History</a>
+                    </div>';
+
+    $form['import_history_section']['header'] = [
+      '#prefix' => '<div class="container view-header">',
+      '#suffix' => '</div>',
+      '#markup' => $view_header,
+    ];
+
+    $form['import_history_section']['view'] = [
+      '#type' => 'container',
+      '#suffix' => '</div>',
+      '#markup' => $view,
     ];
 
     $form['#action'] = \Drupal\Core\Url::fromRoute('csc_csv_import.process_workbook')->toString();

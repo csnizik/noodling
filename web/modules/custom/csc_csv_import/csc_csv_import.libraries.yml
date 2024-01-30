@@ -2,3 +2,8 @@ excel_import_form:
   css:
     theme:
       css/form.css: {}
+
+import_results:
+  css:
+    theme:
+      css/import_results.css: {}

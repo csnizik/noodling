@@ -1,0 +1,92 @@
+.bottom-form {
+  width: 100%;
+  padding: var(--gin-spacing-l);
+  background: var(--gin-bg-layer);
+  border: 1px solid var(--gin-border-color-layer);
+  box-sizing: border-box;
+  margin-top: 1.5rem;
+  box-shadow: var(--gin-shadow-l1);
+  border-radius: var(--gin-border-l);
+}
+
+#edit-infoset{
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.workbook-basic-info, .import-summary, .more-workbook-instructions {
+  display: inline-block !important;
+}
+#edit-type.workbook-basic-info {
+  width: 17rem !important;
+}
+#edit-year.workbook-basic-info {
+  width: 14rem !important;
+}
+#edit-months.workbook-basic-info {
+  width: 30rem !important;
+}
+
+.summary-info {
+  width: 46% !important;
+  vertical-align: top !important;
+  display: inline-block !important;
+}
+#edit-embedded-view {
+  width: 53% !important;
+}
+.view-content {
+  height: 30rem !important;
+  overflow: auto !important;
+}
+
+#more-workbook-button {
+    border-radius: 0.3rem !important;
+    color: #205493 !important;
+    background-color: white !important;
+    border-color: #205493 !important;
+    border-width: 1px !important;
+    font-weight: bold !important;
+    margin-left: 0.7rem !important;
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.3rem !important;
+}
+
+.record_summary_title {
+  margin-bottom: 1.5rem !important;
+  margin-top: 1rem !important;
+}
+.record_summary {
+  column-count: 2 !important;
+  padding-bottom: 1rem !important;
+}
+
+#import-results {
+  background-color: #dee8e0 !important;
+  border-color: #236430 !important; 
+  border-left-width: 4px !important;
+  border-radius: 2px !important;
+  padding-top: 0.75rem !important;
+  padding-left: 0.75rem !important;
+}
+
+#banner_title {
+  margin-top: 0rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.gin-table-scroll-wrapper {
+  padding-bottom: 0px !important;
+}
+
+.view-link, .link_no_underline {
+  color: #0068ad  !important;
+}
+
+[data-gin-accent] {
+  --gin-color-primary-hover: #205493 !important;
+  --gin-color-primary-active: #205493 !important;
+  --gin-color-primary-light-hover: rgba(0, 104, 173, 0.2) !important;
+  --gin-color-primary-light-active: rgba(0, 104, 173, 0.3) !important;
+  --gin-shadow-primary-light: rgba(0, 104, 173, 0.45) !important;
+  --gin-bg-item-hover: rgba(0, 104, 173, 0.1) !important;
+}

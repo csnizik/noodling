@@ -148,6 +148,14 @@ class GHGBenefitsAlternateModeled extends FarmLogType {
         'min' => 0,
         'max' => 10000000,
       ],
+      'csc_import_history_reference' => [
+          'type' => 'entity_reference',
+          'label' => 'Import History Reference',
+          'description' => 'Relate this entity to its respective import',
+          'target_type' => 'asset',
+          'multiple' => TRUE,
+          'cardinality' => -1,
+      ],
     ];
 
     $farmFieldFactory = new FarmFieldFactory();

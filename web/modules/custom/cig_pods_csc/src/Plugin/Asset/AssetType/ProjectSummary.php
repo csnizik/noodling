@@ -23,6 +23,15 @@ class ProjectSummary extends FarmAssetType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
+      'csc_p_summary_csc_project_id' => [
+        'type' => 'entity_reference',
+        'label' => 'Project ID',
+        'description' => 'Project ID',
+		    'target_type' => 'asset',
+		    'target_bundle' => 'csc_project',
+        'required' => TRUE,
+        'multiple' => FALSE,
+      ],
       'csc_p_summary_fiscal_year' => [
         'type' => 'string',
         'label' => 'Federal Fiscal Year of Report Submission',
@@ -215,6 +224,14 @@ class ProjectSummary extends FarmAssetType {
         'target_bundle' => 'ghg_verification_method',
         'required' => TRUE ,
         'multiple' => FALSE,
+      ],
+      'csc_import_history_reference' => [
+        'type' => 'entity_reference',
+        'label' => 'Import History Reference',
+        'description' => 'Relate this entity to its respective import',
+        'target_type' => 'asset',
+        'multiple' => TRUE,
+        'cardinality' => -1,
       ],
     ];
 

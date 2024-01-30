@@ -23,6 +23,15 @@ class FarmSummary extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
+        'csc_farm_summary_producer_id' => [
+          'type' => 'entity_reference',
+          'label' => 'Producer ID',
+          'description' => 'Producer ID',
+          'target_type' => 'asset',
+          'target_bundle' => 'csc_producer_enrollment',
+          'required' => TRUE,
+          'multiple' => FALSE,
+        ],
         'csc_farm_summary_fiscal_year' => [
             'type' => 'string',
             'label' => 'Federal Fiscal Year of report submission',
@@ -194,6 +203,14 @@ class FarmSummary extends FarmLogType {
             ],
             'required' => TRUE,
             'multiple' => FALSE,
+          ],
+          'csc_import_history_reference' => [
+              'type' => 'entity_reference',
+              'label' => 'Import History Reference',
+              'description' => 'Relate this entity to its respective import',
+              'target_type' => 'asset',
+              'multiple' => TRUE,
+              'cardinality' => -1,
           ],
     ];
 

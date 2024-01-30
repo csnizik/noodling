@@ -16,8 +16,8 @@ class RequiredConstraintValidator extends ConstraintValidator {
 
     foreach ($items as $delta => $item) {
       // @DCG Validate the item here.
-      $val = $item->getValue();
-      if ($val == NULL or $val == "" or $val == []) {
+      $val = reset($item->getValue());
+      if ($val === NULL or $val === "" or $val === []) {
         $this->context->buildViolation($constraint->errorMessage)
           ->setParameter('%field_name', $item->getFieldDefinition()->getLabel())
           ->atPath($delta)

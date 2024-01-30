@@ -23,6 +23,15 @@ class MarketActivities extends FarmLogType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
+      'csc_m_activities_project_id' => [
+          'type' => 'entity_reference',
+          'label' => 'Project ID',
+          'description' => 'Project ID',
+              'target_type' => 'asset',
+              'target_bundle' => 'csc_project',
+          'required' => TRUE,
+          'multiple' => FALSE,
+      ],
       'csc_m_activities_commodity_type' => [
         'type' => 'entity_reference',
         'label' => 'Market Activities Commodity Type',
@@ -204,6 +213,14 @@ class MarketActivities extends FarmLogType {
         'description' => 'Market Activities Other traceability method',
         'required' => TRUE,
         'multiple' => FALSE,
+      ],
+      'csc_import_history_reference' => [
+          'type' => 'entity_reference',
+          'label' => 'Import History Reference',
+          'description' => 'Relate this entity to its respective import',
+          'target_type' => 'asset',
+          'multiple' => TRUE,
+          'cardinality' => -1,
       ],
     ];
 

@@ -23,6 +23,15 @@ class PartnerActivities extends FarmAssetType {
     $fields = parent::buildFieldDefinitions();
 
     $field_info = [
+        'csc_prtnr_act_project_id' => [
+            'type' => 'entity_reference',
+            'label' => 'Project ID',
+            'description' => 'Project ID',
+                'target_type' => 'asset',
+                'target_bundle' => 'csc_project',
+            'required' => TRUE,
+            'multiple' => FALSE,
+        ],
         'csc_prtnr_act_partner_ein' => [
             'type' => 'string',
             'label' => 'Partner ID (EIN)',
@@ -253,6 +262,14 @@ class PartnerActivities extends FarmAssetType {
             'description' => 'Name of firm or company from which supplies were obtained.',
             'required' => TRUE,
             'multiple' => FALSE,
+        ],
+        'csc_import_history_reference' => [
+            'type' => 'entity_reference',
+            'label' => 'Import History Reference',
+            'description' => 'Relate this entity to its respective import',
+            'target_type' => 'asset',
+            'multiple' => TRUE,
+            'cardinality' => -1,
         ],
     ];
 

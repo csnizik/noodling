@@ -126,3 +126,28 @@ svg {
   --gin-shadow-primary-light: rgba(0, 104, 173, 0.45) !important;
   --gin-bg-item-hover: rgba(0, 104, 173, 0.1) !important;
 }
+
+.link_no_underline {
+    color: #0068ad !important;
+}
+
+.Success {
+  color: #4d8157 !important;
+  font-weight: bold !important;
+}
+
+.Failed {
+  color: #90161b !important;
+  font-weight: bold !important;
+}
+
+.bottom-form {
+  width: 100%;
+  padding: var(--gin-spacing-l);
+  background: var(--gin-bg-layer);
+  border: 1px solid var(--gin-border-color-layer);
+  box-sizing: border-box;
+  margin-top: 1.5rem;
+  box-shadow: var(--gin-shadow-l1);
+  border-radius: var(--gin-border-l);
+}
