@@ -15,7 +15,12 @@
     "drupal/structure_sync": "^2.0",
     "drupal/openid_connect": "2.0.0-alpha12",
     "drupal/scss_compiler": "^1.1",
-    "phpoffice/phpspreadsheet": "^1.28"
+    "phpoffice/phpspreadsheet": "^1.28",
+    "drupal/schemata": "^1.0@beta",
+    "drupal/openapi_ui": "^1.0@RC",
+    "drupal/openapi_ui_redoc": "^1.0@RC",
+    "drupal/openapi": "^2.1",
+    "drupal/openapi_jsonapi": "^3.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

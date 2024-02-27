@@ -20,6 +20,8 @@ services:
       - |
         set -ex
 
+        git config --global --add safe.directory /opt/drupal
+
         # If a INSTALLED file does not exist, perform a fresh install
         if [ ! -f /opt/drupal/INSTALLED ]; then
 
@@ -47,7 +49,7 @@ services:
 
           # Import taxonomy terms via Drush.
           drush -y import:taxonomies --choice=full
-          
+
           # Add a test, npo, awardee, awardee1, and analyst users.
           drush user:create test --mail="test@example.com" --password="test"
           drush user:create npo --mail="npo@example.com" --password="npo"
@@ -77,7 +79,4 @@ services:
       - './:/opt/drupal'
     ports:
       - '85:80'
-    environment:
-      XDEBUG_MODE: debug
-      XDEBUG_CONFIG: discover_client_host=yes
-      XDEBUG_SESSION: PHPSTORM
+
